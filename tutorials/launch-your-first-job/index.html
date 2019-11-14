@@ -803,7 +803,7 @@ Your job will start as soon as resources are available (usually within 5 minutes
 <h2 id="delete-a-job-from-the-queue">Delete a job from the queue<a class="headerlink" href="#delete-a-job-from-the-queue" title="Permanent link">&para;</a></h2>
 <p>Run <code class="codehilite"><span class="n">qdel</span> <span class="o">&lt;</span><span class="n">job_id</span><span class="o">&gt;</span></code> to remove a job from the queue. If the job was running, associated capacity will be terminated within 4 minutes.  </p>
 <h2 id="custom-aws-scheduler-resources-optional">Custom AWS scheduler resources (optional)<a class="headerlink" href="#custom-aws-scheduler-resources-optional" title="Permanent link">&para;</a></h2>
-<p><a href="/tutorials/integration-ec2-job-parameters/">Here is a list</a> of scheduler resources specially designed for workloads running on AWS. The line starting with -l (lowercase L) is meant to define scheduler resources which will be used by this job. 
+<p><a href="../../tutorials/integration-ec2-job-parameters">Here is a list</a> of scheduler resources specially designed for workloads running on AWS. The line starting with -l (lowercase L) is meant to define scheduler resources which will be used by this job. 
 Syntax is as follow:  </p>
 <ul>
 <li>In a script: <code class="codehilite"><span class="o">#</span><span class="n">PBS</span> <span class="o">-</span><span class="n">l</span> <span class="n">parameter_name</span><span class="o">=</span><span class="n">parameter_value</span><span class="p">,</span><span class="n">parameter_name_2</span><span class="o">=</span><span class="n">parameter_value_2</span></code></li>
