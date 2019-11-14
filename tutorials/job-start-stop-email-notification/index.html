@@ -1,0 +1,915 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+    
+    
+      
+        <title>Automatic emails when your job start/stop</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../assets/css/custom.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#configure-ses-sender-domain" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Scale-Out Computing on AWS Knowledge Base" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Scale-Out Computing on AWS Knowledge Base
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Automatic emails when your job start/stop
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/awslabs/scale-out-computing-on-aws/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    awslabs/scale-out-computing-on-aws
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        What is Scale-Out Computing on AWS ?
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../analytics/build-kibana-dashboards/" class="md-tabs__link">
+          Analytics
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../storage/backend-storage-options/" class="md-tabs__link">
+          Storage
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../create-your-own-queue/" class="md-tabs__link md-tabs__link--active">
+          Tutorials
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Scale-Out Computing on AWS Knowledge Base" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Scale-Out Computing on AWS Knowledge Base
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/awslabs/scale-out-computing-on-aws/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    awslabs/scale-out-computing-on-aws
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="What is Scale-Out Computing on AWS ?" class="md-nav__link">
+      What is Scale-Out Computing on AWS ?
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../access-soca-cluster/" title="How to access Scale-Out Computing on AWS" class="md-nav__link">
+      How to access Scale-Out Computing on AWS
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../install-soca-cluster/" title="Install your Scale-Out Computing on AWS cluster" class="md-nav__link">
+      Install your Scale-Out Computing on AWS cluster
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Analytics
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Analytics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../analytics/build-kibana-dashboards/" title="Create your own analytics dashboard" class="md-nav__link">
+      Create your own analytics dashboard
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../analytics/monitor-cluster-activity/" title="Monitor your cluster and job activity" class="md-nav__link">
+      Monitor your cluster and job activity
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../analytics/review-hpc-costs/" title="Review your HPC costs" class="md-nav__link">
+      Review your HPC costs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../analytics/set-up-budget-project/" title="Set up budget per project" class="md-nav__link">
+      Set up budget per project
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Storage
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Storage
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../storage/backend-storage-options/" title="Understand backend storage" class="md-nav__link">
+      Understand backend storage
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../storage/launch-job-with-fsx/" title="Launch a job with FSx for Lustre" class="md-nav__link">
+      Launch a job with FSx for Lustre
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../create-your-own-queue/" title="Create your own queue" class="md-nav__link">
+      Create your own queue
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../integration-ec2-job-parameters/" title="Job customization for EC2" class="md-nav__link">
+      Job customization for EC2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../job-licenses-flexlm/" title="Job with FlexLM licenses requirements" class="md-nav__link">
+      Job with FlexLM licenses requirements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Automatic emails when your job start/stop
+      </label>
+    
+    <a href="./" title="Automatic emails when your job start/stop" class="md-nav__link md-nav__link--active">
+      Automatic emails when your job start/stop
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configure-ses-sender-domain" class="md-nav__link">
+    Configure SES sender domain
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-recipients-addresses" class="md-nav__link">
+    Configure Recipients addresses
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notification-code" class="md-nav__link">
+    Notification code
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-the-hooks" class="md-nav__link">
+    Create the hooks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test" class="md-nav__link">
+    Test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#addupdate-email" class="md-nav__link">
+    Add/Update email
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-the-logs" class="md-nav__link">
+    Check the logs
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../launch-always-on-instances/" title="Launch AlwaysOn nodes" class="md-nav__link">
+      Launch AlwaysOn nodes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../launch-your-first-job/" title="Launch your first job" class="md-nav__link">
+      Launch your first job
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../manage-ldap-users/" title="Centralized user management" class="md-nav__link">
+      Centralized user management
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../troubleshoot-job-queue/" title="Debug why your jobs are not starting" class="md-nav__link">
+      Debug why your jobs are not starting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../update-soca-dns-ssl-certificate/" title="Change your DNS name and SSL certificate" class="md-nav__link">
+      Change your DNS name and SSL certificate
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../use-custom-ami/" title="Use your own AMI" class="md-nav__link">
+      Use your own AMI
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configure-ses-sender-domain" class="md-nav__link">
+    Configure SES sender domain
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-recipients-addresses" class="md-nav__link">
+    Configure Recipients addresses
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notification-code" class="md-nav__link">
+    Notification code
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-the-hooks" class="md-nav__link">
+    Create the hooks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test" class="md-nav__link">
+    Test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#addupdate-email" class="md-nav__link">
+    Add/Update email
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-the-logs" class="md-nav__link">
+    Check the logs
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/awslabs/scale-out-computing-on-aws/edit/master/docs/tutorials/job-start-stop-email-notification.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>Automatic emails when your job start/stop</h1>
+                
+                <p>In this page, I will show you how to configure email notification when your job start/stop. For this example, I will use <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/getting-started.html">Simple Email Service (SES)</a>, but you can use any SMTP provider.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><strong>Note1:</strong> By default, the Scale-Out Computing on AWS admin user you created during the installation does not have any associated email address. If you want to use this account you must edit LDAP and add the "mail" attribute. </p>
+<p><strong>Note2:</strong> All qmgr command must be executed on the scheduler host</p>
+</div>
+<h2 id="configure-ses-sender-domain">Configure SES sender domain<a class="headerlink" href="#configure-ses-sender-domain" title="Permanent link">&para;</a></h2>
+<p>Open the SES console and verify your domain (or specific email addresses). For this example I will verify my entire domain (soca.dev) and enable DKIM support to prevent email spoofing.</p>
+<p><img alt="" src="../../imgs/email-1.png" /></p>
+<p>Click 'Verify this domain', you will get list of DNS records to update for verification. Once done, wait a couple of hours and you will receive a confirmation when your DNS are validated.</p>
+<p><img alt="" src="../../imgs/email-2.png" /></p>
+<h2 id="configure-recipients-addresses">Configure Recipients addresses<a class="headerlink" href="#configure-recipients-addresses" title="Permanent link">&para;</a></h2>
+<p>By default SES limits you to send email to unique recipients which you will need verify manually</p>
+<p><img alt="" src="../../imgs/email-3.png" /></p>
+<p>If you want to be able to send email to any addresses, <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/request-production-access.html">you need to request production access</a>.</p>
+<p><img alt="" src="../../imgs/email-4.png" /></p>
+<h2 id="notification-code">Notification code<a class="headerlink" href="#notification-code" title="Permanent link">&para;</a></h2>
+<p>Create a hook file (note: this file can be found under <code class="codehilite"><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="n">soca</span><span class="o">/</span><span class="n">cluster_hooks</span><span class="o">/</span><span class="n">job_notification</span><span class="p">.</span><span class="n">py</span></code> on your Scale-Out Computing on AWS cluster)</p>
+<p>Edit the following section to match your SES settings
+<div class="codehilite"><pre><span></span><span class="n">ses_sender_email</span> <span class="o">=</span> <span class="s1">&#39;&lt;SES_SENDER_EMAIL_ADDRESS_HERE&gt;&#39;</span>
+<span class="n">ses_region</span> <span class="o">=</span> <span class="s1">&#39;&lt;YOUR_SES_REGION_HERE&gt;&#39;</span>
+</pre></div></p>
+<h2 id="create-the-hooks">Create the hooks<a class="headerlink" href="#create-the-hooks" title="Permanent link">&para;</a></h2>
+<p>Once your script is created, configure your scheduler hooks by running the following commands:
+<div class="codehilite"><pre><span></span>user@host: qmgr -c <span class="s2">&quot;create hook notify_job_start event=runjob&quot;</span>
+user@host: qmgr -c <span class="s2">&quot;create hook notify_job_complete event=execjob_end&quot;</span>
+user@host: qmgr -c <span class="s2">&quot;import hook notify_job_start application/x-python default /apps/soca/cluster_hooks/job_notifications.py&quot;</span>
+user@host: qmgr -c <span class="s2">&quot;import hook notify_job_complete application/x-python default /apps/soca/cluster_hooks/job_notifications.py&quot;</span>
+</pre></div></p>
+<p>Note: If you make any change to the python file, you <strong>must</strong> re-run the <code class="codehilite"><span class="kn">import</span> <span class="nn">hook</span></code> command</p>
+<h2 id="test">Test<a class="headerlink" href="#test" title="Permanent link">&para;</a></h2>
+<p>Let's submit a test job which will last 5 minutes</p>
+<div class="codehilite"><pre><span></span>qsub -N mytestjob -- /bin/sleep <span class="m">300</span>
+</pre></div>
+
+<p>Now let's verify if I received the alerts correctly.</p>
+<p><strong>Job start:</strong></p>
+<p><img alt="" src="../../imgs/email-8.png" /></p>
+<p><strong>5 minutes later:</strong></p>
+<p><img alt="" src="../../imgs/email-7.png" /></p>
+<h2 id="addupdate-email">Add/Update email<a class="headerlink" href="#addupdate-email" title="Permanent link">&para;</a></h2>
+<p>Run <code class="codehilite"><span class="n">ldapsearch</span> <span class="o">-</span><span class="n">x</span> <span class="n">uid</span><span class="o">=&lt;</span><span class="k">USER</span><span class="o">&gt;</span></code> command to verify if your user has a valid <code class="codehilite"><span class="n">mail</span></code> attribute and if this attribute is pointing to the correct email address. The example below shows a user without email attribute.</p>
+<div class="codehilite"><pre><span></span>user@host: ldapsearch -x <span class="nv">uid</span><span class="o">=</span>mickael
+<span class="c1">## mickael, People, soca.local</span>
+dn: <span class="nv">uid</span><span class="o">=</span>mickael,ou<span class="o">=</span>People,dc<span class="o">=</span>soca,dc<span class="o">=</span><span class="nb">local</span>
+objectClass: top
+objectClass: person
+objectClass: posixAccount
+objectClass: shadowAccount
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+uid: mickael
+uidNumber: <span class="m">5001</span>
+gidNumber: <span class="m">5001</span>
+cn: mickael
+sn: mickael
+loginShell: /bin/bash
+homeDirectory: /data/home/mickael
+</pre></div>
+
+<p>To add/update an email address, create a new ldif file (eg: update_email.ldif) and add the following content</p>
+<div class="codehilite"><pre><span></span><span class="n">dn</span><span class="o">:</span> <span class="n">uid</span><span class="o">=</span><span class="n">mickael</span><span class="o">,</span><span class="n">ou</span><span class="o">=</span><span class="n">People</span><span class="o">,</span><span class="n">dc</span><span class="o">=</span><span class="n">soca</span><span class="o">,</span><span class="n">dc</span><span class="o">=</span><span class="n">local</span>
+<span class="n">changetype</span><span class="o">:</span> <span class="n">modify</span>
+<span class="n">add</span><span class="o">:</span> <span class="n">mail</span>
+<span class="n">mail</span><span class="o">:</span> <span class="n">mickael</span><span class="err">@</span><span class="n">soca</span><span class="o">.</span><span class="na">dev</span>
+</pre></div>
+
+<p>Then execute the <code class="codehilite"><span class="n">ldapadd</span></code> as root
+<div class="codehilite"><pre><span></span>user@host: ldapadd -x -D <span class="nv">cn</span><span class="o">=</span>admin,dc<span class="o">=</span>soca,dc<span class="o">=</span><span class="nb">local</span> -y /root/OpenLdapAdminPassword.txt -f update_email.ldif
+modifying entry <span class="s2">&quot;uid=mickael,ou=People,dc=soca,dc=local&quot;</span>
+</pre></div></p>
+<p>Finally re-run the ldapsearch command and validate your user now has <code class="codehilite"><span class="n">mail</span></code> attribute</p>
+<div class="codehilite"><pre><span></span>user@host: ldapsearch -x <span class="nv">uid</span><span class="o">=</span>mickael
+dn: <span class="nv">uid</span><span class="o">=</span>mickael,ou<span class="o">=</span>People,dc<span class="o">=</span>soca,dc<span class="o">=</span><span class="nb">local</span>
+objectClass: top
+objectClass: person
+objectClass: posixAccount
+objectClass: shadowAccount
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+uid: mickael
+uidNumber: <span class="m">5001</span>
+gidNumber: <span class="m">5001</span>
+cn: mickael
+sn: mickael
+loginShell: /bin/bash
+homeDirectory: /data/home/mickael
+<span class="hll">mail: mickael@soca.dev
+</span></pre></div>
+
+<h2 id="check-the-logs">Check the logs<a class="headerlink" href="#check-the-logs" title="Permanent link">&para;</a></h2>
+<p>Scheduler hooks are located: </p>
+<ul>
+<li>/var/spool/pbs/server_logs/ for notify_job_start on the Scheduler</li>
+<li>/var/spool/pbs/mom_logs/ for notify_job_complete on the Execution Host(s)</li>
+</ul>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../job-licenses-flexlm/" title="Job with FlexLM licenses requirements" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Job with FlexLM licenses requirements
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../launch-always-on-instances/" title="Launch AlwaysOn nodes" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Launch AlwaysOn nodes
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>

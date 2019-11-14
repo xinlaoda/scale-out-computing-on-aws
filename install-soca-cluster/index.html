@@ -1,0 +1,976 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+    
+    
+      
+        <title>Install your Scale-Out Computing on AWS cluster</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.30686662.css">
+      
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../assets/css/custom.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#download-scale-out-computing-on-aws" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="Scale-Out Computing on AWS Knowledge Base" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Scale-Out Computing on AWS Knowledge Base
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Install your Scale-Out Computing on AWS cluster
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/awslabs/scale-out-computing-on-aws/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    awslabs/scale-out-computing-on-aws
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+<nav class="md-tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." class="md-tabs__link md-tabs__link--active">
+        What is Scale-Out Computing on AWS ?
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../analytics/build-kibana-dashboards/" class="md-tabs__link">
+          Analytics
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../storage/backend-storage-options/" class="md-tabs__link">
+          Storage
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../tutorials/create-your-own-queue/" class="md-tabs__link">
+          Tutorials
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="Scale-Out Computing on AWS Knowledge Base" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Scale-Out Computing on AWS Knowledge Base
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/awslabs/scale-out-computing-on-aws/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    awslabs/scale-out-computing-on-aws
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="What is Scale-Out Computing on AWS ?" class="md-nav__link">
+      What is Scale-Out Computing on AWS ?
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../access-soca-cluster/" title="How to access Scale-Out Computing on AWS" class="md-nav__link">
+      How to access Scale-Out Computing on AWS
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Install your Scale-Out Computing on AWS cluster
+      </label>
+    
+    <a href="./" title="Install your Scale-Out Computing on AWS cluster" class="md-nav__link md-nav__link--active">
+      Install your Scale-Out Computing on AWS cluster
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#download-scale-out-computing-on-aws" class="md-nav__link">
+    Download Scale-Out Computing on AWS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-your-release" class="md-nav__link">
+    Build your release
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upload-to-s3" class="md-nav__link">
+    Upload to S3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#locate-the-install-template" class="md-nav__link">
+    Locate the install template
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-scale-out-computing-on-aws" class="md-nav__link">
+    Install Scale-Out Computing on AWS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#post-install-verifications" class="md-nav__link">
+    Post Install Verifications
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    What's next ?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-structure" class="md-nav__link">
+    Project Structure
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Analytics
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Analytics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../analytics/build-kibana-dashboards/" title="Create your own analytics dashboard" class="md-nav__link">
+      Create your own analytics dashboard
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../analytics/monitor-cluster-activity/" title="Monitor your cluster and job activity" class="md-nav__link">
+      Monitor your cluster and job activity
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../analytics/review-hpc-costs/" title="Review your HPC costs" class="md-nav__link">
+      Review your HPC costs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../analytics/set-up-budget-project/" title="Set up budget per project" class="md-nav__link">
+      Set up budget per project
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Storage
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Storage
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../storage/backend-storage-options/" title="Understand backend storage" class="md-nav__link">
+      Understand backend storage
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../storage/launch-job-with-fsx/" title="Launch a job with FSx for Lustre" class="md-nav__link">
+      Launch a job with FSx for Lustre
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorials/create-your-own-queue/" title="Create your own queue" class="md-nav__link">
+      Create your own queue
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorials/integration-ec2-job-parameters/" title="Job customization for EC2" class="md-nav__link">
+      Job customization for EC2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorials/job-licenses-flexlm/" title="Job with FlexLM licenses requirements" class="md-nav__link">
+      Job with FlexLM licenses requirements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorials/job-start-stop-email-notification/" title="Automatic emails when your job start/stop" class="md-nav__link">
+      Automatic emails when your job start/stop
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorials/launch-always-on-instances/" title="Launch AlwaysOn nodes" class="md-nav__link">
+      Launch AlwaysOn nodes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorials/launch-your-first-job/" title="Launch your first job" class="md-nav__link">
+      Launch your first job
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorials/manage-ldap-users/" title="Centralized user management" class="md-nav__link">
+      Centralized user management
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorials/troubleshoot-job-queue/" title="Debug why your jobs are not starting" class="md-nav__link">
+      Debug why your jobs are not starting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorials/update-soca-dns-ssl-certificate/" title="Change your DNS name and SSL certificate" class="md-nav__link">
+      Change your DNS name and SSL certificate
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorials/use-custom-ami/" title="Use your own AMI" class="md-nav__link">
+      Use your own AMI
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#download-scale-out-computing-on-aws" class="md-nav__link">
+    Download Scale-Out Computing on AWS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-your-release" class="md-nav__link">
+    Build your release
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upload-to-s3" class="md-nav__link">
+    Upload to S3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#locate-the-install-template" class="md-nav__link">
+    Locate the install template
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-scale-out-computing-on-aws" class="md-nav__link">
+    Install Scale-Out Computing on AWS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#post-install-verifications" class="md-nav__link">
+    Post Install Verifications
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    What's next ?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-structure" class="md-nav__link">
+    Project Structure
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/awslabs/scale-out-computing-on-aws/edit/master/docs/install-soca-cluster.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>Install your Scale-Out Computing on AWS cluster</h1>
+                
+                <h2 id="download-scale-out-computing-on-aws">Download Scale-Out Computing on AWS<a class="headerlink" href="#download-scale-out-computing-on-aws" title="Permanent link">&para;</a></h2>
+<p>Scale-Out Computing on AWS is open-source and available on Github (<a href="https://github.com/awslabs/scale-out-computing-on-aws">https://github.com/awslabs/scale-out-computing-on-aws</a>).
+To get started, simply clone the repository:</p>
+<div class="codehilite"><pre><span></span><span class="c1"># Clone using HTTPS</span>
+user@host: git clone https://github.com/awslabs/scale-out-computing-on-aws .
+
+<span class="c1"># Clone using SSH</span>
+user@host: git clone git@github.com:awslabs/scale-out-computing-on-aws.git .
+</pre></div>
+
+<h2 id="build-your-release">Build your release<a class="headerlink" href="#build-your-release" title="Permanent link">&para;</a></h2>
+<p>Once you have cloned your repository, execute <code class="codehilite"><span class="k">source</span><span class="o">/</span><span class="n">manual_build</span><span class="p">.</span><span class="n">py</span></code> using either python2 or python3</p>
+<div class="codehilite"><pre><span></span>user@host: python3 source/manual_build.py
+<span class="o">======</span> Scale-Out Computing on AWS <span class="nv">Build</span> <span class="o">======</span>
+
+<span class="hll"> &gt; Generated unique ID <span class="k">for</span> build: r6l1
+</span> &gt; Creating temporary build folder ...
+ &gt; Copying required files ...
+ &gt; Creating archive <span class="k">for</span> build id: <span class="nv">r6l1</span>
+
+<span class="o">======</span> Build <span class="nv">COMPLETE</span> <span class="o">======</span>
+
+<span class="o">======</span> Installation <span class="nv">Instructions</span> <span class="o">======</span>
+<span class="m">1</span>: Create or use an existing S3 bucket on your AWS account <span class="o">(</span>eg: <span class="s1">&#39;mysocacluster&#39;</span><span class="o">)</span>
+<span class="m">2</span>: Drag <span class="p">&amp;</span> Drop source/dist/r6l1 to your S3 bucket <span class="o">(</span>eg: <span class="err">&#39;</span>mysocacluster/dist/r6l1<span class="o">)</span>
+<span class="m">3</span>: Launch CloudFormation and use scale-out-computing-on-aws.template as base template
+<span class="m">4</span>: Enter your cluster information.
+
+Press Enter key to close ..
+</pre></div>
+
+<p>This command create a build (<code class="codehilite"><span class="n">r6l1</span></code> in this example) under <code class="codehilite"><span class="k">source</span><span class="o">/</span><span class="n">dist</span><span class="o">/&lt;</span><span class="n">build_id</span><span class="o">&gt;</span></code> </p>
+<h2 id="upload-to-s3">Upload to S3<a class="headerlink" href="#upload-to-s3" title="Permanent link">&para;</a></h2>
+<p>Go to your Amazon S3 bash and click "Create Bucket"</p>
+<p><img alt="" src="../imgs/install-1.png" /></p>
+<p>Choose a name and a region then click  "Create"</p>
+<p><img alt="" src="../imgs/install-2.png" /></p>
+<div class="admonition warning">
+<p class="admonition-title">Avoid un-necessary charge</p>
+<p>It's recommended to create your bucket in the same region as your are planning to use Scale-Out Computing on AWS to avoid Cross-Regions charge (<a href="/https://aws.amazon.com/s3/pricing/"> See Data Transfer </a>)</p>
+</div>
+<p>Once your bucket is created, select it and click "Upload". Simply drag and drop your build folder  (<code class="codehilite"><span class="n">r6l1</span></code> in this example) to upload the content of the folder to S3.</p>
+<p><img alt="" src="../imgs/install-3.png" /></p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>You can use the same bucket to host multiple Scale-Out Computing on AWS clusters</p>
+</div>
+<h2 id="locate-the-install-template">Locate the install template<a class="headerlink" href="#locate-the-install-template" title="Permanent link">&para;</a></h2>
+<p>On your S3 bucket, click on the folder you just uploaded.</p>
+<p><img alt="" src="../imgs/install-4.png" /></p>
+<p>Your install template is located under <code class="codehilite"><span class="o">&lt;</span><span class="n">S3_BUCKET_NAME</span><span class="o">&gt;/&lt;</span><span class="n">BUILD_ID</span><span class="o">&gt;/</span><span class="k">scale</span><span class="o">-</span><span class="k">out</span><span class="o">-</span><span class="n">computing</span><span class="o">-</span><span class="k">on</span><span class="o">-</span><span class="n">aws</span><span class="p">.</span><span class="k">template</span></code>. Click on the object to retrieve the "Object URL"</p>
+<p><img alt="" src="../imgs/install-5.png" /></p>
+<h2 id="install-scale-out-computing-on-aws">Install Scale-Out Computing on AWS<a class="headerlink" href="#install-scale-out-computing-on-aws" title="Permanent link">&para;</a></h2>
+<p>Open CloudFormation bash and select "Create Stack". Copy the URL of your install template and click "Next".</p>
+<p><img alt="" src="../imgs/install-6.png" /></p>
+<div class="admonition danger">
+<p class="admonition-title">Requirements</p>
+<ul>
+<li>No uppercase in stack name</li>
+<li>Stack name is limited to 20 characters maximum (note: we automatically add soca- prefix)</li>
+<li>Not supported on regions with less than 3 AZs (Canada / Northern California)</li>
+</ul>
+</div>
+<p>If you hit any issue during the installation, refer to the 'CREATE_FAILED' component and find the root cause by referring at "Physical ID"
+<img alt="" src="../imgs/install-12.png" /></p>
+<p>Under stack details, choose the stack name (do not use uppercase or it will break your ElasticSearch cluster). </p>
+<ul>
+<li>
+<p>Install Parameters: Specify your S3 bucket you have uploaded your build (<code class="codehilite"><span class="n">my</span><span class="o">-</span><span class="n">soca</span><span class="o">-</span><span class="n">hpc</span><span class="o">-</span><span class="n">test</span></code> in this example) as well as the name of your build (<code class="codehilite"><span class="n">r6l1</span></code> in this example). If you haven't uploaded your build on your S3 root level, make sure you specify the entire file hierarchy.</p>
+</li>
+<li>
+<p>Environment Parameters: Choose your Linux Distribution, instance type for your master host, VPC CIDR, your IP which will be whitelisted for port 22, 80 and 443 as well as the root SSH keypair you want to use</p>
+</li>
+<li>
+<p>LDAP Parameters: Create a default LDAP user</p>
+</li>
+</ul>
+<p><img alt="" src="../imgs/install-7.png" /></p>
+<div class="admonition info">
+<p class="admonition-title">Disable Rollback on Failure if needed</p>
+<p>If you face any challenge during the installation and need to do some troubleshooting, it's recommended to disable "Rollback On Failure" (under Advanced section)</p>
+</div>
+<p>Click Next two times and make sure to check "Capabilities" section. One done simply click "Create Stack". The installation procedure will take about 45 minutes.</p>
+<p><img alt="" src="../imgs/install-8.png" /></p>
+<h2 id="post-install-verifications">Post Install Verifications<a class="headerlink" href="#post-install-verifications" title="Permanent link">&para;</a></h2>
+<p>Wait for CloudFormation stacks to be "CREATE_COMPLETE", then  select your base stack and click "Outputs"</p>
+<p><img alt="" src="../imgs/install-9.png" /></p>
+<p>Output tabs give you information about the SSH IP for the master, link to the web interface or ElasticSearch.</p>
+<p><img alt="" src="../imgs/install-10.png" /></p>
+<p>Even though Cloudformation resources are created, your environment might not be completely ready. 
+To confirm whether or not Scale-Out Computing on AWS is ready, try to SSH to the scheduler IP. If your Scale-Out Computing on AWS cluster is not ready, your SSH will be rejected as shown below:</p>
+<div class="codehilite"><pre><span></span>38f9d34dde89:~ mcrozes$ ssh -i mcrozes-personal-aws.pem ec2-user@&lt;IP&gt;
+ ************* Scale-Out Computing on AWS FIRST TIME CONFIGURATION *************
+    Hold on, cluster is not ready yet.
+    Please <span class="nb">wait</span> ~30 minutes as Scale-Out Computing on AWS is being installed.
+    Once cluster is ready to use, this message will be replaced automatically and you will be able to SSH.
+ *********************************************************
+Connection Closed.
+</pre></div>
+
+<p>If your Scale-Out Computing on AWS cluster is ready, your SSH session will be accepted.</p>
+<div class="codehilite"><pre><span></span>38f9d34dde89:~ mcrozes$ ssh -i mcrozes-personal-aws.pem ec2-user@&lt;IP&gt;
+Last login: Mon Oct  <span class="m">7</span> <span class="m">21</span>:37:21 <span class="m">2019</span> from &lt;IP&gt;
+
+   _____  ____   ______ ___
+  / ___/ / __ <span class="se">\ </span>/ ____//   <span class="p">|</span>
+  <span class="se">\_</span>_ <span class="se">\ </span>/ / / // /    / /<span class="p">|</span> <span class="p">|</span>
+ ___/ // /_/ // /___ / ___ <span class="p">|</span>
+/____/ <span class="se">\_</span>___/ <span class="se">\_</span>___//_/  <span class="p">|</span>_<span class="p">|</span>
+Cluster: soca-soca-cluster-v1
+&gt; <span class="nb">source</span> /etc/environment to load Scale-Out Computing on AWS paths
+
+<span class="o">[</span>ec2-user@ip-20-0-28-184 ~<span class="o">]</span>$
+</pre></div>
+
+<p>At this point, you will be able to access the web interface and log in with the default LDAP user you specified at launch creation</p>
+<p><img alt="" src="../imgs/install-11.png" /></p>
+<h2 id="whats-next">What's next ?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
+<p>Learn <a href="/access-soca-cluster/">how to access your cluster</a>, <a href="/tutorials/launch-your-first-job/">how to submit your first job</a> or even <a href="/tutorials/update-soca-dns-ssl-certificate/">how to change your Scale-Out Computing on AWS DNS</a> to match your personal domain name.</p>
+<h2 id="project-structure">Project Structure<a class="headerlink" href="#project-structure" title="Permanent link">&para;</a></h2>
+<p>Refer to the project structure below if you want to deploy your own customization
+<div class="codehilite"><pre><span></span>.
+├── solution-for-scale-out-computing-on-aws.template    <span class="o">[</span> Soca Install Template <span class="o">]</span>
+├── soca                           
+│   ├── cluster_analytics                               <span class="o">[</span> Scripts to ingest cluster/job data into ELK <span class="o">]</span>
+│   ├── cluster_hooks                                   <span class="o">[</span> Scheduler Hooks <span class="o">]</span>
+│   ├── cluster_logs_management                         <span class="o">[</span> Scripts to manage cluster log rotation <span class="o">]</span>
+│   ├── cluster_manager                                 <span class="o">[</span> Scripts to control Soca cluster <span class="o">]</span>
+│   └── cluster_web_ui                                  <span class="o">[</span> Web Interface <span class="o">]</span>
+├── scripts                                             
+│   ├── ComputeNode.sh                                  <span class="o">[</span> Configure Compute Node <span class="o">]</span>
+│   ├── ComputeNodeInstallDCV.sh                        <span class="o">[</span> Configure DCV Host <span class="o">]</span>
+│   ├── ComputeNodePostReboot.sh                        <span class="o">[</span> Post Reboot Compute Node actions <span class="o">]</span>
+│   ├── ComputeNodeUserCustomization.sh                 <span class="o">[</span> User customization <span class="o">]</span>
+│   ├── config.cfg                                      <span class="o">[</span> List of all packages to install <span class="o">]</span>
+│   ├── Scheduler.sh                                    <span class="o">[</span> Configure Schedule Node <span class="o">]</span>
+│   └── SchedulerPostReboot.sh                          <span class="o">[</span> Post Reboot Scheduler Node actions <span class="o">]</span>
+└── templates                              
+    ├── Analytics.template                              <span class="o">[</span> Manage ELK stack <span class="k">for</span> your cluster <span class="o">]</span>
+    ├── ComputeNode.template                            <span class="o">[</span> Manage simulation nodes <span class="o">]</span>
+    ├── Configuration.template                          <span class="o">[</span> Centralize cluster configuration <span class="o">]</span>
+    ├── Network.template                                <span class="o">[</span> Manage VPC configuration <span class="o">]</span>
+    ├── Scheduler.template                              <span class="o">[</span> Manage Scheduler host <span class="o">]</span>
+    ├── Security.template                               <span class="o">[</span> Manage ACL, IAM and SGs <span class="o">]</span>
+    ├── Storage.template                                <span class="o">[</span> Manage backend storage <span class="o">]</span>
+    └── Viewer.template                                 <span class="o">[</span> Manage DCV sessions <span class="o">]</span>
+</pre></div></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../access-soca-cluster/" title="How to access Scale-Out Computing on AWS" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                How to access Scale-Out Computing on AWS
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../analytics/build-kibana-dashboards/" title="Create your own analytics dashboard" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Create your own analytics dashboard
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.ac79c3b0.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>
