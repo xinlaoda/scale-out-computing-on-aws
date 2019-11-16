@@ -758,10 +758,9 @@
 <p>If you need to access an instance that is in a Private (non-routable) Subnet, you can use ssh-agent to do this:</p>
 <div class="codehilite"><pre><span></span>$ ssh-add -K ~/Keys/my_key_region.pem
 Identity added: /Users/username/Keys/my_key_region.pem <span class="o">(</span>/Users/username/Keys/my_key_region.pem<span class="o">)</span>
-
-<span class="hll">$ ssh-add -L
-</span>&lt;you should see your ssh key here&gt;
-</pre></div>
+$ ssh-add -L
+<span class="hll">&lt;you should see your ssh key here&gt;
+</span></pre></div>
 
 <p>Now use <code class="codehilite"><span class="o">-</span><span class="n">A</span></code> with ssh and this will forward the key with your ssh login:</p>
 <div class="codehilite"><pre><span></span>$ ssh -A -i ~/Keys/my_key_region.pem centos@111.222.333.444
