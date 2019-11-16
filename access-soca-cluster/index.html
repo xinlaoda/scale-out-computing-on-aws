@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.5.0">
     
     
       
@@ -40,12 +40,12 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.30686662.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.1b62728e.css">
       
       
     
     
-      <script src="../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
     
     
       
@@ -317,6 +317,19 @@
   <a href="#ssh-access" class="md-nav__link">
     SSH access
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ssh-to-an-instance-in-a-private-subnet" class="md-nav__link">
+    SSH to an instance in a Private Subnet
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -664,6 +677,19 @@
     SSH access
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ssh-to-an-instance-in-a-private-subnet" class="md-nav__link">
+    SSH to an instance in a Private Subnet
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -728,6 +754,22 @@
 <h2 id="ssh-access">SSH access<a class="headerlink" href="#ssh-access" title="Permanent link">&para;</a></h2>
 <p>To access your Scale-Out Computing on AWS cluster using SSH protocol, simply click  "SSH Access" on the left sidebar and follow the instructions. Scale-Out Computing on AWS will let you download your private key either in PEM or PPK format.</p>
 <p><img alt="" src="../imgs/access-1.png" /></p>
+<h3 id="ssh-to-an-instance-in-a-private-subnet">SSH to an instance in a Private Subnet<a class="headerlink" href="#ssh-to-an-instance-in-a-private-subnet" title="Permanent link">&para;</a></h3>
+<p>If you need to access an instance that is in a Private (non-routable) Subnet, you can use ssh-agent to do this:</p>
+<div class="codehilite"><pre><span></span>$ ssh-add -K ~/Keys/my_key_region.pem
+Identity added: /Users/username/Keys/my_key_region.pem <span class="o">(</span>/Users/username/Keys/my_key_region.pem<span class="o">)</span>
+
+<span class="hll">$ ssh-add -L
+</span>&lt;you should see your ssh key here&gt;
+</pre></div>
+
+<p>Now use <code class="codehilite"><span class="o">-</span><span class="n">A</span></code> with ssh and this will forward the key with your ssh login:</p>
+<div class="codehilite"><pre><span></span>$ ssh -A -i ~/Keys/my_key_region.pem centos@111.222.333.444
+</pre></div>
+
+<p>Now that you have your key forwarded, you can login to an instance that is in the Private Subnet:
+<div class="codehilite"><pre><span></span>$ ssh centos@ip-10-20-111-222
+</pre></div></p>
 <h2 id="graphical-access-using-dcv">Graphical access using DCV<a class="headerlink" href="#graphical-access-using-dcv" title="Permanent link">&para;</a></h2>
 <p>To access your Scale-Out Computing on AWS cluster using a full remote desktop experience, click "Graphical Access" on the left sidebar. By default you are authorized to have 4 sessions (EC2 instances).</p>
 <p><img alt="" src="../imgs/access-2.png" /></p>
@@ -816,7 +858,7 @@ You will see an informational message asking you to wait up to 20 minutes before
       
     </div>
     
-      <script src="../assets/javascripts/application.ac79c3b0.js"></script>
+      <script src="../assets/javascripts/application.a8b5e56f.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
