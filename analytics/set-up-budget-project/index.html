@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.5.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
     
     
       
@@ -40,12 +40,12 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
       
       
     
     
-      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
@@ -713,7 +713,7 @@
                 
                 <p>On this page, I will demonstrate how to configure a budget for a given project and reject job if you exceed the allocated budget</p>
 <p>For this example, I will create a budget named "Project 1" and prevent user to submit job if (1) they do not belong to the project and (2) if the budget has expired.</p>
-<p><a href="{{ site.baseurl }}/tutorials/control-your-cost/">First, read this link</a> to understand how to monitor your cluster cost and budgets on AWS.</p>
+<p><a href="../../analytics/review-hpc-costs/">First, read this link</a> to understand how to monitor your cluster cost and budgets on AWS.</p>
 <h2 id="configure-the-scheduler-hook">Configure the scheduler hook<a class="headerlink" href="#configure-the-scheduler-hook" title="Permanent link">&para;</a></h2>
 <p>To enable this feature, you will first need to verify the project assigned to each job during submission time. The script managing this can be found on your Scale-Out Computing on AWS cluster at <code class="codehilite"><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="n">soca</span><span class="o">/</span><span class="n">cluster_hooks</span><span class="o">/</span><span class="n">queuejob</span><span class="o">/</span><span class="n">check_project_budget</span><span class="p">.</span><span class="n">py</span></code>
 First, edit this file and manually enter your AWS account id:</p>
@@ -862,7 +862,7 @@ qsub: Error. Unable to query AWS Budget API. ERROR: An error occurred <span clas
       
     </div>
     
-      <script src="../../assets/javascripts/application.a8b5e56f.js"></script>
+      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       

@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.5.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
     
     
       
@@ -40,12 +40,12 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="assets/stylesheets/application.30686662.css">
       
       
     
     
-      <script src="assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="assets/javascripts/modernizr.74668098.js"></script>
     
     
       
@@ -829,7 +829,7 @@
 This solution is designed to provide a production ready reference implementation to be a starting point for deploying an AWS environment to run scale-out workloads, allowing you to focus on running simulations designed to solve complex computational problems.  </p>
 <hr />
 <h2 id="easy-installation">Easy installation<a class="headerlink" href="#easy-installation" title="Permanent link">&para;</a></h2>
-<p><a href="/install-soca-cluster/">Installation of your Scale-Out Computing on AWS cluster</a> is fully automated and managed by CloudFormation </p>
+<p><a href="install-soca-cluster/">Installation of your Scale-Out Computing on AWS cluster</a> is fully automated and managed by CloudFormation </p>
 <div class="admonition info">
 <p class="admonition-title">Did you know?</p>
 <ul>
@@ -838,7 +838,7 @@ This solution is designed to provide a production ready reference implementation
 </ul>
 </div>
 <h2 id="access-your-cluster-in-1-click">Access your cluster in 1 click<a class="headerlink" href="#access-your-cluster-in-1-click" title="Permanent link">&para;</a></h2>
-<p>You can <a href="/access-soca-cluster/">access your Scale-Out Computing on AWS cluster</a> either using DCV (Desktop Cloud Visualization)<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> or through SSH.</p>
+<p>You can <a href="access-soca-cluster/">access your Scale-Out Computing on AWS cluster</a> either using DCV (Desktop Cloud Visualization)<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> or through SSH.</p>
 <h2 id="simple-job-submission">Simple Job Submission<a class="headerlink" href="#simple-job-submission" title="Permanent link">&para;</a></h2>
 <p>Scale-Out Computing on AWS supports a list of parameters designed to simplify your job submission on AWS. Advanced users can either manually choose compute/storage/network configuration for their job or simply ignore these parameters and let Scale-Out Computing on AWS choose the most optimal hardware (defined by the HPC administrator)</p>
 <div class="codehilite"><pre><span></span><span class="c1"># Advanced Configuration</span>
@@ -854,8 +854,8 @@ user@host$ qsub myscript.sh
 </pre></div>
 
 <ul>
-<li><a href="/tutorials/launch-your-first-job/">Refer to this page for tutorial and examples</a></li>
-<li><a href="/tutorials/integration-ec2-job-parameters/">Refer to this page to list all supported parameters</a></li>
+<li><a href="tutorials/launch-your-first-job/">Refer to this page for tutorial and examples</a></li>
+<li><a href="tutorials/integration-ec2-job-parameters/">Refer to this page to list all supported parameters</a></li>
 </ul>
 <h2 id="os-agnostic-and-support-for-custom-ami">OS agnostic and support for custom AMI<a class="headerlink" href="#os-agnostic-and-support-for-custom-ami" title="Permanent link">&para;</a></h2>
 <p>Customers can integrate their Centos7/Rhel7/AmazonLinux2 AMI automatically by simply using <mark>-l instance_ami=&lt;ami_id></mark> at job submission. There is no limitation in term of AMI numbers (you can have 10 jobs running simultaneously using 10 different AMIs)</p>
@@ -873,23 +873,23 @@ user@host$ qsub myscript.sh
 <p>When you use a custom AMI, just make sure that your AMI does not use /apps, /scratch or /data partitions as Scale-Out Computing on AWS will need to use these locations during the deployment</p>
 </div>
 <h2 id="budgets-and-cost-management">Budgets and Cost Management<a class="headerlink" href="#budgets-and-cost-management" title="Permanent link">&para;</a></h2>
-<p>You can <a href="/analytics/review-hpc-costs/">review your HPC costs</a> filtered by user/team/project/queue very easily using AWS Cost Explorer. </p>
-<p>Scale-Out Computing on AWS also supports AWS Budget and <a href="/analytics/set-up-budget-project/">let you create budgets</a> assigned to user/team/project or queue. To prevent over-spend, Scale-Out Computing on AWS includes hooks to restrict job submission when customer-defined budget has expired.</p>
+<p>You can <a href="analytics/review-hpc-costs/">review your HPC costs</a> filtered by user/team/project/queue very easily using AWS Cost Explorer. </p>
+<p>Scale-Out Computing on AWS also supports AWS Budget and <a href="analytics/set-up-budget-project/">let you create budgets</a> assigned to user/team/project or queue. To prevent over-spend, Scale-Out Computing on AWS includes hooks to restrict job submission when customer-defined budget has expired.</p>
 <h2 id="detailed-cluster-analytics">Detailed Cluster Analytics<a class="headerlink" href="#detailed-cluster-analytics" title="Permanent link">&para;</a></h2>
-<p>Scale-Out Computing on AWS <a href="/analytics/monitor-cluster-activity/">includes ElasticSearch and automatically ingest job and hosts data</a> in real-time for accurate visualization of your cluster activity.</p>
+<p>Scale-Out Computing on AWS <a href="analytics/monitor-cluster-activity/">includes ElasticSearch and automatically ingest job and hosts data</a> in real-time for accurate visualization of your cluster activity.</p>
 <div class="admonition success">
 <p class="admonition-title">Don't know where to start?</p>
-<p>Scale-Out Computing on AWS <a href="/analytics/build-kibana-dashboards/">includes dashboard examples</a> if you are not familiar with ElasticSearch or Kibana.</p>
+<p>Scale-Out Computing on AWS <a href="analytics/build-kibana-dashboards/">includes dashboard examples</a> if you are not familiar with ElasticSearch or Kibana.</p>
 </div>
 <h2 id="100-customizable">100% Customizable<a class="headerlink" href="#100-customizable" title="Permanent link">&para;</a></h2>
 <p>Scale-Out Computing on AWS is built entirely on top of AWS and can be customized by users as needed. Most of the logic is based of CloudFormation templates and EC2 User Data scripts.
 More importantly, the entire Scale-Out Computing on AWS codebase is open-source and <a href="https://github.com/awslabs/scale-out-computing-on-aws">available on Github</a>.</p>
 <h2 id="persistent-and-unlimited-storage">Persistent and Unlimited Storage<a class="headerlink" href="#persistent-and-unlimited-storage" title="Permanent link">&para;</a></h2>
-<p>Scale-Out Computing on AWS includes two unlimited EFS storage (/apps and /data). Customers also have the ability to deploy high-speed SSD EBS disks or FSx for Lustre as scratch location on their compute nodes. <a href="/storage/backend-storage-options/">Refer to this page to learn more about the various storage options</a> offered by Scale-Out Computing on AWS</p>
+<p>Scale-Out Computing on AWS includes two unlimited EFS storage (/apps and /data). Customers also have the ability to deploy high-speed SSD EBS disks or FSx for Lustre as scratch location on their compute nodes. <a href="storage/backend-storage-options/">Refer to this page to learn more about the various storage options</a> offered by Scale-Out Computing on AWS</p>
 <h2 id="centralized-user-management">Centralized user-management<a class="headerlink" href="#centralized-user-management" title="Permanent link">&para;</a></h2>
-<p>Customers <a href="/tutorials/manage-ldap-users/">can create unlimited LDAP users and groups</a>. By default Scale-Out Computing on AWS includes a default LDAP account provisioned during installation as well as a "Sudoers" LDAP group which manage SUDO permission on the cluster.</p>
+<p>Customers <a href="tutorials/manage-ldap-users/">can create unlimited LDAP users and groups</a>. By default Scale-Out Computing on AWS includes a default LDAP account provisioned during installation as well as a "Sudoers" LDAP group which manage SUDO permission on the cluster.</p>
 <h2 id="support-for-network-licenses">Support for network licenses<a class="headerlink" href="#support-for-network-licenses" title="Permanent link">&para;</a></h2>
-<p>Scale-Out Computing on AWS <a href="/tutorials/job-licenses-flexlm">includes a FlexLM-enabled script which calculate the number of licenses</a> for a given features and only start the job/provision the capacity when enough licenses are available. </p>
+<p>Scale-Out Computing on AWS <a href="tutorials/job-licenses-flexlm">includes a FlexLM-enabled script which calculate the number of licenses</a> for a given features and only start the job/provision the capacity when enough licenses are available. </p>
 <h2 id="automatic-errors-handling">Automatic Errors Handling<a class="headerlink" href="#automatic-errors-handling" title="Permanent link">&para;</a></h2>
 <p>Scale-Out Computing on AWS performs various dry run checks before provisioning the capacity. However, it may happen than AWS can't fullfill all requests (eg: need 5 instances but only 3 can be provisioned due to capacity shortage within a placement group). In this case, Scale-Out Computing on AWS will try to provision the capacity for 30 minutes. After 30 minutes, and if the capacity is still not available, Scale-Out Computing on AWS will automatically reset the request and try to provision capacity in a different availability zone.</p>
 <h2 id="web-ui">Web UI<a class="headerlink" href="#web-ui" title="Permanent link">&para;</a></h2>
@@ -973,7 +973,7 @@ More importantly, the entire Scale-Out Computing on AWS codebase is open-source 
       
     </div>
     
-      <script src="assets/javascripts/application.a8b5e56f.js"></script>
+      <script src="assets/javascripts/application.ac79c3b0.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"."}})</script>
       

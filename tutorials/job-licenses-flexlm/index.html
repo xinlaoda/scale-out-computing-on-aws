@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.5.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
     
     
       
@@ -40,12 +40,12 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
       
       
     
     
-      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
@@ -736,7 +736,7 @@
 <p>FlexLM configure two ports for each application (DAEMON and SERVER ports). You need to whitelist both of them.</p>
 </div>
 <p><strong>Allow traffic from your license server IP to Scale-Out Computing on AWS</strong></p>
-<p>Assuming my license server IP is <mark>10.0.15.18</mark>, simply go to the EC2 console, locate your <code class="codehilite"><span class="n">Scheduler</span></code> and <code class="codehilite"><span class="n">ComputeNode</span></code> security groups (filter by your Scale-Out Computing on AWS cluster name) associated to your Scale-Out Computing on AWS cluster and whitelist both SERVER and DAEMON ports:</p>
+<p>Assuming my license server IP is <mark>10.0.15.18</mark>, simply go to the EC2 console, locate your <code class="codehilite"><span class="n">Scheduler</span></code> and <code class="codehilite"><span class="n">ComputeNode</span></code> security groups (filter by your cluster name) associated to your Scale-Out Computing on AWS cluster and whitelist both SERVER and DAEMON ports:</p>
 <p><img alt="" src="../../imgs/flexlm-1.png" /></p>
 <p><strong>Allow traffic from Scale-Out Computing on AWS to your license server</strong></p>
 <p>Since FlexLM use client/server protocol, you will need to authorize traffic coming from Scale-Out Computing on AWS to your license servers for both SERVER and DAEMON ports. You will need to whitelist the IP for your scheduler as well as the NAT Gateway used by the compute nodes.
@@ -744,13 +744,10 @@ Your Scheduler Public IP is listed on CloudFormation, to retrieve your NAT Gatew
 <img alt="" src="../../imgs/flexlm-2.png" /></p>
 <h2 id="upload-your-lmutil">Upload your lmutil<a class="headerlink" href="#upload-your-lmutil" title="Permanent link">&para;</a></h2>
 <p>lmutil binary is not included with Scale-Out Computing on AWS. You are required to upload it manually and update <code class="codehilite"><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="n">soca</span><span class="o">/</span><span class="n">cluster_manager</span><span class="o">/</span><span class="n">license_check</span><span class="p">.</span><span class="n">py</span></code> with the location of your file.</p>
-<div class="codehilite"><pre><span></span><span class="n">arg</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
-<span class="hll"><span class="n">lmstat_path</span> <span class="o">=</span> <span class="s2">&quot;PATH_TO_LMUTIL&quot;</span>
-</span><span class="k">if</span> <span class="n">lmstat_path</span> <span class="o">==</span> <span class="s2">&quot;PATH_TO_LMUTIL&quot;</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Please specify a link to your lmutil binary (edit line 19 of this file&#39;</span><span class="p">)</span>
-    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You do not need to install FlexLM server manager. Only <code class="codehilite"><span class="n">lmutil</span></code> binary is required.</p>
+</div>
 <h2 id="how-to-retrieve-number-of-licenses-available">How to retrieve number of licenses available<a class="headerlink" href="#how-to-retrieve-number-of-licenses-available" title="Permanent link">&para;</a></h2>
 <p>Scale-Out Computing on AWS includes a script (<code class="codehilite"><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="n">soca</span><span class="o">/</span><span class="n">cluster_manager</span><span class="o">/</span><span class="n">license_check</span><span class="p">.</span><span class="n">py</span></code>) which output the number of FlexLM available for a given feature. This script takes the following arguments:</p>
 <ul>
@@ -935,7 +932,7 @@ qsub: Unknown resource Resource_List.matlab_lic_fakeresource
       
     </div>
     
-      <script src="../../assets/javascripts/application.a8b5e56f.js"></script>
+      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
