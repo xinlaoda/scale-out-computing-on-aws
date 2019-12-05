@@ -1,0 +1,1017 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+    
+    
+      
+        <title>. - Scale-Out Computing on AWS Knowledge Base</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/application.30686662.css">
+      
+      
+    
+    
+      <script src="../../../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../../../assets/css/custom.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#_1" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../../.." title="Scale-Out Computing on AWS Knowledge Base" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Scale-Out Computing on AWS Knowledge Base
+            </span>
+            <span class="md-header-nav__topic">
+              
+                .
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/awslabs/scale-out-computing-on-aws/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    awslabs/scale-out-computing-on-aws
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../../.." class="md-tabs__link">
+        What is Scale-Out Computing on AWS ?
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../../analytics/build-kibana-dashboards/" class="md-tabs__link">
+          Analytics
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../../storage/backend-storage-options/" class="md-tabs__link">
+          Storage
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../../tutorials/create-your-own-queue/" class="md-tabs__link">
+          Tutorials
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../" class="md-tabs__link md-tabs__link--active">
+          Workshops
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../../.." title="Scale-Out Computing on AWS Knowledge Base" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Scale-Out Computing on AWS Knowledge Base
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/awslabs/scale-out-computing-on-aws/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    awslabs/scale-out-computing-on-aws
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../.." title="What is Scale-Out Computing on AWS ?" class="md-nav__link">
+      What is Scale-Out Computing on AWS ?
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../../access-soca-cluster/" title="How to access Scale-Out Computing on AWS" class="md-nav__link">
+      How to access Scale-Out Computing on AWS
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../../install-soca-cluster/" title="Install your Scale-Out Computing on AWS cluster" class="md-nav__link">
+      Install your Scale-Out Computing on AWS cluster
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Analytics
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Analytics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../analytics/build-kibana-dashboards/" title="Create your own analytics dashboard" class="md-nav__link">
+      Create your own analytics dashboard
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../analytics/monitor-cluster-activity/" title="Monitor your cluster and job activity" class="md-nav__link">
+      Monitor your cluster and job activity
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../analytics/review-hpc-costs/" title="Review your HPC costs" class="md-nav__link">
+      Review your HPC costs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../analytics/set-up-budget-project/" title="Set up budget per project" class="md-nav__link">
+      Set up budget per project
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Storage
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Storage
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../storage/backend-storage-options/" title="Understand backend storage" class="md-nav__link">
+      Understand backend storage
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../storage/launch-job-with-fsx/" title="Launch a job with FSx for Lustre" class="md-nav__link">
+      Launch a job with FSx for Lustre
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../tutorials/create-your-own-queue/" title="Create your own queue" class="md-nav__link">
+      Create your own queue
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../tutorials/integration-ec2-job-parameters/" title="Job customization for EC2" class="md-nav__link">
+      Job customization for EC2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../tutorials/job-licenses-flexlm/" title="Job with FlexLM licenses requirements" class="md-nav__link">
+      Job with FlexLM licenses requirements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../tutorials/job-start-stop-email-notification/" title="Automatic emails when your job start/stop" class="md-nav__link">
+      Automatic emails when your job start/stop
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../tutorials/launch-always-on-instances/" title="Launch AlwaysOn nodes" class="md-nav__link">
+      Launch AlwaysOn nodes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../tutorials/launch-your-first-job/" title="Launch your first job" class="md-nav__link">
+      Launch your first job
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../tutorials/manage-ldap-users/" title="Centralized user management" class="md-nav__link">
+      Centralized user management
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../tutorials/troubleshoot-job-queue/" title="Debug why your jobs are not starting" class="md-nav__link">
+      Debug why your jobs are not starting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../tutorials/update-soca-dns-ssl-certificate/" title="Change your DNS name and SSL certificate" class="md-nav__link">
+      Change your DNS name and SSL certificate
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../tutorials/use-custom-ami/" title="Use your own AMI" class="md-nav__link">
+      Use your own AMI
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
+    
+    <label class="md-nav__link" for="nav-7">
+      Workshops
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Workshops
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../" title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-2" type="checkbox" id="nav-7-2" checked>
+    
+    <label class="md-nav__link" for="nav-7-2">
+      reinvent19 MFG405
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-7-2">
+        reinvent19 MFG405
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../" title="MFG405 Workshop Overview" class="md-nav__link">
+      MFG405 Workshop Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-2-3" type="checkbox" id="nav-7-2-3" checked>
+    
+    <label class="md-nav__link" for="nav-7-2-3">
+      Modules
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-7-2-3">
+        Modules
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Module Overview" class="md-nav__link">
+      Module Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02-deploy-env/" title="Lab 1: Deploy Environment" class="md-nav__link">
+      Lab 1: Deploy Environment
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-configure-desktop/" title="Lab 2: Configure Remote Desktop" class="md-nav__link">
+      Lab 2: Configure Remote Desktop
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-web-login/" title="Lab 3: Launch Remote Desktop Session" class="md-nav__link">
+      Lab 3: Launch Remote Desktop Session
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-launch-vivado/" title="Lab 4: Launch Vivado GUI" class="md-nav__link">
+      Lab 4: Launch Vivado GUI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../07-submit-batch/" title="Lab 5: Submit Batch Workloads" class="md-nav__link">
+      Lab 5: Submit Batch Workloads
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../08-analytics/" title="Lab 6: Explore Analytics Dashboard" class="md-nav__link">
+      Lab 6: Explore Analytics Dashboard
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../09-wrap-up/" title="Wrap-up" class="md-nav__link">
+      Wrap-up
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="." class="md-nav__link md-nav__link--active">
+      .
+    </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/awslabs/scale-out-computing-on-aws/edit/master/docs/workshops/reinvent19-MFG405/modules/z-budgets.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="_1">.<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h1 id="lab-4-configure-budgets">Lab 4 Configure Budgets<a class="headerlink" href="#lab-4-configure-budgets" title="Permanent link">&para;</a></h1>
+<p>This environment supports <a href="https://aws.amazon.com/aws-cost-management/aws-budgets/"><strong>AWS Budgets</strong></a> and lets you create custom budgets assigned to users, teams, projects, or queues. To prevent over-spending, you can integrate the scheduler with <strong>AWS Budgets</strong> to take action when customer-defined budget thesholds have been reached.  </p>
+<p>In this example, we will reject job submissions from users who are not assigned to a project that is associated with an <strong>AWS Budget</strong>.</p>
+<h2 id="step-1-create-an-aws-budget">Step 1. Create an AWS Budget<a class="headerlink" href="#step-1-create-an-aws-budget" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Go to the <a href="https://console.aws.amazon.com/billing/home?region=us-west-2">AWS Billing Dashboard</a>, and click <strong>Budgets</strong> on the left sidebar.
+    <img alt="" src="../../../../imgs/budget-7.png" /></li>
+<li>Click <strong>Create budget</strong>.</li>
+<li>Select <strong>Cost budget</strong> and click <strong>Set your budget</strong>.</li>
+<li>Name your budget "Project 1" and set <strong>Budgeted amount</strong> to <strong>$100</strong>.  Leave all other fields at their default values.</li>
+<li>Click <strong>Configure alerts</strong>.</li>
+<li>Set <strong>Alert threshold</strong> to 80 and add an email address to <strong>Email contacts</strong>.</li>
+<li>Click <strong>Confirm budget</strong> to review the configuration, then click <strong>Create</strong>.</li>
+</ol>
+<h2 id="step-2-enable-budget-enforcement">Step 2. Enable budget enforcement<a class="headerlink" href="#step-2-enable-budget-enforcement" title="Permanent link">&para;</a></h2>
+<p>Next, you will enable the workload scheduler to be aware of the new budget you just created so that it will reject jobs from users who are not members of a project and associated budget.</p>
+<p>To enable this feature, you will first need to verify the project assigned to each job during submission time.</p>
+<ol>
+<li>
+<p>Find the account ID for your temporary AWS account.</p>
+<ol>
+<li>Click <a href="https://console.aws.amazon.com/billing/home?#/account">here</a> to go to the Account page of the AWS console.</li>
+<li>Copy the twelve digit <strong>Account Id</strong> number located underneath the Account Settings section.</li>
+</ol>
+</li>
+<li>
+<p>Log back into the scheduler instance via SSH and edit the <code class="codehilite"><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="n">soca</span><span class="o">/</span><span class="n">cluster_hooks</span><span class="o">/</span><span class="n">queuejob</span><span class="o">/</span><span class="n">check_project_budget</span><span class="p">.</span><span class="n">py</span></code> script and paste the AWS account ID as the value for the <code class="codehilite"><span class="n">aws_account_id</span></code> variable.  Save the file when done.</p>
+<div class="codehilite"><pre><span></span><span class="c1"># User Variables</span>
+<span class="hll"><span class="n">aws_account_id</span> <span class="o">=</span> <span class="s1">&#39;&lt;ENTER_YOUR_AWS_ACCOUNT_ID&gt;&#39;</span>
+</span><span class="n">budget_config_file</span> <span class="o">=</span> <span class="s1">&#39;/apps/soca/cluster_manager/settings/project_cost_manager.txt&#39;</span>
+</pre></div>
+
+</li>
+<li>
+<p>Enable the integration with the scheduler by running the following commands on the scheduler host:</p>
+<div class="codehilite"><pre><span></span><span class="n">sudo</span> <span class="o">-</span><span class="n">i</span>
+<span class="n">source</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">environment</span>
+<span class="n">qmgr</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;create hook check_project_budget event=queuejob&quot;</span>
+<span class="n">qmgr</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;import hook check_project_budget application/x-python default /apps/soca/cluster_hooks/queuejob/check_project_budget.py&quot;</span>
+</pre></div>
+
+</li>
+</ol>
+<h2 id="step-3-test-budget-enforcement">Step 3. Test budget enforcement<a class="headerlink" href="#step-3-test-budget-enforcement" title="Permanent link">&para;</a></h2>
+<h3 id="submit-a-job-without-budget-assignment">Submit a job without budget assignment<a class="headerlink" href="#submit-a-job-without-budget-assignment" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Switch to the <code class="codehilite"><span class="k">admin</span></code> cluster user.</p>
+<p><code class="codehilite"><span class="n">sudo</span> <span class="n">su</span> <span class="o">-</span> <span class="k">admin</span></code></p>
+</li>
+<li>
+<p>Submit a job.</p>
+<p><code class="codehilite"><span class="n">qsub</span> <span class="c1">-- /bin/echo Hello</span></code></p>
+<p>This job will be rejected and you will see the following messages:</p>
+<div class="codehilite"><pre><span></span><span class="n">qsub</span><span class="o">:</span> <span class="n">Error</span><span class="o">.</span> <span class="n">You</span> <span class="n">tried</span> <span class="n">to</span> <span class="n">submit</span> <span class="n">job</span> <span class="n">without</span> <span class="n">project</span><span class="o">.</span> <span class="n">Specify</span> <span class="n">project</span> <span class="n">using</span> <span class="o">-</span><span class="n">P</span> <span class="n">parameter</span>
+</pre></div>
+
+</li>
+<li>
+<p>OK, let's add a project tag to comply with the policy.</p>
+<p><code class="codehilite"><span class="n">qsub</span> <span class="o">-</span><span class="n">P</span> <span class="ss">&quot;Project 1&quot;</span> <span class="c1">-- /bin/echo Hello</span></code></p>
+<p>This job will also be rejected:</p>
+<p><div class="codehilite"><pre><span></span><span class="n">qsub</span><span class="o">:</span> <span class="n">User</span> <span class="n">morrmt</span> <span class="k">is</span> <span class="n">not</span> <span class="n">assigned</span> <span class="n">to</span> <span class="n">any</span> <span class="n">project</span><span class="o">.</span> <span class="n">See</span> <span class="sr">/apps/soca/cluster_manager/settings/</span><span class="n">project_cost_manager</span><span class="o">.</span><span class="na">txt</span>
+</pre></div>
+Next, we'll associated the user with "Project 1" by adding the username to the <code class="codehilite"><span class="n">project_cost_manager</span><span class="p">.</span><span class="n">txt</span></code> mapping file.</p>
+</li>
+<li>
+<p>As sudo, open the <code class="codehilite"><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="n">soca</span><span class="o">/</span><span class="n">cluster_manager</span><span class="o">/</span><span class="n">settings</span><span class="o">/</span><span class="n">project_cost_manager</span><span class="p">.</span><span class="n">txt</span></code> file and add "Project 1" budget and the "admin" user.</p>
+<div class="codehilite"><pre><span></span><span class="cp"># This file is used to prevent job submission when budget allocated to a project exceed your threshold</span>
+<span class="cp"># This file is not used by default and must be configured manually using /apps/soca/cluster_hooks/queuejob/check_project_budget.py</span>
+<span class="cp"># Help &amp; Documentation: https:</span><span class="c1">//soca.dev/tutorials/set-up-budget-project/</span>
+<span class="cp">#</span>
+<span class="cp">#</span>
+<span class="cp"># Syntax:</span>
+<span class="cp">#   [project 1]</span>
+<span class="cp">#   user1</span>
+<span class="cp">#   user2</span>
+<span class="cp">#   [project 2]</span>
+<span class="cp">#   user1</span>
+<span class="cp">#   user3</span>
+<span class="cp">#   [project blabla]</span>
+<span class="cp">#   user4</span>
+<span class="cp">#   user5</span>
+
+<span class="hll"><span class="p">[</span><span class="n">Project</span> <span class="mi">1</span><span class="p">]</span>
+</span><span class="hll"><span class="n">admin</span>
+</span></pre></div>
+
+<div class="admonition danger">
+<p class="admonition-title">Important</p>
+<p>The config section ("Project 1") must match the name of the budget your created in AWS Budgets (it's case sensitive)</p>
+</div>
+</li>
+<li>
+<p>Save this file and try to submit a job. This time the job will be accepted.</p>
+</li>
+</ol>
+<p>The script queries the AWS Budget in real-time. So, if your users are blocked because of a budget restriction, you can at any time edit the value on AWS Budget and unblock them.</p>
+<p>If a user tries to launch a job associated to a project which does not exist on AWS Budget or with an invalid name, you will see the following error:</p>
+<p><div class="codehilite"><pre><span></span>bash-4.2$ qsub -P <span class="s2">&quot;Project 2&quot;</span> -- /bin/echo Hello
+qsub: Error. Unable to query AWS Budget API. ERROR: An error occurred <span class="o">(</span>NotFoundException<span class="o">)</span> when calling the DescribeBudget operation: <span class="o">[</span><span class="nv">Exception</span><span class="o">=</span>NotFoundException<span class="o">]</span> Failed to call DescribeBudget <span class="k">for</span> <span class="o">[</span>AccountId: &lt;REDACTED_ACCOUNT_ID&gt;<span class="o">]</span> - Failed to call GetBudget <span class="k">for</span> <span class="o">[</span>AccountId: &lt;REDACTED_ACCOUNT_ID&gt;<span class="o">]</span> - Unable to get budget: Project <span class="m">2</span> - the budget doesn<span class="err">&#39;</span>t exist.
+</pre></div>
+Done!  On to the next lab.  Click <strong>Next</strong>.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../09-wrap-up/" title="Wrap-up" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Wrap-up
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../../assets/javascripts/application.ac79c3b0.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../../.."}})</script>
+      
+    
+  </body>
+</html>
