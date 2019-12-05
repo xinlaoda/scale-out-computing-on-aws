@@ -780,8 +780,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dashboard-url" class="md-nav__link">
-    Dashboard URL
+  <a href="#open-cluster-dashboard" class="md-nav__link">
+    Open Cluster Dashboard
   </a>
   
 </li>
@@ -905,8 +905,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dashboard-url" class="md-nav__link">
-    Dashboard URL
+  <a href="#open-cluster-dashboard" class="md-nav__link">
+    Open Cluster Dashboard
   </a>
   
 </li>
@@ -979,13 +979,19 @@
                 
                 
                 <h1 id="lab-6-explore-analytics-dashboard">Lab 6: Explore Analytics Dashboard<a class="headerlink" href="#lab-6-explore-analytics-dashboard" title="Permanent link">&para;</a></h1>
-<h3 id="dashboard-url">Dashboard URL<a class="headerlink" href="#dashboard-url" title="Permanent link">&para;</a></h3>
-<p>Open your SOCA Web UI and refer to the "Analytics" section on the left sidebar
-<img alt="" src="../../../../imgs/ws-analytics-5.png" /></p>
+<h3 id="open-cluster-dashboard">Open Cluster Dashboard<a class="headerlink" href="#open-cluster-dashboard" title="Permanent link">&para;</a></h3>
+<p>Return to the your cluster web UI and click on the <strong>Analytics</strong> section on the left sidebar.</p>
+<p><img alt="" src="../../../../imgs/ws-analytics-5.png" /></p>
 <h3 id="add-data-to-your-cluster">Add Data to your cluster<a class="headerlink" href="#add-data-to-your-cluster" title="Permanent link">&para;</a></h3>
-<p>By default, Job information are ingested on an hourly basis. Run the command below on the <strong>scheduler host</strong> to trigger on-demand log ingestion into ElasticSearch:
+<p>By default, job information is ingested by the analytics system on an hourly basis.</p>
+<ol>
+<li>
+<p>Log back into the <strong>scheduler host</strong> via SSH as <code class="codehilite"><span class="n">ec2</span><span class="o">-</span><span class="k">user</span></code> and run the follow command to force immediate ingestion into ElasticSearch:</p>
 <div class="codehilite"><pre><span></span><span class="nb">source</span> /etc/environment<span class="p">;</span> /apps/python/latest/bin/python3 /apps/soca/cluster_analytics/job_tracking.py
-</pre></div></p>
+</pre></div>
+
+</li>
+</ol>
 <h3 id="create-your-indexes">Create your Indexes<a class="headerlink" href="#create-your-indexes" title="Permanent link">&para;</a></h3>
 <p>Since it's the first time you access this endpoint, you will need to configure your indexes.<br />
 First, access Kibana URL and click "Explore on my Own"</p>
