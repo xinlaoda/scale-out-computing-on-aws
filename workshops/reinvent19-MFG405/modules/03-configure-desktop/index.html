@@ -693,18 +693,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../" title="Module Overview" class="md-nav__link">
-      Module Overview
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../02-deploy-env/" title="Lab 1: Deploy Environment" class="md-nav__link">
       Lab 1: Deploy Environment
     </a>
@@ -860,7 +848,7 @@
 </li>
 <li>
 <p>Select the root stack named "mod-xxxxxxxxxxxx", where 'x' is a randomized alpha-numeric string, and click <strong>Outputs</strong>.</p>
-<p><img alt="" src="../../../../imgs/install-9.png" /></p>
+<p><img alt="" src="../../../../imgs/cfn-ee-stack.png" /></p>
 </li>
 <li>
 <p>The <strong>Outputs</strong> tab provides various bits of information about the provisioned environment. Copy the value to the left of <strong>ConnectionString</strong>.  We'll use this command to SSH into the scheduler instance.  </p>
@@ -881,6 +869,10 @@
 </li>
 <li>
 <p>Change the the highlighted values in the file to match the example below.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We strongly recommend that you do not copy and paste this entire block into the file.  Instead, please edit the value of each highlighted line individually.</p>
+</div>
 <div class="codehilite"><pre><span></span><span class="nt">queue_type</span><span class="p">:</span>
 <span class="nt">compute</span><span class="p">:</span>
     <span class="nt">queues</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;high&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;normal&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;low&quot;</span><span class="p p-Indicator">]</span>

@@ -693,18 +693,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../" title="Module Overview" class="md-nav__link">
-      Module Overview
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../02-deploy-env/" title="Lab 1: Deploy Environment" class="md-nav__link">
       Lab 1: Deploy Environment
     </a>
@@ -925,41 +913,41 @@
                 <h1 id="lab-3-launch-remote-desktop-session">Lab 3: Launch Remote Desktop Session<a class="headerlink" href="#lab-3-launch-remote-desktop-session" title="Permanent link">&para;</a></h1>
 <p>The goal of this module is to start a remote desktop session from which you will run applications and submit jobs into the cluster.  You will use the cluster's management console to start and monitor the session.</p>
 <h2 id="step-1-subscribe-to-aws-fpga-developer-ami">Step 1: Subscribe to AWS FPGA Developer AMI<a class="headerlink" href="#step-1-subscribe-to-aws-fpga-developer-ami" title="Permanent link">&para;</a></h2>
-<p>This workshop requires a subscription to the AWS FPGA Developer AMI in AWS Marketplace. This is the AMI you added to the <code class="codehilite"><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="n">soca</span><span class="o">/</span><span class="n">cluster_manager</span><span class="o">/</span><span class="n">settings</span><span class="o">/</span><span class="n">queue_mapping</span><span class="p">.</span><span class="n">yml</span></code> file in the previous lab. It will be used to boot the remote desktop instance in AWS. It also contains software required later in the workshop.</p>
+<p>This workshop requires a subscription to the <strong>AWS FPGA Developer AMI</strong> in <strong>AWS Marketplace</strong>. This is the AMI you added to the <code class="codehilite"><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="n">soca</span><span class="o">/</span><span class="n">cluster_manager</span><span class="o">/</span><span class="n">settings</span><span class="o">/</span><span class="n">queue_mapping</span><span class="p">.</span><span class="n">yml</span></code> file in the previous lab. It will be used to boot the remote desktop instance in AWS and contains software required later in the workshop.</p>
 <ol>
 <li>
 <p>Return to the AWS console for your temporary AWS account.</p>
 </li>
 <li>
-<p>Click <a href="https://aws.amazon.com/marketplace/pp/B06VVYBLZZ">here</a> to open the page for the AWS FPGA Developer AMI in AWS Marketplace, and then choose <strong>Continue</strong> to Subscribe.</p>
+<p>Click <a href="https://aws.amazon.com/marketplace/pp/B06VVYBLZZ">here</a> to open the page for the AWS FPGA Developer AMI in AWS Marketplace, and then choose <strong>Continue to Subscribe</strong>.</p>
 </li>
 <li>
 <p>Review the terms and conditions for software usage, and then choose <strong>Accept Terms</strong>.</p>
-<p>When the subscription process is complete, exit out of AWS Marketplace without further action. Do not click <strong>Continue to Launch</strong>; the workshop CloudFormation templates will deploy the AMI for you.</p>
+<p>When the subscription process is complete, exit out of AWS Marketplace without further action. Do not click <strong>Continue to Configure</strong>; the workshop CloudFormation templates will deploy the AMI for you.</p>
 </li>
 <li>
-<p>Click <a href="https://console.aws.amazon.com/marketplace/home/subscriptions">here</a> to verify the subscription within the Marketplace dashboard.  You should see the <strong>FPGA Developer AMI</strong> in the list of subscriptions.</p>
+<p>Click <a href="https://console.aws.amazon.com/marketplace/home/subscriptions?region=us-east-1#/subscriptions">here</a> to verify the subscription within the Marketplace dashboard.  You should see the <strong>FPGA Developer AMI</strong> in the list of subscriptions.</p>
 <p><img alt="Marketplace Subscriptions" src="../../../../imgs/marketplace-subs.png" /></p>
 </li>
 </ol>
 <h2 id="step-2-log-into-web-ui">Step 2: Log into web UI<a class="headerlink" href="#step-2-log-into-web-ui" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p>Select root stack named "mod-xxxxxxxx" again, and click <strong>Outputs</strong>.</p>
-<p><img alt="" src="../../../../imgs/install-9.png" /></p>
+<p>Select the root stack named "mod-xxxxxxxx" again, and click <strong>Outputs</strong>.</p>
+<p><img alt="" src="../../../../imgs/cfn-ee-stack.png" /></p>
 </li>
 <li>
 <p>The <strong>Outputs</strong> tab provides various bits of information about the provisioned environment. Click on the link to the right of <strong>WebUserInterface</strong> to log into the Web UI</p>
 <p><img alt="" src="../../../../imgs/install-10.png" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Your web browser will warn you about a certificate problem with the site.  To open the webpage, you must authorize the browser to trust the self-signed security certificate or upload a Server Certificate to the Elastic Load Balancer endpoint. </p>
+<p>Your web browser will warn you about a certificate problem with the site.  To open the webpage, you must authorize the browser to trust the self-signed security certificate.  In a production deployment, you would upload a Server Certificate to the Elastic Load Balancer endpoint.</p>
 </div>
 </li>
 <li>
 <p>Log in using the web UI using the following credentials:</p>
 <p>username: admin</p>
-<p>password: passw0rd</p>
+<p>password: passw0rd (use a zero instead of 'o')</p>
 </li>
 </ol>
 <h2 id="step-3-launch-remote-desktop-server">Step 3: Launch remote desktop server<a class="headerlink" href="#step-3-launch-remote-desktop-server" title="Permanent link">&para;</a></h2>
@@ -980,7 +968,7 @@
 </li>
 </ol>
 <p>After you click <strong>Launch my session</strong>, a new job is submitted into the queue that will instruct AWS to provision a server with 8 vCPUs and 32GB of memory and install all desktop required packages including Gnome. </p>
-<p>You will see an message asking you to wait up to 20 minutes before being able to access your remote desktop.</p>
+<p>You will see an message asking you to wait up to 20 minutes before being able to access your remote desktop, but it should take around 10 minutes to deploy the remote desktop server.</p>
 <p>Let's move on to the next step while we wait for the desktop instance to launch.  Click <strong>Next</strong>.</p>
                 
                   

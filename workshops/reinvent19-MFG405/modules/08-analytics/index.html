@@ -693,18 +693,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../" title="Module Overview" class="md-nav__link">
-      Module Overview
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../02-deploy-env/" title="Lab 1: Deploy Environment" class="md-nav__link">
       Lab 1: Deploy Environment
     </a>
@@ -806,8 +794,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#first-time-configuration" class="md-nav__link">
-    First Time Configuration
+  <a href="#create-your-indexes" class="md-nav__link">
+    Create your Indexes
   </a>
   
 </li>
@@ -931,8 +919,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#first-time-configuration" class="md-nav__link">
-    First Time Configuration
+  <a href="#create-your-indexes" class="md-nav__link">
+    Create your Indexes
   </a>
   
 </li>
@@ -992,23 +980,27 @@
                 
                 <h1 id="lab-6-explore-analytics-dashboard">Lab 6: Explore Analytics Dashboard<a class="headerlink" href="#lab-6-explore-analytics-dashboard" title="Permanent link">&para;</a></h1>
 <h3 id="dashboard-url">Dashboard URL<a class="headerlink" href="#dashboard-url" title="Permanent link">&para;</a></h3>
-<p>Open your AWS console and navigate to CloudFormation. Select your parent Stack, click Output, and retrieve "WebUserInterface" 
-<img alt="" src="../../../../imgs/kibana-endpoint.png" /></p>
+<p>Open your SOCA Web UI and refer to the "Analytics" section on the left sidebar
+<img alt="" src="../../../../imgs/ws-analytics-5.png" /></p>
 <h3 id="add-data-to-your-cluster">Add Data to your cluster<a class="headerlink" href="#add-data-to-your-cluster" title="Permanent link">&para;</a></h3>
 <p>By default, Job information are ingested on an hourly basis. Run the command below on the <strong>scheduler host</strong> to trigger on-demand log ingestion into ElasticSearch:
 <div class="codehilite"><pre><span></span><span class="nb">source</span> /etc/environment<span class="p">;</span> /apps/python/latest/bin/python3 /apps/soca/cluster_analytics/job_tracking.py
 </pre></div></p>
-<h3 id="first-time-configuration">First Time Configuration<a class="headerlink" href="#first-time-configuration" title="Permanent link">&para;</a></h3>
+<h3 id="create-your-indexes">Create your Indexes<a class="headerlink" href="#create-your-indexes" title="Permanent link">&para;</a></h3>
 <p>Since it's the first time you access this endpoint, you will need to configure your indexes.<br />
 First, access Kibana URL and click "Explore on my Own"</p>
 <p><img alt="" src="../../../../imgs/kibana-1.png" /></p>
 <p>Go under Management and Click Index Patterns</p>
 <p><img alt="" src="../../../../imgs/kibana-2.png" /></p>
-<p>Select the Index you want to query</p>
-<p><img alt="" src="../../../../imgs/kibana-3.png" /></p>
-<p>Click next, and then specify the Time Filter key (refer to section below for timestamp id). Once done, click Create Index Pattern&lt;</p>
-<p><img alt="" src="../../../../imgs/kibana-4.png" /></p>
-<p>Once your Index is configured, go to Kibana, select "Discover" tab to start visualizing the data</p>
+<p>Create your first index by typing <strong>pbsnodes*</strong>.</p>
+<p><img alt="" src="../../../../imgs/ws-analytics-1.png" /></p>
+<p>Click next, and then specify the Time Filter key (<strong>timestamp</strong>). Once done, click Create Index Pattern.</p>
+<p><img alt="" src="../../../../imgs/ws-analytics-2.png" /></p>
+<p>Repeat the same operation for <strong>jobs*</strong> index </p>
+<p><img alt="" src="../../../../imgs/ws-analytics-3.png" /></p>
+<p>This time,  select <strong>start_iso</strong> as time filter key.</p>
+<p><img alt="" src="../../../../imgs/ws-analytics-4.png" /></p>
+<p>Once your indexes are configured, go to Kibana, select "Discover" tab to start visualizing the data</p>
 <p><img alt="" src="../../../../imgs/kibana-5.png" /></p>
 <h3 id="index-information">Index Information<a class="headerlink" href="#index-information" title="Permanent link">&para;</a></h3>
 <table>
@@ -1167,15 +1159,6 @@ First, access Kibana URL and click "Explore on my Own"</p>
 <h2 id="find-the-price-for-a-given-simulation">Find the price for a given simulation<a class="headerlink" href="#find-the-price-for-a-given-simulation" title="Permanent link">&para;</a></h2>
 <p>Each job comes with <code class="codehilite"><span class="n">estimated_price_ondemand</span></code> and <code class="codehilite"><span class="n">estimated_price_reserved</span></code> attributes which are calculated based on: <code class="codehilite"><span class="nb">number</span> <span class="k">of</span> <span class="n">nodes</span> <span class="o">*</span> <span class="p">(</span> <span class="n">simulation_hours</span> <span class="o">*</span> <span class="n">instance_hourly_rate</span> <span class="p">)</span></code></p>
 <p><img alt="" src="../../../../imgs/dashboard-1.png" /></p>
-<h3 id="troubleshooting-access-permission">Troubleshooting access permission<a class="headerlink" href="#troubleshooting-access-permission" title="Permanent link">&para;</a></h3>
-<p>Access to ElasticSearch is restricted to the IP you have specified during the installation. If your IP change for any reason, you won't be able to access the analytics dashboard and will get the following error message:
-<div class="codehilite"><pre><span></span><span class="p">{</span><span class="nt">&quot;Message&quot;</span><span class="p">:</span><span class="s2">&quot;User: anonymous is not authorized to perform: es:ESHttpGet&quot;</span><span class="p">}</span>
-</pre></div></p>
-<p>To solve this issue, log in to AWS Console  and go to ElasticSearch Service dashboard. Select  your ElasticSearch cluster and click "Modify Access Policy"</p>
-<p><img alt="" src="../../../../imgs/kibana-8.png" /></p>
-<p>Finally, simply add your new IP under the "Condition" block, then click Submit</p>
-<p><img alt="" src="../../../../imgs/kibana-9.png" /></p>
-<p>Please note it may take up to 5 minutes for your IP to be whitelisted</p>
                 
                   
                 
