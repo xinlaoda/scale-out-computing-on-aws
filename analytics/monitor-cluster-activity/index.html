@@ -393,8 +393,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#first-time-user" class="md-nav__link">
-    First Time User
+  <a href="#create-indexes" class="md-nav__link">
+    Create Indexes
   </a>
   
 </li>
@@ -909,8 +909,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#first-time-user" class="md-nav__link">
-    First Time User
+  <a href="#create-indexes" class="md-nav__link">
+    Create Indexes
   </a>
   
 </li>
@@ -986,18 +986,22 @@
                 
                 <h3 id="dashboard-url">Dashboard URL<a class="headerlink" href="#dashboard-url" title="Permanent link">&para;</a></h3>
 <p>Open your AWS console and navigate to CloudFormation. Select your parent Stack, click Output, and retrieve "WebUserInterface" </p>
-<h3 id="first-time-user">First Time User<a class="headerlink" href="#first-time-user" title="Permanent link">&para;</a></h3>
-<p>If you are not already familiar with Kibana, read the instructions below. Since it's the first time you access this endpoint, you will need to configure your indexes.<br />
+<h3 id="create-indexes">Create Indexes<a class="headerlink" href="#create-indexes" title="Permanent link">&para;</a></h3>
+<p>Since it's the first time you access this endpoint, you will need to configure your indexes.<br />
 First, access Kibana URL and click "Explore on my Own"</p>
-<p><img alt="" src="../../imgs/kibana-1.png" /></p>
+<p><img alt="" src="../../../imgs/kibana-1.png" /></p>
 <p>Go under Management and Click Index Patterns</p>
-<p><img alt="" src="../../imgs/kibana-2.png" /></p>
-<p>Select the Index you want to query</p>
-<p><img alt="" src="../../imgs/kibana-3.png" /></p>
-<p>Click next, and then specify the Time Filter key (refer to section below for timestamp id). Once done, click Create Index Pattern&lt;</p>
-<p><img alt="" src="../../imgs/kibana-4.png" /></p>
-<p>Once your Index is configured, go to Kibana, select "Discover" tab to start visualizing the data</p>
-<p><img alt="" src="../../imgs/kibana-5.png" /></p>
+<p><img alt="" src="../../../imgs/kibana-2.png" /></p>
+<p>Create your first index by typing <strong>pbsnodes*</strong>.</p>
+<p><img alt="" src="../../../imgs/ws-analytics-1.png" /></p>
+<p>Click next, and then specify the Time Filter key (<strong>timestamp</strong>). Once done, click Create Index Pattern.</p>
+<p><img alt="" src="../../../imgs/ws-analytics-2.png" /></p>
+<p>Repeat the same operation for <strong>jobs*</strong> index </p>
+<p><img alt="" src="../../../imgs/ws-analytics-3.png" /></p>
+<p>This time,  select <strong>start_iso</strong> as time filter key.</p>
+<p><img alt="" src="../../../imgs/ws-analytics-4.png" /></p>
+<p>Once your indexes are configured, go to Kibana, select "Discover" tab to start visualizing the data</p>
+<p><img alt="" src="../../../imgs/kibana-5.png" /></p>
 <h3 id="index-information">Index Information<a class="headerlink" href="#index-information" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -1031,7 +1035,7 @@ First, access Kibana URL and click "Explore on my Own"</p>
 <tr>
 <td>Timestamp Key</td>
 <td>Use "timestamp" when you create the index for the first time</td>
-<td>use "stime" when you create the index for the first time</td>
+<td>use "start_iso" when you create the index for the first time</td>
 </tr>
 <tr>
 <td>____</td>

@@ -903,7 +903,7 @@
 <p>This tutorial assumes familiarity with the Linux command line.</p>
 </div>
 <h2 id="lab-environment-at-a-glance">Lab environment at a glance<a class="headerlink" href="#lab-environment-at-a-glance" title="Permanent link">&para;</a></h2>
-<p><img alt="Reference Architecture Diagram" src="../../imgs/soca-arch-diagram.png" /></p>
+<p><img alt="Reference Architecture Diagram" src="imgs/soca-arch-diagram.png" /></p>
 <p>At its core, this solution implements a scheduler <strong>Amazon Elastic Compute Cloud (Amazon EC2)</strong> instance, which leverages <strong>AWS CloudFormation</strong> and <strong>Amazon EC2 Auto Scaling</strong> to automatically provision the resources necessary to execute cluster user tasks such as scale-out compute jobs and remote visualization sessions.</p>
 <p>The solution also deploys <strong>Amazon Elastic File System (Amazon EFS)</strong> for persistent storage; <strong>AWS Lambda</strong> functions to verify the required prerequisites and create a default signed certificate for an <strong>Application Load Balancer (ALB)</strong> to manage access to <strong>Desktop Cloud Visualization (DCV)</strong> workstation sessions; an <strong>Amazon Elasticsearch Service (Amazon ES)</strong> cluster to store job and host metrics; and <strong>AWS Secrets Manager</strong> to store the solution configuration files. The solution also leverages <strong>AWS Identity and Access Management (IAM)</strong> roles to enforce least privileged access.</p>
 <p>Let's get started. Click the <strong>Next</strong> link in the bottom right corner to move on to the next module.</p>
