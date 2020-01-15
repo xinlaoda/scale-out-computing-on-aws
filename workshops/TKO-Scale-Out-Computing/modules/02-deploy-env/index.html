@@ -1055,24 +1055,19 @@
 <p>This automated AWS CloudFormation template deploys a scale-out computing environment in the AWS Cloud.</p>
 <ol>
 <li>
-<p>Verify that you have a key pair in the region you intend to deploy in.  If not, create a new key pair.</p>
+<p>Verify that you have a key pair in the  <strong>US West (Oregon)</strong> region.  If not, create a new key pair.</p>
 </li>
 <li>
 <p>Sign in to the AWS Management Console and click the link below to launch the scale-out-computing-on-aws AWS CloudFormation template.</p>
 <ul>
-<li>
-<p><a href="https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?&amp;templateURL=https://s3.amazonaws.com/solutions-reference/scale-out-computing-on-aws/latest/scale-out-computing-on-aws.template"><strong>Launch Stack in US East (Virginia)</strong></a></p>
-</li>
-<li>
-<p><a href="https://console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?&amp;templateURL=https://s3.amazonaws.com/solutions-reference/scale-out-computing-on-aws/latest/scale-out-computing-on-aws.template"><strong>Launch Stack in US West (Oregon)</strong></a></p>
-</li>
+<li><a href="https://console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?&amp;templateURL=https://s3.amazonaws.com/solutions-reference/scale-out-computing-on-aws/latest/scale-out-computing-on-aws.template"><strong>Launch Stack in US West (Oregon)</strong></a></li>
 </ul>
 </li>
 <li>
 <p>On the <strong>Create stack</strong> page, you should see the template URL in the <strong>Amazon S3 URL</strong> text box and choose <strong>Next</strong>.</p>
 </li>
 <li>
-<p>On the <strong>Specify stack</strong> details page, assign a name to your solution stack.  We recommend naming it "soca".</p>
+<p>On the <strong>Specify stack</strong> details page, assign the name <strong>"soca"</strong> to the stack.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>The stack name must be less than 20 characters and must be lower-case only.</p>
@@ -1137,7 +1132,7 @@
 <tr>
 <td>IP Address</td>
 <td>0.0.0.0/0</td>
-<td><strong>REQUIRED</strong> The public-facing IP address that is permitted to log into the environment.  You can leave it at default, but we recommend you change it to your public-facing IP address. You can find your public-facing IP address at <a href="http://checkip.amazonaws.com">http://checkip.amazonaws.com</a>.  Add the /32 suffix to the IP number.</td>
+<td><strong>REQUIRED</strong> The public-facing IP address that is permitted to log into the environment.  You can leave it at default, but we recommend you change it to your public-facing IP address. Add the /32 suffix to the IP number.</td>
 </tr>
 <tr>
 <td>Key Pair Name</td>
@@ -1175,7 +1170,7 @@
 <p>Choose <strong>Create stack</strong> to deploy the stack.</p>
 </li>
 </ol>
-<p>You can view the status of the stack in the AWS CloudFormation console in the <strong>Status</strong> column. You should see a status of <code class="codehilite"><span class="n">CREATE_COMPLETE</span></code> in approximately 35 minutes.</p>
+<p>You can view the status of the stack in the AWS CloudFormation console in the <strong>Status</strong> column. You should see a status of <code class="codehilite"><span class="n">CREATE_COMPLETE</span></code> in approximately 35 minutes.  Please wait for instructions from the workshop staff before moving on to the next lab.</p>
                 
                   
                 
