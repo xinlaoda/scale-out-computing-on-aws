@@ -36,7 +36,7 @@
     
     
       
-        <title>Lab 3: Launch Remote Desktop Session - Scale-Out Computing on AWS Knowledge Base</title>
+        <title>Lab 1: Deploy Environment - Scale-Out Computing on AWS Knowledge Base</title>
       
     
     
@@ -79,7 +79,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#lab-3-launch-remote-desktop-session" tabindex="0" class="md-skip">
+      <a href="#lab-1-deploy-environment" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -105,7 +105,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Lab 3: Launch Remote Desktop Session
+                Lab 1: Deploy Environment
               
             </span>
           
@@ -633,11 +633,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-2" type="checkbox" id="nav-7-2" checked>
     
     <label class="md-nav__link" for="nav-7-2">
-      DVCon VCS
+      DVCon
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
       <label class="md-nav__title" for="nav-7-2">
-        DVCon VCS
+        DVCon
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -648,8 +648,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../" title="DVCon-VCS Workshop Overview" class="md-nav__link">
-      DVCon-VCS Workshop Overview
+    <a href="../../" title="DVCon Workshop Overview" class="md-nav__link">
+      DVCon Workshop Overview
     </a>
   </li>
 
@@ -691,30 +691,6 @@
           
           
 
-
-  <li class="md-nav__item">
-    <a href="../02-deploy-env/" title="Lab 1: Deploy Environment" class="md-nav__link">
-      Lab 1: Deploy Environment
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../03-configure-desktop/" title="Lab 2: Configure Remote Desktop" class="md-nav__link">
-      Lab 2: Configure Remote Desktop
-    </a>
-  </li>
-
-        
-          
-          
-          
-
   
 
 
@@ -726,11 +702,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Lab 3: Launch Remote Desktop Session
+        Lab 1: Deploy Environment
       </label>
     
-    <a href="./" title="Lab 3: Launch Remote Desktop Session" class="md-nav__link md-nav__link--active">
-      Lab 3: Launch Remote Desktop Session
+    <a href="./" title="Lab 1: Deploy Environment" class="md-nav__link md-nav__link--active">
+      Lab 1: Deploy Environment
     </a>
     
       
@@ -744,22 +720,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#step-1-subscribe-to-aws-fpga-developer-ami" class="md-nav__link">
-    Step 1: Subscribe to AWS FPGA Developer AMI
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-log-into-web-ui" class="md-nav__link">
-    Step 2: Log into web UI
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-launch-remote-desktop-server" class="md-nav__link">
-    Step 3: Launch remote desktop server
+  <a href="#step-1-launch-stack" class="md-nav__link">
+    Step 1: Launch stack
   </a>
   
 </li>
@@ -781,8 +743,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../06-launch-vivado/" title="Lab 4: Launch Vivado GUI" class="md-nav__link">
-      Lab 4: Launch Vivado GUI
+    <a href="../02-web-login/" title="Lab 2: Login to SOCA console and launch Remote Desktop Session" class="md-nav__link">
+      Lab 2: Login to SOCA console and launch Remote Desktop Session
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-launch-vivado/" title="." class="md-nav__link">
+      .
     </a>
   </li>
 
@@ -819,18 +793,6 @@
   <li class="md-nav__item">
     <a href="../09-wrap-up/" title="Wrap-up" class="md-nav__link">
       Wrap-up
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../z-budgets/" title="." class="md-nav__link">
-      .
     </a>
   </li>
 
@@ -1207,22 +1169,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#step-1-subscribe-to-aws-fpga-developer-ami" class="md-nav__link">
-    Step 1: Subscribe to AWS FPGA Developer AMI
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-log-into-web-ui" class="md-nav__link">
-    Step 2: Log into web UI
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-launch-remote-desktop-server" class="md-nav__link">
-    Step 3: Launch remote desktop server
+  <a href="#step-1-launch-stack" class="md-nav__link">
+    Step 1: Launch stack
   </a>
   
 </li>
@@ -1243,73 +1191,135 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/awslabs/scale-out-computing-on-aws/edit/master/docs/workshops/DVCon-VCS/modules/04-web-login.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/awslabs/scale-out-computing-on-aws/edit/master/docs/workshops/DVCon/modules/01-deploy-env.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="lab-3-launch-remote-desktop-session">Lab 3: Launch Remote Desktop Session<a class="headerlink" href="#lab-3-launch-remote-desktop-session" title="Permanent link">&para;</a></h1>
-<p>The goal of this module is to start a remote desktop session from which you will run applications and submit jobs into the cluster.  You will use the cluster's management console to start and monitor the session.</p>
-<h2 id="step-1-subscribe-to-aws-fpga-developer-ami">Step 1: Subscribe to AWS FPGA Developer AMI<a class="headerlink" href="#step-1-subscribe-to-aws-fpga-developer-ami" title="Permanent link">&para;</a></h2>
-<p>This workshop requires a subscription to the <strong>AWS FPGA Developer AMI</strong> in <strong>AWS Marketplace</strong>. This is the AMI you added to the <code class="codehilite"><span class="err">/apps/soca/cluster_manager/settings/queue_mapping.yml</span></code> file in the previous lab. It will be used to boot the remote desktop instance in AWS and contains software required later in the workshop.</p>
+                <h1 id="lab-1-deploy-environment">Lab 1: Deploy Environment<a class="headerlink" href="#lab-1-deploy-environment" title="Permanent link">&para;</a></h1>
+<p>We want you to have hands-on experience deploying your own cluster, and in this module we will have you walk through the process of launching a cluster in your temporary AWS account.  This cluster will be provisioned in the background. For the subsequent modules you'll access a pre-built cluster where EDA tools and licenses have been provisioned. </p>
+<h2 id="step-1-launch-stack">Step 1: Launch stack<a class="headerlink" href="#step-1-launch-stack" title="Permanent link">&para;</a></h2>
+<p>This automated AWS CloudFormation template deploys a scale-out computing environment in the AWS Cloud.</p>
 <ol>
 <li>
-<p>Return to the AWS console for your temporary AWS account.</p>
+<p>Sign in to the AWS Management Console and click the Launch Stack link below to launch the scale-out-computing-on-aws AWS CloudFormation template.</p>
+<p><a href="https://console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?&amp;templateURL=https://s3.amazonaws.com/solutions-reference/scale-out-computing-on-aws/latest/scale-out-computing-on-aws.template"><strong>Launch Stack</strong></a></p>
 </li>
 <li>
-<p>Click <a href="https://aws.amazon.com/marketplace/pp/B06VVYBLZZ">here</a> to open the page for the AWS FPGA Developer AMI in AWS Marketplace, and then choose <strong>Continue to Subscribe</strong>.</p>
-</li>
-<li>
-<p>Review the terms and conditions for software usage, and then choose <strong>Accept Terms</strong>.</p>
-<p>When the subscription process is complete, exit out of AWS Marketplace without further action. Do not click <strong>Continue to Configure</strong>; the workshop CloudFormation templates will deploy the AMI for you.</p>
-</li>
-<li>
-<p>Click <a href="https://console.aws.amazon.com/marketplace/home/subscriptions?region=us-east-1#/subscriptions">here</a> to verify the subscription within the Marketplace dashboard.  You should see the <strong>FPGA Developer AMI</strong> in the list of subscriptions.</p>
-<p><img alt="Marketplace Subscriptions" src="../../imgs/marketplace-subs.png" /></p>
-</li>
-</ol>
-<h2 id="step-2-log-into-web-ui">Step 2: Log into web UI<a class="headerlink" href="#step-2-log-into-web-ui" title="Permanent link">&para;</a></h2>
-<ol>
-<li>
-<p>Select the root stack named "mod-xxxxxxxx" again, and click <strong>Outputs</strong>.</p>
-<p><img alt="" src="../../imgs/cfn-ee-stack.png" /></p>
-</li>
-<li>
-<p>The <strong>Outputs</strong> tab provides various bits of information about the provisioned environment. Click on the link to the right of <strong>WebUserInterface</strong> to log into the Web UI</p>
-<p><img alt="" src="../../../../imgs/install-10.png" /></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Your web browser will warn you about a certificate problem with the site.  To open the webpage, you must authorize the browser to trust the self-signed security certificate.  In a production deployment, you would upload a Server Certificate to the Elastic Load Balancer endpoint.</p>
+<p>Verify the launch region is <strong>Oregon</strong></p>
+<p><img alt="" src="../../imgs/verify-region.png" /></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The template must be launched in <strong>Oregon</strong> for this workshop.</p>
 </div>
 </li>
 <li>
-<p>Log in using the web UI using the following credentials:</p>
-<p>username: admin</p>
-<p>password: passw0rd (use a zero instead of 'o')</p>
-</li>
-</ol>
-<h2 id="step-3-launch-remote-desktop-server">Step 3: Launch remote desktop server<a class="headerlink" href="#step-3-launch-remote-desktop-server" title="Permanent link">&para;</a></h2>
-<p>Follow these instructions to start a full remote desktop experience in your new cluster:</p>
-<ol>
-<li>
-<p>Click <strong>Graphical Access</strong> on the left sidebar.</p>
-<p><img alt="Graphical Access" src="../../../../imgs/access-2.png" /></p>
+<p>On the <strong>Create stack</strong> page, you should see the template URL in the <strong>Amazon S3 URL</strong> text box and choose <strong>Next</strong>.</p>
 </li>
 <li>
-<p>Select  <strong>1 day</strong> in the <strong>Session Validity</strong> popup menu.</p>
-</li>
-<li>
-<p>Choose <strong>2D - Medium (8 vCPUs - 32GB ram)</strong> in the <strong>Session Type</strong> popup menu.</p>
-</li>
-<li>
-<p>Click <strong>Launch my Session #1</strong></p>
-</li>
-</ol>
-<p>After you click <strong>Launch my session</strong>, a new job is submitted into the queue that will instruct AWS to provision a server with 8 vCPUs and 32GB of memory and install all desktop required packages including Gnome. </p>
-<p>You will see an message asking you to wait up to 20 minutes before being able to access your remote desktop, but it should take around 10 minutes to deploy the remote desktop server.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You can monitor the deployment of the remote desktop server by observing the status of the CloudFormation stack with a name ending in <code class="codehilite"><span class="err">job-0</span></code>.  If after 5 minutes the status of the stack is not <code class="codehilite"><span class="err">CREATE_COMPLETE</span></code>, please raise your hand for assistance.</p>
+<p>On the <strong>Specify stack</strong> details page, assign a name to your solution stack.  We recommend naming it "dvcon".</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The stack name must be less than 20 characters and must be lower-case only.</p>
 </div>
-<p>Let's move on to the next step while we wait for the desktop instance to launch.  Click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Under <strong>Parameters</strong>, modify the the last four parameters, which are marked with <strong>REQUIRED</strong>.  Leave all other fields with their default values.  These are variables passed the CloudFormation automation that deploys the environment.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Install Location</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Installer S3 Bucket</td>
+<td><code class="codehilite"><span class="err">solutions-reference</span></code></td>
+<td>The default AWS bucket name. Do not change this parameter unless you are using a custom installer.</td>
+</tr>
+<tr>
+<td>Installer Folder</td>
+<td><code class="codehilite"><span class="err">scale-out-computing-on-aws/latest</span></code></td>
+<td>The default AWS folder name. Do not change this parameter unless you are using a custom installer.</td>
+</tr>
+<tr>
+<td><strong>Linux Distribution</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Linux Distribution</td>
+<td>AmazonLinux2</td>
+<td>The preferred Linux distribution for the scheduler and compute instances.  Do not change this parameter.</td>
+</tr>
+<tr>
+<td>Custom AMI</td>
+<td><Optional input></td>
+<td>If using a customized Amazon Machine Image, enter the ID. Leave this field blank.</td>
+</tr>
+<tr>
+<td><strong>Network and Security</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>EC2 Instance Type for Scheduler node</td>
+<td>m5.large</td>
+<td>The instance type for the scheduler.  Do not change this parameter.</td>
+</tr>
+<tr>
+<td>VPC Cluster CIDR</td>
+<td>10.0.0.0/16</td>
+<td>Choose the CIDR (/16) block for the VPC. Do not change this parameter.</td>
+</tr>
+<tr>
+<td>IP Address</td>
+<td>See description</td>
+<td><strong>REQUIRED</strong> The public-facing IP address that is permitted to log into the environment.  You can leave it at default, but we recommend you change it to your public-facing IP address. You can find your public-facing IP address at <a href="http://checkip.amazonaws.com">http://checkip.amazonaws.com</a>.  Add the /32 suffix to the IP number.</td>
+</tr>
+<tr>
+<td>Key Pair Name</td>
+<td>ee-default-keypair</td>
+<td><strong>REQUIRED</strong> Select the <code class="codehilite"><span class="err">ee-default-keypair</span></code> provided by the workshop.</td>
+</tr>
+<tr>
+<td><strong>Default LDAP User</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>User Name</td>
+<td><Requires input></td>
+<td><strong>REQUIRED</strong> Set a username for the default cluster user.</td>
+</tr>
+<tr>
+<td>Password</td>
+<td><Requires input></td>
+<td><strong>REQUIRED</strong> Set a password for the default cluster user. (5 characters minimum, uppercase/lowercase/digit only)</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Choose <strong>Next</strong>.</p>
+</li>
+<li>
+<p>On the <strong>Configure Stack Options</strong> page, choose <strong>Next</strong>.</p>
+</li>
+<li>
+<p>On the <strong>Review</strong> page, review the settings and check the two boxes acknowledging that the template will create AWS Identity and Access Management (IAM) resources and might require the CAPABILITY_AUTO_EXPAND capability.</p>
+</li>
+<li>
+<p>Choose <strong>Create stack</strong> to deploy the stack.</p>
+</li>
+</ol>
+<p>You can view the status of the stack in the AWS CloudFormation console in the <strong>Status</strong> column. You should see a status of <code class="codehilite"><span class="err">CREATE_COMPLETE</span></code> in approximately 35 minutes.</p>
+<p>You can now move on to the next lab.  Click <strong>Next</strong>.</p>
                 
                   
                 
@@ -1331,7 +1341,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../03-configure-desktop/" title="Lab 2: Configure Remote Desktop" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../getting-started/" title="Getting Started" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1340,19 +1350,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Lab 2: Configure Remote Desktop
+                Getting Started
               </span>
             </div>
           </a>
         
         
-          <a href="../06-launch-vivado/" title="Lab 4: Launch Vivado GUI" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../02-web-login/" title="Lab 2: Login to SOCA console and launch Remote Desktop Session" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Lab 4: Launch Vivado GUI
+                Lab 2: Login to SOCA console and launch Remote Desktop Session
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
