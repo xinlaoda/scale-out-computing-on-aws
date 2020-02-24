@@ -36,7 +36,7 @@
     
     
       
-        <title>Lab 3: Login to Remote Desktop and Launch VCS - Scale-Out Computing on AWS Knowledge Base</title>
+        <title>Lab 3: Login to Remote Desktop and Compile Design - Scale-Out Computing on AWS Knowledge Base</title>
       
     
     
@@ -79,7 +79,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#lab-3-login-to-remote-desktop-and-launch-vcs" tabindex="0" class="md-skip">
+      <a href="#lab-3-login-to-remote-desktop-and-compile-design" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -105,7 +105,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Lab 3: Login to Remote Desktop and Launch VCS
+                Lab 3: Login to Remote Desktop and Compile Design
               
             </span>
           
@@ -726,11 +726,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Lab 3: Login to Remote Desktop and Launch VCS
+        Lab 3: Login to Remote Desktop and Compile Design
       </label>
     
-    <a href="./" title="Lab 3: Login to Remote Desktop and Launch VCS" class="md-nav__link md-nav__link--active">
-      Lab 3: Login to Remote Desktop and Launch VCS
+    <a href="./" title="Lab 3: Login to Remote Desktop and Compile Design" class="md-nav__link md-nav__link--active">
+      Lab 3: Login to Remote Desktop and Compile Design
     </a>
     
       
@@ -751,8 +751,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-load-sample-project" class="md-nav__link">
-    Step 2: Load sample project
+  <a href="#step-2-copy-test-case-and-source-environment-settings" class="md-nav__link">
+    Step 2: Copy test case and source environment settings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-compile-the-test-case" class="md-nav__link">
+    Step 3: Compile the test case
   </a>
   
 </li>
@@ -1183,8 +1190,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-load-sample-project" class="md-nav__link">
-    Step 2: Load sample project
+  <a href="#step-2-copy-test-case-and-source-environment-settings" class="md-nav__link">
+    Step 2: Copy test case and source environment settings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-compile-the-test-case" class="md-nav__link">
+    Step 3: Compile the test case
   </a>
   
 </li>
@@ -1205,11 +1219,11 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/awslabs/scale-out-computing-on-aws/edit/master/docs/workshops/DVCon/modules/03-launch-VCS.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/awslabs/scale-out-computing-on-aws/edit/master/docs/workshops/DVCon/modules/03-login-compile.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="lab-3-login-to-remote-desktop-and-launch-vcs">Lab 3: Login to Remote Desktop and Launch VCS<a class="headerlink" href="#lab-3-login-to-remote-desktop-and-launch-vcs" title="Permanent link">&para;</a></h1>
-<p>The goal with this lab is to evaluate the remote visualization experience using a graphically intensive Computer-Aided Design (CAD) tool.</p>
+                <h1 id="lab-3-login-to-remote-desktop-and-compile-design">Lab 3: Login to Remote Desktop and Compile Design<a class="headerlink" href="#lab-3-login-to-remote-desktop-and-compile-design" title="Permanent link">&para;</a></h1>
+<p>The goal with this lab is to evaluate the remote visualization experience using a graphically intensive EDA tool.</p>
 <h2 id="step-1-log-into-your-session">Step 1: Log into your session<a class="headerlink" href="#step-1-log-into-your-session" title="Permanent link">&para;</a></h2>
 <p>By now your remote desktop session should be ready and you should see the following under <strong>Your Session #1</strong>:</p>
 <p><img alt="" src="../../../../imgs/access-7.png" /></p>
@@ -1224,22 +1238,29 @@
 <li>
 <p>Start a new terminal session by going to <strong>Applications → Favorites → Terminal</strong> in the desktop manager.</p>
 </li>
+</ol>
+<h2 id="step-2-copy-test-case-and-source-environment-settings">Step 2: Copy test case and source environment settings<a class="headerlink" href="#step-2-copy-test-case-and-source-environment-settings" title="Permanent link">&para;</a></h2>
+<ol>
 <li>
-<p>Type `` at the command prompt and hit enter</p>
+<p>Copy the test case to your home directory by typing <code class="codehilite"><span class="err">cp -r /data/NVDLA_export .</span></code> at the command prompt and hit enter</p>
+</li>
+<li>
+<p>Change shell to C-Shell by typing <code class="codehilite"><span class="err">csh</span></code> and hit enter</p>
+</li>
+<li>
+<p>Change directory to test case <code class="codehilite"><span class="err">cd NVDLA_export</span></code> and hit enter</p>
+</li>
+<li>
+<p>Source environment settings by typting <code class="codehilite"><span class="err">source setup.csh</span></code> and hit enter</p>
 </li>
 </ol>
-<h2 id="step-2-load-sample-project">Step 2: Load sample project<a class="headerlink" href="#step-2-load-sample-project" title="Permanent link">&para;</a></h2>
-<p>Next, load a sample workload using one of the included example projects:</p>
+<h2 id="step-3-compile-the-test-case">Step 3: Compile the test case<a class="headerlink" href="#step-3-compile-the-test-case" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Go to the <strong>Quick Start</strong> section and select <strong>Open Project</strong>.</li>
-<li>Navigate to <code class="codehilite"><span class="err">/projects/mfg405/</span></code>, select the <code class="codehilite"><span class="err">project_1.xpr</span></code> file, and click <strong>OK</strong>.</li>
 <li>
-<p>Double-click on <strong>Open Block Diagram</strong> under <strong>IP INTEGRATOR</strong> in the left-side navigation panel.</p>
-<p>After the design opens you should see this:</p>
-<p>You can now click around the GUI and scroll and pan through the schematics to get a sense of the remote desktop experience.</p>
+<p>Change directory to verif/sim <code class="codehilite"><span class="err">cd verif/sim</span></code> and hit enter</p>
 </li>
 <li>
-<p>For extra credit, double-click on <strong>Open Synthesized Design</strong> in the navigation panel to see a more complext layout of the design.</p>
+<p>Compile the test case by typing <code class="codehilite"><span class="err">make build</span></code> then hit enter. You should see the test case getting compiled and at the end should see <strong>Compilation Performance Summary</strong> followed by: <strong>checkcompile: Compile Successful!</strong></p>
 </li>
 </ol>
 <p>You've completed this lab. Click <strong>Next</strong>.</p>
