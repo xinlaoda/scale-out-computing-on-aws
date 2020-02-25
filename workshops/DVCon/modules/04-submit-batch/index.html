@@ -1201,10 +1201,10 @@
 <ol>
 <li>
 <p><strong>Submit jobs</strong>. Submit each of the jobs below:</p>
-<p><code class="codehilite"><span class="err">qsub -l instance_type=c5.xlarge -- $HOME/aws-fpga-sa-demo/eda-workshop/run-sim.sh --scratch-dir $HOME</span></code></p>
-<p><code class="codehilite"><span class="err">qsub -l instance_type=c4.xlarge -- $HOME/aws-fpga-sa-demo/eda-workshop/run-sim.sh --scratch-dir $HOME</span></code></p>
-<p><code class="codehilite"><span class="err">qsub -l instance_type=m5.xlarge -- $HOME/aws-fpga-sa-demo/eda-workshop/run-sim.sh --scratch-dir $HOME</span></code></p>
-<p><code class="codehilite"><span class="err">qsub -l instance_type=m4.xlarge -- $HOME/aws-fpga-sa-demo/eda-workshop/run-sim.sh --scratch-dir $HOME</span></code></p>
+<p><code class="codehilite"><span class="err">qsub -l instance_type=c5.xlarge -- $HOME/NVDLA_export/verif/sim/run-sim.sh</span></code></p>
+<p><code class="codehilite"><span class="err">qsub -l instance_type=c4.xlarge -- $HOME/NVDLA_export/verif/sim/run-sim.sh</span></code></p>
+<p><code class="codehilite"><span class="err">qsub -l instance_type=m5.xlarge -- $HOME/NVDLA_export/verif/sim/run-sim.sh</span></code></p>
+<p><code class="codehilite"><span class="err">qsub -l instance_type=m4.xlarge -- $HOME/NVDLA_export/verif/sim/run-sim.sh</span></code></p>
 </li>
 <li>
 <p><strong>Watch job status</strong>. As soon as jobs are sent to the queue, the dispatcher script will start up a new compute instance to execute each job.  Run the <code class="codehilite"><span class="err">qstat</span></code> command to view the status of the jobs.  You can also view job status in the web UI by clicking on <strong>My Job Queue</strong> in the left side navigation bar.</p>
