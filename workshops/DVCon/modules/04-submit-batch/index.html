@@ -36,7 +36,7 @@
     
     
       
-        <title>Lab 4: Submit Batch Workloads - Scale-Out Computing on AWS Knowledge Base</title>
+        <title>04 submit batch - Scale-Out Computing on AWS Knowledge Base</title>
       
     
     
@@ -105,7 +105,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Lab 4: Submit Batch Workloads
+                04 submit batch
               
             </span>
           
@@ -738,11 +738,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Lab 4: Submit Batch Workloads
+        04 submit batch
       </label>
     
-    <a href="./" title="Lab 4: Submit Batch Workloads" class="md-nav__link md-nav__link--active">
-      Lab 4: Submit Batch Workloads
+    <a href="./" title="04 submit batch" class="md-nav__link md-nav__link--active">
+      04 submit batch
     </a>
     
       
@@ -1201,14 +1201,14 @@
 <ol>
 <li>
 <p><strong>Submit jobs</strong>. Submit each of the jobs below:</p>
-<p><code class="codehilite"><span class="err">qsub -l instance_type=c5.xlarge -- $HOME/NVDLA_export/verif/sim/run-sim.sh</span></code></p>
-<p><code class="codehilite"><span class="err">qsub -l instance_type=c4.xlarge -- $HOME/NVDLA_export/verif/sim/run-sim.sh</span></code></p>
-<p><code class="codehilite"><span class="err">qsub -l instance_type=m5.xlarge -- $HOME/NVDLA_export/verif/sim/run-sim.sh</span></code></p>
-<p><code class="codehilite"><span class="err">qsub -l instance_type=m4.xlarge -- $HOME/NVDLA_export/verif/sim/run-sim.sh</span></code></p>
+<p><code class="codehilite"><span class="err">qsub -l instance_type=c5.xlarge -- $HOME/NVDLA_export/verif/sim/run_test1.csh</span></code></p>
+<p><code class="codehilite"><span class="err">qsub -l instance_type=c4.xlarge -- $HOME/NVDLA_export/verif/sim/run_test2.csh</span></code></p>
+<p><code class="codehilite"><span class="err">qsub -l instance_type=m5.xlarge -- $HOME/NVDLA_export/verif/sim/run_test3.csh</span></code></p>
+<p><code class="codehilite"><span class="err">qsub -l instance_type=m4.xlarge -- $HOME/NVDLA_export/verif/sim/run_test4.csh</span></code></p>
 </li>
 <li>
 <p><strong>Watch job status</strong>. As soon as jobs are sent to the queue, the dispatcher script will start up a new compute instance to execute each job.  Run the <code class="codehilite"><span class="err">qstat</span></code> command to view the status of the jobs.  You can also view job status in the web UI by clicking on <strong>My Job Queue</strong> in the left side navigation bar.</p>
-<p><img alt="" src="../../../../imgs/howtojob-10.png" /></p>
+<p><img alt="" src="../../imgs/my-job-queue.png" /></p>
 </li>
 </ol>
 <p>You can also run the <code class="codehilite"><span class="err">pbsnodes -a</span></code> command to see the EC2 instances that have joined the cluster.</p>
