@@ -751,8 +751,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-copy-test-case-and-source-environment-settings" class="md-nav__link">
-    Step 2: Copy test case and source environment settings
+  <a href="#step-2-copy-test-case" class="md-nav__link">
+    Step 2: Copy test case
   </a>
   
 </li>
@@ -781,8 +781,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../04-submit-batch/" title="04 submit batch" class="md-nav__link">
-      04 submit batch
+    <a href="../04-submit-batch/" title="Lab 4: Submit Batch Jobs" class="md-nav__link">
+      Lab 4: Submit Batch Jobs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-load-verdi/" title="Lab 4: Bring up Verdi" class="md-nav__link">
+      Lab 4: Bring up Verdi
     </a>
   </li>
 
@@ -1190,8 +1202,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-copy-test-case-and-source-environment-settings" class="md-nav__link">
-    Step 2: Copy test case and source environment settings
+  <a href="#step-2-copy-test-case" class="md-nav__link">
+    Step 2: Copy test case
   </a>
   
 </li>
@@ -1239,19 +1251,16 @@
 <p>Start a new terminal session by going to <strong>Applications → Favorites → Terminal</strong> in the desktop manager.</p>
 </li>
 </ol>
-<h2 id="step-2-copy-test-case-and-source-environment-settings">Step 2: Copy test case and source environment settings<a class="headerlink" href="#step-2-copy-test-case-and-source-environment-settings" title="Permanent link">&para;</a></h2>
+<h2 id="step-2-copy-test-case">Step 2: Copy test case<a class="headerlink" href="#step-2-copy-test-case" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
 <p>Copy the test case to your home directory by typing <code class="codehilite"><span class="err">cp -r /data/NVDLA_export ~</span></code> at the command prompt and hit enter</p>
 </li>
 <li>
-<p>Change shell to C-Shell by typing <code class="codehilite"><span class="err">csh</span></code> and hit enter</p>
-</li>
-<li>
 <p>Change directory to test case <code class="codehilite"><span class="err">cd NVDLA_export</span></code> and hit enter</p>
 </li>
 <li>
-<p>Source environment settings by typting <code class="codehilite"><span class="err">source setup.csh</span></code> and hit enter</p>
+<p>Source environment settings by typing <code class="codehilite"><span class="err">. setup.sh</span></code> and hit enter </p>
 </li>
 </ol>
 <h2 id="step-3-compile-the-test-case">Step 3: Compile the test case<a class="headerlink" href="#step-3-compile-the-test-case" title="Permanent link">&para;</a></h2>
@@ -1260,15 +1269,11 @@
 <p>Change directory to verif/sim <code class="codehilite"><span class="err">cd verif/sim</span></code> and hit enter</p>
 </li>
 <li>
-<p>Compile the test case by typing <code class="codehilite"><span class="err">make build</span></code> then hit enter. </p>
+<p>Compile the test case by typing <code class="codehilite"><span class="err">make clean comp comp_verdi</span></code> then hit enter. </p>
 </li>
 <li>
 <p>You should see the test case is getting compiled and at the end should see: </p>
 <p><img alt="Compilation performance summary" src="../../imgs/compilation-performance-summary.png" /></p>
-</li>
-<li>
-<p>Followed by:</p>
-<p><img alt="Compile successful" src="../../imgs/compile-successful.png" /></p>
 </li>
 </ol>
 <p>You've completed this lab. Click <strong>Next</strong>.</p>
@@ -1308,13 +1313,13 @@
           </a>
         
         
-          <a href="../04-submit-batch/" title="04 submit batch" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../04-submit-batch/" title="Lab 4: Submit Batch Jobs" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                04 submit batch
+                Lab 4: Submit Batch Jobs
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

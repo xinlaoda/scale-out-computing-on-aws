@@ -36,7 +36,7 @@
     
     
       
-        <title>04 submit batch - Scale-Out Computing on AWS Knowledge Base</title>
+        <title>Lab 4: Submit Batch Jobs - Scale-Out Computing on AWS Knowledge Base</title>
       
     
     
@@ -79,7 +79,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#lab-4-submit-batch-workloads" tabindex="0" class="md-skip">
+      <a href="#lab-4-submit-batch-jobs" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -105,7 +105,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                04 submit batch
+                Lab 4: Submit Batch Jobs
               
             </span>
           
@@ -738,11 +738,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        04 submit batch
+        Lab 4: Submit Batch Jobs
       </label>
     
-    <a href="./" title="04 submit batch" class="md-nav__link md-nav__link--active">
-      04 submit batch
+    <a href="./" title="Lab 4: Submit Batch Jobs" class="md-nav__link md-nav__link--active">
+      Lab 4: Submit Batch Jobs
     </a>
     
       
@@ -762,6 +762,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#step-2-watch-job-status" class="md-nav__link">
+    Step 2: Watch job status
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-monitor-test20-job" class="md-nav__link">
+    Step 3: Monitor test20 job
+  </a>
+  
+</li>
+      
       
       
       
@@ -770,6 +784,18 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-load-verdi/" title="Lab 4: Bring up Verdi" class="md-nav__link">
+      Lab 4: Bring up Verdi
+    </a>
   </li>
 
         
@@ -1175,6 +1201,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#step-2-watch-job-status" class="md-nav__link">
+    Step 2: Watch job status
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-monitor-test20-job" class="md-nav__link">
+    Step 3: Monitor test20 job
+  </a>
+  
+</li>
+      
       
       
       
@@ -1194,24 +1234,33 @@
                   <a href="https://github.com/awslabs/scale-out-computing-on-aws/edit/master/docs/workshops/DVCon/modules/04-submit-batch.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="lab-4-submit-batch-workloads">Lab 4: Submit Batch Workloads<a class="headerlink" href="#lab-4-submit-batch-workloads" title="Permanent link">&para;</a></h1>
-<p>This module provides instructions for running example batch workloads in the computing envronment created the <strong>Deploy environment</strong> module. The workload is a CPU- and IO-intensive logic simulation that is found in integrated cicuit design workflows. </p>
-<h3 id="step-1-submit-jobs-into-the-queue">Step 1: Submit jobs into the queue<a class="headerlink" href="#step-1-submit-jobs-into-the-queue" title="Permanent link">&para;</a></h3>
+                <h1 id="lab-4-submit-batch-jobs">Lab 4: Submit Batch Jobs<a class="headerlink" href="#lab-4-submit-batch-jobs" title="Permanent link">&para;</a></h1>
+<p>This module provides instructions for running example batch jobs in the computing envronment created the <strong>Deploy environment</strong> module. The workload is a CPU- and IO-intensive logic simulation that is found in integrated circuit design workflows. </p>
+<h2 id="step-1-submit-jobs-into-the-queue">Step 1: Submit jobs into the queue<a class="headerlink" href="#step-1-submit-jobs-into-the-queue" title="Permanent link">&para;</a></h2>
 <p>Next, you'll submit four jobs into the cluster, each job requesting a specific instance type.  Using multiple instance types will help provide more interesting data to look at in the analytics lab.</p>
 <ol>
-<li>
-<p><strong>Submit jobs</strong>. Submit each of the jobs below:</p>
-<p><code class="codehilite"><span class="err">qsub -l instance_type=c5.xlarge -- $HOME/NVDLA_export/verif/sim/run_test1.csh</span></code></p>
-<p><code class="codehilite"><span class="err">qsub -l instance_type=c4.xlarge -- $HOME/NVDLA_export/verif/sim/run_test2.csh</span></code></p>
-<p><code class="codehilite"><span class="err">qsub -l instance_type=m5.xlarge -- $HOME/NVDLA_export/verif/sim/run_test3.csh</span></code></p>
-<p><code class="codehilite"><span class="err">qsub -l instance_type=m4.xlarge -- $HOME/NVDLA_export/verif/sim/run_test4.csh</span></code></p>
-</li>
+<li><strong>Submit jobs</strong>. Execute the run_tests.sh script which will submit 20 batch jobs to the queue by typing <code class="codehilite"><span class="err">./run_tests.sh</span></code> then hit enter. You'll observe that the PBS scheduler will report the corresponding job idsfor each of these 20 jobs. You can examine the run_tests.sh script by typing <code class="codehilite"><span class="err">cat run_tests.sh</span></code> and observe that for each test we're specifying a different instance_type. This will usually depend on the CPU and memory requirements for the corresponding test.</li>
+</ol>
+<h2 id="step-2-watch-job-status">Step 2: Watch job status<a class="headerlink" href="#step-2-watch-job-status" title="Permanent link">&para;</a></h2>
+<ol>
 <li>
 <p><strong>Watch job status</strong>. As soon as jobs are sent to the queue, the dispatcher script will start up a new compute instance to execute each job.  Run the <code class="codehilite"><span class="err">qstat</span></code> command to view the status of the jobs.  You can also view job status in the web UI by clicking on <strong>My Job Queue</strong> in the left side navigation bar.</p>
 <p><img alt="" src="../../imgs/my-job-queue.png" /></p>
 </li>
 </ol>
-<p>You can also run the <code class="codehilite"><span class="err">pbsnodes -a</span></code> command to see the EC2 instances that have joined the cluster.</p>
+<p>You can also run the <code class="codehilite"><span class="err">pbsnodes -aSjL</span></code> command to see the EC2 instances that have joined the cluster.</p>
+<ol>
+<li>The scheduler is configured to monitor the status of the queues every minute and create a number of virtual machines corresponding to the number of queued jobs. The process to create a new VM and have it join the queue typically takes 5-6 minutes.</li>
+</ol>
+<h2 id="step-3-monitor-test20-job">Step 3: Monitor test20 job<a class="headerlink" href="#step-3-monitor-test20-job" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Monitor the status of test20 job which corresponds by refreshing the <strong>My Job Queue</strong> page in SOCA portal or by running <code class="codehilite"><span class="err">qstat</span></code>.</p>
+</li>
+<li>
+<p>Once the job is in the running state, look inside test20 directory for test.log and novas.fsdb. You'll need to use novas.fsdb in the next lab</p>
+</li>
+</ol>
 <p>Click <strong>Next</strong> to move to the next section.</p>
                 
                   
@@ -1249,13 +1298,13 @@
           </a>
         
         
-          <a href="../06-analytics/" title="Lab 6: Explore Analytics Dashboard" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../05-load-verdi/" title="Lab 4: Bring up Verdi" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Lab 6: Explore Analytics Dashboard
+                Lab 4: Bring up Verdi
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
