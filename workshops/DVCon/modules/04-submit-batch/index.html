@@ -1239,18 +1239,26 @@
 <h2 id="step-1-submit-jobs-into-the-queue">Step 1: Submit jobs into the queue<a class="headerlink" href="#step-1-submit-jobs-into-the-queue" title="Permanent link">&para;</a></h2>
 <p>Next, you'll submit four jobs into the cluster, each job requesting a specific instance type.  Using multiple instance types will help provide more interesting data to look at in the analytics lab.</p>
 <ol>
-<li><strong>Submit jobs</strong>. Execute the run_tests.sh script which will submit 20 batch jobs to the queue by typing <code class="codehilite"><span class="err">./run_tests.sh</span></code> then hit enter. You'll observe that the PBS scheduler will report the corresponding job idsfor each of these 20 jobs. You can examine the run_tests.sh script by typing <code class="codehilite"><span class="err">cat run_tests.sh</span></code> and observe that for each test we're specifying a different instance_type. This will usually depend on the CPU and memory requirements for the corresponding test.</li>
+<li>
+<p>Execute the run_tests.sh script which will submit 20 batch jobs to the queue by typing <code class="codehilite"><span class="err">./run_tests.sh</span></code> then hit enter. You'll observe that the PBS scheduler will report the corresponding job idsfor each of these 20 jobs. </p>
+</li>
+<li>
+<p>You can examine the run_tests.sh script by typing <code class="codehilite"><span class="err">cat run_tests.sh</span></code> and observe that for each test we're specifying a different instance_type. This will usually depend on the CPU and memory requirements for the corresponding test.</p>
+</li>
 </ol>
 <h2 id="step-2-watch-job-status">Step 2: Watch job status<a class="headerlink" href="#step-2-watch-job-status" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p><strong>Watch job status</strong>. As soon as jobs are sent to the queue, the dispatcher script will start up a new compute instance to execute each job.  Run the <code class="codehilite"><span class="err">qstat</span></code> command to view the status of the jobs.  You can also view job status in the web UI by clicking on <strong>My Job Queue</strong> in the left side navigation bar.</p>
+<p>As soon as jobs are sent to the queue, SOCA automation scripts will create a new compute instance to execute each job.  Run the <code class="codehilite"><span class="err">qstat</span></code> command to view the status of the jobs.  You can also view job status in the web UI by clicking on <strong>My Job Queue</strong> in the left side navigation bar.</p>
 <p><img alt="" src="../../imgs/my-job-queue.png" /></p>
 </li>
-</ol>
-<p>You can also run the <code class="codehilite"><span class="err">pbsnodes -aSjL</span></code> command to see the EC2 instances that have joined the cluster.</p>
-<ol>
-<li>The scheduler is configured to monitor the status of the queues every minute and create a number of virtual machines corresponding to the number of queued jobs. The process to create a new VM and have it join the queue typically takes 5-6 minutes.</li>
+<li>
+<p>You can run the <code class="codehilite"><span class="err">pbsnodes -aSjL</span></code> command to see the EC2 instances that have joined the cluster. Initially, the nodes will be in <strong>state-unknown,down</strong> till they boot-up and join the queue.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The scheduler is configured to monitor the status of the queues every minute. It typically takes 5-6 minutes to launch a new EC2 instance, boot the operating system, configure it to join the cluster, and have the assigned job to start running.</p>
+</div>
+</li>
 </ol>
 <h2 id="step-3-monitor-test20-job">Step 3: Monitor test20 job<a class="headerlink" href="#step-3-monitor-test20-job" title="Permanent link">&para;</a></h2>
 <ol>
