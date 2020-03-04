@@ -1254,10 +1254,14 @@
 <h2 id="step-2-copy-test-case">Step 2: Copy test case<a class="headerlink" href="#step-2-copy-test-case" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p>Copy the test case to your home directory by typing <code class="codehilite"><span class="err">cp -r /data/NVDLA_export ~</span></code> at the command prompt and hit enter</p>
+<p>Copy the test case to your home directory by typing <code class="codehilite"><span class="n">cp</span> <span class="o">-</span><span class="n">r</span> <span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">NVDLA_export</span> <span class="o">/</span><span class="n">fsx</span><span class="o">/</span><span class="ss">`whoami`</span></code> at the command prompt and hit enter</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>/data is a mount point for <strong>Amazon Elastic File System</strong> which provides a simple, scalable elastic NFS file system.  /fsx is a mount point for <strong>Amazon FSx for Lustre</strong> which provides a Lustre file system suitable for high performance computing (HPC) workloads such as EDA</p>
+</div>
 </li>
 <li>
-<p>Change directory to test case <code class="codehilite"><span class="err">cd NVDLA_export</span></code> and hit enter</p>
+<p>Change directory to test case <code class="codehilite"><span class="n">cd</span> <span class="o">/</span><span class="n">fsx</span><span class="o">/</span><span class="ss">`whoami`</span><span class="o">/</span><span class="n">NVDLA_export</span></code> and hit enter</p>
 </li>
 <li>
 <p>Source environment settings by typing <code class="codehilite"><span class="err">. setup.sh</span></code> and hit enter </p>
