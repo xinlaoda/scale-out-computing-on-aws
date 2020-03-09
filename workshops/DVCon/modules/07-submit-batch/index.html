@@ -32,11 +32,11 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.3">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
     
     
       
-        <title>Lab 4: Submit Batch Jobs - Scale-Out Computing on AWS Knowledge Base</title>
+        <title>Lab 5: Submit Batch Workloads - Scale-Out Computing on AWS Knowledge Base</title>
       
     
     
@@ -79,7 +79,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#lab-4-submit-batch-jobs" tabindex="0" class="md-skip">
+      <a href="#lab-5-submit-batch-workloads" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -105,7 +105,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Lab 4: Submit Batch Jobs
+                Lab 5: Submit Batch Workloads
               
             </span>
           
@@ -717,8 +717,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../03-login-compile/" title="Lab 3: Login to Remote Desktop and Compile Design" class="md-nav__link">
-      Lab 3: Login to Remote Desktop and Compile Design
+    <a href="../03-launch-VCS/" title="Lab 3: Login to Remote Desktop and Launch VCS" class="md-nav__link">
+      Lab 3: Login to Remote Desktop and Launch VCS
     </a>
   </li>
 
@@ -738,11 +738,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Lab 4: Submit Batch Jobs
+        Lab 5: Submit Batch Workloads
       </label>
     
-    <a href="./" title="Lab 4: Submit Batch Jobs" class="md-nav__link md-nav__link--active">
-      Lab 4: Submit Batch Jobs
+    <a href="./" title="Lab 5: Submit Batch Workloads" class="md-nav__link md-nav__link--active">
+      Lab 5: Submit Batch Workloads
     </a>
     
       
@@ -756,22 +756,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#step-1-submit-jobs-into-the-queue" class="md-nav__link">
-    Step 1: Submit jobs into the queue
+  <a href="#step-1-clone-workload-repo" class="md-nav__link">
+    Step 1: Clone workload repo
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-watch-job-status" class="md-nav__link">
-    Step 2: Watch job status
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-monitor-test20-job" class="md-nav__link">
-    Step 3: Monitor test20 job
+  <a href="#step-2-submit-jobs-into-the-queue" class="md-nav__link">
+    Step 2: Submit jobs into the queue
   </a>
   
 </li>
@@ -793,19 +786,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../05-load-verdi/" title="Lab 5: Bring up Verdi" class="md-nav__link">
-      Lab 5: Bring up Verdi
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../06-analytics/" title="Lab 6: Explore Analytics Dashboard" class="md-nav__link">
+    <a href="../08-analytics/" title="Lab 6: Explore Analytics Dashboard" class="md-nav__link">
       Lab 6: Explore Analytics Dashboard
     </a>
   </li>
@@ -1195,22 +1176,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#step-1-submit-jobs-into-the-queue" class="md-nav__link">
-    Step 1: Submit jobs into the queue
+  <a href="#step-1-clone-workload-repo" class="md-nav__link">
+    Step 1: Clone workload repo
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-watch-job-status" class="md-nav__link">
-    Step 2: Watch job status
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-monitor-test20-job" class="md-nav__link">
-    Step 3: Monitor test20 job
+  <a href="#step-2-submit-jobs-into-the-queue" class="md-nav__link">
+    Step 2: Submit jobs into the queue
   </a>
   
 </li>
@@ -1231,48 +1205,48 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/awslabs/scale-out-computing-on-aws/edit/master/docs/workshops/DVCon/modules/04-submit-batch.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/awslabs/scale-out-computing-on-aws/edit/master/docs/workshops/DVCon/modules/07-submit-batch.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="lab-4-submit-batch-jobs">Lab 4: Submit Batch Jobs<a class="headerlink" href="#lab-4-submit-batch-jobs" title="Permanent link">&para;</a></h1>
-<p>This module provides instructions for running example batch jobs in the computing envronment created the <strong>Deploy environment</strong> module. The workload is a CPU- and IO-intensive logic simulation that is found in integrated circuit design workflows. </p>
-<h2 id="step-1-submit-jobs-into-the-queue">Step 1: Submit jobs into the queue<a class="headerlink" href="#step-1-submit-jobs-into-the-queue" title="Permanent link">&para;</a></h2>
+                <h1 id="lab-5-submit-batch-workloads">Lab 5: Submit Batch Workloads<a class="headerlink" href="#lab-5-submit-batch-workloads" title="Permanent link">&para;</a></h1>
+<p>This module provides instructions for running an example batch workload in the computing envronment created the <strong>Deploy environment</strong> module. The example workload is a CPU- and IO-intensive logic simulation that is found in integrated cicuit design workflows.  The workload uses data contained in the public <strong>AWS F1 FPGA Development Kit</strong> and the <strong>Xilinx Vivado</strong> EDA software suite provided by the <strong>AWS FPGA Developer AMI</strong> that you subscribed to in the first tutorial. Although you'll be using data and tools from AWS FPGA developer resources, you will not be running on the F1 FPGA instance or executing any type of FPGA workload; we're simply running software simulations on EC2 compute instances using the design data, IP, and software that these kits provide for no additional charge.</p>
+<h3 id="step-1-clone-workload-repo">Step 1: Clone workload repo<a class="headerlink" href="#step-1-clone-workload-repo" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>End your SSH sessions and log back into the DCV remote desktop session that you established <strong>Launch Remote Desktop Session</strong> lab.</p>
+</li>
+<li>
+<p>Minimize the Vivado GUI and open a new terminal window.</p>
+</li>
+<li>
+<p>Clone the example workload from the <code class="codehilite"><span class="err">aws-fpga-sa-demo</span></code> Github repo into your user's home directory on the NFS file system.</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> <span class="nv">$HOME</span>
+git clone https://github.com/morrmt/aws-fpga-sa-demo.git
+</code></pre></div>
+
+</li>
+<li>
+<p>Change into the repo's workshop directory.</p>
+<p><code class="codehilite"><span class="err">cd $HOME/aws-fpga-sa-demo/eda-workshop</span></code></p>
+</li>
+</ol>
+<h3 id="step-2-submit-jobs-into-the-queue">Step 2: Submit jobs into the queue<a class="headerlink" href="#step-2-submit-jobs-into-the-queue" title="Permanent link">&para;</a></h3>
 <p>Next, you'll submit four jobs into the cluster, each job requesting a specific instance type.  Using multiple instance types will help provide more interesting data to look at in the analytics lab.</p>
 <ol>
 <li>
-<p>Execute the run_tests.sh script which will submit 20 batch jobs to the queue by typing <code class="codehilite"><span class="err">./run_tests.sh</span></code> then hit enter. You'll observe that the PBS scheduler will report the corresponding job idsfor each of these 20 jobs. </p>
+<p><strong>Submit jobs</strong>. Submit each of the jobs below:</p>
+<p><code class="codehilite"><span class="err">qsub -l instance_type=c5.xlarge -- $HOME/aws-fpga-sa-demo/eda-workshop/run-sim.sh --scratch-dir $HOME</span></code></p>
+<p><code class="codehilite"><span class="err">qsub -l instance_type=c4.xlarge -- $HOME/aws-fpga-sa-demo/eda-workshop/run-sim.sh --scratch-dir $HOME</span></code></p>
+<p><code class="codehilite"><span class="err">qsub -l instance_type=m5.xlarge -- $HOME/aws-fpga-sa-demo/eda-workshop/run-sim.sh --scratch-dir $HOME</span></code></p>
+<p><code class="codehilite"><span class="err">qsub -l instance_type=m4.xlarge -- $HOME/aws-fpga-sa-demo/eda-workshop/run-sim.sh --scratch-dir $HOME</span></code></p>
 </li>
 <li>
-<p>You can examine the run_tests.sh script by typing <code class="codehilite"><span class="err">cat run_tests.sh</span></code> and observe that for each test we're specifying a different instance_type. This will usually depend on the CPU and memory requirements for the corresponding test.</p>
+<p><strong>Watch job status</strong>. As soon as jobs are sent to the queue, the dispatcher script will start up a new compute instance to execute each job.  Run the <code class="codehilite"><span class="err">qstat</span></code> command to view the status of the jobs.  You can also view job status in the web UI by clicking on <strong>My Job Queue</strong> in the left side navigation bar.</p>
+<p><img alt="" src="../../../../imgs/howtojob-10.png" /></p>
 </li>
 </ol>
-<h2 id="step-2-watch-job-status">Step 2: Watch job status<a class="headerlink" href="#step-2-watch-job-status" title="Permanent link">&para;</a></h2>
-<ol>
-<li>
-<p>As soon as jobs are sent to the queue, SOCA automation scripts will create a new compute instance to execute each job.  Run the <code class="codehilite"><span class="err">qstat</span></code> command to view the status of the jobs.  You can also view job status in the web UI by clicking on <strong>My Job Queue</strong> in the left side navigation bar.</p>
-<p><img alt="" src="../../imgs/my-job-queue.png" /></p>
-</li>
-<li>
-<p>You can run the <code class="codehilite"><span class="err">pbsnodes -aSjL</span></code> command to see the EC2 instances that have joined the cluster. Initially, the nodes will be in <strong>state-unknown,down</strong> till they boot-up and join the queue.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The scheduler is configured to monitor the status of the queues every minute. It typically takes 5-6 minutes to launch a new EC2 instance, boot the operating system, configure it to join the cluster, and have the assigned job to start running.</p>
-</div>
-</li>
-</ol>
-<h2 id="step-3-monitor-test20-job">Step 3: Monitor test20 job<a class="headerlink" href="#step-3-monitor-test20-job" title="Permanent link">&para;</a></h2>
-<ol>
-<li>
-<p>Monitor the status of test20 job by refreshing the <strong>My Job Queue</strong> page in SOCA portal and look for the <strong>Status</strong> column for the job with test20 under <strong>Name</strong> column.</p>
-</li>
-<li>
-<p>You can also monitor the job status in the terminal by typing <code class="codehilite"><span class="err">qstat</span></code> command.</p>
-</li>
-<li>
-<p>Once the job is in the running state, look inside test20 directory for test.log and novas.fsdb by typing <code class="codehilite"><span class="err">ls test20/*</span></code>. Wait until test20/novas.fsdb is created as you'll need to use it in the next lab.</p>
-</li>
-</ol>
-<p>Click <strong>Next</strong> to move to the next lab.</p>
+<p>You can also run the <code class="codehilite"><span class="err">pbsnodes -a</span></code> command to see the EC2 instances that have joined the cluster.</p>
+<p>Click <strong>Next</strong> to move to the next section.</p>
                 
                   
                 
@@ -1294,7 +1268,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../03-login-compile/" title="Lab 3: Login to Remote Desktop and Compile Design" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../03-launch-VCS/" title="Lab 3: Login to Remote Desktop and Launch VCS" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1303,19 +1277,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Lab 3: Login to Remote Desktop and Compile Design
+                Lab 3: Login to Remote Desktop and Launch VCS
               </span>
             </div>
           </a>
         
         
-          <a href="../05-load-verdi/" title="Lab 5: Bring up Verdi" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../08-analytics/" title="Lab 6: Explore Analytics Dashboard" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Lab 5: Bring up Verdi
+                Lab 6: Explore Analytics Dashboard
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -1345,7 +1319,7 @@
     
       <script src="../../../../assets/javascripts/application.c33a9706.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../../../.."}})</script>
+      <script>app.initialize({version:"1.1",url:{base:"../../../.."}})</script>
       
     
   </body>

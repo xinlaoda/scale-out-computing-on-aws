@@ -32,11 +32,11 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.3">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
     
     
       
-        <title>Lab 3: Login to Remote Desktop and Compile Design - Scale-Out Computing on AWS Knowledge Base</title>
+        <title>Lab 3: Login to Remote Desktop and Launch VCS - Scale-Out Computing on AWS Knowledge Base</title>
       
     
     
@@ -79,7 +79,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#lab-3-login-to-remote-desktop-and-compile-design" tabindex="0" class="md-skip">
+      <a href="#lab-3-login-to-remote-desktop-and-launch-vcs" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -105,7 +105,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Lab 3: Login to Remote Desktop and Compile Design
+                Lab 3: Login to Remote Desktop and Launch VCS
               
             </span>
           
@@ -726,11 +726,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Lab 3: Login to Remote Desktop and Compile Design
+        Lab 3: Login to Remote Desktop and Launch VCS
       </label>
     
-    <a href="./" title="Lab 3: Login to Remote Desktop and Compile Design" class="md-nav__link md-nav__link--active">
-      Lab 3: Login to Remote Desktop and Compile Design
+    <a href="./" title="Lab 3: Login to Remote Desktop and Launch VCS" class="md-nav__link md-nav__link--active">
+      Lab 3: Login to Remote Desktop and Launch VCS
     </a>
     
       
@@ -751,15 +751,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-copy-test-case" class="md-nav__link">
-    Step 2: Copy test case
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-compile-the-test-case" class="md-nav__link">
-    Step 3: Compile the test case
+  <a href="#step-2-load-sample-project" class="md-nav__link">
+    Step 2: Load sample project
   </a>
   
 </li>
@@ -781,8 +774,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../04-submit-batch/" title="Lab 4: Submit Batch Jobs" class="md-nav__link">
-      Lab 4: Submit Batch Jobs
+    <a href="../07-submit-batch/" title="Lab 5: Submit Batch Workloads" class="md-nav__link">
+      Lab 5: Submit Batch Workloads
     </a>
   </li>
 
@@ -793,19 +786,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../05-load-verdi/" title="Lab 5: Bring up Verdi" class="md-nav__link">
-      Lab 5: Bring up Verdi
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../06-analytics/" title="Lab 6: Explore Analytics Dashboard" class="md-nav__link">
+    <a href="../08-analytics/" title="Lab 6: Explore Analytics Dashboard" class="md-nav__link">
       Lab 6: Explore Analytics Dashboard
     </a>
   </li>
@@ -1202,15 +1183,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-copy-test-case" class="md-nav__link">
-    Step 2: Copy test case
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-compile-the-test-case" class="md-nav__link">
-    Step 3: Compile the test case
+  <a href="#step-2-load-sample-project" class="md-nav__link">
+    Step 2: Load sample project
   </a>
   
 </li>
@@ -1231,14 +1205,14 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/awslabs/scale-out-computing-on-aws/edit/master/docs/workshops/DVCon/modules/03-login-compile.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/awslabs/scale-out-computing-on-aws/edit/master/docs/workshops/DVCon/modules/03-launch-VCS.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="lab-3-login-to-remote-desktop-and-compile-design">Lab 3: Login to Remote Desktop and Compile Design<a class="headerlink" href="#lab-3-login-to-remote-desktop-and-compile-design" title="Permanent link">&para;</a></h1>
-<p>The goal with this lab is to evaluate the remote visualization experience using a graphically intensive EDA tool.</p>
+                <h1 id="lab-3-login-to-remote-desktop-and-launch-vcs">Lab 3: Login to Remote Desktop and Launch VCS<a class="headerlink" href="#lab-3-login-to-remote-desktop-and-launch-vcs" title="Permanent link">&para;</a></h1>
+<p>The goal with this lab is to evaluate the remote visualization experience using a graphically intensive Computer-Aided Design (CAD) tool.</p>
 <h2 id="step-1-log-into-your-session">Step 1: Log into your session<a class="headerlink" href="#step-1-log-into-your-session" title="Permanent link">&para;</a></h2>
-<p>By now your remote desktop session should be ready and you should see the following under <strong>Your Session #1</strong>:
-    <img alt="Login to remote desktop" src="../../../../imgs/access-7.png" /></p>
+<p>By now your remote desktop session should be ready and you should see the following under <strong>Your Session #1</strong>:</p>
+<p><img alt="" src="../../../../imgs/access-7.png" /></p>
 <ol>
 <li>
 <p>Click <strong>Open Session directly on a browser</strong> to log into the remote desktop session in your new cluster using the username and password you created in the steps above.</p>
@@ -1250,34 +1224,23 @@
 <li>
 <p>Start a new terminal session by going to <strong>Applications → Favorites → Terminal</strong> in the desktop manager.</p>
 </li>
-</ol>
-<h2 id="step-2-copy-test-case">Step 2: Copy test case<a class="headerlink" href="#step-2-copy-test-case" title="Permanent link">&para;</a></h2>
-<ol>
 <li>
-<p>Copy the test case to your home directory by typing <code class="codehilite"><span class="n">cp</span> <span class="o">-</span><span class="n">r</span> <span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">NVDLA_export</span> <span class="o">/</span><span class="n">fsx</span><span class="o">/</span><span class="ss">`whoami`</span></code> at the command prompt and hit enter</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>/data is a mount point for <strong>Amazon Elastic File System</strong> which provides a simple, scalable elastic NFS file system.  /fsx is a mount point for <strong>Amazon FSx for Lustre</strong> which provides a Lustre file system suitable for high performance computing (HPC) workloads such as EDA</p>
-</div>
-</li>
-<li>
-<p>Change directory to test case <code class="codehilite"><span class="n">cd</span> <span class="o">/</span><span class="n">fsx</span><span class="o">/</span><span class="ss">`whoami`</span><span class="o">/</span><span class="n">NVDLA_export</span></code> and hit enter</p>
-</li>
-<li>
-<p>Source environment settings by typing <code class="codehilite"><span class="err">. setup.sh</span></code> and hit enter </p>
+<p>Type <code class="codehilite"><span class="err">vivado</span></code> at the command prompt and hit enter</p>
+<p>The Vivado GUI start and show the following screen:</p>
 </li>
 </ol>
-<h2 id="step-3-compile-the-test-case">Step 3: Compile the test case<a class="headerlink" href="#step-3-compile-the-test-case" title="Permanent link">&para;</a></h2>
+<h2 id="step-2-load-sample-project">Step 2: Load sample project<a class="headerlink" href="#step-2-load-sample-project" title="Permanent link">&para;</a></h2>
+<p>Next, load a sample workload using one of the included example projects:</p>
 <ol>
+<li>Go to the <strong>Quick Start</strong> section and select <strong>Open Project</strong>.</li>
+<li>Navigate to <code class="codehilite"><span class="err">/projects/mfg405/</span></code>, select the <code class="codehilite"><span class="err">project_1.xpr</span></code> file, and click <strong>OK</strong>.</li>
 <li>
-<p>Change directory to verif/sim <code class="codehilite"><span class="err">cd verif/sim</span></code> and hit enter</p>
+<p>Double-click on <strong>Open Block Diagram</strong> under <strong>IP INTEGRATOR</strong> in the left-side navigation panel.</p>
+<p>After the design opens you should see this:</p>
+<p>You can now click around the GUI and scroll and pan through the schematics to get a sense of the remote desktop experience.</p>
 </li>
 <li>
-<p>Compile the test case by typing <code class="codehilite"><span class="err">make clean comp comp_verdi</span></code> then hit enter. </p>
-</li>
-<li>
-<p>You should see the test case is getting compiled and at the end should see: </p>
-<p><img alt="Compilation performance summary" src="../../imgs/compilation-performance-summary.png" /></p>
+<p>For extra credit, double-click on <strong>Open Synthesized Design</strong> in the navigation panel to see a more complext layout of the design.</p>
 </li>
 </ol>
 <p>You've completed this lab. Click <strong>Next</strong>.</p>
@@ -1317,13 +1280,13 @@
           </a>
         
         
-          <a href="../04-submit-batch/" title="Lab 4: Submit Batch Jobs" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../07-submit-batch/" title="Lab 5: Submit Batch Workloads" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Lab 4: Submit Batch Jobs
+                Lab 5: Submit Batch Workloads
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -1353,7 +1316,7 @@
     
       <script src="../../../../assets/javascripts/application.c33a9706.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../../../.."}})</script>
+      <script>app.initialize({version:"1.1",url:{base:"../../../.."}})</script>
       
     
   </body>
