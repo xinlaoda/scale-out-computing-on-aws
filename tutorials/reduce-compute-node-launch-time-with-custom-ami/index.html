@@ -1,0 +1,1814 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+    
+    
+      
+        <title>Import custom AMI to provision capacity faster</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../assets/css/custom.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#step-1-locate-your-base-ami" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Scale-Out Computing on AWS Knowledge Base" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Scale-Out Computing on AWS Knowledge Base
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Import custom AMI to provision capacity faster
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/awslabs/scale-out-computing-on-aws/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    awslabs/scale-out-computing-on-aws
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        What is Scale-Out Computing on AWS ?
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../FAQ/knowledge-base-all-errors/" class="md-tabs__link">
+          FAQ
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../analytics/build-kibana-dashboards/" class="md-tabs__link">
+          Analytics
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../security/backup-restore-your-cluster/" class="md-tabs__link">
+          Security
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../storage/backend-storage-options/" class="md-tabs__link">
+          Storage
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../create-your-own-queue/" class="md-tabs__link md-tabs__link--active">
+          Tutorials
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../workshops/" class="md-tabs__link">
+          Workshops
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Scale-Out Computing on AWS Knowledge Base" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Scale-Out Computing on AWS Knowledge Base
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/awslabs/scale-out-computing-on-aws/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    awslabs/scale-out-computing-on-aws
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="What is Scale-Out Computing on AWS ?" class="md-nav__link">
+      What is Scale-Out Computing on AWS ?
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../access-soca-cluster/" title="How to access Scale-Out Computing on AWS" class="md-nav__link">
+      How to access Scale-Out Computing on AWS
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../install-soca-cluster/" title="Install your Scale-Out Computing on AWS cluster" class="md-nav__link">
+      Install your Scale-Out Computing on AWS cluster
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../job-configuration-generator/" title="Job Submission Generator" class="md-nav__link">
+      Job Submission Generator
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      FAQ
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        FAQ
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../FAQ/knowledge-base-all-errors/" title="Knowledge Base - List all Errors" class="md-nav__link">
+      Knowledge Base - List all Errors
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Analytics
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Analytics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../analytics/build-kibana-dashboards/" title="Create your own analytics dashboard" class="md-nav__link">
+      Create your own analytics dashboard
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../analytics/monitor-cluster-activity/" title="Monitor your cluster and job activity" class="md-nav__link">
+      Monitor your cluster and job activity
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../analytics/prevent-overspend-hpc-cost-on-aws-soca/" title="Keep control of your HPC cost on AWS" class="md-nav__link">
+      Keep control of your HPC cost on AWS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../analytics/review-hpc-costs/" title="Review your HPC costs" class="md-nav__link">
+      Review your HPC costs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../analytics/set-up-budget-project/" title="Set up budget per project" class="md-nav__link">
+      Set up budget per project
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Security
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Security
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../security/backup-restore-your-cluster/" title="Backup your entire cluster automatically" class="md-nav__link">
+      Backup your entire cluster automatically
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../security/integrate-cognito-sso/" title="Enable Oauth2 authentication with Cognito" class="md-nav__link">
+      Enable Oauth2 authentication with Cognito
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../security/manage-queue-acls/" title="Manage Access Lists at queue level" class="md-nav__link">
+      Manage Access Lists at queue level
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../security/manage-queue-instance-types/" title="Retrict provisioning of specific instance type" class="md-nav__link">
+      Retrict provisioning of specific instance type
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../security/manage-queue-restricted-parameters/" title="Prevent user to change specific parameters" class="md-nav__link">
+      Prevent user to change specific parameters
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../security/update-soca-dns-ssl-certificate/" title="Change your DNS name and SSL certificate" class="md-nav__link">
+      Change your DNS name and SSL certificate
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Storage
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Storage
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../storage/backend-storage-options/" title="Understand backend storage" class="md-nav__link">
+      Understand backend storage
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../storage/launch-job-with-fsx/" title="Launch a job with FSx for Lustre" class="md-nav__link">
+      Launch a job with FSx for Lustre
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" checked>
+    
+    <label class="md-nav__link" for="nav-9">
+      Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../create-your-own-queue/" title="Create your own queue" class="md-nav__link">
+      Create your own queue
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../integration-ec2-job-parameters/" title="Job customization for EC2" class="md-nav__link">
+      Job customization for EC2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../job-licenses-flexlm/" title="Job with FlexLM licenses requirements" class="md-nav__link">
+      Job with FlexLM licenses requirements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../job-start-stop-email-notification/" title="Automatic emails when your job start/stop" class="md-nav__link">
+      Automatic emails when your job start/stop
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../launch-always-on-instances/" title="Launch AlwaysOn nodes" class="md-nav__link">
+      Launch AlwaysOn nodes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../launch-your-first-job/" title="Launch your first job" class="md-nav__link">
+      Launch your first job
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../manage-ldap-users/" title="Centralized user management" class="md-nav__link">
+      Centralized user management
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Import custom AMI to provision capacity faster
+      </label>
+    
+    <a href="./" title="Import custom AMI to provision capacity faster" class="md-nav__link md-nav__link--active">
+      Import custom AMI to provision capacity faster
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-locate-your-base-ami" class="md-nav__link">
+    Step 1: Locate your base AMI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-launch-a-temporary-ec2-instance" class="md-nav__link">
+    Step 2: Launch a temporary EC2 instance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-pre-configure-your-ami" class="md-nav__link">
+    Step 3: Pre-configure your AMI
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-pre-install-system-packages" class="md-nav__link">
+    3.1 Pre-Install system packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-pre-install-the-scheduler" class="md-nav__link">
+    3.2: Pre-Install the scheduler
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-optional-pre-install-gnome" class="md-nav__link">
+    3.3: (Optional) Pre-Install Gnome
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-reboot-your-ec2-machine" class="md-nav__link">
+    3.4: Reboot your EC2 machine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-make-sure-you-do-not-have-any-libvirt-of-firewalldiptables" class="md-nav__link">
+    3.5: Make sure you do not have any libvirt of firewalld/iptables
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-create-your-ami" class="md-nav__link">
+    Step 4: Create your AMI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-test-your-new-ami" class="md-nav__link">
+    Step 5: Test your new AMI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-update-default-ami-optional" class="md-nav__link">
+    Step 6: Update default AMI (Optional)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-job" class="md-nav__link">
+    Single job
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entire-queue" class="md-nav__link">
+    Entire queue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entire-cluster" class="md-nav__link">
+    Entire cluster
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../troubleshoot-job-queue/" title="Debug why your jobs are not starting" class="md-nav__link">
+      Debug why your jobs are not starting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Workshops
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Workshops
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/" title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10-2" type="checkbox" id="nav-10-2">
+    
+    <label class="md-nav__link" for="nav-10-2">
+      DVCon
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-10-2">
+        DVCon
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/DVCon/" title="DVCon Workshop Overview" class="md-nav__link">
+      DVCon Workshop Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/DVCon/getting-started/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10-2-3" type="checkbox" id="nav-10-2-3">
+    
+    <label class="md-nav__link" for="nav-10-2-3">
+      Modules
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-10-2-3">
+        Modules
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/DVCon/modules/01-deploy-env/" title="Lab 1: Deploy Environment" class="md-nav__link">
+      Lab 1: Deploy Environment
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/DVCon/modules/02-web-login/" title="Lab 2: Login to SOCA Console and Launch Remote Desktop Session" class="md-nav__link">
+      Lab 2: Login to SOCA Console and Launch Remote Desktop Session
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/DVCon/modules/03-launch-VCS/" title="Lab 3: Login to Remote Desktop and Launch VCS" class="md-nav__link">
+      Lab 3: Login to Remote Desktop and Launch VCS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/DVCon/modules/07-submit-batch/" title="Lab 5: Submit Batch Workloads" class="md-nav__link">
+      Lab 5: Submit Batch Workloads
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/DVCon/modules/08-analytics/" title="Lab 6: Explore Analytics Dashboard" class="md-nav__link">
+      Lab 6: Explore Analytics Dashboard
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/DVCon/modules/09-wrap-up/" title="Wrap-up" class="md-nav__link">
+      Wrap-up
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10-3" type="checkbox" id="nav-10-3">
+    
+    <label class="md-nav__link" for="nav-10-3">
+      TKO Scale Out Computing
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-10-3">
+        TKO Scale Out Computing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/TKO-Scale-Out-Computing/" title="Scaling EDA with Vivado Workshop Overview" class="md-nav__link">
+      Scaling EDA with Vivado Workshop Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/TKO-Scale-Out-Computing/getting-started/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10-3-3" type="checkbox" id="nav-10-3-3">
+    
+    <label class="md-nav__link" for="nav-10-3-3">
+      Modules
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-10-3-3">
+        Modules
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/TKO-Scale-Out-Computing/modules/02-deploy-env/" title="Lab 1: Deploy Environment" class="md-nav__link">
+      Lab 1: Deploy Environment
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/TKO-Scale-Out-Computing/modules/03-configure-desktop/" title="Lab 2: Configure Remote Desktop" class="md-nav__link">
+      Lab 2: Configure Remote Desktop
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/TKO-Scale-Out-Computing/modules/04-web-login/" title="Lab 3: Launch Remote Desktop Session" class="md-nav__link">
+      Lab 3: Launch Remote Desktop Session
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/TKO-Scale-Out-Computing/modules/06-launch-vivado/" title="Lab 4: Launch Vivado GUI" class="md-nav__link">
+      Lab 4: Launch Vivado GUI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/TKO-Scale-Out-Computing/modules/07-submit-batch/" title="Lab 5: Submit Batch Workloads" class="md-nav__link">
+      Lab 5: Submit Batch Workloads
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/TKO-Scale-Out-Computing/modules/071-budgets/" title="Lab 6: Configure Budgets" class="md-nav__link">
+      Lab 6: Configure Budgets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/TKO-Scale-Out-Computing/modules/08-analytics/" title="Lab 7: Explore Analytics Dashboard" class="md-nav__link">
+      Lab 7: Explore Analytics Dashboard
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/TKO-Scale-Out-Computing/modules/09-wrap-up/" title="Wrap-up" class="md-nav__link">
+      Wrap-up
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10-4" type="checkbox" id="nav-10-4">
+    
+    <label class="md-nav__link" for="nav-10-4">
+      reinvent19 MFG405
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-10-4">
+        reinvent19 MFG405
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/reinvent19-MFG405/" title="MFG405 Workshop Overview" class="md-nav__link">
+      MFG405 Workshop Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/reinvent19-MFG405/getting-started/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10-4-3" type="checkbox" id="nav-10-4-3">
+    
+    <label class="md-nav__link" for="nav-10-4-3">
+      Modules
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-10-4-3">
+        Modules
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/reinvent19-MFG405/modules/02-deploy-env/" title="Lab 1: Deploy Environment" class="md-nav__link">
+      Lab 1: Deploy Environment
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/reinvent19-MFG405/modules/03-configure-desktop/" title="Lab 2: Configure Remote Desktop" class="md-nav__link">
+      Lab 2: Configure Remote Desktop
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/reinvent19-MFG405/modules/04-web-login/" title="Lab 3: Launch Remote Desktop Session" class="md-nav__link">
+      Lab 3: Launch Remote Desktop Session
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/reinvent19-MFG405/modules/06-launch-vivado/" title="Lab 4: Launch Vivado GUI" class="md-nav__link">
+      Lab 4: Launch Vivado GUI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/reinvent19-MFG405/modules/07-submit-batch/" title="Lab 5: Submit Batch Workloads" class="md-nav__link">
+      Lab 5: Submit Batch Workloads
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/reinvent19-MFG405/modules/08-analytics/" title="Lab 6: Explore Analytics Dashboard" class="md-nav__link">
+      Lab 6: Explore Analytics Dashboard
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/reinvent19-MFG405/modules/09-wrap-up/" title="Wrap-up" class="md-nav__link">
+      Wrap-up
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/reinvent19-MFG405/modules/z-budgets/" title="." class="md-nav__link">
+      .
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-locate-your-base-ami" class="md-nav__link">
+    Step 1: Locate your base AMI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-launch-a-temporary-ec2-instance" class="md-nav__link">
+    Step 2: Launch a temporary EC2 instance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-pre-configure-your-ami" class="md-nav__link">
+    Step 3: Pre-configure your AMI
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-pre-install-system-packages" class="md-nav__link">
+    3.1 Pre-Install system packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-pre-install-the-scheduler" class="md-nav__link">
+    3.2: Pre-Install the scheduler
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-optional-pre-install-gnome" class="md-nav__link">
+    3.3: (Optional) Pre-Install Gnome
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-reboot-your-ec2-machine" class="md-nav__link">
+    3.4: Reboot your EC2 machine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-make-sure-you-do-not-have-any-libvirt-of-firewalldiptables" class="md-nav__link">
+    3.5: Make sure you do not have any libvirt of firewalld/iptables
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-create-your-ami" class="md-nav__link">
+    Step 4: Create your AMI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-test-your-new-ami" class="md-nav__link">
+    Step 5: Test your new AMI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-update-default-ami-optional" class="md-nav__link">
+    Step 6: Update default AMI (Optional)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-job" class="md-nav__link">
+    Single job
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entire-queue" class="md-nav__link">
+    Entire queue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entire-cluster" class="md-nav__link">
+    Entire cluster
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/awslabs/scale-out-computing-on-aws/edit/master/docs/tutorials/reduce-compute-node-launch-time-with-custom-ami.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>Import custom AMI to provision capacity faster</h1>
+                
+                <p>By default, SOCA provision a vanilla AMI and install all required packages in ~3 to 5 minutes. 
+If this cold time is not acceptable for your workload, you can <a href="../tutorials/launch-always-on-instances/">launch AlwaysOn instance</a> or pre-bake your AMI with all required libraries.</p>
+<h3 id="step-1-locate-your-base-ami">Step 1: Locate your base AMI<a class="headerlink" href="#step-1-locate-your-base-ami" title="Permanent link">&para;</a></h3>
+<p>Run <code class="codehilite"><span class="n">cat</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">environment</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">SOCA_INSTALL_AMI</span></code> on your scheduler host</p>
+<div class="codehilite"><pre><span></span>$ ssh -i &lt;key&gt; ec2-user@&lt;ip&gt;
+Last login: Wed Oct  <span class="m">2</span> <span class="m">20</span>:06:47 <span class="m">2019</span> from &lt;ip&gt;
+
+   _____  ____   ______ ___
+  / ___/ / __ <span class="se">\ </span>/ ____//   <span class="p">|</span>
+  <span class="se">\_</span>_ <span class="se">\ </span>/ / / // /    / /<span class="p">|</span> <span class="p">|</span>
+ ___/ // /_/ // /___ / ___ <span class="p">|</span>
+/____/ <span class="se">\_</span>___/ <span class="se">\_</span>___//_/  <span class="p">|</span>_<span class="p">|</span>
+Cluster: soca-uiupdates
+&gt; <span class="nb">source</span> /etc/environment to SOCA paths
+
+<span class="o">[</span>ec2-user@ip-30-0-1-28 ~<span class="o">]</span>$ cat /etc/environment <span class="p">|</span> grep SOCA_INSTALL_AMI
+<span class="hll"><span class="nb">export</span> <span class="nv">SOCA_INSTALL_AMI</span><span class="o">=</span>ami-082b5a644766e0e6f
+</span><span class="o">[</span>ec2-user@ip-30-0-1-28 ~<span class="o">]</span>$
+</pre></div>
+
+<h3 id="step-2-launch-a-temporary-ec2-instance">Step 2: Launch a temporary EC2 instance<a class="headerlink" href="#step-2-launch-a-temporary-ec2-instance" title="Permanent link">&para;</a></h3>
+<p>Launch a new EC2 instance using the <code class="codehilite"><span class="n">SOCA_INSTALL_AMI</span></code> image
+<img alt="" src="../../imgs/use-efa-ami-1.png" /></p>
+<h3 id="step-3-pre-configure-your-ami">Step 3: Pre-configure your AMI<a class="headerlink" href="#step-3-pre-configure-your-ami" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Important</p>
+<p>Step 3 is only required if you want to reduce the time required for your compute node to boot. You can skip this section if you just want to install your customization on your AMI and let SOCA handles PBS/Gnome/System packages installation. </p>
+</div>
+<h4 id="31-pre-install-system-packages">3.1 Pre-Install system packages<a class="headerlink" href="#31-pre-install-system-packages" title="Permanent link">&para;</a></h4>
+<p>You can pre-install the packages listed on <a href="https://github.com/awslabs/scale-out-computing-on-aws/blob/master/source/scripts/config.cfg">https://github.com/awslabs/scale-out-computing-on-aws/blob/master/source/scripts/config.cfg</a>. You will need to run <code class="codehilite"><span class="n">yum</span> <span class="n">install</span></code> for:</p>
+<ul>
+<li>SYSTEM_PKGS</li>
+<li>SCHEDULER_PKGS</li>
+<li>OPENLDAP_SERVER_PKGS</li>
+<li>SSSD_PKGS</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Easy Install</p>
+<ul>
+<li>Copy the content of the <code class="codehilite"><span class="n">config</span><span class="p">.</span><span class="n">cfg</span></code> on your filesystem (say <code class="codehilite"><span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">config</span><span class="p">.</span><span class="n">cfg</span></code>)</li>
+<li>Run <code class="codehilite"><span class="k">source</span> <span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">config</span><span class="p">.</span><span class="n">cfg</span></code></li>
+<li>Run the following commands:<ul>
+<li><code class="codehilite">yum install -y $(echo <span class="cp">${</span><span class="n">SYSTEM_PKGS</span><span class="p">[</span><span class="o">*</span><span class="p">]</span><span class="cp">}</span>)</code></li>
+<li><code class="codehilite">yum install -y $(echo <span class="cp">${</span><span class="n">SCHEDULER_PKGS</span><span class="p">[</span><span class="o">*</span><span class="p">]</span><span class="cp">}</span>)</code></li>
+<li><code class="codehilite">yum install -y $(echo <span class="cp">${</span><span class="n">OPENLDAP_SERVER_PKGS</span><span class="p">[</span><span class="o">*</span><span class="p">]</span><span class="cp">}</span>)</code></li>
+<li><code class="codehilite">yum install -y $(echo <span class="cp">${</span><span class="n">SSSD_PKGS</span><span class="p">[</span><span class="o">*</span><span class="p">]</span><span class="cp">}</span>)</code></li>
+</ul>
+</li>
+</ul>
+<hr />
+<p><a href="https://github.com/awslabs/scale-out-computing-on-aws/blob/master/source/scripts/ComputeNode.sh#L26">Here is an example</a> of how you can install packages listed in an array in bash.</p>
+</div>
+<h4 id="32-pre-install-the-scheduler">3.2: Pre-Install the scheduler<a class="headerlink" href="#32-pre-install-the-scheduler" title="Permanent link">&para;</a></h4>
+<p>To reduce the launch time of your EC2 instance, it's recommended to pre-install PBSPro. 
+First, refer to <a href="https://github.com/awslabs/scale-out-computing-on-aws/blob/master/source/scripts/config.cfg">https://github.com/awslabs/scale-out-computing-on-aws/blob/master/source/scripts/config.cfg</a> and note all PBSPro related variables as you will need to use them below (see highlighted lines):</p>
+<div class="codehilite"><pre><span></span><span class="c1"># Sudo as Root</span>
+sudo su -
+
+<span class="c1"># Define PBSPro variable</span>
+<span class="hll"><span class="nb">export</span> <span class="nv">PBSPRO_URL</span><span class="o">=</span>&lt;variable_from_config.txt&gt; <span class="c1"># ex https://github.com/PBSPro/pbspro/releases/download/v18.1.4/pbspro-18.1.4.tar.gz</span>
+</span><span class="hll"><span class="nb">export</span> <span class="nv">PBSPRO_TGZ</span><span class="o">=</span>&lt;variable_from_config.txt&gt; <span class="c1"># ex pbspro-18.1.4.tar.gz</span>
+</span><span class="hll"><span class="nb">export</span> <span class="nv">PBSPRO_VERSION</span><span class="o">=</span>&lt;variable_from_config.txt&gt; <span class="c1"># ex 18.1.4</span>
+</span>
+<span class="c1"># Run the following command to install PBS</span>
+<span class="nb">cd</span> ~
+wget <span class="nv">$PBSPRO_URL</span>
+tar zxvf <span class="nv">$PBSPRO_TGZ</span>
+<span class="nb">cd</span> pbspro-<span class="nv">$PBSPRO_VERSION</span>
+./autogen.sh
+./configure --prefix<span class="o">=</span>/opt/pbs
+make -j6
+make install -j6
+/opt/pbs/libexec/pbs_postinstall
+chmod <span class="m">4755</span> /opt/pbs/sbin/pbs_iff /opt/pbs/sbin/pbs_rcp
+</pre></div>
+
+<div class="admonition note">
+<p class="admonition-title">Installation Path</p>
+<p>Make sure to install pbspro under <code class="codehilite"><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">pbs</span></code></p>
+</div>
+<h4 id="33-optional-pre-install-gnome">3.3: (Optional) Pre-Install Gnome<a class="headerlink" href="#33-optional-pre-install-gnome" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>If you are using <code class="codehilite"><span class="n">RHEL</span></code>, run <code class="codehilite"><span class="n">yum</span> <span class="n">groupinstall</span> <span class="ss">&quot;Server with GUI&quot;</span> <span class="o">-</span><span class="n">y</span></code></p>
+</li>
+<li>
+<p>If you are using <code class="codehilite"><span class="n">Centos</span></code>, run <code class="codehilite"><span class="n">yum</span> <span class="n">groupinstall</span> <span class="ss">&quot;GNOME Desktop&quot;</span> <span class="o">-</span><span class="n">y</span></code></p>
+</li>
+<li>
+<p>If you are using <code class="codehilite"><span class="n">Amazon</span> <span class="n">Linux</span></code>, run <code class="codehilite">yum install -y $(echo <span class="cp">${</span><span class="n">DCV_AMAZONLINUX_PKGS</span><span class="p">[</span><span class="o">*</span><span class="p">]</span><span class="cp">}</span>)</code></p>
+</li>
+</ul>
+<h4 id="34-reboot-your-ec2-machine">3.4: Reboot your EC2 machine<a class="headerlink" href="#34-reboot-your-ec2-machine" title="Permanent link">&para;</a></h4>
+<h4 id="35-make-sure-you-do-not-have-any-libvirt-of-firewalldiptables">3.5: Make sure you do not have any libvirt of firewalld/iptables<a class="headerlink" href="#35-make-sure-you-do-not-have-any-libvirt-of-firewalldiptables" title="Permanent link">&para;</a></h4>
+<p>Post reboot, some distribution may automatically start libvirt or firewall. If that's the case you must delete them otherwise PBS won't be able to contact the master scheduler.
+To find if you have a running libvirt, run <code class="codehilite"><span class="n">ifconfig</span></code> and check if you have <code class="codehilite"><span class="n">virbr0</span></code> interface such as:</p>
+<div class="codehilite"><pre><span></span>ifconfig
+ens5: <span class="nv">flags</span><span class="o">=</span><span class="m">4163</span>&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu <span class="m">9001</span>
+        inet <span class="m">10</span>.10.2.19  netmask <span class="m">255</span>.255.255.0  broadcast <span class="m">10</span>.10.2.255
+        inet6 fe80::8b1:6aff:fe8a:5ad8  prefixlen <span class="m">64</span>  scopeid 0x20&lt;link&gt;
+        ether 0a:b1:6a:8a:5a:d8  txqueuelen <span class="m">1000</span>  <span class="o">(</span>Ethernet<span class="o">)</span>
+        RX packets <span class="m">81</span>  bytes <span class="m">11842</span> <span class="o">(</span><span class="m">11</span>.5 KiB<span class="o">)</span>
+        RX errors <span class="m">0</span>  dropped <span class="m">0</span>  overruns <span class="m">0</span>  frame <span class="m">0</span>
+        TX packets <span class="m">92</span>  bytes <span class="m">12853</span> <span class="o">(</span><span class="m">12</span>.5 KiB<span class="o">)</span>
+        TX errors <span class="m">0</span>  dropped <span class="m">0</span> overruns <span class="m">0</span>  carrier <span class="m">0</span>  collisions <span class="m">0</span>
+
+lo: <span class="nv">flags</span><span class="o">=</span><span class="m">73</span>&lt;UP,LOOPBACK,RUNNING&gt;  mtu <span class="m">65536</span>
+        inet <span class="m">127</span>.0.0.1  netmask <span class="m">255</span>.0.0.0
+        inet6 ::1  prefixlen <span class="m">128</span>  scopeid 0x10&lt;host&gt;
+        loop  txqueuelen <span class="m">1000</span>  <span class="o">(</span>Local Loopback<span class="o">)</span>
+        RX packets <span class="m">8</span>  bytes <span class="m">601</span> <span class="o">(</span><span class="m">601</span>.0 B<span class="o">)</span>
+        RX errors <span class="m">0</span>  dropped <span class="m">0</span>  overruns <span class="m">0</span>  frame <span class="m">0</span>
+        TX packets <span class="m">8</span>  bytes <span class="m">601</span> <span class="o">(</span><span class="m">601</span>.0 B<span class="o">)</span>
+        TX errors <span class="m">0</span>  dropped <span class="m">0</span> overruns <span class="m">0</span>  carrier <span class="m">0</span>  collisions <span class="m">0</span>
+
+<span class="hll">virbr0: <span class="nv">flags</span><span class="o">=</span><span class="m">4099</span>&lt;UP,BROADCAST,MULTICAST&gt;  mtu <span class="m">1500</span>
+</span><span class="hll">        inet <span class="m">192</span>.168.122.1  netmask <span class="m">255</span>.255.255.0  broadcast <span class="m">192</span>.168.122.255
+</span><span class="hll">        ether <span class="m">52</span>:54:00:ea:5a:b9  txqueuelen <span class="m">1000</span>  <span class="o">(</span>Ethernet<span class="o">)</span>
+</span><span class="hll">        RX packets <span class="m">0</span>  bytes <span class="m">0</span> <span class="o">(</span><span class="m">0</span>.0 B<span class="o">)</span>
+</span><span class="hll">        RX errors <span class="m">0</span>  dropped <span class="m">0</span>  overruns <span class="m">0</span>  frame <span class="m">0</span>
+</span><span class="hll">        TX packets <span class="m">0</span>  bytes <span class="m">0</span> <span class="o">(</span><span class="m">0</span>.0 B<span class="o">)</span>
+</span><span class="hll">        TX errors <span class="m">0</span>  dropped <span class="m">0</span> overruns <span class="m">0</span>  carrier <span class="m">0</span>  collisions <span class="m">0</span>
+</span></pre></div>
+
+<p>If that's the case, disable <code class="codehilite"><span class="n">libvirt</span></code> by running
+<div class="codehilite"><pre><span></span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">systemctl</span> <span class="n">disable</span> <span class="n">libvirtd</span><span class="p">.</span><span class="n">service</span>
+<span class="n">ip</span> <span class="n">link</span> <span class="k">set</span> <span class="n">virbr0</span> <span class="n">down</span>
+<span class="n">brctl</span> <span class="n">delbr</span> <span class="n">virbr0</span>
+</pre></div></p>
+<p>Then, make sure you do not have iptables (<code class="codehilite"><span class="n">iptables</span> <span class="o">-</span><span class="n">L</span></code>) running. If needed, disable <code class="codehilite"><span class="n">firewalld</span></code> by running <code class="codehilite"><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">systemctl</span> <span class="n">disable</span> <span class="n">firewalld</span></code></p>
+<h3 id="step-4-create-your-ami">Step 4: Create your AMI<a class="headerlink" href="#step-4-create-your-ami" title="Permanent link">&para;</a></h3>
+<p>Once you are done, go back to EC2 console, locate your instance and click "Actions &gt; Image &gt; Create Image"
+<img alt="" src="../../imgs/reduce-node-launch-time-1.png" /></p>
+<p>Choose an AMI name and click 'Create Image'.
+<img alt="" src="../../imgs/reduce-node-launch-time-2.png" /></p>
+<p>Your AMI is now being created. Please note it may take a couple of minutes for the AMI to be ready. To check the status, go to EC2 Console and then click "AMIs" on the left sidebar
+<img alt="" src="../../imgs/reduce-node-launch-time-3.png" /></p>
+<div class="admonition warning">
+<p class="admonition-title">Stop your temporary EC2 instance</p>
+<p>Once your AMI has been created, you can safely terminate the EC2 instance you just launched as you won't need it anymore.</p>
+</div>
+<h3 id="step-5-test-your-new-ami">Step 5: Test your new AMI<a class="headerlink" href="#step-5-test-your-new-ami" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="c1"># Test 1: Submit a job with a vanilla AMI</span>
+<span class="hll">$ qsub -l <span class="nv">instance_type</span><span class="o">=</span>c5.9xlarge -- /bin/date 
+</span>
+<span class="c1"># Test 2: Submit a job with a pre-configured AMI</span>
+<span class="hll">$ qsub -l <span class="nv">instance_type</span><span class="o">=</span>c5.9xlarge -l <span class="nv">instance_ami</span><span class="o">=</span>ami-0e05219e578020c64 -- /bin/date 
+</span></pre></div>
+
+<p><strong>Results:</strong></p>
+<ul>
+<li>Test1 (Vanilla): <strong>3 minutes 45 seconds</strong> to provision EC2 capacity, register node on SOCA and start the job</li>
+<li>Test2 (Pre-Configured): <strong>1 minute 44 seconds</strong> to provision EC2 capacity, register host on SOCA and start the job</li>
+</ul>
+<h3 id="step-6-update-default-ami-optional">Step 6: Update default AMI (Optional)<a class="headerlink" href="#step-6-update-default-ami-optional" title="Permanent link">&para;</a></h3>
+<h4 id="single-job">Single job<a class="headerlink" href="#single-job" title="Permanent link">&para;</a></h4>
+<p>As you are planning to use a custom AMI, you will be required to specify <code class="codehilite"><span class="o">-</span><span class="n">l</span> <span class="n">instance_ami</span><span class="o">=&lt;</span><span class="n">IMAGE_ID</span><span class="o">&gt;</span></code> at job submission.
+It's recommended to go with the "Entire Queue" option below if you do not want to manually specify this resource each time you submit a job</p>
+<h4 id="entire-queue">Entire queue<a class="headerlink" href="#entire-queue" title="Permanent link">&para;</a></h4>
+<p>Edit <code class="codehilite"><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="n">soca</span><span class="o">/&lt;</span><span class="n">CLUSTER_ID</span><span class="o">&gt;/</span><span class="n">cluster_manager</span><span class="o">/</span><span class="n">settings</span><span class="o">/</span><span class="n">queue_mapping</span><span class="p">.</span><span class="n">yml</span></code> and update the default AMI</p>
+<div class="codehilite"><pre><span></span><span class="nt">queue_type</span><span class="p">:</span>
+  <span class="nt">compute</span><span class="p">:</span>
+    <span class="nt">queues</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;queue1&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;queue2&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;queue3&quot;</span><span class="p p-Indicator">]</span> 
+<span class="hll">    <span class="nt">instance_ami</span><span class="p">:</span> <span class="s">&quot;&lt;YOUR_AMI_ID&gt;&quot;</span> <span class="c1"># &lt;- Add your new AMI </span>
+</span>    <span class="nt">instance_type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
+</pre></div>
+
+<p>Any jobs running in the queue configured on the <code class="codehilite"><span class="n">queue_mapping</span></code> will now use your pre-configured AMI by default. You do not need to specify <code class="codehilite"><span class="o">-</span><span class="n">l</span> <span class="n">instance_ami</span></code> at job submission anymore.</p>
+<h4 id="entire-cluster">Entire cluster<a class="headerlink" href="#entire-cluster" title="Permanent link">&para;</a></h4>
+<p>If you want to change the default AMI to use regardless of queue/job, open your Secret Manager console and select your Scale-Out Computing on AWS cluster configuration. Click “Retrieve Secret Value” and then “Edit”.
+Find the entry “CustomAMI” and update the value with your new AMI ID then click Save</p>
+<p><img alt="" src="../../imgs/reduce-node-launch-time-4.png" /></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../manage-ldap-users/" title="Centralized user management" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Centralized user management
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../troubleshoot-job-queue/" title="Debug why your jobs are not starting" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Debug why your jobs are not starting
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>
