@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.3">
     
     
       
@@ -40,17 +40,17 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.30686662.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.adb8469c.css">
       
       
     
     
-      <script src="../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -79,7 +79,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#1-click-installer" tabindex="1" class="md-skip">
+      <a href="#1-click-installer" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -88,7 +88,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href=".." title="Scale-Out Computing on AWS Knowledge Base" class="md-header-nav__button md-logo">
+        <a href=".." title="Scale-Out Computing on AWS Knowledge Base" aria-label="Scale-Out Computing on AWS Knowledge Base" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -119,7 +119,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -992,8 +992,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../workshops/DVCon/modules/03-launch-VCS/" title="Lab 3: Login to Remote Desktop and Launch VCS" class="md-nav__link">
-      Lab 3: Login to Remote Desktop and Launch VCS
+    <a href="../workshops/DVCon/modules/03-login-compile/" title="Lab 3: Login to Remote Desktop and Compile Design" class="md-nav__link">
+      Lab 3: Login to Remote Desktop and Compile Design
     </a>
   </li>
 
@@ -1004,8 +1004,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../workshops/DVCon/modules/07-submit-batch/" title="Lab 5: Submit Batch Workloads" class="md-nav__link">
-      Lab 5: Submit Batch Workloads
+    <a href="../workshops/DVCon/modules/04-submit-batch/" title="Lab 4: Submit Batch Jobs" class="md-nav__link">
+      Lab 4: Submit Batch Jobs
     </a>
   </li>
 
@@ -1016,7 +1016,19 @@
 
 
   <li class="md-nav__item">
-    <a href="../workshops/DVCon/modules/08-analytics/" title="Lab 6: Explore Analytics Dashboard" class="md-nav__link">
+    <a href="../workshops/DVCon/modules/05-load-verdi/" title="Lab 5: Bring up Verdi" class="md-nav__link">
+      Lab 5: Bring up Verdi
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../workshops/DVCon/modules/06-analytics/" title="Lab 6: Explore Analytics Dashboard" class="md-nav__link">
       Lab 6: Explore Analytics Dashboard
     </a>
   </li>
@@ -1513,16 +1525,16 @@
 <h2 id="download-scale-out-computing-on-aws">Download Scale-Out Computing on AWS<a class="headerlink" href="#download-scale-out-computing-on-aws" title="Permanent link">&para;</a></h2>
 <p>Scale-Out Computing on AWS is open-source and available on Github (<a href="https://github.com/awslabs/scale-out-computing-on-aws">https://github.com/awslabs/scale-out-computing-on-aws</a>).
 To get started, simply clone the repository:</p>
-<div class="codehilite"><pre><span></span><span class="c1"># Clone using HTTPS</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Clone using HTTPS</span>
 user@host: git clone https://github.com/awslabs/scale-out-computing-on-aws .
 
 <span class="c1"># Clone using SSH</span>
 user@host: git clone git@github.com:awslabs/scale-out-computing-on-aws.git .
-</pre></div>
+</code></pre></div>
 
 <h2 id="build-your-release">Build your release<a class="headerlink" href="#build-your-release" title="Permanent link">&para;</a></h2>
-<p>Once you have cloned your repository, execute <code class="codehilite"><span class="k">source</span><span class="o">/</span><span class="n">manual_build</span><span class="p">.</span><span class="n">py</span></code> using either python2 or python3</p>
-<div class="codehilite"><pre><span></span>user@host: python3 source/manual_build.py
+<p>Once you have cloned your repository, execute <code class="codehilite"><span class="err">source/manual_build.py</span></code> using either python2 or python3</p>
+<div class="codehilite"><pre><span></span><code>user@host: python3 source/manual_build.py
 <span class="o">======</span> Scale-Out Computing on AWS <span class="nv">Build</span> <span class="o">======</span>
 
 <span class="hll"> &gt; Generated unique ID <span class="k">for</span> build: r6l1
@@ -1539,9 +1551,9 @@ user@host: git clone git@github.com:awslabs/scale-out-computing-on-aws.git .
 <span class="m">4</span>: Enter your cluster information.
 
 Press Enter key to close ..
-</pre></div>
+</code></pre></div>
 
-<p>This command create a build (<code class="codehilite"><span class="n">r6l1</span></code> in this example) under <code class="codehilite"><span class="k">source</span><span class="o">/</span><span class="n">dist</span><span class="o">/&lt;</span><span class="n">build_id</span><span class="o">&gt;</span></code> </p>
+<p>This command create a build (<code class="codehilite"><span class="err">r6l1</span></code> in this example) under <code class="codehilite"><span class="err">source/dist/&lt;build_id&gt;</span></code> </p>
 <h2 id="upload-to-s3">Upload to S3<a class="headerlink" href="#upload-to-s3" title="Permanent link">&para;</a></h2>
 <p>Go to your Amazon S3 console and click "Create Bucket"</p>
 <p><img alt="" src="../imgs/install-1.png" /></p>
@@ -1551,7 +1563,7 @@ Press Enter key to close ..
 <p class="admonition-title">Avoid un-necessary charge</p>
 <p>It's recommended to create your bucket in the same region as your are planning to use Scale-Out Computing on AWS to avoid Cross-Regions charge (<a href="/https://aws.amazon.com/s3/pricing/"> See Data Transfer </a>)</p>
 </div>
-<p>Once your bucket is created, select it and click "Upload". Simply drag and drop your build folder  (<code class="codehilite"><span class="n">r6l1</span></code> in this example) to upload the content of the folder to S3.</p>
+<p>Once your bucket is created, select it and click "Upload". Simply drag and drop your build folder  (<code class="codehilite"><span class="err">r6l1</span></code> in this example) to upload the content of the folder to S3.</p>
 <p><img alt="" src="../imgs/install-3.png" /></p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
@@ -1560,11 +1572,11 @@ Press Enter key to close ..
 <h2 id="locate-the-install-template">Locate the install template<a class="headerlink" href="#locate-the-install-template" title="Permanent link">&para;</a></h2>
 <p>On your S3 bucket, click on the folder you just uploaded.</p>
 <p><img alt="" src="../imgs/install-4.png" /></p>
-<p>Your install template is located under <code class="codehilite"><span class="o">&lt;</span><span class="n">S3_BUCKET_NAME</span><span class="o">&gt;/&lt;</span><span class="n">BUILD_ID</span><span class="o">&gt;/</span><span class="k">scale</span><span class="o">-</span><span class="k">out</span><span class="o">-</span><span class="n">computing</span><span class="o">-</span><span class="k">on</span><span class="o">-</span><span class="n">aws</span><span class="p">.</span><span class="k">template</span></code>. Click on the object to retrieve the "Object URL"</p>
+<p>Your install template is located under <code class="codehilite"><span class="err">&lt;S3_BUCKET_NAME&gt;/&lt;BUILD_ID&gt;/scale-out-computing-on-aws.template</span></code>. Click on the object to retrieve the "Object URL"</p>
 <p><img alt="" src="../imgs/install-5.png" /></p>
 <div class="admonition info">
 <p class="admonition-title">Want to use your existing AWS resources?</p>
-<p>Refer to <code class="codehilite"><span class="n">install</span><span class="o">-</span><span class="k">with</span><span class="o">-</span><span class="k">existing</span><span class="o">-</span><span class="n">resources</span><span class="p">.</span><span class="k">template</span></code> if you want to use Scale-Out Computing on AWS with your existing resources.</p>
+<p>Refer to <code class="codehilite"><span class="err">install-with-existing-resources.template</span></code> if you want to use Scale-Out Computing on AWS with your existing resources.</p>
 <p><a href="https://install.soca.dev">Check out the web installer</a> to verify your setup</p>
 </div>
 <h2 id="install-scale-out-computing-on-aws">Install Scale-Out Computing on AWS<a class="headerlink" href="#install-scale-out-computing-on-aws" title="Permanent link">&para;</a></h2>
@@ -1583,7 +1595,7 @@ Press Enter key to close ..
 <p>Under stack details, choose the stack name (do not use uppercase or it will break your ElasticSearch cluster). </p>
 <ul>
 <li>
-<p>Install Parameters: Specify your S3 bucket you have uploaded your build (<code class="codehilite"><span class="n">my</span><span class="o">-</span><span class="n">soca</span><span class="o">-</span><span class="n">hpc</span><span class="o">-</span><span class="n">test</span></code> in this example) as well as the name of your build (<code class="codehilite"><span class="n">r6l1</span></code> in this example). If you haven't uploaded your build on your S3 root level, make sure you specify the entire file hierarchy.</p>
+<p>Install Parameters: Specify your S3 bucket you have uploaded your build (<code class="codehilite"><span class="err">my-soca-hpc-test</span></code> in this example) as well as the name of your build (<code class="codehilite"><span class="err">r6l1</span></code> in this example). If you haven't uploaded your build on your S3 root level, make sure you specify the entire file hierarchy.</p>
 </li>
 <li>
 <p>Environment Parameters: Choose your Linux Distribution, instance type for your master host, VPC CIDR, your IP which will be whitelisted for port 22, 80 and 443 as well as the root SSH keypair you want to use</p>
@@ -1606,17 +1618,17 @@ Press Enter key to close ..
 <p><img alt="" src="../imgs/install-10.png" /></p>
 <p>Even though Cloudformation resources are created, your environment might not be completely ready. 
 To confirm whether or not Scale-Out Computing on AWS is ready, try to SSH to the scheduler IP. If your Scale-Out Computing on AWS cluster is not ready, your SSH will be rejected as shown below:</p>
-<div class="codehilite"><pre><span></span>38f9d34dde89:~ mcrozes$ ssh -i mcrozes-personal-aws.pem ec2-user@&lt;IP&gt;
+<div class="codehilite"><pre><span></span><code>38f9d34dde89:~ mcrozes$ ssh -i mcrozes-personal-aws.pem ec2-user@&lt;IP&gt;
  ************* Scale-Out Computing on AWS FIRST TIME CONFIGURATION *************
     Hold on, cluster is not ready yet.
     Please <span class="nb">wait</span> ~30 minutes as Scale-Out Computing on AWS is being installed.
     Once cluster is ready to use, this message will be replaced automatically and you will be able to SSH.
  *********************************************************
 Connection Closed.
-</pre></div>
+</code></pre></div>
 
 <p>If your Scale-Out Computing on AWS cluster is ready, your SSH session will be accepted.</p>
-<div class="codehilite"><pre><span></span>38f9d34dde89:~ mcrozes$ ssh -i mcrozes-personal-aws.pem ec2-user@&lt;IP&gt;
+<div class="codehilite"><pre><span></span><code>38f9d34dde89:~ mcrozes$ ssh -i mcrozes-personal-aws.pem ec2-user@&lt;IP&gt;
 Last login: Mon Oct  <span class="m">7</span> <span class="m">21</span>:37:21 <span class="m">2019</span> from &lt;IP&gt;
 
    _____  ____   ______ ___
@@ -1628,7 +1640,7 @@ Cluster: soca-cluster-v1
 &gt; <span class="nb">source</span> /etc/environment to load Scale-Out Computing on AWS paths
 
 <span class="o">[</span>ec2-user@ip-20-0-5-212 ~<span class="o">]</span>$
-</pre></div>
+</code></pre></div>
 
 <p>At this point, you will be able to access the web interface and log in with the default LDAP user you specified at launch creation</p>
 <p><img alt="" src="../imgs/install-11.png" /></p>
@@ -1650,37 +1662,38 @@ To enable "Termination Protect" select your Primary template and click "Stack Ac
 </div>
 <p>Run the following command (as root) if you want to restart any service: </p>
 <ul>
-<li>Scheduler: <code class="codehilite"><span class="n">service</span> <span class="n">pbs</span> <span class="k">start</span></code></li>
-<li>SSSD: <code class="codehilite"><span class="n">service</span> <span class="n">sssd</span> <span class="k">start</span></code></li>
-<li>OpenLDAP: <code class="codehilite"><span class="n">service</span> <span class="n">openldap</span> <span class="k">start</span></code></li>
-<li>Web UI <code class="codehilite"><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="n">soca</span><span class="o">/&lt;</span><span class="n">CLUSTER_ID</span><span class="o">&gt;/</span><span class="n">cluster_web_ui</span><span class="o">/</span><span class="n">socawebui</span><span class="p">.</span><span class="n">sh</span> <span class="k">start</span></code></li>
-<li>NFS partitions <code class="codehilite"><span class="n">mount</span> <span class="o">-</span><span class="n">a</span></code> (mount configuration is available on <code class="codehilite"><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">fstab</span></code>)</li>
+<li>Scheduler: <code class="codehilite"><span class="err">service pbs start</span></code></li>
+<li>SSSD: <code class="codehilite"><span class="err">service sssd start</span></code></li>
+<li>OpenLDAP: <code class="codehilite"><span class="err">service openldap start</span></code></li>
+<li>Web UI <code class="codehilite"><span class="err">/apps/soca/&lt;CLUSTER_ID&gt;/cluster_web_ui/socawebui.sh start</span></code></li>
+<li>NFS partitions <code class="codehilite"><span class="err">mount -a</span></code> (mount configuration is available on <code class="codehilite"><span class="err">/etc/fstab</span></code>)</li>
 </ul>
 <h2 id="operational-metrics">Operational Metrics<a class="headerlink" href="#operational-metrics" title="Permanent link">&para;</a></h2>
 <p>This solution includes an option to send anonymous operational metrics to AWS. We use this data to better understand how customers use this solution and related services and products. 
 Note that AWS will own the data gathered via this survey. Data collection will be subject to the <a href="https://aws.amazon.com/privacy/">AWS Privacy Policy</a>. </p>
-<p>To opt out of this feature, modify the <code class="codehilite"><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="n">soca</span><span class="o">/&lt;</span><span class="n">CLUSTER_ID</span><span class="o">&gt;/</span><span class="n">cluster_manager</span><span class="o">/</span><span class="n">cloudformation_builder</span></code> and set <code class="codehilite"><span class="n">allow_anonymous_data_collection</span></code> variable to <code class="codehilite"><span class="k">False</span></code></p>
+<p>To opt out of this feature, modify the <code class="codehilite"><span class="err">/apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/cloudformation_builder</span></code> and set <code class="codehilite"><span class="err">allow_anonymous_data_collection</span></code> variable to <code class="codehilite"><span class="err">False</span></code></p>
 <p>When enabled, the following information is collected and sent to AWS:</p>
-<div class="codehilite"><pre><span></span>   <span class="o">-</span> <span class="nv">Solution</span> <span class="nv">ID</span>: <span class="nv">The</span> <span class="nv">AWS</span> <span class="nv">solution</span> <span class="nv">identifier</span>
-   <span class="o">-</span> <span class="nv">Base</span> <span class="nv">Operating</span> <span class="nv">System</span>: <span class="nv">The</span> <span class="nv">operating</span> <span class="nv">system</span> <span class="nv">selected</span> <span class="k">for</span> <span class="nv">the</span> <span class="nv">solution</span> <span class="nv">deployment</span>
-   <span class="o">-</span> <span class="nv">Unique</span> <span class="nv">ID</span> <span class="ss">(</span><span class="nv">UUID</span><span class="ss">)</span>: <span class="nv">Randomly</span> <span class="nv">generated</span>, <span class="nv">unique</span> <span class="nv">identifier</span> <span class="k">for</span> <span class="nv">each</span> <span class="nv">solution</span> <span class="nv">deployment</span>
-   <span class="o">-</span> <span class="nv">Timestamp</span>: <span class="nv">Data</span><span class="o">-</span><span class="nv">collection</span> <span class="nv">timestamp</span>
-   <span class="o">-</span> <span class="nv">Instance</span> <span class="nv">Data</span>: <span class="nv">Type</span> <span class="nv">or</span> <span class="nv">count</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">state</span> <span class="nv">and</span> <span class="nv">type</span> <span class="nv">of</span> <span class="nv">instances</span> <span class="nv">that</span> <span class="nv">are</span> <span class="nv">provided</span> <span class="k">for</span> <span class="nv">by</span> <span class="nv">the</span> <span class="nv">Amazon</span> <span class="nv">EC2</span> <span class="nv">scheduler</span> <span class="nv">instance</span> <span class="k">for</span> <span class="nv">each</span> <span class="nv">job</span> <span class="nv">in</span> <span class="nv">each</span> <span class="nv">AWS</span> <span class="nv">Region</span>
-   <span class="o">-</span> <span class="nv">Keep</span> <span class="nv">Forever</span>: <span class="k">If</span> <span class="nv">instances</span> <span class="nv">are</span> <span class="nv">running</span> <span class="nv">when</span> <span class="nv">no</span> <span class="nv">job</span> <span class="nv">is</span> <span class="nv">running</span>
-   <span class="o">-</span> <span class="nv">EFA</span> <span class="nv">Support</span>: <span class="k">If</span> <span class="nv">EFA</span> <span class="nv">support</span> <span class="nv">was</span> <span class="nv">selected</span>
-   <span class="o">-</span> <span class="nv">Spot</span> <span class="nv">Support</span>: <span class="k">If</span> <span class="nv">Spot</span> <span class="nv">support</span> <span class="nv">was</span> <span class="nv">invoked</span> <span class="k">for</span> <span class="nv">new</span> <span class="nv">auto</span><span class="o">-</span><span class="nv">scaling</span> <span class="nv">stacks</span>
-   <span class="o">-</span> <span class="nv">Stack</span> <span class="nv">Creation</span> <span class="nv">Version</span>: <span class="nv">The</span> <span class="nv">version</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">stack</span> <span class="nv">that</span> <span class="nv">is</span> <span class="nv">created</span> <span class="nv">or</span> <span class="nv">deleted</span>
-   <span class="o">-</span> <span class="nv">Status</span>: <span class="nv">The</span> <span class="nv">status</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">stack</span> <span class="ss">(</span><span class="nv">stack_created</span> <span class="nv">or</span> <span class="nv">stack_deleted</span><span class="ss">)</span>
-   <span class="o">-</span> <span class="nv">Scratch</span> <span class="nv">Disk</span> <span class="nv">Size</span>: <span class="nv">The</span> <span class="nv">size</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">scratch</span> <span class="nv">disk</span> <span class="nv">selected</span> <span class="k">for</span> <span class="nv">each</span> <span class="nv">solution</span> <span class="nv">deployment</span>
-   <span class="o">-</span> <span class="nv">Region</span>: <span class="nv">The</span> <span class="nv">region</span> <span class="nv">where</span> <span class="nv">the</span> <span class="nv">stack</span> <span class="nv">is</span> <span class="nv">deployed</span>
-   <span class="o">-</span> <span class="nv">FSxLustre</span>: <span class="k">If</span> <span class="nv">the</span> <span class="nv">job</span> <span class="nv">is</span> <span class="nv">using</span> <span class="nv">FSx</span> <span class="k">for</span> <span class="nv">Lustre</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="err">   - Solution ID: The AWS solution identifier</span>
+<span class="err">   - Base Operating System: The operating system selected for the solution deployment</span>
+<span class="err">   - Unique ID (UUID): Randomly generated, unique identifier for each solution deployment</span>
+<span class="err">   - Timestamp: Data-collection timestamp</span>
+<span class="err">   - Instance Data: Type or count of the state and type of instances that are provided for by the Amazon EC2 scheduler instance for each job in each AWS Region</span>
+<span class="err">   - Keep Forever: If instances are running when no job is running</span>
+<span class="err">   - EFA Support: If EFA support was selected</span>
+<span class="err">   - Spot Support: If Spot support was invoked for new auto-scaling stacks</span>
+<span class="err">   - Stack Creation Version: The version of the stack that is created or deleted</span>
+<span class="err">   - Status: The status of the stack (stack_created or stack_deleted)</span>
+<span class="err">   - Scratch Disk Size: The size of the scratch disk selected for each solution deployment</span>
+<span class="err">   - Region: The region where the stack is deployed</span>
+<span class="err">   - FSxLustre: If the job is using FSx for Lustre</span>
+</code></pre></div>
 
 
 <h2 id="whats-next">What's next ?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
 <p>Learn <a href="../access-soca-cluster/">how to access your cluster</a>, <a href="../tutorials/launch-your-first-job/">how to submit your first job</a> or even <a href="../security/update-soca-dns-ssl-certificate/">how to change your Scale-Out Computing on AWS DNS</a> to match your personal domain name.</p>
                 
                   
+                
                 
               
               
@@ -1736,9 +1749,9 @@ Note that AWS will own the data gathered via this survey. Data collection will b
       <div class="md-footer-copyright">
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
@@ -1748,7 +1761,7 @@ Note that AWS will own the data gathered via this survey. Data collection will b
       
     </div>
     
-      <script src="../assets/javascripts/application.ac79c3b0.js"></script>
+      <script src="../assets/javascripts/application.c33a9706.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       

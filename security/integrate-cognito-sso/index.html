@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.3">
     
     
       
@@ -40,17 +40,17 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
       
     
     
-      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -79,7 +79,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#what-is-cognito-oauth2" tabindex="1" class="md-skip">
+      <a href="#what-is-cognito-oauth2" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -88,7 +88,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="Scale-Out Computing on AWS Knowledge Base" class="md-header-nav__button md-logo">
+        <a href="../.." title="Scale-Out Computing on AWS Knowledge Base" aria-label="Scale-Out Computing on AWS Knowledge Base" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -119,7 +119,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -968,8 +968,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../workshops/DVCon/modules/03-launch-VCS/" title="Lab 3: Login to Remote Desktop and Launch VCS" class="md-nav__link">
-      Lab 3: Login to Remote Desktop and Launch VCS
+    <a href="../../workshops/DVCon/modules/03-login-compile/" title="Lab 3: Login to Remote Desktop and Compile Design" class="md-nav__link">
+      Lab 3: Login to Remote Desktop and Compile Design
     </a>
   </li>
 
@@ -980,8 +980,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../workshops/DVCon/modules/07-submit-batch/" title="Lab 5: Submit Batch Workloads" class="md-nav__link">
-      Lab 5: Submit Batch Workloads
+    <a href="../../workshops/DVCon/modules/04-submit-batch/" title="Lab 4: Submit Batch Jobs" class="md-nav__link">
+      Lab 4: Submit Batch Jobs
     </a>
   </li>
 
@@ -992,7 +992,19 @@
 
 
   <li class="md-nav__item">
-    <a href="../../workshops/DVCon/modules/08-analytics/" title="Lab 6: Explore Analytics Dashboard" class="md-nav__link">
+    <a href="../../workshops/DVCon/modules/05-load-verdi/" title="Lab 5: Bring up Verdi" class="md-nav__link">
+      Lab 5: Bring up Verdi
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/DVCon/modules/06-analytics/" title="Lab 6: Explore Analytics Dashboard" class="md-nav__link">
       Lab 6: Explore Analytics Dashboard
     </a>
   </li>
@@ -1460,7 +1472,7 @@
 <h3 id="what-is-cognito-oauth2">What is Cognito / Oauth2<a class="headerlink" href="#what-is-cognito-oauth2" title="Permanent link">&para;</a></h3>
 <p>With <a href="https://aws.amazon.com/cognito/">Amazon Cognito</a>, your users can sign-in through social identity providers such as Google, Facebook, and Amazon, and through enterprise identity providers such as Microsoft Active Directory using SAML.
 Amazon <a href="ps://aws.amazon.com/blogs/mobile/understanding-amazon-cognito-user-pool-oauth-2-0-grants/">Cognito User Pools provide</a> a secure user directory that scales to hundreds of millions of users. As a fully managed service, User Pools are easy to set up without any worries about server infrastructure. User Pools provide user profiles and authentication tokens for users who sign up directly and for federated users who sign in with social and enterprise identity providers.</p>
-<p>Additionally, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-app-idp-settings.html">read this link </a> if you are not already familiar with <code class="codehilite"><span class="n">Oauth2</span></code> workflow.</p>
+<p>Additionally, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-app-idp-settings.html">read this link </a> if you are not already familiar with <code class="codehilite"><span class="err">Oauth2</span></code> workflow.</p>
 <h3 id="how-it-works">How it works ?<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="../../imgs/cognito-6.png" /></p>
 <ul>
@@ -1478,7 +1490,7 @@ Amazon <a href="ps://aws.amazon.com/blogs/mobile/understanding-amazon-cognito-us
 <p>Assuming a user has a valid credential on corporate LDAP/AD but not on SOCA, Cognito will redirect the user to the default SOCA login portal.</p>
 <p><strong>How do you determine if a user has an account on SOCA?</strong></p>
 <p>To verify if a corporate user is active and can log in, SOCA checks whether or not this user has an account. By default, we determine the user account name is the first part of an email address. 
-For example, if the email returned by your corporate LDAP for a given user is <code class="codehilite"><span class="n">myuser</span><span class="nv">@company</span><span class="p">.</span><span class="n">com</span><span class="w"></span></code>, we will assume this user the SOCA account is <code class="codehilite"><span class="n">myuser</span></code>. If this mapping does not apply to your company, you can change it by editing <code class="codehilite"><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="n">soca</span><span class="o">/&lt;</span><span class="n">CLUSTER_ID</span><span class="o">&gt;/</span><span class="n">cluster_web_ui</span><span class="o">/</span><span class="n">generic</span><span class="o">/</span><span class="n">auth</span><span class="p">.</span><span class="n">py</span></code>.   </p>
+For example, if the email returned by your corporate LDAP for a given user is <code class="codehilite"><span class="err">myuser@company.com</span></code>, we will assume this user the SOCA account is <code class="codehilite"><span class="err">myuser</span></code>. If this mapping does not apply to your company, you can change it by editing <code class="codehilite"><span class="err">/apps/soca/&lt;CLUSTER_ID&gt;/cluster_web_ui/generic/auth.py</span></code>.   </p>
 <h3 id="create-your-cognito-user-pool">Create your Cognito User Pool<a class="headerlink" href="#create-your-cognito-user-pool" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
@@ -1487,7 +1499,7 @@ For example, if the email returned by your corporate LDAP for a given user is <c
 <p>First, you need to configure your <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Cognito User Pool with your existing SAML provider</a>. You can leave most settings by default as we won't be using any user password, custom login UI etc..
 This step is optional if you already have a User Pool configured.</p>
 <h3 id="integrate-your-adldap-with-cognito">Integrate your AD/LDAP with Cognito<a class="headerlink" href="#integrate-your-adldap-with-cognito" title="Permanent link">&para;</a></h3>
-<p>Once your User Pool is created, go to <code class="codehilite"><span class="n">Federation</span> <span class="o">&gt;</span> <span class="k">Identity</span> <span class="n">Provider</span></code> and choose whatever IDP you want to use (most likely SAML if you are looking to integrate your corporate LDAP)</p>
+<p>Once your User Pool is created, go to <code class="codehilite"><span class="err">Federation &gt; Identity Provider</span></code> and choose whatever IDP you want to use (most likely SAML if you are looking to integrate your corporate LDAP)</p>
 <p><img alt="" src="../../imgs/cognito-2.png" /></p>
 <p>SAML integration vary based on your own corporate settings, reach out to your local IT if needed. Here are some extra links if you need more documentation related to SAML:</p>
 <ul>
@@ -1497,23 +1509,23 @@ This step is optional if you already have a User Pool configured.</p>
 </ul>
 <div class="admonition warning soca pre-requisite">
 <p class="admonition-title">Warning</p>
-<p>The only required parameters for Scale-Out Computing on AWS is the <code class="codehilite"><span class="n">email</span></code> attribute. </p>
+<p>The only required parameters for Scale-Out Computing on AWS is the <code class="codehilite"><span class="err">email</span></code> attribute. </p>
 </div>
 <h3 id="create-a-cognito-client">Create a Cognito Client<a class="headerlink" href="#create-a-cognito-client" title="Permanent link">&para;</a></h3>
-<p>On Cognito interface, click <code class="codehilite"><span class="k">User</span> <span class="n">Pools</span> <span class="o">&gt;</span> <span class="n">Federated</span> <span class="n">Identities</span></code> then <code class="codehilite"><span class="k">General</span> <span class="n">Settings</span> <span class="o">&gt;</span> <span class="n">App</span> <span class="n">Clients</span></code> and finally click <code class="codehilite"><span class="k">Add</span> <span class="n">Another</span> <span class="n">App</span> <span class="n">Client</span></code>.</p>
+<p>On Cognito interface, click <code class="codehilite"><span class="err">User Pools &gt; Federated Identities</span></code> then <code class="codehilite"><span class="err">General Settings &gt; App Clients</span></code> and finally click <code class="codehilite"><span class="err">Add Another App Client</span></code>.</p>
 <p>Note your client name, client id and client secret and leave all other parameters by default.</p>
 <p><img alt="" src="../../imgs/cognito-1.png" /></p>
 <h3 id="configure-your-cognito-client">Configure your Cognito Client<a class="headerlink" href="#configure-your-cognito-client" title="Permanent link">&para;</a></h3>
-<p>Now visit <code class="codehilite"><span class="n">App</span> <span class="n">Integration</span> <span class="o">&gt;</span> <span class="n">App</span> <span class="n">client</span> <span class="n">setting</span></code> and configure your application with the Identity Provider you just created (<code class="codehilite"><span class="n">Enabled</span> <span class="k">Identity</span> <span class="n">Provider</span></code>). 
-You also want to specify the callback url(s) for all domains you are planning to use. The default callback URL you must specify is <code class="codehilite"><span class="n">https</span><span class="p">:</span><span class="o">//&lt;</span><span class="n">your_soca_elb_name</span><span class="o">&gt;/</span><span class="n">oauth</span></code> but you can add any other URL if you have multiple environments (e.g: dev/test)</p>
+<p>Now visit <code class="codehilite"><span class="err">App Integration &gt; App client setting</span></code> and configure your application with the Identity Provider you just created (<code class="codehilite"><span class="err">Enabled Identity Provider</span></code>). 
+You also want to specify the callback url(s) for all domains you are planning to use. The default callback URL you must specify is <code class="codehilite"><span class="c">https://&lt;your_soca_elb_name&gt;/oauth</span></code> but you can add any other URL if you have multiple environments (e.g: dev/test)</p>
 <div class="admonition danger">
 <p class="admonition-title">Important Info about Callback</p>
 <p>Update the callback URLs with your custom domain if you are using one. If you don't do that, you will get a Cognito error with "Redirect URI mismatch"</p>
 </div>
 <p><img alt="" src="../../imgs/cognito-3.png" /></p>
 <h3 id="configure-soca">Configure SOCA<a class="headerlink" href="#configure-soca" title="Permanent link">&para;</a></h3>
-<p>Edit <code class="codehilite"><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="n">soca</span><span class="o">/&lt;</span><span class="n">CLUSTER_ID</span><span class="o">&gt;/</span><span class="n">cluster_web_ui</span><span class="o">/</span><span class="n">generic</span><span class="o">/</span><span class="k">parameters</span><span class="p">.</span><span class="n">cfg</span></code> and update the <code class="codehilite"><span class="o">[</span><span class="n">cognito</span><span class="o">]</span><span class="w"></span></code> section as shown below:</p>
-<div class="codehilite"><pre><span></span><span class="o">[</span>cognito<span class="o">]</span>
+<p>Edit <code class="codehilite"><span class="err">/apps/soca/&lt;CLUSTER_ID&gt;/cluster_web_ui/generic/parameters.cfg</span></code> and update the <code class="codehilite"><span class="o">[</span><span class="n">cognito</span><span class="o">]</span><span class="w"></span></code> section as shown below:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">[</span>cognito<span class="o">]</span>
 <span class="c1">## Cognito</span>
 <span class="nv">enable_sso</span><span class="o">=</span><span class="s2">&quot;true&quot;</span> <span class="c1"># Set this flag to &quot;true&quot;</span>
 <span class="nv">cognito_oauth_authorize_endpoint</span><span class="o">=</span><span class="s2">&quot;https://&lt;YOUR_COGNITO_POOL&gt;.auth.&lt;YOUR_REGION&gt;.amazoncognito.com/oauth2/authorize&quot;</span>
@@ -1523,7 +1535,7 @@ You also want to specify the callback url(s) for all domains you are planning to
 <span class="nv">cognito_app_id</span><span class="o">=</span><span class="s2">&quot;&lt;YOUR_APP_ID&gt;&quot;</span>
 <span class="nv">cognito_root_url</span><span class="o">=</span><span class="s2">&quot;&lt;YOUR_WEB_URL&gt;&quot;</span>
 <span class="nv">cognito_callback_url</span><span class="o">=</span><span class="s2">&quot;&lt;YOUR_CALLBACK_URL&gt;&quot;</span>
-</pre></div>
+</code></pre></div>
 
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
@@ -1531,14 +1543,15 @@ You also want to specify the callback url(s) for all domains you are planning to
 </div>
 <h3 id="restart-the-web-ui">Restart the Web UI<a class="headerlink" href="#restart-the-web-ui" title="Permanent link">&para;</a></h3>
 <p>Simply restart the Web UI by running:</p>
-<div class="codehilite"><pre><span></span>/apps/soca/&lt;CLUSTER_ID&gt;/cluster_web_ui/socawebui.sh stop
+<div class="codehilite"><pre><span></span><code>/apps/soca/&lt;CLUSTER_ID&gt;/cluster_web_ui/socawebui.sh stop
 /apps/soca/&lt;CLUSTER_ID&gt;/cluster_web_ui/socawebui.sh start
-</pre></div>
+</code></pre></div>
 
-<p>Now try to access <code class="codehilite"><span class="n">https</span><span class="p">:</span><span class="o">//&lt;</span><span class="n">YOUR_SOCA_DNS</span><span class="o">&gt;/</span></code>, you should be automatically logged in.</p>
-<p>Note that we keep <code class="codehilite"><span class="o">/</span><span class="n">login</span></code> as fallback authentication mechanism to LDAP, so make sure your users access <code class="codehilite"><span class="n">https</span><span class="p">:</span><span class="o">//&lt;</span><span class="n">YOUR_SOCA_DNS</span><span class="o">&gt;/</span></code> and not <code class="codehilite"><span class="n">https</span><span class="p">:</span><span class="o">//&lt;</span><span class="n">YOUR_SOCA_DNS</span><span class="o">&gt;/</span><span class="n">login</span></code> if they want to be automatically logged in with SSO</p>
+<p>Now try to access <code class="codehilite"><span class="c">https://&lt;YOUR_SOCA_DNS&gt;/</span></code>, you should be automatically logged in.</p>
+<p>Note that we keep <code class="codehilite"><span class="err">/login</span></code> as fallback authentication mechanism to LDAP, so make sure your users access <code class="codehilite"><span class="c">https://&lt;YOUR_SOCA_DNS&gt;/</span></code> and not <code class="codehilite"><span class="c">https://&lt;YOUR_SOCA_DNS&gt;/login</span></code> if they want to be automatically logged in with SSO</p>
                 
                   
+                
                 
               
               
@@ -1594,9 +1607,9 @@ You also want to specify the callback url(s) for all domains you are planning to
       <div class="md-footer-copyright">
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
@@ -1606,7 +1619,7 @@ You also want to specify the callback url(s) for all domains you are planning to
       
     </div>
     
-      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
