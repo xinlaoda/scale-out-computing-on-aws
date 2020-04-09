@@ -492,6 +492,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#total-number-of-cpus-by-instance-type" class="md-nav__link">
+    Total number of CPUs by instance type
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#detailed-information-per-user" class="md-nav__link">
     Detailed information per user
   </a>
@@ -968,8 +975,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../workshops/DVCon/modules/03-login-compile/" title="Lab 3: Login to Remote Desktop and Compile Design" class="md-nav__link">
-      Lab 3: Login to Remote Desktop and Compile Design
+    <a href="../../workshops/DVCon/modules/03-launch-VCS/" title="Lab 3: Login to Remote Desktop and Launch VCS" class="md-nav__link">
+      Lab 3: Login to Remote Desktop and Launch VCS
     </a>
   </li>
 
@@ -980,8 +987,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../workshops/DVCon/modules/04-submit-batch/" title="Lab 4: Submit Batch Jobs" class="md-nav__link">
-      Lab 4: Submit Batch Jobs
+    <a href="../../workshops/DVCon/modules/07-submit-batch/" title="Lab 5: Submit Batch Workloads" class="md-nav__link">
+      Lab 5: Submit Batch Workloads
     </a>
   </li>
 
@@ -992,19 +999,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../workshops/DVCon/modules/05-load-verdi/" title="Lab 5: Bring up Verdi" class="md-nav__link">
-      Lab 5: Bring up Verdi
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../workshops/DVCon/modules/06-analytics/" title="Lab 6: Explore Analytics Dashboard" class="md-nav__link">
+    <a href="../../workshops/DVCon/modules/08-analytics/" title="Lab 6: Explore Analytics Dashboard" class="md-nav__link">
       Lab 6: Explore Analytics Dashboard
     </a>
   </li>
@@ -1434,6 +1429,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#total-number-of-cpus-by-instance-type" class="md-nav__link">
+    Total number of CPUs by instance type
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#detailed-information-per-user" class="md-nav__link">
     Detailed information per user
   </a>
@@ -1606,6 +1608,31 @@
 </ul>
 </div>
 <p><img alt="" src="../../imgs/dashboard-7.png" /></p>
+<h2 id="total-number-of-cpus-by-instance-type">Total number of CPUs by instance type<a class="headerlink" href="#total-number-of-cpus-by-instance-type" title="Permanent link">&para;</a></h2>
+<div class="admonition example">
+<p class="admonition-title">Configuration</p>
+<ul>
+<li>Select "Area" and "pbsnodes" index</li>
+<li>Y Axis (Metrics):<ul>
+<li>Aggregation: Sum</li>
+<li>Field: resources_available.ncpus</li>
+</ul>
+</li>
+<li>X Axis (Buckets):<ul>
+<li>Aggregation: Date Histogram,</li>
+<li>Field: timestamp</li>
+<li>Interval: Auto</li>
+</ul>
+</li>
+<li>Split Series (Buckets):<ul>
+<li>Sub Aggregation: Terms</li>
+<li>Field: resources_available.instance_type.keyword</li>
+<li>Order By: metric: Sum</li>
+</ul>
+</li>
+</ul>
+</div>
+<p><img alt="" src="../../imgs/dashboard-10.png" /></p>
 <h2 id="detailed-information-per-user">Detailed information per user<a class="headerlink" href="#detailed-information-per-user" title="Permanent link">&para;</a></h2>
 <div class="admonition example">
 <p class="admonition-title">Configuration</p>
