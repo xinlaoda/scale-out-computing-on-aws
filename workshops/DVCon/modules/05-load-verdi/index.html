@@ -31,21 +31,21 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="/assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.3">
     
     
       
-        <title>Scale-Out Computing on AWS Knowledge Base</title>
+        <title>Lab 5: Bring up Verdi - Scale-Out Computing on AWS Knowledge Base</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/application.adb8469c.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/application.adb8469c.css">
       
       
     
     
-      <script src="/assets/javascripts/modernizr.86422ebf.js"></script>
+      <script src="../../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -54,10 +54,10 @@
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
-    <link rel="stylesheet" href="/assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="../../../../assets/fonts/material-icons.css">
     
     
-      <link rel="stylesheet" href="/assets/css/custom.css">
+      <link rel="stylesheet" href="../../../../assets/css/custom.css">
     
     
       
@@ -79,12 +79,16 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
+      <a href="#lab-5-bring-up-verdi" tabindex="0" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="/." title="Scale-Out Computing on AWS Knowledge Base" aria-label="Scale-Out Computing on AWS Knowledge Base" class="md-header-nav__button md-logo">
+        <a href="../../../.." title="Scale-Out Computing on AWS Knowledge Base" aria-label="Scale-Out Computing on AWS Knowledge Base" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -101,7 +105,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                
+                Lab 5: Bring up Verdi
               
             </span>
           
@@ -169,14 +173,16 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href="/." class="md-tabs__link md-tabs__link--active">
+      <a href="../../../.." class="md-tabs__link">
         What is Scale-Out Computing on AWS ?
       </a>
     
@@ -194,7 +200,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="/FAQ/knowledge-base-all-errors/" class="md-tabs__link">
+        <a href="../../../../FAQ/knowledge-base-all-errors/" class="md-tabs__link">
           FAQ
         </a>
       
@@ -207,7 +213,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="/analytics/build-kibana-dashboards/" class="md-tabs__link">
+        <a href="../../../../analytics/build-kibana-dashboards/" class="md-tabs__link">
           Analytics
         </a>
       
@@ -220,7 +226,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="/security/backup-restore-your-cluster/" class="md-tabs__link">
+        <a href="../../../../security/backup-restore-your-cluster/" class="md-tabs__link">
           Security
         </a>
       
@@ -233,7 +239,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="/storage/backend-storage-options/" class="md-tabs__link">
+        <a href="../../../../storage/backend-storage-options/" class="md-tabs__link">
           Storage
         </a>
       
@@ -246,7 +252,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="/tutorials/create-your-own-queue/" class="md-tabs__link">
+        <a href="../../../../tutorials/create-your-own-queue/" class="md-tabs__link">
           Tutorials
         </a>
       
@@ -259,7 +265,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="/workshops/" class="md-tabs__link">
+        <a href="../../../" class="md-tabs__link md-tabs__link--active">
           Workshops
         </a>
       
@@ -280,7 +286,7 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="/." title="Scale-Out Computing on AWS Knowledge Base" class="md-nav__button md-logo">
+    <a href="../../../.." title="Scale-Out Computing on AWS Knowledge Base" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
@@ -316,7 +322,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/." title="What is Scale-Out Computing on AWS ?" class="md-nav__link">
+    <a href="../../../.." title="What is Scale-Out Computing on AWS ?" class="md-nav__link">
       What is Scale-Out Computing on AWS ?
     </a>
   </li>
@@ -328,7 +334,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/access-soca-cluster/" title="How to access Scale-Out Computing on AWS" class="md-nav__link">
+    <a href="../../../../access-soca-cluster/" title="How to access Scale-Out Computing on AWS" class="md-nav__link">
       How to access Scale-Out Computing on AWS
     </a>
   </li>
@@ -340,7 +346,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/install-soca-cluster/" title="Install your Scale-Out Computing on AWS cluster" class="md-nav__link">
+    <a href="../../../../install-soca-cluster/" title="Install your Scale-Out Computing on AWS cluster" class="md-nav__link">
       Install your Scale-Out Computing on AWS cluster
     </a>
   </li>
@@ -352,7 +358,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/job-configuration-generator/" title="Job Submission Generator" class="md-nav__link">
+    <a href="../../../../job-configuration-generator/" title="Job Submission Generator" class="md-nav__link">
       Job Submission Generator
     </a>
   </li>
@@ -383,7 +389,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/FAQ/knowledge-base-all-errors/" title="Knowledge Base - List all Errors" class="md-nav__link">
+    <a href="../../../../FAQ/knowledge-base-all-errors/" title="Knowledge Base - List all Errors" class="md-nav__link">
       Knowledge Base - List all Errors
     </a>
   </li>
@@ -419,7 +425,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/analytics/build-kibana-dashboards/" title="Create your own analytics dashboard" class="md-nav__link">
+    <a href="../../../../analytics/build-kibana-dashboards/" title="Create your own analytics dashboard" class="md-nav__link">
       Create your own analytics dashboard
     </a>
   </li>
@@ -431,7 +437,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/analytics/monitor-cluster-activity/" title="Monitor your cluster and job activity" class="md-nav__link">
+    <a href="../../../../analytics/monitor-cluster-activity/" title="Monitor your cluster and job activity" class="md-nav__link">
       Monitor your cluster and job activity
     </a>
   </li>
@@ -443,7 +449,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/analytics/prevent-overspend-hpc-cost-on-aws-soca/" title="Keep control of your HPC cost on AWS" class="md-nav__link">
+    <a href="../../../../analytics/prevent-overspend-hpc-cost-on-aws-soca/" title="Keep control of your HPC cost on AWS" class="md-nav__link">
       Keep control of your HPC cost on AWS
     </a>
   </li>
@@ -455,7 +461,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/analytics/review-hpc-costs/" title="Review your HPC costs" class="md-nav__link">
+    <a href="../../../../analytics/review-hpc-costs/" title="Review your HPC costs" class="md-nav__link">
       Review your HPC costs
     </a>
   </li>
@@ -467,7 +473,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/analytics/set-up-budget-project/" title="Set up budget per project" class="md-nav__link">
+    <a href="../../../../analytics/set-up-budget-project/" title="Set up budget per project" class="md-nav__link">
       Set up budget per project
     </a>
   </li>
@@ -503,7 +509,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/security/backup-restore-your-cluster/" title="Backup your entire cluster automatically" class="md-nav__link">
+    <a href="../../../../security/backup-restore-your-cluster/" title="Backup your entire cluster automatically" class="md-nav__link">
       Backup your entire cluster automatically
     </a>
   </li>
@@ -515,7 +521,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/security/integrate-cognito-sso/" title="Enable Oauth2 authentication with Cognito" class="md-nav__link">
+    <a href="../../../../security/integrate-cognito-sso/" title="Enable Oauth2 authentication with Cognito" class="md-nav__link">
       Enable Oauth2 authentication with Cognito
     </a>
   </li>
@@ -527,7 +533,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/security/manage-queue-acls/" title="Manage Access Lists at queue level" class="md-nav__link">
+    <a href="../../../../security/manage-queue-acls/" title="Manage Access Lists at queue level" class="md-nav__link">
       Manage Access Lists at queue level
     </a>
   </li>
@@ -539,7 +545,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/security/manage-queue-instance-types/" title="Retrict provisioning of specific instance type" class="md-nav__link">
+    <a href="../../../../security/manage-queue-instance-types/" title="Retrict provisioning of specific instance type" class="md-nav__link">
       Retrict provisioning of specific instance type
     </a>
   </li>
@@ -551,7 +557,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/security/manage-queue-restricted-parameters/" title="Prevent user to change specific parameters" class="md-nav__link">
+    <a href="../../../../security/manage-queue-restricted-parameters/" title="Prevent user to change specific parameters" class="md-nav__link">
       Prevent user to change specific parameters
     </a>
   </li>
@@ -563,7 +569,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/security/update-soca-dns-ssl-certificate/" title="Change your DNS name and SSL certificate" class="md-nav__link">
+    <a href="../../../../security/update-soca-dns-ssl-certificate/" title="Change your DNS name and SSL certificate" class="md-nav__link">
       Change your DNS name and SSL certificate
     </a>
   </li>
@@ -599,7 +605,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/storage/backend-storage-options/" title="Understand backend storage" class="md-nav__link">
+    <a href="../../../../storage/backend-storage-options/" title="Understand backend storage" class="md-nav__link">
       Understand backend storage
     </a>
   </li>
@@ -611,7 +617,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/storage/launch-job-with-fsx/" title="Launch a job with FSx for Lustre" class="md-nav__link">
+    <a href="../../../../storage/launch-job-with-fsx/" title="Launch a job with FSx for Lustre" class="md-nav__link">
       Launch a job with FSx for Lustre
     </a>
   </li>
@@ -647,7 +653,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/tutorials/create-your-own-queue/" title="Create your own queue" class="md-nav__link">
+    <a href="../../../../tutorials/create-your-own-queue/" title="Create your own queue" class="md-nav__link">
       Create your own queue
     </a>
   </li>
@@ -659,7 +665,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/tutorials/integration-ec2-job-parameters/" title="Job customization for EC2" class="md-nav__link">
+    <a href="../../../../tutorials/integration-ec2-job-parameters/" title="Job customization for EC2" class="md-nav__link">
       Job customization for EC2
     </a>
   </li>
@@ -671,7 +677,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/tutorials/job-licenses-flexlm/" title="Job with FlexLM licenses requirements" class="md-nav__link">
+    <a href="../../../../tutorials/job-licenses-flexlm/" title="Job with FlexLM licenses requirements" class="md-nav__link">
       Job with FlexLM licenses requirements
     </a>
   </li>
@@ -683,7 +689,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/tutorials/job-start-stop-email-notification/" title="Automatic emails when your job start/stop" class="md-nav__link">
+    <a href="../../../../tutorials/job-start-stop-email-notification/" title="Automatic emails when your job start/stop" class="md-nav__link">
       Automatic emails when your job start/stop
     </a>
   </li>
@@ -695,7 +701,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/tutorials/launch-always-on-instances/" title="Launch AlwaysOn nodes" class="md-nav__link">
+    <a href="../../../../tutorials/launch-always-on-instances/" title="Launch AlwaysOn nodes" class="md-nav__link">
       Launch AlwaysOn nodes
     </a>
   </li>
@@ -707,7 +713,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/tutorials/launch-your-first-job/" title="Launch your first job" class="md-nav__link">
+    <a href="../../../../tutorials/launch-your-first-job/" title="Launch your first job" class="md-nav__link">
       Launch your first job
     </a>
   </li>
@@ -719,7 +725,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/tutorials/manage-ldap-users/" title="Centralized user management" class="md-nav__link">
+    <a href="../../../../tutorials/manage-ldap-users/" title="Centralized user management" class="md-nav__link">
       Centralized user management
     </a>
   </li>
@@ -731,7 +737,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/tutorials/reduce-compute-node-launch-time-with-custom-ami/" title="Import custom AMI to provision capacity faster" class="md-nav__link">
+    <a href="../../../../tutorials/reduce-compute-node-launch-time-with-custom-ami/" title="Import custom AMI to provision capacity faster" class="md-nav__link">
       Import custom AMI to provision capacity faster
     </a>
   </li>
@@ -743,7 +749,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/tutorials/troubleshoot-job-queue/" title="Debug why your jobs are not starting" class="md-nav__link">
+    <a href="../../../../tutorials/troubleshoot-job-queue/" title="Debug why your jobs are not starting" class="md-nav__link">
       Debug why your jobs are not starting
     </a>
   </li>
@@ -758,10 +764,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10" checked>
     
     <label class="md-nav__link" for="nav-10">
       Workshops
@@ -779,7 +787,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/workshops/" title="About" class="md-nav__link">
+    <a href="../../../" title="About" class="md-nav__link">
       About
     </a>
   </li>
@@ -789,10 +797,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10-2" type="checkbox" id="nav-10-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10-2" type="checkbox" id="nav-10-2" checked>
     
     <label class="md-nav__link" for="nav-10-2">
       DVCon
@@ -810,7 +820,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/workshops/DVCon/" title="DVCon Workshop Overview" class="md-nav__link">
+    <a href="../../" title="DVCon Workshop Overview" class="md-nav__link">
       DVCon Workshop Overview
     </a>
   </li>
@@ -822,7 +832,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/workshops/DVCon/getting-started/" title="Getting Started" class="md-nav__link">
+    <a href="../../getting-started/" title="Getting Started" class="md-nav__link">
       Getting Started
     </a>
   </li>
@@ -832,10 +842,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10-2-3" type="checkbox" id="nav-10-2-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10-2-3" type="checkbox" id="nav-10-2-3" checked>
     
     <label class="md-nav__link" for="nav-10-2-3">
       Modules
@@ -853,7 +865,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/workshops/DVCon/modules/01-deploy-env/" title="Lab 1: Deploy Environment" class="md-nav__link">
+    <a href="../01-deploy-env/" title="Lab 1: Deploy Environment" class="md-nav__link">
       Lab 1: Deploy Environment
     </a>
   </li>
@@ -865,7 +877,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/workshops/DVCon/modules/02-web-login/" title="Lab 2: Login to SOCA Console and Launch Remote Desktop Session" class="md-nav__link">
+    <a href="../02-web-login/" title="Lab 2: Login to SOCA Console and Launch Remote Desktop Session" class="md-nav__link">
       Lab 2: Login to SOCA Console and Launch Remote Desktop Session
     </a>
   </li>
@@ -877,7 +889,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/workshops/DVCon/modules/03-login-compile/" title="Lab 3: Login to Remote Desktop and Compile Design" class="md-nav__link">
+    <a href="../03-login-compile/" title="Lab 3: Login to Remote Desktop and Compile Design" class="md-nav__link">
       Lab 3: Login to Remote Desktop and Compile Design
     </a>
   </li>
@@ -889,7 +901,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/workshops/DVCon/modules/04-submit-batch/" title="Lab 4: Submit Batch Jobs" class="md-nav__link">
+    <a href="../04-submit-batch/" title="Lab 4: Submit Batch Jobs" class="md-nav__link">
       Lab 4: Submit Batch Jobs
     </a>
   </li>
@@ -899,11 +911,70 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="/workshops/DVCon/modules/05-load-verdi/" title="Lab 5: Bring up Verdi" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Lab 5: Bring up Verdi
+      </label>
+    
+    <a href="./" title="Lab 5: Bring up Verdi" class="md-nav__link md-nav__link--active">
       Lab 5: Bring up Verdi
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-start-verdi-and-load-test20-database" class="md-nav__link">
+    Step 1: Start Verdi and load test20 database
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-select-signals" class="md-nav__link">
+    Step 2: Select Signals
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-search-for-signal-transition" class="md-nav__link">
+    Step 3: Search for Signal Transition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-exit-verdi" class="md-nav__link">
+    Step 4: Exit Verdi
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -913,7 +984,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/workshops/DVCon/modules/06-analytics/" title="Lab 6: Explore Analytics Dashboard" class="md-nav__link">
+    <a href="../06-analytics/" title="Lab 6: Explore Analytics Dashboard" class="md-nav__link">
       Lab 6: Explore Analytics Dashboard
     </a>
   </li>
@@ -925,7 +996,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/workshops/DVCon/modules/09-wrap-up/" title="Wrap-up" class="md-nav__link">
+    <a href="../09-wrap-up/" title="Wrap-up" class="md-nav__link">
       Wrap-up
     </a>
   </li>
@@ -966,7 +1037,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/workshops/TKO-Scale-Out-Computing/" title="Scaling EDA with Vivado Workshop Overview" class="md-nav__link">
+    <a href="../../../TKO-Scale-Out-Computing/" title="Scaling EDA with Vivado Workshop Overview" class="md-nav__link">
       Scaling EDA with Vivado Workshop Overview
     </a>
   </li>
@@ -978,7 +1049,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/workshops/TKO-Scale-Out-Computing/getting-started/" title="Getting Started" class="md-nav__link">
+    <a href="../../../TKO-Scale-Out-Computing/getting-started/" title="Getting Started" class="md-nav__link">
       Getting Started
     </a>
   </li>
@@ -1009,7 +1080,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/workshops/TKO-Scale-Out-Computing/modules/02-deploy-env/" title="Lab 1: Deploy Environment" class="md-nav__link">
+    <a href="../../../TKO-Scale-Out-Computing/modules/02-deploy-env/" title="Lab 1: Deploy Environment" class="md-nav__link">
       Lab 1: Deploy Environment
     </a>
   </li>
@@ -1021,7 +1092,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/workshops/TKO-Scale-Out-Computing/modules/03-configure-desktop/" title="Lab 2: Configure Remote Desktop" class="md-nav__link">
+    <a href="../../../TKO-Scale-Out-Computing/modules/03-configure-desktop/" title="Lab 2: Configure Remote Desktop" class="md-nav__link">
       Lab 2: Configure Remote Desktop
     </a>
   </li>
@@ -1033,7 +1104,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/workshops/TKO-Scale-Out-Computing/modules/04-web-login/" title="Lab 3: Launch Remote Desktop Session" class="md-nav__link">
+    <a href="../../../TKO-Scale-Out-Computing/modules/04-web-login/" title="Lab 3: Launch Remote Desktop Session" class="md-nav__link">
       Lab 3: Launch Remote Desktop Session
     </a>
   </li>
@@ -1045,7 +1116,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/workshops/TKO-Scale-Out-Computing/modules/06-launch-vivado/" title="Lab 4: Launch Vivado GUI" class="md-nav__link">
+    <a href="../../../TKO-Scale-Out-Computing/modules/06-launch-vivado/" title="Lab 4: Launch Vivado GUI" class="md-nav__link">
       Lab 4: Launch Vivado GUI
     </a>
   </li>
@@ -1057,7 +1128,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/workshops/TKO-Scale-Out-Computing/modules/07-submit-batch/" title="Lab 5: Submit Batch Workloads" class="md-nav__link">
+    <a href="../../../TKO-Scale-Out-Computing/modules/07-submit-batch/" title="Lab 5: Submit Batch Workloads" class="md-nav__link">
       Lab 5: Submit Batch Workloads
     </a>
   </li>
@@ -1069,7 +1140,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/workshops/TKO-Scale-Out-Computing/modules/071-budgets/" title="Lab 6: Configure Budgets" class="md-nav__link">
+    <a href="../../../TKO-Scale-Out-Computing/modules/071-budgets/" title="Lab 6: Configure Budgets" class="md-nav__link">
       Lab 6: Configure Budgets
     </a>
   </li>
@@ -1081,7 +1152,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/workshops/TKO-Scale-Out-Computing/modules/08-analytics/" title="Lab 7: Explore Analytics Dashboard" class="md-nav__link">
+    <a href="../../../TKO-Scale-Out-Computing/modules/08-analytics/" title="Lab 7: Explore Analytics Dashboard" class="md-nav__link">
       Lab 7: Explore Analytics Dashboard
     </a>
   </li>
@@ -1093,7 +1164,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/workshops/TKO-Scale-Out-Computing/modules/09-wrap-up/" title="Wrap-up" class="md-nav__link">
+    <a href="../../../TKO-Scale-Out-Computing/modules/09-wrap-up/" title="Wrap-up" class="md-nav__link">
       Wrap-up
     </a>
   </li>
@@ -1134,7 +1205,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/workshops/reinvent19-MFG405/" title="MFG405 Workshop Overview" class="md-nav__link">
+    <a href="../../../reinvent19-MFG405/" title="MFG405 Workshop Overview" class="md-nav__link">
       MFG405 Workshop Overview
     </a>
   </li>
@@ -1146,7 +1217,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/workshops/reinvent19-MFG405/getting-started/" title="Getting Started" class="md-nav__link">
+    <a href="../../../reinvent19-MFG405/getting-started/" title="Getting Started" class="md-nav__link">
       Getting Started
     </a>
   </li>
@@ -1177,7 +1248,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/workshops/reinvent19-MFG405/modules/02-deploy-env/" title="Lab 1: Deploy Environment" class="md-nav__link">
+    <a href="../../../reinvent19-MFG405/modules/02-deploy-env/" title="Lab 1: Deploy Environment" class="md-nav__link">
       Lab 1: Deploy Environment
     </a>
   </li>
@@ -1189,7 +1260,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/workshops/reinvent19-MFG405/modules/03-configure-desktop/" title="Lab 2: Configure Remote Desktop" class="md-nav__link">
+    <a href="../../../reinvent19-MFG405/modules/03-configure-desktop/" title="Lab 2: Configure Remote Desktop" class="md-nav__link">
       Lab 2: Configure Remote Desktop
     </a>
   </li>
@@ -1201,7 +1272,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/workshops/reinvent19-MFG405/modules/04-web-login/" title="Lab 3: Launch Remote Desktop Session" class="md-nav__link">
+    <a href="../../../reinvent19-MFG405/modules/04-web-login/" title="Lab 3: Launch Remote Desktop Session" class="md-nav__link">
       Lab 3: Launch Remote Desktop Session
     </a>
   </li>
@@ -1213,7 +1284,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/workshops/reinvent19-MFG405/modules/06-launch-vivado/" title="Lab 4: Launch Vivado GUI" class="md-nav__link">
+    <a href="../../../reinvent19-MFG405/modules/06-launch-vivado/" title="Lab 4: Launch Vivado GUI" class="md-nav__link">
       Lab 4: Launch Vivado GUI
     </a>
   </li>
@@ -1225,7 +1296,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/workshops/reinvent19-MFG405/modules/07-submit-batch/" title="Lab 5: Submit Batch Workloads" class="md-nav__link">
+    <a href="../../../reinvent19-MFG405/modules/07-submit-batch/" title="Lab 5: Submit Batch Workloads" class="md-nav__link">
       Lab 5: Submit Batch Workloads
     </a>
   </li>
@@ -1237,7 +1308,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/workshops/reinvent19-MFG405/modules/08-analytics/" title="Lab 6: Explore Analytics Dashboard" class="md-nav__link">
+    <a href="../../../reinvent19-MFG405/modules/08-analytics/" title="Lab 6: Explore Analytics Dashboard" class="md-nav__link">
       Lab 6: Explore Analytics Dashboard
     </a>
   </li>
@@ -1249,7 +1320,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/workshops/reinvent19-MFG405/modules/09-wrap-up/" title="Wrap-up" class="md-nav__link">
+    <a href="../../../reinvent19-MFG405/modules/09-wrap-up/" title="Wrap-up" class="md-nav__link">
       Wrap-up
     </a>
   </li>
@@ -1261,7 +1332,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/workshops/reinvent19-MFG405/modules/z-budgets/" title="." class="md-nav__link">
+    <a href="../../../reinvent19-MFG405/modules/z-budgets/" title="." class="md-nav__link">
       .
     </a>
   </li>
@@ -1289,12 +1360,102 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-start-verdi-and-load-test20-database" class="md-nav__link">
+    Step 1: Start Verdi and load test20 database
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-select-signals" class="md-nav__link">
+    Step 2: Select Signals
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-search-for-signal-transition" class="md-nav__link">
+    Step 3: Search for Signal Transition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-exit-verdi" class="md-nav__link">
+    Step 4: Exit Verdi
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
-  <h1>404 - Not found</h1>
-
+                
+                  <a href="https://github.com/awslabs/scale-out-computing-on-aws/edit/master/docs/workshops/DVCon/modules/05-load-verdi.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="lab-5-bring-up-verdi">Lab 5: Bring up Verdi<a class="headerlink" href="#lab-5-bring-up-verdi" title="Permanent link">&para;</a></h1>
+<p>This module provides instructions for loading a graphical tool to debug a design which is commonly used in integrated cicuit design workflows.</p>
+<h3 id="step-1-start-verdi-and-load-test20-database">Step 1: Start Verdi and load test20 database<a class="headerlink" href="#step-1-start-verdi-and-load-test20-database" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Start Verdi and load test20 waveform database by typing the command <code class="codehilite"><span class="err">verdi -ssf test20/novas.fsdb</span></code>. When Verdi GUI comes-up, click Ok to ignore the license expiration warning.
+    <img alt="" src="../../imgs/verdi.png" /></li>
+</ol>
+<h3 id="step-2-select-signals">Step 2: Select Signals<a class="headerlink" href="#step-2-select-signals" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>On the lower pane, click on <strong>Signal</strong> then on the pop-up click on <strong>Get Signals</strong>
+    <img alt="" src="../../imgs/verdi-get-signals.png" /></p>
+</li>
+<li>
+<p>On the left pane, expand <strong>+ top(top)</strong> then expand <strong>+ nvdla_top(NV_nvdla)</strong> then click on <strong>u_parition_a(NV_NVDLA_partition_a)</strong></p>
+</li>
+<li>
+<p>In the middle pane, click on <strong>accu2sc_credit_size[2:0]</strong> then hit shift and click on <strong>mac_a2accu_data2[175:0]</strong> then click <strong>OK</strong>
+    <img alt="" src="../../imgs/verdi-signals.png" /></p>
+</li>
+</ol>
+<h3 id="step-3-search-for-signal-transition">Step 3: Search for Signal Transition<a class="headerlink" href="#step-3-search-for-signal-transition" title="Permanent link">&para;</a></h3>
+<ol>
+<li>On the lower left pane, click on <strong>a2accu_dst_data0[175:0]</strong> and click <strong>twice</strong> on the <strong>Search Forward</strong> button to find the time where the bus changes to non-zero values and observe the timestamp 419,090,000 ps
+    <img alt="" src="../../imgs/verdi-signal-transition.png" /></li>
+</ol>
+<h3 id="step-4-exit-verdi">Step 4: Exit Verdi<a class="headerlink" href="#step-4-exit-verdi" title="Permanent link">&para;</a></h3>
+<ol>
+<li>On the upper pane, click on <strong>File</strong> menu item then click on <strong>Exit</strong> to close Verdi. Click <strong>Yes</strong> on the exit confirmation question</li>
+</ol>
+<p>Click <strong>Next</strong> to move to the next lab.</p>
+                
+                  
+                
+                
+              
               
                 
 
@@ -1307,6 +1468,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../04-submit-batch/" title="Lab 4: Submit Batch Jobs" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Lab 4: Submit Batch Jobs
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../06-analytics/" title="Lab 6: Explore Analytics Dashboard" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Lab 6: Explore Analytics Dashboard
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1325,9 +1521,9 @@
       
     </div>
     
-      <script src="/assets/javascripts/application.c33a9706.js"></script>
+      <script src="../../../../assets/javascripts/application.c33a9706.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"/"}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../../../.."}})</script>
       
     
   </body>
