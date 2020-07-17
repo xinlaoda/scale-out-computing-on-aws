@@ -191,6 +191,19 @@
   
     <li class="md-tabs__item">
       
+        <a href="budget/prevent-overspend-hpc-cost-on-aws-soca/" class="md-tabs__link">
+          Budget
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
         <a href="security/backup-restore-your-cluster/" class="md-tabs__link">
           Security
         </a>
@@ -217,8 +230,21 @@
   
     <li class="md-tabs__item">
       
-        <a href="tutorials/create-your-own-queue/" class="md-tabs__link">
+        <a href="tutorials/integration-ec2-job-parameters/" class="md-tabs__link">
           Tutorials
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="web-interface/control-hpc-job-with-http-web-rest-api/" class="md-tabs__link">
+          Web interface
         </a>
       
     </li>
@@ -341,6 +367,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#web-user-interface" class="md-nav__link">
+    Web User Interface
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-rest-api" class="md-nav__link">
+    HTTP Rest API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#budgets-and-cost-management" class="md-nav__link">
     Budgets and Cost Management
   </a>
@@ -392,13 +432,6 @@
         <li class="md-nav__item">
   <a href="#automatic-errors-handling" class="md-nav__link">
     Automatic Errors Handling
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#web-ui" class="md-nav__link">
-    Web UI
   </a>
   
 </li>
@@ -551,13 +584,43 @@
   </li>
 
         
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Budget
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Budget" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Budget
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
           
           
           
 
 
   <li class="md-nav__item">
-    <a href="analytics/prevent-overspend-hpc-cost-on-aws-soca/" title="Keep control of your HPC cost on AWS" class="md-nav__link">
+    <a href="budget/prevent-overspend-hpc-cost-on-aws-soca/" title="Keep control of your HPC cost on AWS" class="md-nav__link">
       Keep control of your HPC cost on AWS
     </a>
   </li>
@@ -569,7 +632,7 @@
 
 
   <li class="md-nav__item">
-    <a href="analytics/review-hpc-costs/" title="Review your HPC costs" class="md-nav__link">
+    <a href="budget/review-hpc-costs/" title="Review your HPC costs" class="md-nav__link">
       Review your HPC costs
     </a>
   </li>
@@ -581,7 +644,7 @@
 
 
   <li class="md-nav__item">
-    <a href="analytics/set-up-budget-project/" title="Set up budget per project" class="md-nav__link">
+    <a href="budget/set-up-budget-project/" title="Set up budget per project" class="md-nav__link">
       Set up budget per project
     </a>
   </li>
@@ -599,16 +662,16 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
     
-    <label class="md-nav__link" for="nav-7">
+    <label class="md-nav__link" for="nav-8">
       Security
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
     <nav class="md-nav" aria-label="Security" data-md-level="1">
-      <label class="md-nav__title" for="nav-7">
+      <label class="md-nav__title" for="nav-8">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
@@ -647,6 +710,18 @@
 
 
   <li class="md-nav__item">
+    <a href="security/limit-concurrent-job-and-instances/" title="Restrict number of concurrent jobs and/or instances" class="md-nav__link">
+      Restrict number of concurrent jobs and/or instances
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="security/manage-queue-acls/" title="Manage Access Lists at queue level" class="md-nav__link">
       Manage Access Lists at queue level
     </a>
@@ -659,8 +734,8 @@
 
 
   <li class="md-nav__item">
-    <a href="security/manage-queue-instance-types/" title="Retrict provisioning of specific instance type" class="md-nav__link">
-      Retrict provisioning of specific instance type
+    <a href="security/manage-queue-instance-types/" title="Restrict provisioning of specific instance type" class="md-nav__link">
+      Restrict provisioning of specific instance type
     </a>
   </li>
 
@@ -701,16 +776,16 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
     
-    <label class="md-nav__link" for="nav-8">
+    <label class="md-nav__link" for="nav-9">
       Storage
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
     <nav class="md-nav" aria-label="Storage" data-md-level="1">
-      <label class="md-nav__title" for="nav-8">
+      <label class="md-nav__title" for="nav-9">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
@@ -755,16 +830,16 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
     
-    <label class="md-nav__link" for="nav-9">
+    <label class="md-nav__link" for="nav-10">
       Tutorials
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
     <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
-      <label class="md-nav__title" for="nav-9">
+      <label class="md-nav__title" for="nav-10">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
@@ -772,18 +847,6 @@
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="tutorials/create-your-own-queue/" title="Create your own queue" class="md-nav__link">
-      Create your own queue
-    </a>
-  </li>
-
         
           
           
@@ -851,18 +914,6 @@
 
 
   <li class="md-nav__item">
-    <a href="tutorials/manage-ldap-users/" title="Centralized user management" class="md-nav__link">
-      Centralized user management
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="tutorials/reduce-compute-node-launch-time-with-custom-ami/" title="Import custom AMI to provision capacity faster" class="md-nav__link">
       Import custom AMI to provision capacity faster
     </a>
@@ -893,16 +944,130 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
     
-    <label class="md-nav__link" for="nav-10">
+    <label class="md-nav__link" for="nav-11">
+      Web interface
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Web interface" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Web interface
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="web-interface/control-hpc-job-with-http-web-rest-api/" title="Control your job with HTTP/REST API" class="md-nav__link">
+      Control your job with HTTP/REST API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="web-interface/create-your-own-queue/" title="Create your own queue" class="md-nav__link">
+      Create your own queue
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="web-interface/manage-ldap-users/" title="Centralized user/group management" class="md-nav__link">
+      Centralized user/group management
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="web-interface/my-activity/" title="My Activity" class="md-nav__link">
+      My Activity
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="web-interface/my-files/" title="My Files" class="md-nav__link">
+      My Files
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="web-interface/my-job-queue/" title="My Job Queue" class="md-nav__link">
+      My Job Queue
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="web-interface/submit-hpc-jobs-web-based-interface/" title="Submit your HPC job via a custom web interface" class="md-nav__link">
+      Submit your HPC job via a custom web interface
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
       Workshops
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
     <nav class="md-nav" aria-label="Workshops" data-md-level="1">
-      <label class="md-nav__title" for="nav-10">
+      <label class="md-nav__title" for="nav-12">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
@@ -930,16 +1095,16 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10-2" type="checkbox" id="nav-10-2">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12-2" type="checkbox" id="nav-12-2">
     
-    <label class="md-nav__link" for="nav-10-2">
+    <label class="md-nav__link" for="nav-12-2">
       DVCon
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
     <nav class="md-nav" aria-label="DVCon" data-md-level="2">
-      <label class="md-nav__title" for="nav-10-2">
+      <label class="md-nav__title" for="nav-12-2">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
@@ -979,16 +1144,16 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10-2-3" type="checkbox" id="nav-10-2-3">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12-2-3" type="checkbox" id="nav-12-2-3">
     
-    <label class="md-nav__link" for="nav-10-2-3">
+    <label class="md-nav__link" for="nav-12-2-3">
       Modules
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
     <nav class="md-nav" aria-label="Modules" data-md-level="3">
-      <label class="md-nav__title" for="nav-10-2-3">
+      <label class="md-nav__title" for="nav-12-2-3">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
@@ -1098,16 +1263,16 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10-3" type="checkbox" id="nav-10-3">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12-3" type="checkbox" id="nav-12-3">
     
-    <label class="md-nav__link" for="nav-10-3">
+    <label class="md-nav__link" for="nav-12-3">
       TKO Scale Out Computing
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
     <nav class="md-nav" aria-label="TKO Scale Out Computing" data-md-level="2">
-      <label class="md-nav__title" for="nav-10-3">
+      <label class="md-nav__title" for="nav-12-3">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
@@ -1147,16 +1312,16 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10-3-3" type="checkbox" id="nav-10-3-3">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12-3-3" type="checkbox" id="nav-12-3-3">
     
-    <label class="md-nav__link" for="nav-10-3-3">
+    <label class="md-nav__link" for="nav-12-3-3">
       Modules
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
     <nav class="md-nav" aria-label="Modules" data-md-level="3">
-      <label class="md-nav__title" for="nav-10-3-3">
+      <label class="md-nav__title" for="nav-12-3-3">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
@@ -1278,16 +1443,16 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10-4" type="checkbox" id="nav-10-4">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12-4" type="checkbox" id="nav-12-4">
     
-    <label class="md-nav__link" for="nav-10-4">
+    <label class="md-nav__link" for="nav-12-4">
       reinvent19 MFG405
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
     <nav class="md-nav" aria-label="reinvent19 MFG405" data-md-level="2">
-      <label class="md-nav__title" for="nav-10-4">
+      <label class="md-nav__title" for="nav-12-4">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
@@ -1327,16 +1492,16 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10-4-3" type="checkbox" id="nav-10-4-3">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12-4-3" type="checkbox" id="nav-12-4-3">
     
-    <label class="md-nav__link" for="nav-10-4-3">
+    <label class="md-nav__link" for="nav-12-4-3">
       Modules
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
     <nav class="md-nav" aria-label="Modules" data-md-level="3">
-      <label class="md-nav__title" for="nav-10-4-3">
+      <label class="md-nav__title" for="nav-12-4-3">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
@@ -1508,6 +1673,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#web-user-interface" class="md-nav__link">
+    Web User Interface
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-rest-api" class="md-nav__link">
+    HTTP Rest API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#budgets-and-cost-management" class="md-nav__link">
     Budgets and Cost Management
   </a>
@@ -1559,13 +1738,6 @@
         <li class="md-nav__item">
   <a href="#automatic-errors-handling" class="md-nav__link">
     Automatic Errors Handling
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#web-ui" class="md-nav__link">
-    Web UI
   </a>
   
 </li>
@@ -1644,6 +1816,7 @@ user@host$ qsub myscript.sh
 <li><a href="job-configuration-generator/">Check our Web-Based utility to generate you submission command</a></li>
 <li><a href="tutorials/launch-your-first-job/">Refer to this page for tutorial and examples</a></li>
 <li><a href="tutorials/integration-ec2-job-parameters/">Refer to this page to list all supported parameters</a></li>
+<li>Jobs can also be submitted <a href="web-interface/control-hpc-job-with-http-web-rest-api/">via HTTP API</a> or <a href="web-interface/submit-hpc-jobs-web-based-interface/">via web interface</a></li>
 </ul>
 </div>
 <h2 id="os-agnostic-and-support-for-custom-ami">OS agnostic and support for custom AMI<a class="headerlink" href="#os-agnostic-and-support-for-custom-ami" title="Permanent link">&para;</a></h2>
@@ -1661,6 +1834,19 @@ user@host$ qsub myscript.sh
 <p class="admonition-title">Scale-Out Computing on AWS AMI requirements</p>
 <p>When you use a custom AMI, just make sure that your AMI does not use /apps, /scratch or /data partitions as Scale-Out Computing on AWS will need to use these locations during the deployment. <a href="tutorials/reduce-compute-node-launch-time-with-custom-ami/">Read this page for AMI creation best practices</a></p>
 </div>
+<h2 id="web-user-interface">Web User Interface<a class="headerlink" href="#web-user-interface" title="Permanent link">&para;</a></h2>
+<p>Scale-Out Computing on AWS includes a simple web ui designed to simplify user interactions such as:</p>
+<ul>
+<li><a href="access-soca-cluster/#graphical-access-using-dcv">Start/Stop DCV sessions in 1 click</a></li>
+<li><a href="access-soca-cluster/#ssh-access">Download private key in both PEM or PPK format</a></li>
+<li><a href="web-interface/manage-ldap-users/">Check the queue and job status in real-time</a></li>
+<li><a href="web-interface/manage-ldap-users/">Add/Remove LDAP users </a></li>
+<li><a href="web-interface/my-activity/">Access the analytic dashboard</a></li>
+<li><a href="web-interface/my-files/">Access your filesystem</a></li>
+<li><a href="web-interface/submit-hpc-jobs-web-based-interface/">Create Application profiles and let your users submit job directly via the web interface</a></li>
+</ul>
+<h2 id="http-rest-api">HTTP Rest API<a class="headerlink" href="#http-rest-api" title="Permanent link">&para;</a></h2>
+<p>Users can submit/retrieve/delete jobs <a href="web-interface/control-hpc-job-with-http-web-rest-api/">remotely via an HTTP REST API</a></p>
 <h2 id="budgets-and-cost-management">Budgets and Cost Management<a class="headerlink" href="#budgets-and-cost-management" title="Permanent link">&para;</a></h2>
 <p>You can <a href="analytics/review-hpc-costs/">review your HPC costs</a> filtered by user/team/project/queue very easily using AWS Cost Explorer. </p>
 <p>Scale-Out Computing on AWS also supports AWS Budget and <a href="analytics/set-up-budget-project/">let you create budgets</a> assigned to user/team/project or queue. To prevent over-spend, Scale-Out Computing on AWS includes hooks to restrict job submission when customer-defined budget has expired.</p>
@@ -1683,16 +1869,8 @@ More importantly, the entire Scale-Out Computing on AWS codebase is open-source 
 <h2 id="support-for-network-licenses">Support for network licenses<a class="headerlink" href="#support-for-network-licenses" title="Permanent link">&para;</a></h2>
 <p>Scale-Out Computing on AWS <a href="tutorials/job-licenses-flexlm">includes a FlexLM-enabled script which calculate the number of licenses</a> for a given features and only start the job/provision the capacity when enough licenses are available. </p>
 <h2 id="automatic-errors-handling">Automatic Errors Handling<a class="headerlink" href="#automatic-errors-handling" title="Permanent link">&para;</a></h2>
-<p>Scale-Out Computing on AWS performs various dry run checks before provisioning the capacity. However, it may happen than AWS can't fullfill all requests (eg: need 5 instances but only 3 can be provisioned due to capacity shortage within a placement group). In this case, Scale-Out Computing on AWS will try to provision the capacity for 30 minutes. After 30 minutes, and if the capacity is still not available, Scale-Out Computing on AWS will automatically reset the request and try to provision capacity in a different availability zone.</p>
-<h2 id="web-ui">Web UI<a class="headerlink" href="#web-ui" title="Permanent link">&para;</a></h2>
-<p>Scale-Out Computing on AWS includes a simple web ui designed to simplify user interactions such as:</p>
-<ul>
-<li>Start/Stop DCV sessions in 1 click</li>
-<li>Download private key in both PEM or PPK format</li>
-<li>Check the queue status in real-time</li>
-<li>Add/Remove LDAP users </li>
-<li>Access the analytic dashboard</li>
-</ul>
+<p>Scale-Out Computing on AWS performs various dry run checks before provisioning the capacity. However, it may happen than AWS can't fullfill all requests (eg: need 5 instances but only 3 can be provisioned due to capacity shortage within a placement group). In this case, Scale-Out Computing on AWS will try to provision the capacity for 30 minutes. After 30 minutes, and if the capacity is still not available, Scale-Out Computing on AWS will automatically reset the request and try to provision capacity in a different availability zone.
+<a href="web-interface/my-job-queue/#understand-why-your-job-cannot-start">To simplify troubleshooting, all these errors are reported on the web interface</a></p>
 <h2 id="custom-fair-share">Custom fair-share<a class="headerlink" href="#custom-fair-share" title="Permanent link">&para;</a></h2>
 <p>Each user is given a score which vary based on:</p>
 <ul>
@@ -1701,7 +1879,7 @@ More importantly, the entire Scale-Out Computing on AWS codebase is open-source 
 <li>Priority of each job</li>
 <li>Type of instance</li>
 </ul>
-<p>Job that belong to the user with the highest score will start next </p>
+<p>Job that belong to the user with the highest score will start next. Fair Share is is configured at the queue level (so you can have one queue using FIFO and another one Fair Share)</p>
 <h2 id="and-more">And more ...<a class="headerlink" href="#and-more" title="Permanent link">&para;</a></h2>
 <p>Refer to the various sections (tutorial/security/analytics ...) to learn more about this solution</p>
 <div class="footnote">

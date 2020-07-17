@@ -1,0 +1,1823 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.6">
+    
+    
+      
+        <title>Control your job with HTTP/REST API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4b9ffd7b.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../assets/css/custom.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#step1-retrieve-your-api-key" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="Scale-Out Computing on AWS Knowledge Base" class="md-header-nav__button md-logo" aria-label="Scale-Out Computing on AWS Knowledge Base">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Scale-Out Computing on AWS Knowledge Base
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Control your job with HTTP/REST API
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/awslabs/scale-out-computing-on-aws/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    awslabs/scale-out-computing-on-aws
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        What is Scale-Out Computing on AWS ?
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../FAQ/knowledge-base-all-errors/" class="md-tabs__link">
+          FAQ
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../analytics/build-kibana-dashboards/" class="md-tabs__link">
+          Analytics
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../budget/prevent-overspend-hpc-cost-on-aws-soca/" class="md-tabs__link">
+          Budget
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../security/backup-restore-your-cluster/" class="md-tabs__link">
+          Security
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../storage/backend-storage-options/" class="md-tabs__link">
+          Storage
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../tutorials/integration-ec2-job-parameters/" class="md-tabs__link">
+          Tutorials
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" class="md-tabs__link md-tabs__link--active">
+          Web interface
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../workshops/" class="md-tabs__link">
+          Workshops
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Scale-Out Computing on AWS Knowledge Base" class="md-nav__button md-logo" aria-label="Scale-Out Computing on AWS Knowledge Base">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Scale-Out Computing on AWS Knowledge Base
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/awslabs/scale-out-computing-on-aws/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    awslabs/scale-out-computing-on-aws
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="What is Scale-Out Computing on AWS ?" class="md-nav__link">
+      What is Scale-Out Computing on AWS ?
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../access-soca-cluster/" title="How to access Scale-Out Computing on AWS" class="md-nav__link">
+      How to access Scale-Out Computing on AWS
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../install-soca-cluster/" title="Install your Scale-Out Computing on AWS cluster" class="md-nav__link">
+      Install your Scale-Out Computing on AWS cluster
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../job-configuration-generator/" title="Job Submission Generator" class="md-nav__link">
+      Job Submission Generator
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      FAQ
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="FAQ" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        FAQ
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../FAQ/knowledge-base-all-errors/" title="Knowledge Base - List all Errors" class="md-nav__link">
+      Knowledge Base - List all Errors
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Analytics
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Analytics" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Analytics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../analytics/build-kibana-dashboards/" title="Create your own analytics dashboard" class="md-nav__link">
+      Create your own analytics dashboard
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../analytics/monitor-cluster-activity/" title="Monitor your cluster and job activity" class="md-nav__link">
+      Monitor your cluster and job activity
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Budget
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Budget" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Budget
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../budget/prevent-overspend-hpc-cost-on-aws-soca/" title="Keep control of your HPC cost on AWS" class="md-nav__link">
+      Keep control of your HPC cost on AWS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../budget/review-hpc-costs/" title="Review your HPC costs" class="md-nav__link">
+      Review your HPC costs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../budget/set-up-budget-project/" title="Set up budget per project" class="md-nav__link">
+      Set up budget per project
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Security
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Security" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Security
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../security/backup-restore-your-cluster/" title="Backup your entire cluster automatically" class="md-nav__link">
+      Backup your entire cluster automatically
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../security/integrate-cognito-sso/" title="Enable Oauth2 authentication with Cognito" class="md-nav__link">
+      Enable Oauth2 authentication with Cognito
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../security/limit-concurrent-job-and-instances/" title="Restrict number of concurrent jobs and/or instances" class="md-nav__link">
+      Restrict number of concurrent jobs and/or instances
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../security/manage-queue-acls/" title="Manage Access Lists at queue level" class="md-nav__link">
+      Manage Access Lists at queue level
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../security/manage-queue-instance-types/" title="Restrict provisioning of specific instance type" class="md-nav__link">
+      Restrict provisioning of specific instance type
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../security/manage-queue-restricted-parameters/" title="Prevent user to change specific parameters" class="md-nav__link">
+      Prevent user to change specific parameters
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../security/update-soca-dns-ssl-certificate/" title="Change your DNS name and SSL certificate" class="md-nav__link">
+      Change your DNS name and SSL certificate
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Storage
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Storage" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Storage
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../storage/backend-storage-options/" title="Understand backend storage" class="md-nav__link">
+      Understand backend storage
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../storage/launch-job-with-fsx/" title="Launch a job with FSx for Lustre" class="md-nav__link">
+      Launch a job with FSx for Lustre
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Tutorials
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/integration-ec2-job-parameters/" title="Job customization for EC2" class="md-nav__link">
+      Job customization for EC2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/job-licenses-flexlm/" title="Job with FlexLM licenses requirements" class="md-nav__link">
+      Job with FlexLM licenses requirements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/job-start-stop-email-notification/" title="Automatic emails when your job start/stop" class="md-nav__link">
+      Automatic emails when your job start/stop
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/launch-always-on-instances/" title="Launch AlwaysOn nodes" class="md-nav__link">
+      Launch AlwaysOn nodes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/launch-your-first-job/" title="Launch your first job" class="md-nav__link">
+      Launch your first job
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/reduce-compute-node-launch-time-with-custom-ami/" title="Import custom AMI to provision capacity faster" class="md-nav__link">
+      Import custom AMI to provision capacity faster
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/troubleshoot-job-queue/" title="Debug why your jobs are not starting" class="md-nav__link">
+      Debug why your jobs are not starting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11" checked>
+    
+    <label class="md-nav__link" for="nav-11">
+      Web interface
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Web interface" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Web interface
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Control your job with HTTP/REST API
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Control your job with HTTP/REST API" class="md-nav__link md-nav__link--active">
+      Control your job with HTTP/REST API
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step1-retrieve-your-api-key" class="md-nav__link">
+    Step1: Retrieve your API key
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step2-prepare-your-job-input" class="md-nav__link">
+    Step2: Prepare your job input
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step3-send-the-job-to-soca" class="md-nav__link">
+    Step3: Send the job to SOCA
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step4-get-job-info" class="md-nav__link">
+    Step4: Get job info
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step4-delete-job" class="md-nav__link">
+    Step4: Delete job
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../create-your-own-queue/" title="Create your own queue" class="md-nav__link">
+      Create your own queue
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../manage-ldap-users/" title="Centralized user/group management" class="md-nav__link">
+      Centralized user/group management
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../my-activity/" title="My Activity" class="md-nav__link">
+      My Activity
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../my-files/" title="My Files" class="md-nav__link">
+      My Files
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../my-job-queue/" title="My Job Queue" class="md-nav__link">
+      My Job Queue
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../submit-hpc-jobs-web-based-interface/" title="Submit your HPC job via a custom web interface" class="md-nav__link">
+      Submit your HPC job via a custom web interface
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      Workshops
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Workshops" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Workshops
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/" title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12-2" type="checkbox" id="nav-12-2">
+    
+    <label class="md-nav__link" for="nav-12-2">
+      DVCon
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="DVCon" data-md-level="2">
+      <label class="md-nav__title" for="nav-12-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        DVCon
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/DVCon/" title="DVCon Workshop Overview" class="md-nav__link">
+      DVCon Workshop Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/DVCon/getting-started/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12-2-3" type="checkbox" id="nav-12-2-3">
+    
+    <label class="md-nav__link" for="nav-12-2-3">
+      Modules
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Modules" data-md-level="3">
+      <label class="md-nav__title" for="nav-12-2-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Modules
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/DVCon/modules/01-deploy-env/" title="Lab 1: Deploy Environment" class="md-nav__link">
+      Lab 1: Deploy Environment
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/DVCon/modules/02-web-login/" title="Lab 2: Login to SOCA Console and Launch Remote Desktop Session" class="md-nav__link">
+      Lab 2: Login to SOCA Console and Launch Remote Desktop Session
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/DVCon/modules/03-login-compile/" title="Lab 3: Login to Remote Desktop and Compile Design" class="md-nav__link">
+      Lab 3: Login to Remote Desktop and Compile Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/DVCon/modules/04-submit-batch/" title="Lab 4: Submit Batch Jobs" class="md-nav__link">
+      Lab 4: Submit Batch Jobs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/DVCon/modules/05-load-verdi/" title="Lab 5: Bring up Verdi" class="md-nav__link">
+      Lab 5: Bring up Verdi
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/DVCon/modules/06-analytics/" title="Lab 6: Explore Analytics Dashboard" class="md-nav__link">
+      Lab 6: Explore Analytics Dashboard
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/DVCon/modules/09-wrap-up/" title="Wrap-up" class="md-nav__link">
+      Wrap-up
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12-3" type="checkbox" id="nav-12-3">
+    
+    <label class="md-nav__link" for="nav-12-3">
+      TKO Scale Out Computing
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="TKO Scale Out Computing" data-md-level="2">
+      <label class="md-nav__title" for="nav-12-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        TKO Scale Out Computing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/TKO-Scale-Out-Computing/" title="Scaling EDA with Vivado Workshop Overview" class="md-nav__link">
+      Scaling EDA with Vivado Workshop Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/TKO-Scale-Out-Computing/getting-started/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12-3-3" type="checkbox" id="nav-12-3-3">
+    
+    <label class="md-nav__link" for="nav-12-3-3">
+      Modules
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Modules" data-md-level="3">
+      <label class="md-nav__title" for="nav-12-3-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Modules
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/TKO-Scale-Out-Computing/modules/02-deploy-env/" title="Lab 1: Deploy Environment" class="md-nav__link">
+      Lab 1: Deploy Environment
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/TKO-Scale-Out-Computing/modules/03-configure-desktop/" title="Lab 2: Configure Remote Desktop" class="md-nav__link">
+      Lab 2: Configure Remote Desktop
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/TKO-Scale-Out-Computing/modules/04-web-login/" title="Lab 3: Launch Remote Desktop Session" class="md-nav__link">
+      Lab 3: Launch Remote Desktop Session
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/TKO-Scale-Out-Computing/modules/06-launch-vivado/" title="Lab 4: Launch Vivado GUI" class="md-nav__link">
+      Lab 4: Launch Vivado GUI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/TKO-Scale-Out-Computing/modules/07-submit-batch/" title="Lab 5: Submit Batch Workloads" class="md-nav__link">
+      Lab 5: Submit Batch Workloads
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/TKO-Scale-Out-Computing/modules/071-budgets/" title="Lab 6: Configure Budgets" class="md-nav__link">
+      Lab 6: Configure Budgets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/TKO-Scale-Out-Computing/modules/08-analytics/" title="Lab 7: Explore Analytics Dashboard" class="md-nav__link">
+      Lab 7: Explore Analytics Dashboard
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/TKO-Scale-Out-Computing/modules/09-wrap-up/" title="Wrap-up" class="md-nav__link">
+      Wrap-up
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12-4" type="checkbox" id="nav-12-4">
+    
+    <label class="md-nav__link" for="nav-12-4">
+      reinvent19 MFG405
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="reinvent19 MFG405" data-md-level="2">
+      <label class="md-nav__title" for="nav-12-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        reinvent19 MFG405
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/reinvent19-MFG405/" title="MFG405 Workshop Overview" class="md-nav__link">
+      MFG405 Workshop Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/reinvent19-MFG405/getting-started/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12-4-3" type="checkbox" id="nav-12-4-3">
+    
+    <label class="md-nav__link" for="nav-12-4-3">
+      Modules
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Modules" data-md-level="3">
+      <label class="md-nav__title" for="nav-12-4-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Modules
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/reinvent19-MFG405/modules/02-deploy-env/" title="Lab 1: Deploy Environment" class="md-nav__link">
+      Lab 1: Deploy Environment
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/reinvent19-MFG405/modules/03-configure-desktop/" title="Lab 2: Configure Remote Desktop" class="md-nav__link">
+      Lab 2: Configure Remote Desktop
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/reinvent19-MFG405/modules/04-web-login/" title="Lab 3: Launch Remote Desktop Session" class="md-nav__link">
+      Lab 3: Launch Remote Desktop Session
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/reinvent19-MFG405/modules/06-launch-vivado/" title="Lab 4: Launch Vivado GUI" class="md-nav__link">
+      Lab 4: Launch Vivado GUI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/reinvent19-MFG405/modules/07-submit-batch/" title="Lab 5: Submit Batch Workloads" class="md-nav__link">
+      Lab 5: Submit Batch Workloads
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/reinvent19-MFG405/modules/08-analytics/" title="Lab 6: Explore Analytics Dashboard" class="md-nav__link">
+      Lab 6: Explore Analytics Dashboard
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/reinvent19-MFG405/modules/09-wrap-up/" title="Wrap-up" class="md-nav__link">
+      Wrap-up
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../workshops/reinvent19-MFG405/modules/z-budgets/" title="." class="md-nav__link">
+      .
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step1-retrieve-your-api-key" class="md-nav__link">
+    Step1: Retrieve your API key
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step2-prepare-your-job-input" class="md-nav__link">
+    Step2: Prepare your job input
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step3-send-the-job-to-soca" class="md-nav__link">
+    Step3: Send the job to SOCA
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step4-get-job-info" class="md-nav__link">
+    Step4: Get job info
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step4-delete-job" class="md-nav__link">
+    Step4: Delete job
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/awslabs/scale-out-computing-on-aws/edit/master/docs/web-interface/control-hpc-job-with-http-web-rest-api.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                  <h1>Control your job with HTTP/REST API</h1>
+                
+                <div class="admonition note">
+<p class="admonition-title">API Documentation</p>
+<p>You can interact with your SOCA cluster (create users, groups, queue, submit jobs, view jobs etc ..) via a simple REST interface. Documentation and examples can be found on <code>https://your_soca_url/api/doc</code> (note: <a href="../../security/update-soca-dns-ssl-certificate/">Your SOCA must have a valid SSL certificate</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Submit a job via web</p>
+<p>In addition of REST API, SOCA also support job management via a web based interface. <a href="../../tutorials/submit-hpc-jobs-web-based-interface/">Click here to learn more</a></p>
+</div>
+<h2 id="step1-retrieve-your-api-key">Step1: Retrieve your API key<a class="headerlink" href="#step1-retrieve-your-api-key" title="Permanent link">&para;</a></h2>
+<p>To retrieve your API key, navigate to "My API Key" section on the left sidebar.
+<img alt="" src="../../imgs/api-1.png" /></p>
+<div class="admonition danger">
+<p class="admonition-title">Important</p>
+<p>Your API key is unique and linked to your account. Do not share it with anyone. If you think your key has been compromised, reset it immediately via the link on the same page</p>
+</div>
+<h2 id="step2-prepare-your-job-input">Step2: Prepare your job input<a class="headerlink" href="#step2-prepare-your-job-input" title="Permanent link">&para;</a></h2>
+<p>For this example, let's assume we want to submit a simple "Hello World" job as shown below:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1">#PBS -N testjob</span>
+<span class="c1">#PBS -V -j oe -o testjob_output.qlog</span>
+<span class="c1">#PBS -P myproject</span>
+<span class="c1">#PBS -q normal</span>
+<span class="c1">#PBS -l nodes=1,instance_type=c5.large</span>
+/bin/echo <span class="s2">&quot;Hello World&quot;</span>
+</code></pre></div>
+
+<p>To be able to send this job to SOCA via HTTP, you must first encode this file using <code>base64.</code> There are multiple ways to create a base64 hash, on Linux/Mac, the easiest method is to use <code>base64</code> encode function:</p>
+<div class="highlight"><pre><span></span><code><span class="gp">$</span> base64 job_submit.sh
+<span class="go">IyEvYmluL2Jhc2gKI1BCUyAtTiB0ZXN0am9iCiNQQlMgLVYgLWogb2UgLW8gdGVzdGpvYl9vdXRwdXQucWxvZwojUEJTIC1QIG15cHJvamVjdAojUEJTIC1xIG5vcm1hbAojUEJTIC1sIG5vZGVzPTEsaW5zdGFuY2VfdHlwZT1jNS5sYXJnZQovYmluL2VjaG8gIkhlbGxvIFdvcmxkIgo=</span>
+</code></pre></div>
+
+<p>You can verify the hash is correct by running the <code>base64</code> decode function (this should return your original input file)</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> <span class="s2">&quot;IyEvYmluL2Jhc2gKI1BCUyAtTiB0ZXN0am9iCiNQQlMgLVYgLWogb2UgLW8gdGVzdGpvYl9vdXRwdXQucWxvZwojUEJTIC1QIG15cHJvamVjdAojUEJTIC1xIG5vcm1hbAojUEJTIC1sIG5vZGVzPTEsaW5zdGFuY2VfdHlwZT1jNS5sYXJnZQovYmluL2VjaG8gIkhlbGxvIFdvcmxkIgo&quot;</span> <span class="p">|</span> base64 --decode
+<span class="c1">#!/bin/bash</span>
+<span class="c1">#PBS -N testjob</span>
+<span class="c1">#PBS -V -j oe -o testjob_output.qlog</span>
+<span class="c1">#PBS -P myproject</span>
+<span class="c1">#PBS -q normal</span>
+<span class="c1">#PBS -l nodes=1,instance_type=c5.large</span>
+/bin/echo <span class="s2">&quot;Hello World&quot;</span>
+</code></pre></div>
+
+<h2 id="step3-send-the-job-to-soca">Step3: Send the job to SOCA<a class="headerlink" href="#step3-send-the-job-to-soca" title="Permanent link">&para;</a></h2>
+<p>To be able to submit the POST request, you will need to specify three headers:</p>
+<ul>
+<li>X-SOCA-USER and set the value to <code>&lt;YOUR_SOCA_USER&gt;</code></li>
+<li>X-SOCA-TOKEN and set the value to <code>&lt;YOUR_SOCA_TOKEN&gt;</code></li>
+<li>Content-Type and set the value to <code>multipart/form-data</code></li>
+</ul>
+<p>Once you have your headers configured, submit a HTTP/POST request and pass your hash as form data via <code>payload</code> parameter:</p>
+<div class="highlight"><pre><span></span><code>curl -X POST <span class="se">\</span>
+  https://&lt;YOUR_SOCA_URL&gt;/api/scheduler/job <span class="se">\</span>
+  -H <span class="s1">&#39;X-SOCA-TOKEN: &lt;YOUR_SOCA_TOKEN&gt;&#39;</span> <span class="se">\</span>
+  -H <span class="s1">&#39;X-SOCA-USER: &lt;YOUR_SOCA_USER&gt;&#39;</span> <span class="se">\</span>
+  -F <span class="nv">payload</span><span class="o">=</span><span class="nv">IyEvYmluL2Jhc2gKI1BCUyAtTiB0ZXN0am9iCiNQQlMgLVYgLWogb2UgLW8gdGVzdGpvYl9vdXRwdXQucWxvZwojUEJTIC1QIG15cHJvamVjdAojUEJTIC1xIG5vcm1hbAojUEJTIC1sIG5vZGVzPTEsaW5zdGFuY2VfdHlwZT1jNS5sYXJnZQovYmluL2VjaG8gIkhlbGxvIFdvcmxkIgo</span><span class="o">=</span>
+</code></pre></div>
+
+<p>If your hash is a valid PBS job file, SOCA will return the job id associated to your request (11313 in this example)</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;success&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;11313&quot;</span><span class="p">}</span>
+</code></pre></div>
+
+<h2 id="step4-get-job-info">Step4: Get job info<a class="headerlink" href="#step4-get-job-info" title="Permanent link">&para;</a></h2>
+<p>To retrieve information about a given job (assuming you are the job owner), simply submit a HTTP/GET request and pass <code>job_id</code> as parameter</p>
+<div class="highlight"><pre><span></span><code>curl -X GET <span class="se">\</span>
+  https://&lt;YOUR_SOCA_URL&gt;/api/scheduler/job?job_id<span class="o">=</span><span class="m">11313</span> <span class="se">\</span>
+  -H <span class="s1">&#39;X-SOCA-TOKEN: &lt;YOUR_SOCA_TOKEN&gt;&#39;</span> <span class="se">\</span>
+  -H <span class="s1">&#39;X-SOCA-USER: &lt;YOUR_SOCA_USER&gt;&#39;</span>
+</code></pre></div>
+
+<p>This command will return a JSON object with all information regarding your job.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;success&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;Job_Name&quot;</span><span class="p">:</span> <span class="s2">&quot;testjob&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;Job_Owner&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;YOUR_SOCA_USER&gt;@ip-10-10-0-75.us-west-2.compute.internal&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;job_state&quot;</span><span class="p">:</span> <span class="s2">&quot;Q&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;queue&quot;</span><span class="p">:</span> <span class="s2">&quot;normal&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;server&quot;</span><span class="p">:</span> <span class="s2">&quot;ip-10-10-0-75&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;Checkpoint&quot;</span><span class="p">:</span> <span class="s2">&quot;u&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;ctime&quot;</span><span class="p">:</span> <span class="s2">&quot;Thu May 21 02:47:05 2020&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;Error_Path&quot;</span><span class="p">:</span> <span class="s2">&quot;ip-10-10-0-75.us-west-2.compute.internal:/data/home/&lt;YOUR_SOCA_USER&gt;/soca_job_output/testjob_pGep6UiWpK/testjob.e11313&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;Hold_Types&quot;</span><span class="p">:</span> <span class="s2">&quot;n&quot;</span>
+    <span class="err">....</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div>
+
+<h2 id="step4-delete-job">Step4: Delete job<a class="headerlink" href="#step4-delete-job" title="Permanent link">&para;</a></h2>
+<p>To delete a job, simply submit a <code>HTTP/DELETE</code> request and specify <code>job_id</code> parameter:</p>
+<div class="highlight"><pre><span></span><code>curl -X DELETE <span class="se">\</span>
+  https://&lt;YOUR_SOCA_URL&gt;/api/scheduler/job?job_id<span class="o">=</span><span class="m">11313</span> <span class="se">\</span>
+  -H <span class="s1">&#39;X-SOCA-TOKEN: &lt;YOUR_SOCA_TOKEN&gt;&#39;</span> <span class="se">\</span>
+  -H <span class="s1">&#39;X-SOCA-USER: &lt;YOUR_SOCA_USER&gt;&#39;</span>
+</code></pre></div>
+
+<p>If the command is valid, you will receive a validation message:</p>
+<div class="highlight"><pre><span></span><code> <span class="p">{</span><span class="nt">&quot;success&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Job deleted&quot;</span><span class="p">}</span>
+</code></pre></div>
+
+<p>You can verify the Job has been removed from the queue using the same HTTP/GET request:</p>
+<div class="highlight"><pre><span></span><code> curl -X GET <span class="se">\</span>
+   https://&lt;YOUR_SOCA_URL&gt;/api/scheduler/job?job_id<span class="o">=</span><span class="m">11313</span><span class="se">\</span>
+   -H <span class="s1">&#39;X-SOCA-TOKEN: &lt;YOUR_SOCA_TOKEN&gt;&#39;</span> <span class="se">\</span>
+   -H <span class="s1">&#39;X-SOCA-USER: &lt;YOUR_SOCA_USER&gt;&#39;</span>
+</code></pre></div>
+
+<p>This time the output will return an error:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;succes&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Unable to retrieve Job ID (job may have terminated and is no longer in the queue)&quot;</span><span class="p">}</span>
+</code></pre></div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../../tutorials/troubleshoot-job-queue/" title="Debug why your jobs are not starting" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Debug why your jobs are not starting
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../create-your-own-queue/" title="Create your own queue" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Create your own queue
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.a0c4167b.min.js"></script>
+      <script src="../../assets/javascripts/bundle.fb26dd1d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.37585f48.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
