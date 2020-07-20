@@ -1700,7 +1700,7 @@
                 
                 <p>On this page, I will demonstrate how to configure a budget for a given project and reject job if you exceed the allocated budget</p>
 <p>For this example, I will create a budget named "Project 1" and prevent user to submit job if (1) they do not belong to the project and (2) if the budget has expired.</p>
-<p><a href="../../analytics/review-hpc-costs/">First, read this link</a> to understand how to monitor your cluster cost and budgets on AWS.</p>
+<p><a href="../../budget/review-hpc-costs/">First, read this link</a> to understand how to monitor your cluster cost and budgets on AWS.</p>
 <h2 id="configure-the-scheduler-hook">Configure the scheduler hook<a class="headerlink" href="#configure-the-scheduler-hook" title="Permanent link">&para;</a></h2>
 <p>To enable this feature, you will first need to verify the project assigned to each job during submission time. The script managing this can be found on your Scale-Out Computing on AWS cluster at <code>/apps/soca/&lt;YOUR_SOCA_CLUSTER_ID&gt;/cluster_hooks/queuejob/check_project_budget.py</code>
 First, edit this file and manually enter your AWS account id:</p>
@@ -1719,7 +1719,7 @@ user@host: qmgr -c <span class="s2">&quot;import hook check_project_budget appli
 
 <h2 id="test-it">Test it<a class="headerlink" href="#test-it" title="Permanent link">&para;</a></h2>
 <h3 id="submit-a-job-when-budget-is-valid">Submit a job when budget is valid<a class="headerlink" href="#submit-a-job-when-budget-is-valid" title="Permanent link">&para;</a></h3>
-<p>Go to <a href="https://bash.aws.amazon.com/billing/home#/">AWS Billing</a>, click Budget on the left sidebar and create a new budget</p>
+<p>Go to <a href="https://aws.amazon.com/billing/home#/">AWS Billing</a>, click Budget on the left sidebar and create a new budget</p>
 <p><img alt="" src="../../imgs/budget-7.png" /></p>
 <p>Select "Cost Budget". Name your budget "Project 1" and configure the Period/Budget based on your requirements. 
 For my example I will allocate a $100 per month recurring budget for my project called "Project 1" (use <mark>Tag: soca:JobProject</mark>)</p>
