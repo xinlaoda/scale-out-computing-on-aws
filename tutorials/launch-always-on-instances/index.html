@@ -849,16 +849,42 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-launch-an-alwayson-instance" class="md-nav__link">
-    How launch an AlwaysOn instance
+  <a href="#how-to-launch-an-alwayson-instance" class="md-nav__link">
+    How to launch an AlwaysOn instance?
+  </a>
+  
+    <nav class="md-nav" aria-label="How to launch an AlwaysOn instance?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-keep_forever-option" class="md-nav__link">
+    Using keep_forever option
+  </a>
+  
+    <nav class="md-nav" aria-label="Using keep_forever option">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terminate-an-alwayson-instance-launched-with-keep_forever" class="md-nav__link">
+    Terminate an AlwaysOn instance launched with keep_forever
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#how-terminate-an-alwayson-instance" class="md-nav__link">
-    How terminate an AlwaysOn instance
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-terminate_when_idle-option" class="md-nav__link">
+    Using terminate_when_idle option
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1637,16 +1663,42 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-launch-an-alwayson-instance" class="md-nav__link">
-    How launch an AlwaysOn instance
+  <a href="#how-to-launch-an-alwayson-instance" class="md-nav__link">
+    How to launch an AlwaysOn instance?
+  </a>
+  
+    <nav class="md-nav" aria-label="How to launch an AlwaysOn instance?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-keep_forever-option" class="md-nav__link">
+    Using keep_forever option
+  </a>
+  
+    <nav class="md-nav" aria-label="Using keep_forever option">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terminate-an-alwayson-instance-launched-with-keep_forever" class="md-nav__link">
+    Terminate an AlwaysOn instance launched with keep_forever
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#how-terminate-an-alwayson-instance" class="md-nav__link">
-    How terminate an AlwaysOn instance
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-terminate_when_idle-option" class="md-nav__link">
+    Using terminate_when_idle option
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1673,65 +1725,113 @@
                   <h1>Launch AlwaysOn nodes</h1>
                 
                 <h2 id="why-alwayson-instances">Why AlwaysOn instances?<a class="headerlink" href="#why-alwayson-instances" title="Permanent link">&para;</a></h2>
-<p>By default, Scale-Out Computing on AWS provision on-demand capacity when there are jobs in the queue. This mean any job submitted will wait in the queue 5 to 8 minutes until EC2 capacity is ready.</p>
+<p>By default, Scale-Out Computing on AWS provisions on-demand capacity when there are jobs in the queue. This mean any job submitted will wait in the queue 5 to 8 minutes until EC2 capacity is ready.</p>
 <p>If you want to avoid this penalty, you can provision "AlwaysOn instance". Please note you will be charged until you manually terminate it.</p>
-<h2 id="how-launch-an-alwayson-instance">How launch an AlwaysOn instance<a class="headerlink" href="#how-launch-an-alwayson-instance" title="Permanent link">&para;</a></h2>
+<h2 id="how-to-launch-an-alwayson-instance">How to launch an AlwaysOn instance?<a class="headerlink" href="#how-to-launch-an-alwayson-instance" title="Permanent link">&para;</a></h2>
 <p>On your scheduler host, sudo as root and run <code>source /etc/environment</code> to load Scale-Out Computing on AWS shell and then execute <code>/apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/add_nodes.py</code></p>
 <div class="highlight"><pre><span></span><code><span class="o">[</span>root@ip-40-0-22-232 ~<span class="o">]</span><span class="c1"># python3 /apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/add_nodes.py -h</span>
-usage: add_nodes.py <span class="o">[</span>-h<span class="o">]</span> --instance_type <span class="o">[</span>INSTANCE_TYPE<span class="o">]</span> --desired_capacity
-                    <span class="o">[</span>DESIRED_CAPACITY<span class="o">]</span> --queue <span class="o">[</span>QUEUE<span class="o">]</span>
-                    <span class="o">[</span>--instance_ami <span class="o">[</span>INSTANCE_AMI<span class="o">]]</span> <span class="o">[</span>--subnet_id SUBNET_ID<span class="o">]</span>
-                    <span class="o">[</span>--job_id <span class="o">[</span>JOB_ID<span class="o">]]</span> --job_name <span class="o">[</span>JOB_NAME<span class="o">]</span> --job_owner
-                    <span class="o">[</span>JOB_OWNER<span class="o">]</span> <span class="o">[</span>--job_project <span class="o">[</span>JOB_PROJECT<span class="o">]]</span>
+usage: add_nodes.py <span class="o">[</span>-h<span class="o">]</span> --desired_capacity <span class="o">[</span>DESIRED_CAPACITY<span class="o">]</span> --instance_type
+                    <span class="o">[</span>INSTANCE_TYPE<span class="o">]</span> --job_name <span class="o">[</span>JOB_NAME<span class="o">]</span> --job_owner
+                    <span class="o">[</span>JOB_OWNER<span class="o">]</span> --queue <span class="o">[</span>QUEUE<span class="o">]</span> <span class="o">[</span>--efa_support EFA_SUPPORT<span class="o">]</span>
+                    <span class="o">[</span>--ht_support HT_SUPPORT<span class="o">]</span> <span class="o">[</span>--keep_forever KEEP_FOREVER<span class="o">]</span>
+                    <span class="o">[</span>--terminate_when_idle <span class="o">[</span>TERMINATE_WHEN_IDLE<span class="o">]]</span>
+                    <span class="o">[</span>--base_os BASE_OS<span class="o">]</span> <span class="o">[</span>--fsx_lustre FSX_LUSTRE<span class="o">]</span>
+                    <span class="o">[</span>--fsx_lustre_size FSX_LUSTRE_SIZE<span class="o">]</span> --instance_ami
+                    <span class="o">[</span>INSTANCE_AMI<span class="o">]</span> <span class="o">[</span>--job_id <span class="o">[</span>JOB_ID<span class="o">]]</span>
+                    <span class="o">[</span>--job_project <span class="o">[</span>JOB_PROJECT<span class="o">]]</span>
+                    <span class="o">[</span>--placement_group PLACEMENT_GROUP<span class="o">]</span>
+                    <span class="o">[</span>--root_size <span class="o">[</span>ROOT_SIZE<span class="o">]]</span> <span class="o">[</span>--scratch_iops <span class="o">[</span>SCRATCH_IOPS<span class="o">]]</span>
                     <span class="o">[</span>--scratch_size <span class="o">[</span>SCRATCH_SIZE<span class="o">]]</span>
-                    <span class="o">[</span>--placement_group PLACEMENT_GROUP<span class="o">]</span> <span class="o">[</span>--tags <span class="o">[</span>TAGS<span class="o">]]</span>
-                    <span class="o">[</span>--keep_forever<span class="o">]</span> <span class="o">[</span>--base_os BASE_OS<span class="o">]</span> <span class="o">[</span>--efa<span class="o">]</span>
-                    <span class="o">[</span>--spot_price <span class="o">[</span>SPOT_PRICE<span class="o">]]</span>
+                    <span class="o">[</span>--spot_allocation_count <span class="o">[</span>SPOT_ALLOCATION_COUNT<span class="o">]]</span>
+                    <span class="o">[</span>--spot_allocation_strategy <span class="o">[</span>SPOT_ALLOCATION_STRATEGY<span class="o">]]</span>
+                    <span class="o">[</span>--spot_price <span class="o">[</span>SPOT_PRICE<span class="o">]]</span> <span class="o">[</span>--keep_ebs<span class="o">]</span>
+                    <span class="o">[</span>--subnet_id SUBNET_ID<span class="o">]</span> <span class="o">[</span>--tags <span class="o">[</span>TAGS<span class="o">]]</span>
 
 optional arguments:
   -h, --help            show this <span class="nb">help</span> message and <span class="nb">exit</span>
-  --instance_type <span class="o">[</span>INSTANCE_TYPE<span class="o">]</span>
-                        Instance <span class="nb">type</span> you want to deploy
   --desired_capacity <span class="o">[</span>DESIRED_CAPACITY<span class="o">]</span>
                         Number of EC2 instances to deploy
-  --queue <span class="o">[</span>QUEUE<span class="o">]</span>       Queue to map the capacity
-  --instance_ami <span class="o">[</span>INSTANCE_AMI<span class="o">]</span>
-                        AMI to use
-  --subnet_id SUBNET_ID
-                        Launch capacity in a special subnet
-  --job_id <span class="o">[</span>JOB_ID<span class="o">]</span>     Job ID <span class="k">for</span> which the capacity is being provisioned
+  --instance_type <span class="o">[</span>INSTANCE_TYPE<span class="o">]</span>
+                        Instance <span class="nb">type</span> you want to deploy
   --job_name <span class="o">[</span>JOB_NAME<span class="o">]</span>
                         Job Name <span class="k">for</span> which the capacity is being provisioned
   --job_owner <span class="o">[</span>JOB_OWNER<span class="o">]</span>
                         Job Owner <span class="k">for</span> which the capacity is being provisioned
+  --queue <span class="o">[</span>QUEUE<span class="o">]</span>       Queue to map the capacity
+  --efa_support EFA_SUPPORT
+                        Support <span class="k">for</span> EFA
+  --ht_support HT_SUPPORT
+                        Enable Hyper Threading
+  --keep_forever KEEP_FOREVER
+                        Whether or not capacity will stay forever
+  --terminate_when_idle <span class="o">[</span>TERMINATE_WHEN_IDLE<span class="o">]</span>
+                        If instances will be terminated when idle <span class="k">for</span> N
+                        minutes
+  --base_os BASE_OS     Specify custom Base OK
+  --fsx_lustre FSX_LUSTRE
+                        Mount existing FSx by providing the DNS
+  --fsx_lustre_size FSX_LUSTRE_SIZE
+                        Specify size of your FSx
+  --instance_ami <span class="o">[</span>INSTANCE_AMI<span class="o">]</span>
+                        AMI to use
+  --job_id <span class="o">[</span>JOB_ID<span class="o">]</span>     Job ID <span class="k">for</span> which the capacity is being provisioned
   --job_project <span class="o">[</span>JOB_PROJECT<span class="o">]</span>
                         Job Owner <span class="k">for</span> which the capacity is being provisioned
-  --scratch_size <span class="o">[</span>SCRATCH_SIZE<span class="o">]</span>
-                        Size of /scratch in GB
   --placement_group PLACEMENT_GROUP
                         Enable or disable placement group
-  --tags <span class="o">[</span>TAGS<span class="o">]</span>         Tags, format must be <span class="o">{</span><span class="s1">&#39;Key&#39;</span>:<span class="s1">&#39;Value&#39;</span><span class="o">}</span>
-  --keep_forever        Wheter or not capacity will stay forever
-  --base_os BASE_OS     Specify custom Base OK
-  --efa                 Support <span class="k">for</span> EFA
+  --root_size <span class="o">[</span>ROOT_SIZE<span class="o">]</span>
+                        Size of Root partition in GB
+  --scratch_iops <span class="o">[</span>SCRATCH_IOPS<span class="o">]</span>
+                        Size of /scratch in GB
+  --scratch_size <span class="o">[</span>SCRATCH_SIZE<span class="o">]</span>
+                        Size of /scratch in GB
+  --spot_allocation_count <span class="o">[</span>SPOT_ALLOCATION_COUNT<span class="o">]</span>
+                        When using mixed OD and SPOT, choose % of SPOT
+  --spot_allocation_strategy <span class="o">[</span>SPOT_ALLOCATION_STRATEGY<span class="o">]</span>
+                        lowest-price or capacity-optimized or diversified
+                        <span class="o">(</span>supported only <span class="k">for</span> SpotFleet<span class="o">)</span>
   --spot_price <span class="o">[</span>SPOT_PRICE<span class="o">]</span>
                         Spot Price
+  --keep_ebs            Do not delete EBS disk
+  --subnet_id SUBNET_ID
+                        Launch capacity in a special subnet
+  --tags <span class="o">[</span>TAGS<span class="o">]</span>         Tags, format must be <span class="o">{</span><span class="s1">&#39;Key&#39;</span>:<span class="s1">&#39;Value&#39;</span><span class="o">}</span>
 </code></pre></div>
 
-<p>To enable "AlwaysOn" instance, make sure to use <code>--keep_forever</code> tag and use <code>alwayson</code> queue. If you do not want to use <code>alwayson</code> instance, make sure the queue you have created has been configured correctly to support AlwaysOn (<a href="{% post_url 2019-10-04-create-own-queue %}">see instructions</a>)</p>
+<p>To enable "AlwaysOn" instance, there are two alternative methods either using --keep_forever or --terminate_when_idle options.</p>
+<h3 id="using-keep_forever-option">Using keep_forever option<a class="headerlink" href="#using-keep_forever-option" title="Permanent link">&para;</a></h3>
+<p>Use <code>--keep_forever true</code> and <code>alwayson</code> queue. If you do not want to use <code>alwayson</code> queue, make sure the queue you have created has been configured correctly to support AlwaysOn (<a href="../../web-interface/create-your-own-queue/#queue-with-alwayson-instances">see instructions</a>)</p>
 <p>See example below (note: you can use additional parameters if needed)</p>
 <div class="highlight"><pre><span></span><code> python3 /apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/add_nodes.py --instance_type<span class="o">=</span>c5.large <span class="se">\</span>
      --desired_capacity<span class="o">=</span><span class="m">1</span> <span class="se">\</span>
-<span class="hll">     --keep_forever <span class="se">\</span>
-</span>     --job_owner mickael
-     --job_name always_on_capacity
+<span class="hll">     --keep_forever <span class="nb">true</span> <span class="se">\</span>
+</span>     --job_owner mickael <span class="se">\</span>
+     --job_name always_on_capacity <span class="se">\</span>
 <span class="hll">     --queue alwayson
 </span></code></pre></div>
 
 <p>When the capacity is available, simply run a job and specify <code>alwayson</code> as queue name</p>
-<h2 id="how-terminate-an-alwayson-instance">How terminate an AlwaysOn instance<a class="headerlink" href="#how-terminate-an-alwayson-instance" title="Permanent link">&para;</a></h2>
+<h4 id="terminate-an-alwayson-instance-launched-with-keep_forever">Terminate an AlwaysOn instance launched with keep_forever<a class="headerlink" href="#terminate-an-alwayson-instance-launched-with-keep_forever" title="Permanent link">&para;</a></h4>
 <p>Simply go to your CloudFormation console, locate the stack following the naming convention: <code>soca-&lt;cluster_name&gt;-keepforever-&lt;queue_name&gt;-uniqueid</code> and terminate it.</p>
 <p><img alt="" src="../../imgs/howtoqueue-1.png" /></p>
+<h3 id="using-terminate_when_idle-option">Using terminate_when_idle option<a class="headerlink" href="#using-terminate_when_idle-option" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Use <code>--terminate_when_idle N</code> where N represents the number of minutes when the instance(s) where be terminated after all running jobs on the instances exit,</li>
+<li>Use <code>--keep_forever false</code>, and </li>
+<li>Use <code>alwayson</code> queue. If you do not want to use <code>alwayson</code> queue, make sure the queue you have created has been configured correctly to support AlwaysOn (<a href="../../web-interface/create-your-own-queue/#queue-with-alwayson-instances">see instructions</a>)</li>
+</ol>
+<p>See example below (note: you can use additional parameters if needed)</p>
+<div class="highlight"><pre><span></span><code> python3 /apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/add_nodes.py --instance_type<span class="o">=</span>c5.large <span class="se">\</span>
+     --desired_capacity<span class="o">=</span><span class="m">1</span> <span class="se">\</span>
+<span class="hll">     --terminate_when_idle <span class="m">5</span> <span class="se">\</span>
+</span><span class="hll">     --keep_forever <span class="nb">false</span> <span class="se">\</span>
+</span>     --job_owner mickael <span class="se">\</span>
+     --job_name always_on_capacity <span class="se">\</span>
+<span class="hll">     --queue alwayson
+</span></code></pre></div>
+
+<p>When the capacity is available, simply run a job and specify <code>alwayson</code> as queue name. </p>
+<p>The instance(s) launched with <code>--terminate_when_idle</code> will be terminated automatically once all jobs running on the instance exit then the instance is detected as idle (no jobs running) for the specified number of minutes (5 in the example above).</p>
                 
                   
                 

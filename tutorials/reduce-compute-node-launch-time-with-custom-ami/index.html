@@ -1851,7 +1851,7 @@
                   <h1>Import custom AMI to provision capacity faster</h1>
                 
                 <p>By default, SOCA provision a vanilla AMI and install all required packages in ~3 to 5 minutes. 
-If this cold time is not acceptable for your workload, you can <a href="../tutorials/launch-always-on-instances/">launch AlwaysOn instance</a> or pre-bake your AMI with all required libraries.</p>
+If this cold time is not acceptable for your workload, you can <a href="../../tutorials/launch-always-on-instances/">launch AlwaysOn instance</a> or pre-bake your AMI with all required libraries.</p>
 <h3 id="step-1-locate-your-base-ami">Step 1: Locate your base AMI<a class="headerlink" href="#step-1-locate-your-base-ami" title="Permanent link">&para;</a></h3>
 <p>Run <code>cat /etc/environment | grep SOCA_INSTALL_AMI</code> on your scheduler host</p>
 <div class="highlight"><pre><span></span><code>$ ssh -i &lt;key&gt; ec2-user@&lt;ip&gt;
@@ -1900,7 +1900,7 @@ Cluster: soca-uiupdates
 </li>
 </ul>
 <hr />
-<p><a href="https://github.com/awslabs/scale-out-computing-on-aws/blob/master/source/scripts/ComputeNode.sh#L34">Here is an example</a> of how you can install packages listed in an array in bash.</p>
+<p><a href="https://github.com/awslabs/scale-out-computing-on-aws/blob/master/source/scripts/Scheduler.sh#L34">Here is an example</a> of how you can install packages listed in an array in bash.</p>
 </div>
 <h4 id="32-pre-install-the-scheduler">3.2: Pre-Install the scheduler<a class="headerlink" href="#32-pre-install-the-scheduler" title="Permanent link">&para;</a></h4>
 <p>To reduce the launch time of your EC2 instance, it's recommended to pre-install PBSPro. 
