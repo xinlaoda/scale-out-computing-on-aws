@@ -2362,15 +2362,6 @@ Below is a list of parameters you can specify when you request your simulation t
 <p><code>spot_price</code> is capped to On-Demand price (e.g: Assuming you are provisioning a t3.medium, AWS will default spot price to 0.418 (OD price) even though you specified <code>-l spot_price=15</code>)</p>
 </div>
 <h4 id="subnet_id">subnet_id<a class="headerlink" href="#subnet_id" title="Permanent link">&para;</a></h4>
-<ul>
-<li>Description: Reference to a subnet ID to use</li>
-<li>Default: If not specified, value default to one of the three private subnets created during installation</li>
-<li>Examples:<ul>
-<li><code>-l subnet_id=sub-123</code>: Will provision capacity on sub-123 subnet</li>
-<li><code>-l subnet_id=sub-123+sub-456+sub-789</code>: + separated list of private subnets. Specifying more than 1 subnet is useful when requesting large number of instances</li>
-</ul>
-</li>
-</ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you specify more than 1 subnet and have <code>placement_group</code> set to True, SOCA will automatically provision capacity and placement group on the first subnet from the list</p>
