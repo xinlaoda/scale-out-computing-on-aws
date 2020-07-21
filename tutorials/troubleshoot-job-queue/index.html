@@ -455,6 +455,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../analytics/monitor-system-with-metricbeat/" title="Monitor Nodes with MetricBeat" class="md-nav__link">
+      Monitor Nodes with MetricBeat
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -895,6 +907,13 @@
           <li class="md-nav__item">
   <a href="#verify-the-job-resource" class="md-nav__link">
     Verify the job resource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieve-node-logs" class="md-nav__link">
+    Retrieve node logs
   </a>
   
 </li>
@@ -1672,6 +1691,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#retrieve-node-logs" class="md-nav__link">
+    Retrieve node logs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#if-cloudformation-stack-is-not-create_complete" class="md-nav__link">
     If CloudFormation stack is NOT "CREATE_COMPLETE"
   </a>
@@ -1750,6 +1776,33 @@ bash-4.2$ qstat -f <span class="m">2</span> <span class="p">|</span> grep -i res
 </code></pre></div></p>
 <p>If you see a <code>compute_node</code> different than <code>tbd</code> as well as <code>stack_id</code>, that means Scale-Out Computing on AWS triggered capacity provisioning by creating a new CloudFormation stack.
 If you go to your CloudFormation console, you should see  a new stack being created using the following naming convention: <code>soca-&lt;cluster_name&gt;-job-&lt;job_id&gt;</code></p>
+<h3 id="retrieve-node-logs">Retrieve node logs<a class="headerlink" href="#retrieve-node-logs" title="Permanent link">&para;</a></h3>
+<p>On the master host, access <code>/apps/soca/&lt;cluster_id&gt;/cluster_node_bootstrap/logs/</code>. This folder contains the output of all logs for all hosts provisioned by SOCA</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Retrieve logs for the most recent (2 weeks) jobs</span>
+<span class="hll">ls -ltr /apps/soca/&lt;CLUSTER_ID&gt;/cluster_node_bootstrap/logs/ <span class="p">|</span> tail -n <span class="m">5</span>
+</span>drwxr-xr-x   <span class="m">3</span> root root  <span class="m">6144</span> Jul <span class="m">21</span> <span class="m">17</span>:02 <span class="m">19607</span>
+drwxr-xr-x   <span class="m">3</span> root root  <span class="m">6144</span> Jul <span class="m">21</span> <span class="m">17</span>:16 <span class="m">19608</span>
+drwxr-xr-x   <span class="m">3</span> root root  <span class="m">6144</span> Jul <span class="m">21</span> <span class="m">17</span>:21 <span class="m">19609</span>
+drwxr-xr-x   <span class="m">6</span> root root  <span class="m">6144</span> Jul <span class="m">21</span> <span class="m">17</span>:40 <span class="m">19575</span>
+drwxr-xr-x  <span class="m">10</span> root root  <span class="m">6144</span> Jul <span class="m">21</span> <span class="m">17</span>:44 <span class="m">19606</span>
+
+<span class="c1"># Filter for a specific job id. Each nodes provisioned for this job will show up on the directory</span>
+<span class="hll">ls -ltr /apps/soca/&lt;CLUSTER_ID&gt;/cluster_node_bootstrap/logs/19606 <span class="p">|</span> tail -n <span class="m">5</span>
+</span>drwxr-xr-x <span class="m">2</span> root root <span class="m">6144</span> Jul <span class="m">21</span> <span class="m">17</span>:47 ip-10-10-99-2
+drwxr-xr-x <span class="m">2</span> root root <span class="m">6144</span> Jul <span class="m">21</span> <span class="m">17</span>:47 ip-10-10-102-78
+drwxr-xr-x <span class="m">2</span> root root <span class="m">6144</span> Jul <span class="m">21</span> <span class="m">17</span>:48 ip-10-10-101-45
+drwxr-xr-x <span class="m">2</span> root root <span class="m">6144</span> Jul <span class="m">21</span> <span class="m">17</span>:48 ip-10-10-85-64
+drwxr-xr-x <span class="m">2</span> root root <span class="m">6144</span> Jul <span class="m">21</span> <span class="m">17</span>:48 ip-10-10-77-184
+
+<span class="c1"># For each hosts, you will be able to retrieve the install logs and do any troubleshooting</span>
+<span class="hll">ls -ltr /apps/soca/&lt;CLUSTER_ID&gt;/cluster_node_bootstrap/logs/19606/ip-10-10-85-64
+</span>-rw-r--r-- <span class="m">1</span> root root <span class="m">77326</span> Jul <span class="m">21</span> <span class="m">17</span>:47 ComputeNode.sh.log
+-rw-r--r-- <span class="m">1</span> root root   <span class="m">864</span> Jul <span class="m">21</span> <span class="m">17</span>:48 ComputeNodePostReboot.log
+-rw-r--r-- <span class="m">1</span> root root    <span class="m">12</span> Jul <span class="m">21</span> <span class="m">17</span>:48 ComputeNodeUserCustom.log
+-rw-r--r-- <span class="m">1</span> root root <span class="m">73009</span> Jul <span class="m">21</span> <span class="m">17</span>:48 ComputeNodeUserCustomization.log
+-rw-r--r-- <span class="m">1</span> root root <span class="m">77995</span> Jul <span class="m">21</span> <span class="m">17</span>:48 ComputeNodeConfigureMetrics.log
+</code></pre></div>
+
 <h3 id="if-cloudformation-stack-is-not-create_complete">If CloudFormation stack is NOT "CREATE_COMPLETE"<a class="headerlink" href="#if-cloudformation-stack-is-not-create_complete" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="../../imgs/job-launch-4.png" /></p>
 <p>Click on the stack name then check the "Events" tab and refer to any "CREATE_FAILED" errors</p>
