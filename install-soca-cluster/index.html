@@ -374,26 +374,25 @@
     Download Scale-Out Computing on AWS
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#build-your-release" class="md-nav__link">
-    Build your release
+    <nav class="md-nav" aria-label="Download Scale-Out Computing on AWS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-1-build-your-own-version" class="md-nav__link">
+    Option 1: Build your own version
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#upload-to-s3" class="md-nav__link">
-    Upload to S3
+        
+          <li class="md-nav__item">
+  <a href="#option-2-download-the-latest-release-targz" class="md-nav__link">
+    Option 2: Download the latest release (.tar.gz)
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#locate-the-install-template" class="md-nav__link">
-    Locate the install template
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1712,26 +1711,25 @@
     Download Scale-Out Computing on AWS
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#build-your-release" class="md-nav__link">
-    Build your release
+    <nav class="md-nav" aria-label="Download Scale-Out Computing on AWS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-1-build-your-own-version" class="md-nav__link">
+    Option 1: Build your own version
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#upload-to-s3" class="md-nav__link">
-    Upload to S3
+        
+          <li class="md-nav__item">
+  <a href="#option-2-download-the-latest-release-targz" class="md-nav__link">
+    Option 2: Download the latest release (.tar.gz)
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#locate-the-install-template" class="md-nav__link">
-    Locate the install template
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1809,7 +1807,8 @@
                 <h2 id="1-click-installer">1-Click installer<a class="headerlink" href="#1-click-installer" title="Permanent link">&para;</a></h2>
 <p>You can use the <a href="https://aws.amazon.com/solutions/scale-out-computing-on-aws/">1-Click installer for quick proof-of-concept (PoC), demo and/or development work</a>. This installer is hosted on an AWS controlled S3 bucket and customization is limited, so we recommend downloading building your own SOCA (see below) for your production. Always refers to the Github repository for the latest SOCA version.</p>
 <h2 id="download-scale-out-computing-on-aws">Download Scale-Out Computing on AWS<a class="headerlink" href="#download-scale-out-computing-on-aws" title="Permanent link">&para;</a></h2>
-<p>Scale-Out Computing on AWS is open-source and available on Github (<a href="https://github.com/awslabs/scale-out-computing-on-aws">https://github.com/awslabs/scale-out-computing-on-aws</a>).
+<h3 id="option-1-build-your-own-version">Option 1: Build your own version<a class="headerlink" href="#option-1-build-your-own-version" title="Permanent link">&para;</a></h3>
+<p>Scale-Out Computing on AWS is open-source and available on Github (<a href="https://github.com/awslabs/scale-out-computing-on-aws">https://github.com/awslabs/scale-out-computing-on-aws</a>.
 To get started, simply clone the repository:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Clone using HTTPS</span>
 user@host: git clone https://github.com/awslabs/scale-out-computing-on-aws .
@@ -1818,29 +1817,50 @@ user@host: git clone https://github.com/awslabs/scale-out-computing-on-aws .
 user@host: git clone git@github.com:awslabs/scale-out-computing-on-aws.git .
 </code></pre></div>
 
-<h2 id="build-your-release">Build your release<a class="headerlink" href="#build-your-release" title="Permanent link">&para;</a></h2>
-<p>Once you have cloned your repository, execute <code>source/manual_build.py</code> using either python2 or python3</p>
-<div class="highlight"><pre><span></span><code>user@host: python3 source/manual_build.py
+<p><strong>Build your release</strong></p>
+<p>Once you have cloned your repository, install dependencies with <code>pip</code> and then execute <code>source/manual_build.py</code> using either python2 or python3. In the following example we use python3:</p>
+<div class="admonition note">
+<p class="admonition-title">IAM permissions required</p>
+<p>Your IAM user invoked by <code>awscli</code> must have the permission to list and upload to S3</p>
+</div>
+<div class="highlight"><pre><span></span><code>user@host: pip3 install -r source/requirements.txt
+user@host: python3 source/manual_build.py
 <span class="o">======</span> Scale-Out Computing on AWS <span class="nv">Build</span> <span class="o">======</span>
 
-<span class="hll"> &gt; Generated unique ID <span class="k">for</span> build: r6l1
-</span> &gt; Creating temporary build folder ...
+ &gt; Generated unique ID <span class="k">for</span> build: r6l1
+ &gt; Creating temporary build folder ...
  &gt; Copying required files ...
  &gt; Creating archive <span class="k">for</span> build id: <span class="nv">r6l1</span>
 
-<span class="o">======</span> Build <span class="nv">COMPLETE</span> <span class="o">======</span>
+<span class="o">======</span> Uploading to <span class="nv">S3</span> <span class="o">======</span>
+
+ &gt; Please enter the AWS region youd like to build SOCA in: us-east-1
+ &gt; Please enter the name of an S3 bucket you own: your-bucket
+ &gt; Uploading required files ...<span class="s1">&#39;</span>
+
+<span class="s1">[+] Uploading /home/you/scale-out-computing-on-aws/source/dist/r6l1/install-with-existing-resources.template to s3://your-bucket/soca-installer-r6l1/install-with-existing-resources.template</span>
+<span class="s1">...</span>
+<span class="s1">[+] Uploading /home/you/scale-out-computing-on-aws/source/dist/r6l1/templates/Security.template to s3://your-bucket/soca-installer-r6l1/templates/Security.template&#39;</span>
+
+<span class="o">======</span> Upload <span class="nv">COMPLETE</span> <span class="o">======</span>
 
 <span class="o">======</span> Installation <span class="nv">Instructions</span> <span class="o">======</span>
-<span class="m">1</span>: Create or use an existing S3 bucket on your AWS account <span class="o">(</span>eg: <span class="s1">&#39;mysocacluster&#39;</span><span class="o">)</span>
-<span class="m">2</span>: Drag <span class="p">&amp;</span> Drop source/dist/r6l1 to your S3 bucket <span class="o">(</span>eg: <span class="err">&#39;</span>mysocacluster/dist/r6l1<span class="o">)</span>
-<span class="m">3</span>: Launch CloudFormation and use scale-out-computing-on-aws.template as base template
-<span class="m">4</span>: Enter your cluster information.
+<span class="m">1</span>. Click on the following link:
+<span class="hll"><span class="o">==</span>&gt; https://console.aws.amazon.com/cloudformation/home?region<span class="o">=</span>us-east-1#/stacks/create/review?<span class="p">&amp;</span><span class="nv">templateURL</span><span class="o">=</span>https://your-bucket.s3.amazonaws.com/soca-installer-r6l1/scale-out-computing-on-aws.template<span class="p">&amp;</span><span class="nv">param_S3InstallBucket</span><span class="o">=</span>your-bucket<span class="p">&amp;</span><span class="nv">param_S3InstallFolder</span><span class="o">=</span>soca-installer-r6l1
+</span><span class="m">2</span>. The <span class="s1">&#39;Install Location&#39;</span> parameters are pre-filled <span class="k">for</span> you, fill out the rest of the parameters.
 
+For more information: https://awslabs.github.io/scale-out-computing-on-aws/install-soca-cluster/
 Press Enter key to close ..
 </code></pre></div>
 
-<p>This command create a build (<code>r6l1</code> in this example) under <code>source/dist/&lt;build_id&gt;</code> </p>
-<h2 id="upload-to-s3">Upload to S3<a class="headerlink" href="#upload-to-s3" title="Permanent link">&para;</a></h2>
+<p>This command builds and uploads the required files to Amazon S3, then outputs a 1-Click url to launch the SOCA CloudFormation Stack.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>You can use the same bucket to host multiple Scale-Out Computing on AWS clusters. Each build generates a unique ID and uses that as the S3 key.</p>
+</div>
+<h3 id="option-2-download-the-latest-release-targz">Option 2: Download the latest release (.tar.gz)<a class="headerlink" href="#option-2-download-the-latest-release-targz" title="Permanent link">&para;</a></h3>
+<p>Download the tarball from <a href="https://github.com/awslabs/scale-out-computing-on-aws/releases">https://github.com/awslabs/scale-out-computing-on-aws/releases</a></p>
+<p><strong>Upload to S3</strong></p>
 <p>Go to your Amazon S3 console and click "Create Bucket"</p>
 <p><img alt="" src="../imgs/install-1.png" /></p>
 <p>Choose a name and a region then click  "Create"</p>
@@ -1855,19 +1875,21 @@ Press Enter key to close ..
 <p class="admonition-title">Info</p>
 <p>You can use the same bucket to host multiple Scale-Out Computing on AWS clusters</p>
 </div>
-<h2 id="locate-the-install-template">Locate the install template<a class="headerlink" href="#locate-the-install-template" title="Permanent link">&para;</a></h2>
+<p><strong>Locate the install template</strong></p>
 <p>On your S3 bucket, click on the folder you just uploaded.</p>
 <p><img alt="" src="../imgs/install-4.png" /></p>
 <p>Your install template is located under <code>&lt;S3_BUCKET_NAME&gt;/&lt;BUILD_ID&gt;/scale-out-computing-on-aws.template</code>. Click on the object to retrieve the "Object URL"</p>
 <p><img alt="" src="../imgs/install-5.png" /></p>
 <div class="admonition info">
 <p class="admonition-title">Want to use your existing AWS resources?</p>
-<p>Refer to <code>install-with-existing-resources.template</code> if you want to use Scale-Out Computing on AWS with your existing resources.</p>
-<p><a href="https://install.soca.dev">Check out the web installer</a> to verify your setup</p>
+<p>Refer to <code>install-with-existing-resources.template</code> if you want to use Scale-Out Computing on AWS with your existing resources. 
+<a href="https://install.soca.dev">Check out the web installer</a> to verify your setup</p>
 </div>
 <h2 id="install-scale-out-computing-on-aws">Install Scale-Out Computing on AWS<a class="headerlink" href="#install-scale-out-computing-on-aws" title="Permanent link">&para;</a></h2>
-<p>Open CloudFormation console and select "Create Stack". Copy the URL of your install template and click "Next".</p>
+<p>If you've used the <code>manual_build.py</code> version, clicking on the link will open the CloudFormation console and pre-fill the <strong>Install Location</strong> parameters:</p>
+<p>If you've manually uploaded these to S3 following <a href="#option-2-download-the-latest-release-targz">Option 2</a>, you'll need to fill out these two parameters.</p>
 <p><img alt="" src="../imgs/install-6.png" /></p>
+<p>Under stack details, choose the stack name (do not use uppercase or it will break your ElasticSearch cluster). </p>
 <div class="admonition danger">
 <p class="admonition-title">Requirements</p>
 <ul>
@@ -1876,13 +1898,7 @@ Press Enter key to close ..
 <li>Not supported on regions with less than 3 AZs (Northern California / us-west-1)</li>
 </ul>
 </div>
-<p>If you hit any issue during the installation, refer to the 'CREATE_FAILED' component and find the root cause by referring at "Physical ID"
-<img alt="" src="../imgs/install-12.png" /></p>
-<p>Under stack details, choose the stack name (do not use uppercase or it will break your ElasticSearch cluster). </p>
 <ul>
-<li>
-<p>Install Parameters: Specify your S3 bucket you have uploaded your build (<code>my-soca-hpc-test</code> in this example) as well as the name of your build (<code>r6l1</code> in this example). If you haven't uploaded your build on your S3 root level, make sure you specify the entire file hierarchy.</p>
-</li>
 <li>
 <p>Environment Parameters: Choose your Linux Distribution, instance type for your master host, VPC CIDR, your IP which will be whitelisted for port 22, 80 and 443 as well as the root SSH keypair you want to use</p>
 </li>
@@ -1897,6 +1913,11 @@ Press Enter key to close ..
 </div>
 <p>Click Next two times and make sure to check "Capabilities" section. One done simply click "Create Stack". The installation procedure will take about 45 minutes.</p>
 <p><img alt="" src="../imgs/install-8.png" /></p>
+<div class="admonition info">
+<p class="admonition-title">CREATE_FAILED</p>
+<p>If you hit any issue during the installation, refer to the 'CREATE_FAILED' component and find the root cause by referring at "Physical ID"
+<img alt="" src="../imgs/install-12.png" /></p>
+</div>
 <h2 id="post-install-verifications">Post Install Verifications<a class="headerlink" href="#post-install-verifications" title="Permanent link">&para;</a></h2>
 <p>Wait for CloudFormation stacks to be "CREATE_COMPLETE", then  select your base stack and click "Outputs"</p>
 <p><img alt="" src="../imgs/install-9.png" /></p>
