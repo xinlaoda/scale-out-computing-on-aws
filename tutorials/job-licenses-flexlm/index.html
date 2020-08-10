@@ -1742,7 +1742,7 @@
 Your Scheduler Public IP is listed on CloudFormation, to retrieve your NAT Gateway IP, visit VPC console, select NAT Gateway and find the NAT Gateway IP associated to your Scale-Out Computing on AWS cluster.
 <img alt="" src="../../imgs/flexlm-2.png" /></p>
 <h2 id="upload-your-lmutil">Upload your lmutil<a class="headerlink" href="#upload-your-lmutil" title="Permanent link">&para;</a></h2>
-<p>lmutil binary is not included with Scale-Out Computing on AWS. You are required to upload it manually and update <code>/apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/license_check.py</code> with the location of your file.</p>
+<p>lmutil binary is not included with Scale-Out Computing on AWS. You are required to upload it manually and update <code>/apps/soca/$SOCA_CONFIGURATION/cluster_manager/license_check.py</code> with the location of your file.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You do not need to install FlexLM server manager. Only <code>lmutil</code> binary is required.</p>
@@ -1752,7 +1752,7 @@ Your Scheduler Public IP is listed on CloudFormation, to retrieve your NAT Gatew
 <p>FlexLM may requires 32 bits lib depending your system. If launching <code>lmutil</code> returns an <code>ELF</code> version mismatch, simply install <code>yum install redhat-lsb</code> (or equivalent)</p>
 </div>
 <h2 id="how-to-retrieve-number-of-licenses-available">How to retrieve number of licenses available<a class="headerlink" href="#how-to-retrieve-number-of-licenses-available" title="Permanent link">&para;</a></h2>
-<p>Scale-Out Computing on AWS includes a script (<code>/apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/license_check.py</code>) which output the number of FlexLM available for a given feature. This script takes the following arguments:</p>
+<p>Scale-Out Computing on AWS includes a script (<code>/apps/soca/$SOCA_CONFIGURATION/cluster_manager/license_check.py</code>) which output the number of FlexLM available for a given feature. This script takes the following arguments:</p>
 <ul>
 <li>-s: The license server hostname</li>
 <li>-p: The port used by your flexlm deamon</li>
@@ -1778,27 +1778,27 @@ Now let's say you want to reserve 15 licenses for non HPC/Scale-Out Computing on
 <p class="admonition-title">IMPORTANT</p>
 <p>The name of the resource <strong>must</strong> be <code>*_lic_*</code>. We recommend using <code>&lt;application&gt;_lic_&lt;feature_name&gt;</code></p>
 </div>
-<p>Update your <code>/apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/settings/licenses_mapping.yml</code> and create a new resource. This file must follow the YAML syntax. </p>
+<p>Update your <code>/apps/soca/$SOCA_CONFIGURATION/cluster_manager/settings/licenses_mapping.yml</code> and create a new resource. This file must follow the YAML syntax. </p>
 <div class="highlight"><pre><span></span><code><span class="c1"># There is no requirements for section names, but I recommend having 1 section = 1 application</span>
 
 <span class="nt">matlab</span><span class="p">:</span>
-<span class="hll">  <span class="nt">matlab_lic_audiosystemtoolbox</span><span class="p">:</span> <span class="s">&quot;/apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/license_check.py</span><span class="nv"> </span><span class="s">-s</span><span class="nv"> </span><span class="s">licenses.soca.dev</span><span class="nv"> </span><span class="s">-p</span><span class="nv"> </span><span class="s">5000</span><span class="nv"> </span><span class="s">-f</span><span class="nv"> </span><span class="s">Audio_System_Toolbox&quot;</span>
+<span class="hll">  <span class="nt">matlab_lic_audiosystemtoolbox</span><span class="p">:</span> <span class="s">&quot;/apps/soca/$SOCA_CONFIGURATION/cluster_manager/license_check.py</span><span class="nv"> </span><span class="s">-s</span><span class="nv"> </span><span class="s">licenses.soca.dev</span><span class="nv"> </span><span class="s">-p</span><span class="nv"> </span><span class="s">5000</span><span class="nv"> </span><span class="s">-f</span><span class="nv"> </span><span class="s">Audio_System_Toolbox&quot;</span>
 </span>
 <span class="c1"># Example for other daemons/features</span>
 <span class="nt">comsol</span><span class="p">:</span>
-  <span class="nt">comsol_lic_acoustic</span><span class="p">:</span> <span class="s">&quot;/apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/license_check.py</span><span class="nv"> </span><span class="s">-s</span><span class="nv"> </span><span class="s">licenses.soca.dev</span><span class="nv"> </span><span class="s">-p</span><span class="nv"> </span><span class="s">27718</span><span class="nv"> </span><span class="s">-f</span><span class="nv"> </span><span class="s">ACOUSTICS&quot;</span>
+  <span class="nt">comsol_lic_acoustic</span><span class="p">:</span> <span class="s">&quot;/apps/soca/$SOCA_CONFIGURATION/cluster_manager/license_check.py</span><span class="nv"> </span><span class="s">-s</span><span class="nv"> </span><span class="s">licenses.soca.dev</span><span class="nv"> </span><span class="s">-p</span><span class="nv"> </span><span class="s">27718</span><span class="nv"> </span><span class="s">-f</span><span class="nv"> </span><span class="s">ACOUSTICS&quot;</span>
   <span class="nt">comsol_lic_cadimport</span><span class="p">:</span> <span class="s">&quot;/apps/soca/cluster_manager/license_check.py</span><span class="nv"> </span><span class="s">-s</span><span class="nv"> </span><span class="s">licenses.soca.dev</span><span class="nv"> </span><span class="s">-p</span><span class="nv"> </span><span class="s">27718</span><span class="nv"> </span><span class="s">-f</span><span class="nv"> </span><span class="s">CADIMPORT&quot;</span>
 
 <span class="nt">synopsys</span><span class="p">:</span>
-  <span class="nt">synopsys_lic_testbenchruntime</span><span class="p">:</span> <span class="s">&quot;/apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/license_check.py</span><span class="nv"> </span><span class="s">-s</span><span class="nv"> </span><span class="s">licenses.soca.dev</span><span class="nv"> </span><span class="s">-p</span><span class="nv"> </span><span class="s">27020</span><span class="nv"> </span><span class="s">-f</span><span class="nv"> </span><span class="s">VT_TestbenchRuntime&quot;</span>
-  <span class="nt">synopsys_lic_vcsruntime</span><span class="p">:</span> <span class="s">&quot;/apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/license_check.py</span><span class="nv"> </span><span class="s">-s</span><span class="nv"> </span><span class="s">licenses.soca.dev</span><span class="nv"> </span><span class="s">-p</span><span class="nv"> </span><span class="s">27020</span><span class="nv"> </span><span class="s">-f</span><span class="nv"> </span><span class="s">VCSRuntime_Net&quot;</span>
-  <span class="nt">synopsys_lic_vipambaaxisvt</span><span class="p">:</span> <span class="s">&quot;/apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/license_check.py</span><span class="nv"> </span><span class="s">-s</span><span class="nv"> </span><span class="s">licenses.soca.dev</span><span class="nv"> </span><span class="s">-p</span><span class="nv"> </span><span class="s">27020</span><span class="nv"> </span><span class="s">-f</span><span class="nv"> </span><span class="s">VIP-AMBA-AXI-SVT&quot;</span>
+  <span class="nt">synopsys_lic_testbenchruntime</span><span class="p">:</span> <span class="s">&quot;/apps/soca/$SOCA_CONFIGURATION/cluster_manager/license_check.py</span><span class="nv"> </span><span class="s">-s</span><span class="nv"> </span><span class="s">licenses.soca.dev</span><span class="nv"> </span><span class="s">-p</span><span class="nv"> </span><span class="s">27020</span><span class="nv"> </span><span class="s">-f</span><span class="nv"> </span><span class="s">VT_TestbenchRuntime&quot;</span>
+  <span class="nt">synopsys_lic_vcsruntime</span><span class="p">:</span> <span class="s">&quot;/apps/soca/$SOCA_CONFIGURATION/cluster_manager/license_check.py</span><span class="nv"> </span><span class="s">-s</span><span class="nv"> </span><span class="s">licenses.soca.dev</span><span class="nv"> </span><span class="s">-p</span><span class="nv"> </span><span class="s">27020</span><span class="nv"> </span><span class="s">-f</span><span class="nv"> </span><span class="s">VCSRuntime_Net&quot;</span>
+  <span class="nt">synopsys_lic_vipambaaxisvt</span><span class="p">:</span> <span class="s">&quot;/apps/soca/$SOCA_CONFIGURATION/cluster_manager/license_check.py</span><span class="nv"> </span><span class="s">-s</span><span class="nv"> </span><span class="s">licenses.soca.dev</span><span class="nv"> </span><span class="s">-p</span><span class="nv"> </span><span class="s">27020</span><span class="nv"> </span><span class="s">-f</span><span class="nv"> </span><span class="s">VIP-AMBA-AXI-SVT&quot;</span>
 </code></pre></div>
 
 <p>This parameter will let Scale-Out Computing on AWS knows your license mapping and capacity will only be provisioned if enough licenses are available based on job's requirements.</p>
 <p>Since you are about to create a new custom resource, additional configuration is required at the scheduler level.
 On the scheduler host, edit <mark><code>/var/spool/pbs/sched_priv/sched_config</code></mark> and add a new <code>server_dyn_res</code></p>
-<div class="highlight"><pre><span></span><code>server_dyn_res: <span class="s2">&quot;matlab_lic_audiosystemtoolbox !/apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/license_check.py -s licenses.soca.dev -p 5000 -f Audio_System_Toolbox&quot;</span>
+<div class="highlight"><pre><span></span><code>server_dyn_res: <span class="s2">&quot;matlab_lic_audiosystemtoolbox !/apps/soca/</span><span class="nv">$SOCA_CONFIGURATION</span><span class="s2">/cluster_manager/license_check.py -s licenses.soca.dev -p 5000 -f Audio_System_Toolbox&quot;</span>
 </code></pre></div>
 
 <p>On the same file, add your new resource under <code>resources</code> section. This section will not allow a job to run if the amount of assigned resources exceeds the available amount.</p>
@@ -1818,7 +1818,7 @@ fsx_lustre_dns <span class="nv">type</span><span class="o">=</span>string
 <p>Once done, restart the scheduler using <code>service pbs restart</code></p>
 <h2 id="test">Test<a class="headerlink" href="#test" title="Permanent link">&para;</a></h2>
 <p>For this example, let's assume we do have 3 "Audio_System_Toolbox" licenses available
-<div class="highlight"><pre><span></span><code>/apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/license_check.py -s licenses.soca.dev -p <span class="m">5000</span> -f Audio_System_Toolbox
+<div class="highlight"><pre><span></span><code>/apps/soca/<span class="nv">$SOCA_CONFIGURATION</span>/cluster_manager/license_check.py -s licenses.soca.dev -p <span class="m">5000</span> -f Audio_System_Toolbox
 <span class="m">3</span>
 </code></pre></div></p>
 <p>Let's try to submit a job which require 5 licenses</p>
@@ -1826,7 +1826,7 @@ fsx_lustre_dns <span class="nv">type</span><span class="o">=</span>string
 <span class="m">31</span>.ip-20-0-2-69
 </code></pre></div>
 
-<p>Let's check the log files under <code>/apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/log/&lt;QUEUE_NAME&gt;</code>. Scale-Out Computing on AWS will ignore this job due to the lack of licenses available</p>
+<p>Let's check the log files under <code>/apps/soca/$SOCA_CONFIGURATION/cluster_manager/log/&lt;QUEUE_NAME&gt;</code>. Scale-Out Computing on AWS will ignore this job due to the lack of licenses available</p>
 <div class="highlight"><pre><span></span><code><span class="hll"> [157] [INFO] [License Available: {&#39;matlab_lic_audiosystemtoolbox&#39;: 3}]
 </span> [157] [INFO] [Next User is mickael]
  [157] [INFO] [Next Job for user is [&#39;31&#39;]]

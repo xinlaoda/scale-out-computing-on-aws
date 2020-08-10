@@ -1944,7 +1944,7 @@ Qmgr:exit
 <p>On Scale-Out Computing on AWS, unless you configure queue with AlwaysOn instances, nodes will be provisioned based on queue status. When you submit a job, Scale-Out Computing on AWS will automatically provision capacity for this job and compute_node is the scheduler making sure only one job can run on this instance. compute_node=tbd is the default value, making sure any new jobs won't run on existing (if any) nodes</p>
 </div>
 <h4 id="configure-automatic-host-provisioning">Configure automatic host provisioning<a class="headerlink" href="#configure-automatic-host-provisioning" title="Permanent link">&para;</a></h4>
-<p>If you want to enable automatic host provisioning, edit this file: <code>/apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/settings/queue_mapping.yml</code></p>
+<p>If you want to enable automatic host provisioning, edit this file: <code>/apps/soca/$SOCA_CONFIGURATION/cluster_manager/settings/queue_mapping.yml</code></p>
 <h5 id="option1-i-want-to-use-the-same-settings-as-an-existing-queue">Option1: I want to use the same settings as an existing queue<a class="headerlink" href="#option1-i-want-to-use-the-same-settings-as-an-existing-queue" title="Permanent link">&para;</a></h5>
 <p>In this case, simply update the array with your new queue</p>
 <div class="highlight"><pre><span></span><code><span class="nt">queue_type</span><span class="p">:</span>
@@ -1971,11 +1971,11 @@ Qmgr:exit
 </code></pre></div>
 
 <p>Finally, add a new crontab on the scheduler machine (as root). Use -c to path to the YAML file and -t to the YAML section you just created  </p>
-<div class="highlight"><pre><span></span><code>*/3 * * * * <span class="nb">source</span> /etc/environment<span class="p">;</span>  /apps/soca/&lt;CLUSTER_ID&gt;/python/latest/bin/python3 /apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/dispatcher.py -c /apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/settings/queue_mapping.yml -t memory
+<div class="highlight"><pre><span></span><code>*/3 * * * * <span class="nb">source</span> /etc/environment<span class="p">;</span>  /apps/soca/<span class="nv">$SOCA_CONFIGURATION</span>/python/latest/bin/python3 /apps/soca/<span class="nv">$SOCA_CONFIGURATION</span>/cluster_manager/dispatcher.py -c /apps/soca/<span class="nv">$SOCA_CONFIGURATION</span>/cluster_manager/settings/queue_mapping.yml -t memory
 </code></pre></div>
 
 <h4 id="automatic-host-provisioning-logs">Automatic Host provisioning logs<a class="headerlink" href="#automatic-host-provisioning-logs" title="Permanent link">&para;</a></h4>
-<p>All logs queues are stored under <code>/apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/logs/&lt;queue_name&gt;</code></p>
+<p>All logs queues are stored under <code>/apps/soca/$SOCA_CONFIGURATION/cluster_manager/logs/&lt;queue_name&gt;</code></p>
 <h3 id="queue-with-alwayson-instances">Queue with AlwaysOn instances<a class="headerlink" href="#queue-with-alwayson-instances" title="Permanent link">&para;</a></h3>
 <div class="admonition danger">
 <p class="admonition-title">Important</p>
@@ -2007,7 +2007,7 @@ Qmgr:exit
 <h4 id="start-provisioning-some-capacity">Start provisioning some capacity<a class="headerlink" href="#start-provisioning-some-capacity" title="Permanent link">&para;</a></h4>
 <p>Run <code>python3 apps/soca/cluster_manager/add_nodes.py</code> and enable <code>--keep_forever True</code> flag</p>
 <p><div class="highlight"><pre><span></span><code><span class="c1"># Launch 1 c5.large always on</span>
-python3 /apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/add_nodes.py --instance_type c5.large <span class="se">\</span>
+python3 /apps/soca/<span class="nv">$SOCA_CONFIGURATION</span>/cluster_manager/add_nodes.py --instance_type c5.large <span class="se">\</span>
     --desired_capacity <span class="m">1</span> <span class="se">\</span>
     --queue &lt;queue_name&gt; <span class="se">\</span>
     --job_name instancealwayson <span class="se">\</span>

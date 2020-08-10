@@ -2022,7 +2022,7 @@ brctl delbr virbr0
 <p>As you are planning to use a custom AMI, you will be required to specify <code>-l instance_ami=&lt;IMAGE_ID&gt;</code> at job submission.
 It's recommended to go with the "Entire Queue" option below if you do not want to manually specify this resource each time you submit a job</p>
 <h4 id="entire-queue">Entire queue<a class="headerlink" href="#entire-queue" title="Permanent link">&para;</a></h4>
-<p>Edit <code>/apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/settings/queue_mapping.yml</code> and update the default AMI</p>
+<p>Edit <code>/apps/soca/$SOCA_CONFIGURATION/cluster_manager/settings/queue_mapping.yml</code> and update the default AMI</p>
 <div class="highlight"><pre><span></span><code><span class="nt">queue_type</span><span class="p">:</span>
   <span class="nt">compute</span><span class="p">:</span>
     <span class="nt">queues</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;queue1&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;queue2&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;queue3&quot;</span><span class="p p-Indicator">]</span> 

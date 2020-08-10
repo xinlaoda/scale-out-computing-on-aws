@@ -1734,7 +1734,7 @@
 <li>List of username and LDAP groups: <code>allowed_users: ["user1", "cn=mynewgroup,ou=Group,dc=soca,dc=local", "user2"]</code></li>
 </ul>
 <h2 id="restrict-queue-for-some-users">Restrict queue for some users<a class="headerlink" href="#restrict-queue-for-some-users" title="Permanent link">&para;</a></h2>
-<p>Considering <code>/apps/soca/&lt;CLUSTER_ID&gt;cluster_manager/settings/queue_mapping.yml</code>
+<p>Considering <code>/apps/soca/$SOCA_CONFIGURATION/cluster_manager/settings/queue_mapping.yml</code>
 <div class="highlight"><pre><span></span><code>queue_type:
   compute:
     queues: [&quot;normal&quot;]
@@ -1749,7 +1749,7 @@
 <p>In this example, <code>user1</code> can submit a job to "normal" queue but not on "high" or "low" queues.</p>
 <div class="highlight"><pre><span></span><code><span class="gp">#</span> Job submission does not work on <span class="s2">&quot;high&quot;</span> queue because user1 is on the excluded_users list pattern
 <span class="go">qsub -q high -- /bin/sleep 60</span>
-<span class="go">qsub: user1 is not authorized to use submit this job on the queue high. Contact your HPC admin and update /apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/settings/queue_mapping.yml</span>
+<span class="go">qsub: user1 is not authorized to use submit this job on the queue high. Contact your HPC admin and update /apps/soca/$SOCA_CONFIGURATION/cluster_manager/settings/queue_mapping.yml</span>
 
 <span class="gp">#</span> Job submission is ok on <span class="s2">&quot;normal&quot;</span> queue
 <span class="go">qsub -q normal -- /bin/sleep 60</span>
@@ -1851,7 +1851,7 @@ excluded_users: [&quot;cn=mynewgroup,ou=Group,dc=soca,dc=local&quot;]
 <h2 id="check-the-logs">Check the logs<a class="headerlink" href="#check-the-logs" title="Permanent link">&para;</a></h2>
 <p>Scheduler hooks are located on /var/spool/pbs/server_logs/</p>
 <h2 id="code">Code<a class="headerlink" href="#code" title="Permanent link">&para;</a></h2>
-<p>The hook file can be found under <code>/apps/soca/cluster_hooks/&lt;CLUSTER_ID&gt;/queuejob/check_queue_acls.py</code> on your Scale-Out Computing on AWS cluster)</p>
+<p>The hook file can be found under <code>/apps/soca/cluster_hooks/$SOCA_CONFIGURATION/queuejob/check_queue_acls.py</code> on your Scale-Out Computing on AWS cluster)</p>
 <h2 id="disable-the-hook">Disable the hook<a class="headerlink" href="#disable-the-hook" title="Permanent link">&para;</a></h2>
 <p>You can disable the hook by running the following command on the scheduler host (as root):</p>
 <div class="highlight"><pre><span></span><code>user@host: qmgr -c <span class="s2">&quot;delete hook check_queue_acls event=queuejob&quot;</span>

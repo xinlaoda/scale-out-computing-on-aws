@@ -1740,8 +1740,8 @@
 <p>By default, Scale-Out Computing on AWS provisions on-demand capacity when there are jobs in the queue. This mean any job submitted will wait in the queue 5 to 8 minutes until EC2 capacity is ready.</p>
 <p>If you want to avoid this penalty, you can provision "AlwaysOn instance". Please note you will be charged until you manually terminate it.</p>
 <h2 id="how-to-launch-an-alwayson-instance">How to launch an AlwaysOn instance?<a class="headerlink" href="#how-to-launch-an-alwayson-instance" title="Permanent link">&para;</a></h2>
-<p>On your scheduler host, sudo as root and run <code>source /etc/environment</code> to load Scale-Out Computing on AWS shell and then execute <code>/apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/add_nodes.py</code></p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>root@ip-40-0-22-232 ~<span class="o">]</span><span class="c1"># python3 /apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/add_nodes.py -h</span>
+<p>On your scheduler host, sudo as root and run <code>source /etc/environment</code> to load Scale-Out Computing on AWS shell and then execute <code>/apps/soca/$SOCA_CONFIGURATION/cluster_manager/add_nodes.py</code></p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>root@ip-40-0-22-232 ~<span class="o">]</span><span class="c1"># python3 /apps/soca/$SOCA_CONFIGURATION/cluster_manager/add_nodes.py -h</span>
 usage: add_nodes.py <span class="o">[</span>-h<span class="o">]</span> --desired_capacity <span class="o">[</span>DESIRED_CAPACITY<span class="o">]</span> --instance_type
                     <span class="o">[</span>INSTANCE_TYPE<span class="o">]</span> --job_name <span class="o">[</span>JOB_NAME<span class="o">]</span> --job_owner
                     <span class="o">[</span>JOB_OWNER<span class="o">]</span> --queue <span class="o">[</span>QUEUE<span class="o">]</span> <span class="o">[</span>--efa_support EFA_SUPPORT<span class="o">]</span>
@@ -1814,7 +1814,7 @@ optional arguments:
 <h3 id="using-keep_forever-option">Using keep_forever option<a class="headerlink" href="#using-keep_forever-option" title="Permanent link">&para;</a></h3>
 <p>Use <code>--keep_forever true</code> and <code>alwayson</code> queue. If you do not want to use <code>alwayson</code> queue, make sure the queue you have created has been configured correctly to support AlwaysOn (<a href="../../web-interface/create-your-own-queue/#queue-with-alwayson-instances">see instructions</a>)</p>
 <p>See example below (note: you can use additional parameters if needed)</p>
-<div class="highlight"><pre><span></span><code> python3 /apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/add_nodes.py --instance_type<span class="o">=</span>c5.large <span class="se">\</span>
+<div class="highlight"><pre><span></span><code> python3 /apps/soca/<span class="nv">$SOCA_CONFIGURATION</span>/cluster_manager/add_nodes.py --instance_type<span class="o">=</span>c5.large <span class="se">\</span>
      --desired_capacity<span class="o">=</span><span class="m">1</span> <span class="se">\</span>
 <span class="hll">     --keep_forever <span class="nb">true</span> <span class="se">\</span>
 </span>     --job_owner mickael <span class="se">\</span>
@@ -1833,7 +1833,7 @@ optional arguments:
 <li>Use <code>alwayson</code> queue. If you do not want to use <code>alwayson</code> queue, make sure the queue you have created has been configured correctly to support AlwaysOn (<a href="../../web-interface/create-your-own-queue/#queue-with-alwayson-instances">see instructions</a>)</li>
 </ol>
 <p>See example below (note: you can use additional parameters if needed)</p>
-<div class="highlight"><pre><span></span><code> python3 /apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/add_nodes.py --instance_type<span class="o">=</span>c5.large <span class="se">\</span>
+<div class="highlight"><pre><span></span><code> python3 /apps/soca/<span class="nv">$SOCA_CONFIGURATION</span>/cluster_manager/add_nodes.py --instance_type<span class="o">=</span>c5.large <span class="se">\</span>
      --desired_capacity<span class="o">=</span><span class="m">1</span> <span class="se">\</span>
 <span class="hll">     --terminate_when_idle <span class="m">5</span> <span class="se">\</span>
 </span><span class="hll">     --keep_forever <span class="nb">false</span> <span class="se">\</span>

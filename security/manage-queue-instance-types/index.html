@@ -1730,7 +1730,7 @@
 <p>If you add <code>c5</code> to the allowed instance list c5 instances will be allowed.  c5n instances will be blocked unless <code>c5n</code> is added to the <code>allowed_instance_types</code> to allow c5n instances to run.</p>
 </div>
 <h2 id="allow-only-compute-optimized-ec2-instances">Allow only compute optimized EC2 instances<a class="headerlink" href="#allow-only-compute-optimized-ec2-instances" title="Permanent link">&para;</a></h2>
-<p>Considering <code>/apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/settings/queue_mapping.yml</code>
+<p>Considering <code>/apps/soca/$SOCA_CONFIGURATION/cluster_manager/settings/queue_mapping.yml</code>
 <div class="highlight"><pre><span></span><code>queue_type:
   compute:
     queues: [&quot;normal&quot;]
@@ -1745,7 +1745,7 @@
 <p>In this example, only EC2 instance types in the c5 and c5n families can be used for jobs submitted to the normal queue.  For the test queue only c5.4xlarge instance type will be allowed. </p>
 <div class="highlight"><pre><span></span><code><span class="gp">#</span> Job submission to queue <span class="s2">&quot;normal&quot;</span> using instance <span class="nb">type</span> i3.2xlarge is blocked
 <span class="go">qsub -q normal -l instance_type=i3.2xlarge -- /bin/echo test</span>
-<span class="go">qsub: i3.2xlarge is not a valid instance type for the job queue normal. Contact your HPC admin and update /apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/settings/queue_mapping.yml</span>
+<span class="go">qsub: i3.2xlarge is not a valid instance type for the job queue normal. Contact your HPC admin and update /apps/soca/$SOCA_CONFIGURATION/cluster_manager/settings/queue_mapping.yml</span>
 
 <span class="gp">#</span> Job submission to queue <span class="s2">&quot;normal&quot;</span> using instance from c5 family is allowed.
 <span class="go">qsub -q normal -l instance_type=c5.2xlarge -- /bin/echo test</span>
@@ -1753,7 +1753,7 @@
 
 <span class="gp">#</span> Job submission to <span class="s2">&quot;test&quot;</span> queue only allowed <span class="k">if</span> using c5.4xlarge instance <span class="nb">type</span>
 <span class="go">qsub -q test -l instance_type=c5.2xlarge -- /bin/echo test</span>
-<span class="go">qsub: c5.2xlarge is not a valid instance type for the job queue test. Contact your HPC admin and update /apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/settings/queue_mapping.yml</span>
+<span class="go">qsub: c5.2xlarge is not a valid instance type for the job queue test. Contact your HPC admin and update /apps/soca/$SOCA_CONFIGURATION/cluster_manager/settings/queue_mapping.yml</span>
 
 <span class="go">qsub -q test -l instance_type=c5.4xlarge -- /bin/echo test</span>
 <span class="go">16.ip-110-0-12-28</span>
@@ -1764,7 +1764,7 @@
 <p>If an instance type or family appears in both the <code>excluded_instance_types</code>list as well as <code>allowed_instance_types</code> for a queue, the <code>excluded_instance_types</code> setting takes priority.</p>
 </div>
 <h2 id="block-users-from-using-specific-ec2-instance-types">Block users from using specific EC2 instance types<a class="headerlink" href="#block-users-from-using-specific-ec2-instance-types" title="Permanent link">&para;</a></h2>
-<p>Considering <code>/apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/settings/queue_mapping.yml</code>
+<p>Considering <code>/apps/soca/$SOCA_CONFIGURATION/cluster_manager/settings/queue_mapping.yml</code>
 <div class="highlight"><pre><span></span><code>queue_type:
   compute:
     queues: [&quot;normal&quot;]
@@ -1779,17 +1779,17 @@
 In this example the normal queue will not allow instances in the f1 and g3 family as well as g4.16xlarge instanct types.  The test queue will not allow instances in the f1 and g4 family.</p>
 <div class="highlight"><pre><span></span><code><span class="gp">#</span> Job submission to queue <span class="s2">&quot;normal&quot;</span> using instance <span class="nb">type</span> in f1 family is blocked
 <span class="go">qsub -q normal -l instance_type=f1.2xlarge -- /bin/echo test</span>
-<span class="go">qsub: f1.2xlarge is not a valid instance type for the job queue normal. Contact your HPC admin and update /apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/settings/queue_mapping.yml</span>
+<span class="go">qsub: f1.2xlarge is not a valid instance type for the job queue normal. Contact your HPC admin and update /apps/soca/$SOCA_CONFIGURATION/cluster_manager/settings/queue_mapping.yml</span>
 
 <span class="gp">#</span> Job submission to queue <span class="s2">&quot;test&quot;</span> using instance <span class="nb">type</span> in g4dn is blocked
 <span class="go">qsub -q normal -l instance_type=g4dn.xlarge -- /bin/echo test</span>
-<span class="go">qsub: g4dn.xlarge is not a valid instance type for the job queue test. Contact your HPC admin and update /apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/settings/queue_mapping.yml</span>
+<span class="go">qsub: g4dn.xlarge is not a valid instance type for the job queue test. Contact your HPC admin and update /apps/soca/$SOCA_CONFIGURATION/cluster_manager/settings/queue_mapping.yml</span>
 </code></pre></div>
 
 <h2 id="check-the-logs">Check the logs<a class="headerlink" href="#check-the-logs" title="Permanent link">&para;</a></h2>
 <p>Scheduler hooks are located on /var/spool/pbs/server_logs/</p>
 <h2 id="code">Code<a class="headerlink" href="#code" title="Permanent link">&para;</a></h2>
-<p>The hook file can be found under <code>/apps/soca/cluster_hooks/&lt;CLUSTER_ID&gt;/queuejob/check_queue_instance_types.py</code> on your Scale-Out Computing on AWS cluster)</p>
+<p>The hook file can be found under <code>/apps/soca/cluster_hooks/$SOCA_CONFIGURATION/queuejob/check_queue_instance_types.py</code> on your Scale-Out Computing on AWS cluster)</p>
 <h2 id="disable-the-hook">Disable the hook<a class="headerlink" href="#disable-the-hook" title="Permanent link">&para;</a></h2>
 <p>You can disable the hook by running the following command on the scheduler host (as root):</p>
 <div class="highlight"><pre><span></span><code>user@host: qmgr -c <span class="s2">&quot;delete hook check_queue_instance_types event=queuejob&quot;</span>

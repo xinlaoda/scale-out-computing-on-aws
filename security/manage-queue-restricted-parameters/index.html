@@ -1729,7 +1729,7 @@
                 <p>When submitting a job, users can override the default parameters configured for the queue (<a href="../../tutorials/integration-ec2-job-parameters/">click here to see a list of all parameters supported by SOCA</a>).</p>
 <p>For security, compliance or cost reasons, you may want prevent users to override these default parameters by configuring <code>restricted_parameters</code> on your <code>queue_mapping.yml</code></p>
 <h2 id="prevent-user-to-choose-a-different-instance-type">Prevent user to choose a different instance type<a class="headerlink" href="#prevent-user-to-choose-a-different-instance-type" title="Permanent link">&para;</a></h2>
-<p>Considering <code>/apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/settings/queue_mapping.yml</code></p>
+<p>Considering <code>/apps/soca/$SOCA_CONFIGURATION/cluster_manager/settings/queue_mapping.yml</code></p>
 <div class="highlight"><pre><span></span><code>queue_type:
   compute:
     queues: [&quot;normal&quot;, &quot;low&quot;]
@@ -1740,7 +1740,7 @@
 
 <p>In this example, a job will be rejected if a user try to specify the <code>instance_type</code> parameter when using the <code>normal</code> or <code>low</code> queues. In this particular case, any job sent to the <code>normal</code> or <code>low</code> queue will be forced to use <code>c5.large</code> instance, which is the default instance type configured by HPC admins. </p>
 <div class="highlight"><pre><span></span><code><span class="go">qsub -q normal -l instance_type=m5.24xlarge -- /bin/echo test</span>
-<span class="go">qsub: instance_type is a restricted parameter and can&#39;t be configure by the user. Contact your HPC admin and update /apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/settings/queue_mapping.yml</span>
+<span class="go">qsub: instance_type is a restricted parameter and can&#39;t be configure by the user. Contact your HPC admin and update /apps/soca/$SOCA_CONFIGURATION/cluster_manager/settings/queue_mapping.yml</span>
 </code></pre></div>
 
 <div class="admonition note">
@@ -1748,7 +1748,7 @@
 <p><a href="../../security/manage-queue-instance-types/">Read the documentation</a> if you want to limit users to a list of multiple instance types</p>
 </div>
 <h2 id="prevent-user-to-provision-additional-storage">Prevent user to provision additional storage<a class="headerlink" href="#prevent-user-to-provision-additional-storage" title="Permanent link">&para;</a></h2>
-<p>Considering <code>/apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/settings/queue_mapping.yml</code></p>
+<p>Considering <code>/apps/soca/$SOCA_CONFIGURATION/cluster_manager/settings/queue_mapping.yml</code></p>
 <p><div class="highlight"><pre><span></span><code>queue_type:
   compute:
     queues: [&quot;normal&quot;, &quot;low&quot;]
@@ -1758,11 +1758,11 @@
 </code></pre></div>
 In this example, a job will be rejected if a user try to specify the <code>scratch_size</code> parameter when using the <code>normal</code> or <code>low</code> queues. In this particular case, any job sent to the <code>normal</code> or <code>low</code> queue will be forced to use a 200 GB EBS disk as <code>/scratch</code> partition. Users are no longer able to provision more storage than what's allocated to them.</p>
 <div class="highlight"><pre><span></span><code><span class="go">qsub -q normal -l scratch_size=550 -- /bin/echo test</span>
-<span class="go">qsub: scratch_size is a restricted parameter and can&#39;t be configure by the user. Contact your HPC admin and update /apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/settings/queue_mapping.yml</span>
+<span class="go">qsub: scratch_size is a restricted parameter and can&#39;t be configure by the user. Contact your HPC admin and update /apps/soca/$SOCA_CONFIGURATION/cluster_manager/settings/queue_mapping.yml</span>
 </code></pre></div>
 
 <h2 id="combine-multiple-restrictions">Combine multiple restrictions<a class="headerlink" href="#combine-multiple-restrictions" title="Permanent link">&para;</a></h2>
-<p>Considering <code>/apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/settings/queue_mapping.yml</code></p>
+<p>Considering <code>/apps/soca/$SOCA_CONFIGURATION/cluster_manager/settings/queue_mapping.yml</code></p>
 <div class="highlight"><pre><span></span><code>queue_type:
   compute:
     queues: [&quot;normal&quot;, &quot;low&quot;]
@@ -1773,13 +1773,13 @@ In this example, a job will be rejected if a user try to specify the <code>scrat
 
 <p>In this example, a job will be rejected if a user try to change either <code>instance_type</code>, <code>fsx_lustre_bucket</code> or <code>scratch_size</code> parameters.</p>
 <div class="highlight"><pre><span></span><code><span class="go">qsub -q normal -l fsx_lustre_bucket=mybucket -- /bin/echo test</span>
-<span class="go">qsub: fsx_lustre_bucket is a restricted parameter and can&#39;t be configure by the user. Contact your HPC admin and update /apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/settings/queue_mapping.yml</span>
+<span class="go">qsub: fsx_lustre_bucket is a restricted parameter and can&#39;t be configure by the user. Contact your HPC admin and update /apps/soca/$SOCA_CONFIGURATION/cluster_manager/settings/queue_mapping.yml</span>
 </code></pre></div>
 
 <h2 id="check-the-logs">Check the logs<a class="headerlink" href="#check-the-logs" title="Permanent link">&para;</a></h2>
 <p>Scheduler hooks are located on /var/spool/pbs/server_logs/</p>
 <h2 id="code">Code<a class="headerlink" href="#code" title="Permanent link">&para;</a></h2>
-<p>The hook file can be found under <code>/apps/soca/cluster_hooks/&lt;CLUSTER_ID&gt;/queuejob/check_queue_restricted_parameters.py</code> on your Scale-Out Computing on AWS cluster)</p>
+<p>The hook file can be found under <code>/apps/soca/cluster_hooks/$SOCA_CONFIGURATION/queuejob/check_queue_restricted_parameters.py</code> on your Scale-Out Computing on AWS cluster)</p>
 <h2 id="disable-the-hook">Disable the hook<a class="headerlink" href="#disable-the-hook" title="Permanent link">&para;</a></h2>
 <p>You can disable the hook by running the following command on the scheduler host (as root):</p>
 <div class="highlight"><pre><span></span><code>user@host: qmgr -c <span class="s2">&quot;delete hook check_queue_restricted_parameters event=queuejob&quot;</span>

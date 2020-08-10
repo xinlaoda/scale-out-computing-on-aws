@@ -1672,7 +1672,7 @@
                 
                 <h2 id="restrict-number-of-concurrent-running-jobs">Restrict number of concurrent running jobs<a class="headerlink" href="#restrict-number-of-concurrent-running-jobs" title="Permanent link">&para;</a></h2>
 <p>Configure <code>max_running_jobs</code> to limit the number of jobs running in parallel for a given queue
-Considering <code>/apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/settings/queue_mapping.yml</code></p>
+Considering <code>/apps/soca/$SOCA_CONFIGURATION/cluster_manager/settings/queue_mapping.yml</code></p>
 <div class="highlight"><pre><span></span><code>queue_type:
   compute:
     queues: [&quot;normal&quot;]

@@ -2011,7 +2011,7 @@ Filesystem      Size  Used Avail Use% Mounted on
 <h3 id="combine-custom-scratch-and-root-size">Combine custom scratch and root size<a class="headerlink" href="#combine-custom-scratch-and-root-size" title="Permanent link">&para;</a></h3>
 <p>You can combine parameters as needed. For example, <code>qsub -l root_size=150 -l scratch_size=200 -l nodes=2</code> will provision 2 nodes with 150GB / and 200GB SSD /scratch</p>
 <h3 id="change-the-storage-parameters-at-queue-level">Change the storage parameters at queue level<a class="headerlink" href="#change-the-storage-parameters-at-queue-level" title="Permanent link">&para;</a></h3>
-<p>Edit <code>/apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/settings/queue_mapping.yml</code> to configure default storage settings at a queue level:</p>
+<p>Edit <code>/apps/soca/$SOCA_CONFIGURATION/cluster_manager/settings/queue_mapping.yml</code> to configure default storage settings at a queue level:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">queue_type</span><span class="p">:</span>
   <span class="nt">compute</span><span class="p">:</span>
     <span class="c1"># /root will be 30 GB and /scratch will be a standard 100GB SSD</span>

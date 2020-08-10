@@ -2009,7 +2009,7 @@ Syntax is as follow:  </p>
 </ul>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p><a href="../integration-ec2-job-parameters/#how-to-use-custom-parameters">If you don't specify them, your job will use the default values configured for your queue (see <code>/apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/settings/queue_mapping.yml</code>) </a></p>
+<p><a href="../integration-ec2-job-parameters/#how-to-use-custom-parameters">If you don't specify them, your job will use the default values configured for your queue (see <code>/apps/soca/$SOCA_CONFIGURATION/cluster_manager/settings/queue_mapping.yml</code>) </a></p>
 </div>
 <h2 id="specify-an-ec2-instance-type-optional">Specify an EC2 Instance Type (optional)<a class="headerlink" href="#specify-an-ec2-instance-type-optional" title="Permanent link">&para;</a></h2>
 <p>Scale-Out Computing on AWS supports all type of EC2 instance. If you don't specify it, job will use a default type which may not be optimal (eg: simulation is memory intensive but default EC2 is compute optimized) If you are not familiar with EC2 instances, take some time to review <a href="https://aws.amazon.com/ec2/instance-types/">https://aws.amazon.com/ec2/instance-types/</a><br />
@@ -2018,7 +2018,7 @@ If you want to force utilization of a specific instance type (and not use the de
 <h2 id="specify-a-license-restriction-optional">Specify a license restriction (optional)<a class="headerlink" href="#specify-a-license-restriction-optional" title="Permanent link">&para;</a></h2>
 <div class="admonition info">
 <p class="admonition-title">License Mapping</p>
-<p>Please refer to /apps/soca/<CLUSTER_ID>/cluster_manager/settings/licenses_mapping.yml for a list of licenses you can restrict. Contact your Administrator if your license is not available yet.</p>
+<p>Please refer to /apps/soca/$SOCA_CONFIGURATION/cluster_manager/settings/licenses_mapping.yml for a list of licenses you can restrict. Contact your Administrator if your license is not available yet.</p>
 </div>
 <p>If your job needs to check-out a specific license to run, you want to make sure enough licenses are available before provisioning capacity for the job. To do so, you can add a new resource which will be your license name and the number of license you need.<br />
 Example: Your job will only start if we have at least 2 Synopsys VCSRuntime_Net licenses available.<br />

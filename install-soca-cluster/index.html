@@ -1846,7 +1846,7 @@ user@host: python3 source/manual_build.py
 
 <span class="o">======</span> Installation <span class="nv">Instructions</span> <span class="o">======</span>
 <span class="m">1</span>. Click on the following link:
-<span class="hll"><span class="o">==</span>&gt; https://console.aws.amazon.com/cloudformation/home?region<span class="o">=</span>us-east-1#/stacks/create/review?<span class="p">&amp;</span><span class="nv">templateURL</span><span class="o">=</span>https://your-bucket.s3.amazonaws.com/soca-installer-r6l1/scale-out-computing-on-aws.template<span class="p">&amp;</span><span class="nv">param_S3InstallBucket</span><span class="o">=</span>your-bucket<span class="p">&amp;</span><span class="nv">param_S3InstallFolder</span><span class="o">=</span>soca-installer-r6l1
+<span class="hll">https://console.aws.amazon.com/cloudformation/home?region<span class="o">=</span>us-east-1#/stacks/create/review?<span class="p">&amp;</span><span class="nv">templateURL</span><span class="o">=</span>https://your-bucket.s3.amazonaws.com/soca-installer-r6l1/scale-out-computing-on-aws.template<span class="p">&amp;</span><span class="nv">param_S3InstallBucket</span><span class="o">=</span>your-bucket<span class="p">&amp;</span><span class="nv">param_S3InstallFolder</span><span class="o">=</span>soca-installer-r6l1
 </span><span class="m">2</span>. The <span class="s1">&#39;Install Location&#39;</span> parameters are pre-filled <span class="k">for</span> you, fill out the rest of the parameters.
 
 For more information: https://awslabs.github.io/scale-out-computing-on-aws/install-soca-cluster/
@@ -1886,8 +1886,7 @@ Press Enter key to close ..
 <a href="https://install.soca.dev">Check out the web installer</a> to verify your setup</p>
 </div>
 <h2 id="install-scale-out-computing-on-aws">Install Scale-Out Computing on AWS<a class="headerlink" href="#install-scale-out-computing-on-aws" title="Permanent link">&para;</a></h2>
-<p>If you've used the <code>manual_build.py</code> version, clicking on the link will open the CloudFormation console and pre-fill the <strong>Install Location</strong> parameters:</p>
-<p>If you've manually uploaded these to S3 following <a href="#option-2-download-the-latest-release-targz">Option 2</a>, you'll need to fill out these two parameters.</p>
+<p>Clicking on the link will open the CloudFormation console and pre-fill the <strong>Install Location</strong> parameters:</p>
 <p><img alt="" src="../imgs/install-6.png" /></p>
 <p>Under stack details, choose the stack name (do not use uppercase or it will break your ElasticSearch cluster). </p>
 <div class="admonition danger">
@@ -1972,13 +1971,13 @@ To enable "Termination Protect" select your Primary template and click "Stack Ac
 <li>Scheduler: <code>service pbs start</code></li>
 <li>SSSD: <code>service sssd start</code></li>
 <li>OpenLDAP: <code>service openldap start</code></li>
-<li>Web UI <code>/apps/soca/&lt;CLUSTER_ID&gt;/cluster_web_ui/socawebui.sh start</code></li>
+<li>Web UI <code>/apps/soca/$SOCA_CONFIGURATION/cluster_web_ui/socawebui.sh start</code></li>
 <li>NFS partitions <code>mount -a</code> (mount configuration is available on <code>/etc/fstab</code>)</li>
 </ul>
 <h2 id="operational-metrics">Operational Metrics<a class="headerlink" href="#operational-metrics" title="Permanent link">&para;</a></h2>
 <p>This solution includes an option to send anonymous operational metrics to AWS. We use this data to better understand how customers use this solution and related services and products. 
 Note that AWS will own the data gathered via this survey. Data collection will be subject to the <a href="https://aws.amazon.com/privacy/">AWS Privacy Policy</a>. </p>
-<p>To opt out of this feature, modify the <code>/apps/soca/&lt;CLUSTER_ID&gt;/cluster_manager/cloudformation_builder</code> and set <code>allow_anonymous_data_collection</code> variable to <code>False</code></p>
+<p>To opt out of this feature, modify the <code>/apps/soca/$SOCA_CONFIGURATION/cluster_manager/cloudformation_builder</code> and set <code>allow_anonymous_data_collection</code> variable to <code>False</code></p>
 <p>When enabled, the following information is collected and sent to AWS:</p>
 <div class="codehilite"><pre><span></span><code><span class="err">   - Solution ID: The AWS solution identifier</span>
 <span class="err">   - Base Operating System: The operating system selected for the solution deployment</span>
