@@ -1781,7 +1781,7 @@
 <ol>
 <li>
 <p>Log back into the <strong>scheduler host</strong> via SSH as <code>ec2-user</code> and run the follow command to force immediate ingestion into ElasticSearch:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">source</span> /etc/environment<span class="p">;</span> /apps/python/latest/bin/python3 /apps/soca/cluster_analytics/job_tracking.py
+<div class="highlight"><pre><span></span><code><span class="nb">source</span> /etc/environment<span class="p">;</span> /apps/soca/<span class="nv">$SOCA_CONFIGURATION</span>/python/latest/bin/python3 /apps/soca/<span class="nv">$SOCA_CONFIGURATION</span>/cluster_analytics/job_tracking.py
 </code></pre></div>
 
 </li>
