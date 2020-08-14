@@ -1757,7 +1757,7 @@
 <p>If you want to be able to send email to any addresses, <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/request-production-access.html">you need to request production access</a>.</p>
 <p><img alt="" src="../../imgs/email-4.png" /></p>
 <h2 id="notification-code">Notification code<a class="headerlink" href="#notification-code" title="Permanent link">&para;</a></h2>
-<p>Create a hook file (note: this file can be found under <code>/apps/soca/$SOCA_CONFIGURATION/cluster_hooks/job_notification.py</code> on your Scale-Out Computing on AWS cluster)</p>
+<p>Create a hook file (note: this file can be found under <code>/apps/soca/$SOCA_CONFIGURATION/cluster_hooks/job_notifications.py</code> on your Scale-Out Computing on AWS cluster)</p>
 <p>Edit the following section to match your SES settings
 <div class="highlight"><pre><span></span><code>ses_sender_email = &#39;&lt;SES_SENDER_EMAIL_ADDRESS_HERE&gt;&#39;
 ses_region = &#39;&lt;YOUR_SES_REGION_HERE&gt;&#39;
