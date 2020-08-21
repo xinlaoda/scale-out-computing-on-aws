@@ -1768,7 +1768,11 @@
                 
                   <h1>Create your own analytics dashboard</h1>
                 
-                <p><a href="../../analytics/monitor-cluster-activity/">On your Kibana cluster</a>, click "Visualize" to create a new visualization. Below are some example to help you get started</p>
+                <div class="admonition danger">
+<p class="admonition-title">Pre-Requisites</p>
+<p><a href="../../analytics/monitor-cluster-activity/">You must have configure your Kibana index first</a></p>
+</div>
+<p><a href="../../analytics/monitor-cluster-activity/">On your Kibana cluster</a>, click "Visualize" to create a new visualization. Below are some example to help you get started</p>
 <p><em>Note: For each dashboard, you can get detailed data at user, queue, job or project level by simply using the "Filters" section</em></p>
 <h2 id="money-spent-by-instance-type">Money spent by instance type<a class="headerlink" href="#money-spent-by-instance-type" title="Permanent link">&para;</a></h2>
 <div class="admonition example">
@@ -1777,19 +1781,19 @@
 <li>Select "Vertical Bars" and "jobs" index</li>
 <li>Y Axis (Metrics):<ul>
 <li>Aggregation: Sum</li>
-<li>Field: price_ondemand</li>
+<li>Field: estimated_price_ondemand</li>
 </ul>
 </li>
 <li>X Axis (Buckets):<ul>
 <li>Aggregation: Terms</li>
 <li>Field: instance_type_used</li>
-<li>Order By: metric: Sum of price_on_demand</li>
+<li>Order By: metric: Sum of estimated_price_ondemand</li>
 </ul>
 </li>
 <li>Split Series (Buckets):<ul>
 <li>Sub Aggregation: Terms</li>
 <li>Field: instance_type_used</li>
-<li>Order By:  metric: Sum of price_on_demand</li>
+<li>Order By:  metric: Sum of estimated_price_ondemand</li>
 </ul>
 </li>
 </ul>
