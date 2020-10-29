@@ -358,43 +358,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#graphical-access-using-dcv" class="md-nav__link">
-    Graphical access using DCV
+  <a href="#graphical-access-using-windowslinux-virtual-desktop" class="md-nav__link">
+    Graphical access using Windows/Linux virtual desktop
   </a>
-  
-    <nav class="md-nav" aria-label="Graphical access using DCV">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#session-validity" class="md-nav__link">
-    Session Validity
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#session-type" class="md-nav__link">
-    Session type
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#advanced-options" class="md-nav__link">
-    Advanced Options
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#access-your-session" class="md-nav__link">
-    Access your session
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1000,8 +966,44 @@
 
 
   <li class="md-nav__item">
+    <a href="../web-interface/create-virtual-desktops-images/" title="Create Virtual Desktop Images for Windows/Linux" class="md-nav__link">
+      Create Virtual Desktop Images for Windows/Linux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../web-interface/create-virtual-desktops/" title="Create Virtual Desktops (Windows/Linux)" class="md-nav__link">
+      Create Virtual Desktops (Windows/Linux)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../web-interface/create-your-own-queue/" title="Create your own queue" class="md-nav__link">
       Create your own queue
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../web-interface/import-export-application-profiles/" title="Import/Export application profiles" class="md-nav__link">
+      Import/Export application profiles
     </a>
   </li>
 
@@ -1050,6 +1052,18 @@
   <li class="md-nav__item">
     <a href="../web-interface/my-job-queue/" title="My Job Queue" class="md-nav__link">
       My Job Queue
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../web-interface/share-data-windows-sessions/" title="How to easily share data with your virtual desktops" class="md-nav__link">
+      How to easily share data with your virtual desktops
     </a>
   </li>
 
@@ -1672,43 +1686,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#graphical-access-using-dcv" class="md-nav__link">
-    Graphical access using DCV
+  <a href="#graphical-access-using-windowslinux-virtual-desktop" class="md-nav__link">
+    Graphical access using Windows/Linux virtual desktop
   </a>
-  
-    <nav class="md-nav" aria-label="Graphical access using DCV">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#session-validity" class="md-nav__link">
-    Session Validity
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#session-type" class="md-nav__link">
-    Session type
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#advanced-options" class="md-nav__link">
-    Advanced Options
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#access-your-session" class="md-nav__link">
-    Access your session
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1759,31 +1739,8 @@ $ ssh-add -L
 <div class="highlight"><pre><span></span><code>$ ssh &lt;USERNAME&gt;@&lt;PRIVATE_IP&gt;
 </code></pre></div></p>
 </div>
-<h2 id="graphical-access-using-dcv">Graphical access using DCV<a class="headerlink" href="#graphical-access-using-dcv" title="Permanent link">&para;</a></h2>
-<p>To access your Scale-Out Computing on AWS cluster using a full remote desktop experience, click "Graphical Access" on the left sidebar. By default you are authorized to have 4 sessions (EC2 instances).</p>
-<p><img alt="" src="../imgs/access-2.png" /></p>
-<h3 id="session-validity">Session Validity<a class="headerlink" href="#session-validity" title="Permanent link">&para;</a></h3>
-<p>You can choose how long your session will be valid. This parameter can be customized as needed</p>
-<p><img alt="" src="../imgs/access-6.png" /></p>
-<div class="admonition info">
-<p class="admonition-title">Terminate when idle</p>
-<p>Starting 2.5.0, HPC admins can configure idle time (<code>DCV_TERMINATE_IDLE_SESSION</code>, in hours). DCV session will automatically terminated if the session is inactive for too long.</p>
-</div>
-<h3 id="session-type">Session type<a class="headerlink" href="#session-type" title="Permanent link">&para;</a></h3>
-<p>You can choose the type of session you want to deploy, depending your needs. This parameter can be customized as needed</p>
-<p><img alt="" src="../imgs/access-4.png" /></p>
-<h3 id="advanced-options">Advanced Options<a class="headerlink" href="#advanced-options" title="Permanent link">&para;</a></h3>
-<p>Starting 2.5.0, users can choose to install DCV on their custom AMI as well as provision additional EBS volumes</p>
-<h3 id="access-your-session">Access your session<a class="headerlink" href="#access-your-session" title="Permanent link">&para;</a></h3>
-<p>After you click "Launch my session", a new "desktop" job is sent to the queue. Scale-Out Computing on AWS will then provision the capacity and install all required packages including Gnome.
-You will see an informational message asking you to wait up to 20 minutes before being able to access your remote desktop.</p>
-<p><img alt="" src="../imgs/access-3.png" /></p>
-<p>Once your session is ready, the message will automatically be updated with the connection information</p>
-<p><img alt="" src="../imgs/access-7.png" /></p>
-<p>You can access your session directly on your browser</p>
-<p><img alt="" src="../imgs/access-8.png" /></p>
-<p>You can also download the NICE DCV Native Clients for Mac / Linux and Windows and access your session directly through them</p>
-<p><img alt="" src="../imgs/access-9.png" /></p>
+<h2 id="graphical-access-using-windowslinux-virtual-desktop">Graphical access using Windows/Linux virtual desktop<a class="headerlink" href="#graphical-access-using-windowslinux-virtual-desktop" title="Permanent link">&para;</a></h2>
+<p>Refer to <a href="../web-interface/create-virtual-desktops/">this page to learn how to launch your own Windows/Linux session and access SOCA via your virtual desktop</a></p>
                 
                   
                 

@@ -1066,8 +1066,44 @@
 
 
   <li class="md-nav__item">
+    <a href="../../web-interface/create-virtual-desktops-images/" title="Create Virtual Desktop Images for Windows/Linux" class="md-nav__link">
+      Create Virtual Desktop Images for Windows/Linux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../web-interface/create-virtual-desktops/" title="Create Virtual Desktops (Windows/Linux)" class="md-nav__link">
+      Create Virtual Desktops (Windows/Linux)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../web-interface/create-your-own-queue/" title="Create your own queue" class="md-nav__link">
       Create your own queue
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../web-interface/import-export-application-profiles/" title="Import/Export application profiles" class="md-nav__link">
+      Import/Export application profiles
     </a>
   </li>
 
@@ -1116,6 +1152,18 @@
   <li class="md-nav__item">
     <a href="../../web-interface/my-job-queue/" title="My Job Queue" class="md-nav__link">
       My Job Queue
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../web-interface/share-data-windows-sessions/" title="How to easily share data with your virtual desktops" class="md-nav__link">
+      How to easily share data with your virtual desktops
     </a>
   </li>
 
@@ -1915,21 +1963,21 @@ Cluster: soca-uiupdates
 <p><a href="https://github.com/awslabs/scale-out-computing-on-aws/blob/master/source/scripts/Scheduler.sh#L34">Here is an example</a> of how you can install packages listed in an array in bash.</p>
 </div>
 <h4 id="32-pre-install-the-scheduler">3.2: Pre-Install the scheduler<a class="headerlink" href="#32-pre-install-the-scheduler" title="Permanent link">&para;</a></h4>
-<p>To reduce the launch time of your EC2 instance, it's recommended to pre-install PBSPro. 
-First, refer to <a href="https://github.com/awslabs/scale-out-computing-on-aws/blob/master/source/scripts/config.cfg">https://github.com/awslabs/scale-out-computing-on-aws/blob/master/source/scripts/config.cfg</a> and note all PBSPro related variables as you will need to use them below (see highlighted lines):</p>
+<p>To reduce the launch time of your EC2 instance, it's recommended to pre-install OpenPBS. 
+First, refer to <a href="https://github.com/awslabs/scale-out-computing-on-aws/blob/master/source/scripts/config.cfg">https://github.com/awslabs/scale-out-computing-on-aws/blob/master/source/scripts/config.cfg</a> and note all OpenPBS related variables as you will need to use them below (see highlighted lines):</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Sudo as Root</span>
 sudo su -
 
-<span class="c1"># Define PBSPro variable</span>
-<span class="hll"><span class="nb">export</span> <span class="nv">PBSPRO_URL</span><span class="o">=</span>&lt;variable_from_config.txt&gt; <span class="c1"># ex https://github.com/PBSPro/pbspro/releases/download/v18.1.4/pbspro-18.1.4.tar.gz</span>
-</span><span class="hll"><span class="nb">export</span> <span class="nv">PBSPRO_TGZ</span><span class="o">=</span>&lt;variable_from_config.txt&gt; <span class="c1"># ex pbspro-18.1.4.tar.gz</span>
-</span><span class="hll"><span class="nb">export</span> <span class="nv">PBSPRO_VERSION</span><span class="o">=</span>&lt;variable_from_config.txt&gt; <span class="c1"># ex 18.1.4</span>
+<span class="c1"># Define OpenPBS variable</span>
+<span class="hll"><span class="nb">export</span> <span class="nv">OPENPBS_URL</span><span class="o">=</span>&lt;variable_from_config.txt&gt; <span class="c1"># ex https://github.com/openpbs/openpbs/archive/v20.0.1.tar.gz</span>
+</span><span class="hll"><span class="nb">export</span> <span class="nv">OPENPBS_TGZ</span><span class="o">=</span>&lt;variable_from_config.txt&gt; <span class="c1"># ex v20.0.1.tar.gz</span>
+</span><span class="hll"><span class="nb">export</span> <span class="nv">OPENPBS_VERSION</span><span class="o">=</span>&lt;variable_from_config.txt&gt; <span class="c1"># ex 20.0.1</span>
 </span>
-<span class="c1"># Run the following command to install PBS</span>
+<span class="c1"># Run the following command to install OpenPBS</span>
 <span class="nb">cd</span> ~
-wget <span class="nv">$PBSPRO_URL</span>
-tar zxvf <span class="nv">$PBSPRO_TGZ</span>
-<span class="nb">cd</span> pbspro-<span class="nv">$PBSPRO_VERSION</span>
+wget <span class="nv">$OPENPBS_URL</span>
+tar zxvf <span class="nv">$OPENPBS_TGZ</span>
+<span class="nb">cd</span> openpbs-<span class="nv">$OPENPBS_VERSION</span>
 ./autogen.sh
 ./configure --prefix<span class="o">=</span>/opt/pbs
 make -j6
@@ -1941,7 +1989,7 @@ systemctl disable pbs
 
 <div class="admonition note">
 <p class="admonition-title">Installation Path</p>
-<p>Make sure to install pbspro under <code>/opt/pbs</code></p>
+<p>Make sure to install OpenPBS under <code>/opt/pbs</code></p>
 </div>
 <h4 id="33-optional-pre-install-gnome">3.3: (Optional) Pre-Install Gnome<a class="headerlink" href="#33-optional-pre-install-gnome" title="Permanent link">&para;</a></h4>
 <ul>

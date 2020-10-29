@@ -1078,8 +1078,44 @@
 
 
   <li class="md-nav__item">
+    <a href="../../web-interface/create-virtual-desktops-images/" title="Create Virtual Desktop Images for Windows/Linux" class="md-nav__link">
+      Create Virtual Desktop Images for Windows/Linux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../web-interface/create-virtual-desktops/" title="Create Virtual Desktops (Windows/Linux)" class="md-nav__link">
+      Create Virtual Desktops (Windows/Linux)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../web-interface/create-your-own-queue/" title="Create your own queue" class="md-nav__link">
       Create your own queue
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../web-interface/import-export-application-profiles/" title="Import/Export application profiles" class="md-nav__link">
+      Import/Export application profiles
     </a>
   </li>
 
@@ -1128,6 +1164,18 @@
   <li class="md-nav__item">
     <a href="../../web-interface/my-job-queue/" title="My Job Queue" class="md-nav__link">
       My Job Queue
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../web-interface/share-data-windows-sessions/" title="How to easily share data with your virtual desktops" class="md-nav__link">
+      How to easily share data with your virtual desktops
     </a>
   </li>
 
@@ -1902,6 +1950,7 @@
 <p>/data is an <a href="https://aws.amazon.com/efs/">Elastic File System</a> partition mounted on all hosts. This contains the home directory of your LDAP users ($HOME = <code>/data/home/&lt;USERNAME&gt;</code>). <strong>This partition is persistent</strong>. Avoid using this partition if your simulation is disk I/O intensive (use /scratch instead)</p>
 <h3 id="apps-partition">/apps partition<a class="headerlink" href="#apps-partition" title="Permanent link">&para;</a></h3>
 <p>/apps is an <a href="https://aws.amazon.com/efs/">Elastic File System</a> partition mounted on all hosts. This partition is designed to host all your CFD/FEA/EDA/Mathematical applications. <strong>This partition is persistent</strong>. Avoid using this partition if your simulation is disk I/O intensive (use /scratch instead)</p>
+<p>The corresponding EFS file system is deployed with bursting Throughput mode which depends on burst credits. /apps has cron jobs that monitor the status of the cluster, scale-up and scale-down the cluster, and is also running the web application. If the cluster stays up and running for 1+ months and not much additional applications are installed under /apps, then EFS file system might run out of burst credits which could impact the web application. Starting v2.6.0, the solution deploys CloudWatch Alarms to monitor the burst credits for /apps EFS file system. When burst credits are close to be depleted, a lambda function is triggered to change the Throughput mode to provisioned at 5 MiB/sec. This increases the monthly cost of EFS by ~$30/month (for us-west-2 and us-east-1 regions). After some time, the file system would have earned enough burst credits, so the lambda function changes Throughput mode back to bursting as it is more cost effective. <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Click here to learn more about EFS Throughput modes</a></p>
 <h2 id="fsx">FSx<a class="headerlink" href="#fsx" title="Permanent link">&para;</a></h2>
 <p>Scale-Out Computing on AWS supports FSx natively. <a href="../../storage/launch-job-with-fsx/">Click here to learn how to use FSx as backend storage for your jobs</a>.</p>
 <h2 id="instance-local-partitions">Instance (local) partitions<a class="headerlink" href="#instance-local-partitions" title="Permanent link">&para;</a></h2>
