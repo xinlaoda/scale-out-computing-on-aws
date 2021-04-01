@@ -1881,7 +1881,7 @@ bash-4.2$ qstat -f <span class="m">2</span> <span class="p">|</span> grep -i res
 <p>If you see a <code>compute_node</code> different than <code>tbd</code> as well as <code>stack_id</code>, that means Scale-Out Computing on AWS triggered capacity provisioning by creating a new CloudFormation stack.
 If you go to your CloudFormation console, you should see  a new stack being created using the following naming convention: <code>soca-&lt;cluster_name&gt;-job-&lt;job_id&gt;</code></p>
 <h3 id="retrieve-node-logs">Retrieve node logs<a class="headerlink" href="#retrieve-node-logs" title="Permanent link">&para;</a></h3>
-<p>On the master host, access <code>/apps/soca/$SOCA_CONFIGURATION/cluster_node_bootstrap/logs/</code>. This folder contains the output of all logs for all hosts provisioned by SOCA</p>
+<p>On the scheduler host, access <code>/apps/soca/$SOCA_CONFIGURATION/cluster_node_bootstrap/logs/</code>. This folder contains the output of all logs for all hosts provisioned by SOCA</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Retrieve logs for the most recent (2 weeks) jobs</span>
 <span class="hll">ls -ltr /apps/soca/<span class="nv">$SOCA_CONFIGURATION</span>/cluster_node_bootstrap/logs/ <span class="p">|</span> tail -n <span class="m">5</span>
 </span>drwxr-xr-x   <span class="m">3</span> root root  <span class="m">6144</span> Jul <span class="m">21</span> <span class="m">17</span>:02 <span class="m">19607</span>

@@ -1995,7 +1995,7 @@ Cluster: soca-uiupdates
 <p>Step 3 is only required if you want to reduce the time required for your compute node to boot. You can skip this section if you just want to install your customization on your AMI and let SOCA handles PBS/Gnome/System packages installation. </p>
 </div>
 <h4 id="31-pre-install-system-packages">3.1 Pre-Install system packages<a class="headerlink" href="#31-pre-install-system-packages" title="Permanent link">&para;</a></h4>
-<p>You can pre-install the packages listed on <a href="https://github.com/awslabs/scale-out-computing-on-aws/blob/master/source/scripts/config.cfg">https://github.com/awslabs/scale-out-computing-on-aws/blob/master/source/scripts/config.cfg</a>. You will need to run <code>yum install</code> for:</p>
+<p>You can pre-install the packages listed on <a href="https://github.com/awslabs/scale-out-computing-on-aws/blob/main/source/scripts/config.cfg">https://github.com/awslabs/scale-out-computing-on-aws/blob/main/source/scripts/config.cfg</a>. You will need to run <code>yum install</code> for:</p>
 <ul>
 <li>SYSTEM_PKGS</li>
 <li>SCHEDULER_PKGS</li>
@@ -2016,11 +2016,11 @@ Cluster: soca-uiupdates
 </li>
 </ul>
 <hr />
-<p><a href="https://github.com/awslabs/scale-out-computing-on-aws/blob/master/source/scripts/Scheduler.sh#L34">Here is an example</a> of how you can install packages listed in an array in bash.</p>
+<p><a href="https://github.com/awslabs/scale-out-computing-on-aws/blob/main/source/scripts/Scheduler.sh#L34">Here is an example</a> of how you can install packages listed in an array in bash.</p>
 </div>
 <h4 id="32-pre-install-the-scheduler">3.2: Pre-Install the scheduler<a class="headerlink" href="#32-pre-install-the-scheduler" title="Permanent link">&para;</a></h4>
 <p>To reduce the launch time of your EC2 instance, it's recommended to pre-install OpenPBS. 
-First, refer to <a href="https://github.com/awslabs/scale-out-computing-on-aws/blob/master/source/scripts/config.cfg">https://github.com/awslabs/scale-out-computing-on-aws/blob/master/source/scripts/config.cfg</a> and note all OpenPBS related variables as you will need to use them below (see highlighted lines):</p>
+First, refer to <a href="https://github.com/awslabs/scale-out-computing-on-aws/blob/main/source/scripts/config.cfg">https://github.com/awslabs/scale-out-computing-on-aws/blob/main/source/scripts/config.cfg</a> and note all OpenPBS related variables as you will need to use them below (see highlighted lines):</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Sudo as Root</span>
 sudo su -
 
@@ -2060,7 +2060,7 @@ systemctl disable pbs
 </ul>
 <h4 id="34-reboot-your-ec2-machine">3.4: Reboot your EC2 machine<a class="headerlink" href="#34-reboot-your-ec2-machine" title="Permanent link">&para;</a></h4>
 <h4 id="35-make-sure-you-do-not-have-any-libvirt-of-firewalldiptables">3.5: Make sure you do not have any libvirt of firewalld/iptables<a class="headerlink" href="#35-make-sure-you-do-not-have-any-libvirt-of-firewalldiptables" title="Permanent link">&para;</a></h4>
-<p>Post reboot, some distribution may automatically start libvirt or firewall. If that's the case you must delete them otherwise PBS won't be able to contact the master scheduler.
+<p>Post reboot, some distribution may automatically start libvirt or firewall. If that's the case you must delete them otherwise PBS won't be able to contact the scheduler.
 To find if you have a running libvirt, run <code>ifconfig</code> and check if you have <code>virbr0</code> interface such as:</p>
 <div class="highlight"><pre><span></span><code>ifconfig
 ens5: <span class="nv">flags</span><span class="o">=</span><span class="m">4163</span>&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu <span class="m">9001</span>

@@ -2007,7 +2007,7 @@ Press Enter key to close ..
 </div>
 <ul>
 <li>
-<p>Environment Parameters: Choose your Linux Distribution, instance type for your master host, VPC CIDR, your IP which will be whitelisted for port 22, 80 and 443 as well as the root SSH keypair you want to use</p>
+<p>Environment Parameters: Choose your Linux Distribution, instance type for your scheduler host, VPC CIDR, your IP which will be allowed to access port 22, 80 and 443 as well as the root SSH keypair you want to use</p>
 </li>
 <li>
 <p>LDAP Parameters: Create a default LDAP user</p>
@@ -2033,7 +2033,7 @@ Press Enter key to close ..
 <h2 id="post-install-verifications">Post Install Verifications<a class="headerlink" href="#post-install-verifications" title="Permanent link">&para;</a></h2>
 <p>Wait for CloudFormation stacks to be "CREATE_COMPLETE", then  select your base stack and click "Outputs"</p>
 <p><img alt="" src="../../imgs/install-9.png" /></p>
-<p>Output tabs give you information about the SSH IP for the master, link to the web interface or ElasticSearch.</p>
+<p>Output tabs give you information about the SSH IP for the scheduler host, link to the web interface or ElasticSearch.</p>
 <p><img alt="" src="../../imgs/install-10.png" /></p>
 <p>Even though Cloudformation resources are created, your environment might not be completely ready. 
 To confirm whether or not Scale-Out Computing on AWS is ready, try to SSH to the scheduler IP. If your Scale-Out Computing on AWS cluster is not ready, your SSH will be rejected as shown below:</p>
