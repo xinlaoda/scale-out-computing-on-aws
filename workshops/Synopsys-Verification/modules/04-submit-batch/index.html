@@ -1774,9 +1774,9 @@
                 
                 
                 <h1 id="lab-4-submit-batch-jobs">Lab 4: Submit Batch Jobs<a class="headerlink" href="#lab-4-submit-batch-jobs" title="Permanent link">&para;</a></h1>
-<p>This module provides instructions for running an example batch workload in the computing envronment created the <strong>Deploy environment</strong> module. The example workload is a CPU- and IO-intensive logic simulation that is found in integrated cicuit design workflows.</p>
+<p>This module provides instructions for running an example batch workload in the SOCA computing environment. The example workload is a CPU- and IO-intensive logic simulation that is found in integrated cicuit design workflows.</p>
 <h3 id="step-1-submit-jobs-to-the-scheduler">Step 1: Submit jobs to the scheduler<a class="headerlink" href="#step-1-submit-jobs-to-the-scheduler" title="Permanent link">&para;</a></h3>
-<p>Next, you'll submit four jobs into the cluster, each job requesting a specific instance type. Using multiple instance types will help provide more interesting data to look at in the analytics lab.</p>
+<p>Next, you'll submit four jobs into the cluster, each job requests a specific instance type. Using multiple instance types will help provide more interesting data to look at in the analytics lab.</p>
 <ol>
 <li>
 <p>Execute the run_tests.sh script which will submit 20 batch jobs to the queue by typing <code>./run_tests.sh</code> then hit enter. You'll observe that the PBS scheduler will report the corresponding job idsfor each of these 20 jobs. </p>
@@ -1792,21 +1792,23 @@
     <img alt="" src="../../imgs/my-job-queue.png" /></p>
 </li>
 <li>
-<p>You can run the <code>pbsnodes -aSjL</code> command to see the EC2 instances that have joined the cluster. Initially, the nodes will be in <strong>state-unknown,down</strong> till they boot-up and join the queue.
-    !!! note
-       The scheduler is configured to monitor the status of the queues every minute. It typically takes 5-6 minutes to launch a new EC2 instance, boot the operating system, configure it to join the cluster, and have the assigned job to start running. </p>
+<p>You can run the <code>pbsnodes -aSjL</code> command to see the EC2 instances that have joined the cluster. Initially, the nodes will be in <strong>state-unknown,down</strong> till they boot-up and join the queue.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The scheduler is configured to monitor the status of the queues every minute. It typically takes 5-6 minutes to launch a new EC2 instance, boot the operating system, configure it to join the cluster, and have the assigned job to start running. </p>
+</div>
 </li>
 </ol>
 <h3 id="step-3-monitor-test20-job">Step 3: Monitor test20 job<a class="headerlink" href="#step-3-monitor-test20-job" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p>Monitor the status of test20 job by refreshing the <strong>My Job Queue</strong> page in SOCA portal and look for the <strong>Status</strong> column for the job with test20 under <strong>Name</strong> column.</p>
+<p>Monitor the status of test20 job by refreshing the <strong>My Job Queue</strong> page in SOCA portal and look for the <strong>Status</strong> column for the job with <code>test20</code> under <strong>Name</strong> column.</p>
 </li>
 <li>
-<p>You can also monitor the job status in the terminal by typing <code>qstat</code> command.</p>
+<p>You can also monitor the status of the jobs in the terminal by typing <code>watch -n 10 "qstat"</code> command which will keep monitoring the status of the jobs every 10 seconds. You'll need to wait the <strong>S</strong> column represeting the status of the job correspoding to the one with <code>test20</code> under <strong>Name</strong> column. This job usually takes around 6 minutes to complete.</p>
 </li>
 <li>
-<p>Once the job is in the running state, look inside test20 directory for test.log and novas.fsdb by typing <code>ls test20/*</code>. Wait until test20/novas.fsdb is created as you'll need to use it in the next lab.</p>
+<p>Once the job is in the running state (<strong>S</strong> column changes to R in the terminal or <strong>Status</strong> column changes to RUNNING on <strong>My Job Queue</strong> page in SOCA portal), look inside test20 directory for test.log and novas.fsdb by typing <code>ls test20/*</code>. Wait until test20/novas.fsdb is created as you'll need to use it in the next lab.</p>
 </li>
 </ol>
 <p>Click <strong>Next</strong> to move to the next lab.</p>

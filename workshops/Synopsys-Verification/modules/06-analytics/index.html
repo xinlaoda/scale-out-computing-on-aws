@@ -1301,57 +1301,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#step-1-open-cluster-dashboard" class="md-nav__link">
-    Step 1: Open Cluster Dashboard
+  <a href="#step-1-open-my-activity" class="md-nav__link">
+    Step 1: Open My Activity
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-add-data-to-your-cluster" class="md-nav__link">
-    Step 2: Add Data to your Cluster
+  <a href="#step-2-explore-cluster-dashboard" class="md-nav__link">
+    Step 2: Explore Cluster Dashboard
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-create-indexes" class="md-nav__link">
-    Step 3: Create Indexes
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 3: Create Indexes">
+    <nav class="md-nav" aria-label="Step 2: Explore Cluster Dashboard">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#index-information" class="md-nav__link">
-    Index Information
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
-    Examples
-  </a>
-  
-    <nav class="md-nav" aria-label="Examples">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cluster-node" class="md-nav__link">
-    Cluster Node
+  <a href="#jobs-per-user-split-by-instance-type" class="md-nav__link">
+    Jobs per user split by instance type
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#job-metadata" class="md-nav__link">
-    Job Metadata
+  <a href="#instance-types-split-by-user" class="md-nav__link">
+    Instance types split by user
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#number-of-instances-in-the-cluster" class="md-nav__link">
+    Number of instances in the cluster
   </a>
   
 </li>
@@ -1776,57 +1756,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#step-1-open-cluster-dashboard" class="md-nav__link">
-    Step 1: Open Cluster Dashboard
+  <a href="#step-1-open-my-activity" class="md-nav__link">
+    Step 1: Open My Activity
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-add-data-to-your-cluster" class="md-nav__link">
-    Step 2: Add Data to your Cluster
+  <a href="#step-2-explore-cluster-dashboard" class="md-nav__link">
+    Step 2: Explore Cluster Dashboard
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-create-indexes" class="md-nav__link">
-    Step 3: Create Indexes
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 3: Create Indexes">
+    <nav class="md-nav" aria-label="Step 2: Explore Cluster Dashboard">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#index-information" class="md-nav__link">
-    Index Information
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
-    Examples
-  </a>
-  
-    <nav class="md-nav" aria-label="Examples">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cluster-node" class="md-nav__link">
-    Cluster Node
+  <a href="#jobs-per-user-split-by-instance-type" class="md-nav__link">
+    Jobs per user split by instance type
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#job-metadata" class="md-nav__link">
-    Job Metadata
+  <a href="#instance-types-split-by-user" class="md-nav__link">
+    Instance types split by user
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#number-of-instances-in-the-cluster" class="md-nav__link">
+    Number of instances in the cluster
   </a>
   
 </li>
@@ -1854,191 +1814,31 @@
                 
                 
                 <h1 id="lab-6-explore-analytics-dashboard">Lab 6: Explore Analytics Dashboard<a class="headerlink" href="#lab-6-explore-analytics-dashboard" title="Permanent link">&para;</a></h1>
-<h2 id="step-1-open-cluster-dashboard">Step 1: Open Cluster Dashboard<a class="headerlink" href="#step-1-open-cluster-dashboard" title="Permanent link">&para;</a></h2>
-<p>Return to the your cluster web UI and click on the <strong>Analytics</strong> section on the left sidebar.</p>
-<p><img alt="" src="../../../../imgs/ws-analytics-5.png" /></p>
-<h2 id="step-2-add-data-to-your-cluster">Step 2: Add Data to your Cluster<a class="headerlink" href="#step-2-add-data-to-your-cluster" title="Permanent link">&para;</a></h2>
-<p>By default, job information is ingested by the analytics system on an hourly basis.</p>
-<ol>
-<li>
-<p>Log back into the <strong>scheduler host</strong> via SSH as <code>ec2-user</code> and run the follow command to force immediate ingestion into ElasticSearch:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">source</span> /etc/environment<span class="p">;</span> /apps/soca/<span class="nv">$SOCA_CONFIGURATION</span>/python/latest/bin/python3 /apps/soca/<span class="nv">$SOCA_CONFIGURATION</span>/cluster_analytics/job_tracking.py
-</code></pre></div>
-</li>
-</ol>
-<h2 id="step-3-create-indexes">Step 3: Create Indexes<a class="headerlink" href="#step-3-create-indexes" title="Permanent link">&para;</a></h2>
-<p>Since it's the first time you access this endpoint, you will need to configure your indexes.<br />
-First, access Kibana URL and click "Explore on my Own"</p>
-<p><img alt="" src="../../../../imgs/kibana-1.png" /></p>
-<p>Go under Management and Click Index Patterns</p>
-<p><img alt="" src="../../../../imgs/kibana-2.png" /></p>
-<p>Create your first index by typing <strong>pbsnodes*</strong>.</p>
-<p><img alt="" src="../../../../imgs/ws-analytics-1.png" /></p>
-<p>Click next, and then specify the Time Filter key (<strong>timestamp</strong>). Once done, click Create Index Pattern.</p>
-<p><img alt="" src="../../../../imgs/ws-analytics-2.png" /></p>
-<p>Repeat the same operation for <strong>jobs*</strong> index </p>
-<p><img alt="" src="../../../../imgs/ws-analytics-3.png" /></p>
-<p>This time,  select <strong>start_iso</strong> as time filter key.</p>
-<p><img alt="" src="../../../../imgs/ws-analytics-4.png" /></p>
-<p>Once your indexes are configured, go to Kibana, select "Discover" tab to start visualizing the data</p>
-<p><img alt="" src="../../../../imgs/kibana-5.png" /></p>
-<h3 id="index-information">Index Information<a class="headerlink" href="#index-information" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Cluster Node Information</th>
-<th>Job Information</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Kibana Index Name</td>
-<td>pbsnodes</td>
-<td>jobs</td>
-</tr>
-<tr>
-<td>Data ingestion</td>
-<td>/apps/soca/cluster_analytics/cluster_nodes_tracking.py</td>
-<td>/apps/soca/cluster_analytics/job_tracking.py</td>
-</tr>
-<tr>
-<td>Recurrence</td>
-<td>1 minute</td>
-<td>1 hour <strong>(note: job must be terminated to be shown on ElasticSearch)</strong></td>
-</tr>
-<tr>
-<td>Data uploaded</td>
-<td>Host Info (status of provisioned host, lifecycle, memory, cpu etc ..)</td>
-<td>Job Info (allocated hardware, licenses, simulation cost, job owner, instance type ...)</td>
-</tr>
-<tr>
-<td>Timestamp Key</td>
-<td>Use "timestamp" when you create the index for the first time</td>
-<td>use "start_iso" when you create the index for the first time</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
-<h4 id="cluster-node">Cluster Node<a class="headerlink" href="#cluster-node" title="Permanent link">&para;</a></h4>
-<p><img alt="" src="../../../../imgs/kibana-6.png" /></p>
-<h4 id="job-metadata">Job Metadata<a class="headerlink" href="#job-metadata" title="Permanent link">&para;</a></h4>
+<h2 id="step-1-open-my-activity">Step 1: Open My Activity<a class="headerlink" href="#step-1-open-my-activity" title="Permanent link">&para;</a></h2>
+<p>Return to the your cluster web UI and click on the <strong>My Activity</strong> section on the left sidebar.</p>
+<p><img alt="" src="../../imgs/my-activity.png" /></p>
+<p>You should see information about recent jobs submitted to the cluster for your user. You might need to update the duration dropdown just above the chart to see older or more recent job data.</p>
+<p><img alt="" src="../../imgs/analytics-jobs.png" /></p>
+<p>If you click on the small arrow to the left of the date/time, you'll see all metadata information saved into the analytics dashboard for this specific job. The metadata information is available in Table or JSON format. Here is an example of how it looks in JSON format. Notice that it includes an estimated price calculated based on job duration and instance type.</p>
 <p><img alt="" src="../../../../imgs/kibana-7.png" /></p>
-<h1 id="generate-graph">Generate Graph<a class="headerlink" href="#generate-graph" title="Permanent link">&para;</a></h1>
-<h2 id="money-spent-by-instance-type">Money spent by instance type<a class="headerlink" href="#money-spent-by-instance-type" title="Permanent link">&para;</a></h2>
-<div class="admonition example">
-<p class="admonition-title">Configuration</p>
-<ul>
-<li>Select "Vertical Bars" and "jobs" index</li>
-<li>Y Axis (Metrics):<ul>
-<li>Aggregation: Sum</li>
-<li>Field: estimate_price_ondemand</li>
-</ul>
-</li>
-<li>X Axis (Buckets):<ul>
-<li>Aggregation: Terms</li>
-<li>Field: instance_type_used.keyword</li>
-<li>Order By: metric: Sum of estimated_price_on_demand</li>
-</ul>
-</li>
-<li>Split Series (Buckets):<ul>
-<li>Sub Aggregation: Terms</li>
-<li>Field: instance_type_used</li>
-<li>Order By:  metric: Sum of price_on_demand</li>
-</ul>
-</li>
-</ul>
+<h2 id="step-2-explore-cluster-dashboard">Step 2: Explore Cluster Dashboard<a class="headerlink" href="#step-2-explore-cluster-dashboard" title="Permanent link">&para;</a></h2>
+<p>Above the chart click on the three-horizontal bars (a.k.a hamburger button) next to Elasticsearch Discover label.</p>
+<p><img alt="" src="../../imgs/analytics-menu.png" /></p>
+<p>Then under the Kibana section, click on <strong>Dashboard</strong></p>
+<p><img alt="" src="../../imgs/analytics-kibana-menu.png" /></p>
+<p>The cluster administrator can setup various visualizations in the dashboard. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The results of what you'll see in the cluster might be different than the example images below. Move your cursor above the visualizations to see pop-ups with more relevant information. You can also zoom in or out on the charts with date/time on the x-axis to see more details.</p>
 </div>
-<p><img alt="" src="../../../../imgs/dashboard-2.png" /></p>
-<h2 id="jobs-per-user-split-by-instance-type">Jobs per user split by instance type<a class="headerlink" href="#jobs-per-user-split-by-instance-type" title="Permanent link">&para;</a></h2>
-<div class="admonition example">
-<p class="admonition-title">Configuration</p>
-<ul>
-<li>Select "Vertical Bars" and "jobs" index</li>
-<li>Y Axis (Metrics):<ul>
-<li>Aggregation: count</li>
-</ul>
-</li>
-<li>X Axis (Buckets):<ul>
-<li>Aggregation: Terms</li>
-<li>Field: user.keyword</li>
-<li>Order By: metric: Count</li>
-</ul>
-</li>
-<li>Split Series (Buckets):<ul>
-<li>Sub Aggregation: Terms</li>
-<li>Field: instance_type_used</li>
-<li>Order By: metric: Count</li>
-</ul>
-</li>
-</ul>
-</div>
+<p>Here are a few examples:</p>
+<h3 id="jobs-per-user-split-by-instance-type">Jobs per user split by instance type<a class="headerlink" href="#jobs-per-user-split-by-instance-type" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="../../../../imgs/dashboard-9.png" />  </p>
-<h2 id="most-active-projects">Most active projects<a class="headerlink" href="#most-active-projects" title="Permanent link">&para;</a></h2>
-<div class="admonition example">
-<p class="admonition-title">Configuration</p>
-<ul>
-<li>Select "Pie" and "jobs" index</li>
-<li>Slice Size (Metrics):<ul>
-<li>Aggregation: Count</li>
-</ul>
-</li>
-<li>Split Slices (Buckets):<ul>
-<li>Aggregation: Terms</li>
-<li>Field: project.keyword</li>
-<li>Order By: metric: Count</li>
-</ul>
-</li>
-</ul>
-</div>
-<p><img alt="" src="../../../../imgs/dashboard-3.png" /></p>
-<h2 id="instance-type-launched-by-user">Instance type launched by user<a class="headerlink" href="#instance-type-launched-by-user" title="Permanent link">&para;</a></h2>
-<div class="admonition example">
-<p class="admonition-title">Configuration</p>
-<ul>
-<li>Select "Heat Map" and "jobs" index</li>
-<li>Value (Metrics):<ul>
-<li>Aggregation: Count</li>
-</ul>
-</li>
-<li>Y Axis (Buckets):<ul>
-<li>Aggregation: Term</li>
-<li>Field: instance_type_used</li>
-<li>Order By: metric: Count</li>
-</ul>
-</li>
-<li>X Axis (Buckets):<ul>
-<li>Aggregation: Terms</li>
-<li>Field: user</li>
-<li>Order By: metric: Count</li>
-</ul>
-</li>
-</ul>
-</div>
+<h3 id="instance-types-split-by-user">Instance types split by user<a class="headerlink" href="#instance-types-split-by-user" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="../../../../imgs/dashboard-5.png" /></p>
-<h2 id="number-of-nodes-in-the-cluster">Number of nodes in the cluster<a class="headerlink" href="#number-of-nodes-in-the-cluster" title="Permanent link">&para;</a></h2>
-<div class="admonition example">
-<p class="admonition-title">Configuration</p>
-<ul>
-<li>Select "Lines" and "pbsnodes" index</li>
-<li>Y Axis (Metrics):<ul>
-<li>Aggregation: Unique Count</li>
-<li>Field: Mom.keyword</li>
-</ul>
-</li>
-<li>X Axis (Buckets):<ul>
-<li>Aggregation: Date Histogram,</li>
-<li>Field: timestamp</li>
-<li>Interval: Minute</li>
-</ul>
-</li>
-</ul>
-</div>
+<h3 id="number-of-instances-in-the-cluster">Number of instances in the cluster<a class="headerlink" href="#number-of-instances-in-the-cluster" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="../../../../imgs/dashboard-7.png" /></p>
-<h2 id="find-the-price-for-a-given-simulation">Find the price for a given simulation<a class="headerlink" href="#find-the-price-for-a-given-simulation" title="Permanent link">&para;</a></h2>
-<p>Each job comes with <code>estimated_price_ondemand</code> and <code>estimated_price_reserved</code> attributes which are calculated based on: <code>number of nodes * ( simulation_hours * instance_hourly_rate )</code></p>
-<p><img alt="" src="../../../../imgs/dashboard-1.png" /></p>
+<p>Click <strong>Next</strong> to move to the next lab.</p>
                 
               
               
