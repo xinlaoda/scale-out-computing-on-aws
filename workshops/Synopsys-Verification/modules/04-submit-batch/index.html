@@ -1782,7 +1782,7 @@
 <p>Execute the run_tests.sh script by typing <code>./run_tests.sh</code> then hit enter. The script is broken into two sections: The first section creates 5 compute instances each with 4 vCPUs then the second section submits 20 batch jobs to these instances. You'll observe that the PBS scheduler will report the corresponding job ids for each of these 20 jobs. </p>
 </li>
 <li>
-<p>You can examine the run_tests.sh script by typing <code>cat run_tests.sh</code>. </p>
+<p>You can examine the run_tests.sh script by typing <code>cat run_tests.sh</code>. Notice that we're using Spot pricing model since the duration of these jobs are short. Also, notice that we're specifying <code>--terminate_when_idle 3</code> which would terminate the instances and remove them from the cluster 3 mins after all jobs running on the instances complete.</p>
 </li>
 </ol>
 <h3 id="step-2-watch-job-status">Step 2: Watch job status<a class="headerlink" href="#step-2-watch-job-status" title="Permanent link">&para;</a></h3>
