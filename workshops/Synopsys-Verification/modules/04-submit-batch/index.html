@@ -1795,7 +1795,7 @@
 <p>You can run the <code>pbsnodes -aSjL</code> command to see the EC2 instances that have joined the cluster. Initially, the nodes will be in <strong>state-unknown,down</strong> till they boot-up and join the queue.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The scheduler is configured to monitor the status of the queues every minute. It typically takes 5-6 minutes to launch a new EC2 instance, boot the operating system, configure it to join the cluster, and have the assigned job to start running. </p>
+<p>SOCA automation scripts are configured to monitor the status of the queues every minute. It typically takes 5-6 minutes to launch a new EC2 instance, boot the operating system, configure it to join the cluster, and have the assigned job to start running. </p>
 </div>
 </li>
 </ol>
@@ -1805,12 +1805,13 @@
 <p>Monitor the status of test20 job by refreshing the <strong>My Job Queue</strong> page in SOCA portal and look for the <strong>Status</strong> column for the job with <code>test20</code> under <strong>Name</strong> column.</p>
 </li>
 <li>
-<p>You can also monitor the status of the jobs in the terminal by typing <code>watch -n 10 "qstat -u `whoami`"</code> command which will keep monitoring the status of the jobs every 10 seconds. You'll need to wait the <strong>S</strong> column represeting the status of the job correspoding to the one with <code>test20</code> under <strong>Name</strong> column. This job usually takes around 6 minutes to complete.</p>
+<p>You can also monitor the status of the jobs in the terminal by typing <code>watch -n 10 "qstat -u `whoami`"</code> command which will keep monitoring the status of the jobs every 10 seconds. You'll need to wait for the <strong>S</strong> column represeting the status of the job correspoding to the one with <strong>test20</strong> under <strong>Name</strong> column. This job usually takes around 6 minutes to complete.</p>
 </li>
 <li>
-<p>Once the job is in the running state (<strong>S</strong> column changes to R in the terminal or <strong>Status</strong> column changes to RUNNING on <strong>My Job Queue</strong> page in SOCA portal), look inside test20 directory for test.log and novas.fsdb by typing <code>ls test20/*</code>. Wait until test20/novas.fsdb is created as you'll need to use it in the next lab.</p>
+<p>Once the job is in the running state (<strong>S</strong> column changes to <strong>R</strong> in the terminal or <strong>Status</strong> column changes to <strong>RUNNING</strong> on <strong>My Job Queue</strong> page in SOCA portal), look inside test20 directory for test.log and novas.fsdb by typing <code>ls test20/*</code>. Wait until test20/novas.fsdb is created as you'll need to use this fsdb file in the next lab.</p>
 </li>
 </ol>
+<p>In this lab you learned how to submit VCS batch jobs to the cluster and how to monitor the status of these jobs.</p>
 <p>Click <strong>Next</strong> to move to the next lab.</p>
                 
               
