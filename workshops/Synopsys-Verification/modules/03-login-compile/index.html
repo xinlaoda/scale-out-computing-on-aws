@@ -1780,20 +1780,23 @@
 <p><img alt="" src="../../imgs/access-3.png" /></p>
 <ol>
 <li>
-<p>Click <strong>Open Session directly on a browser</strong> to log into the remote desktop session in your new cluster using the username and password you created in the steps above.</p>
+<p>Click <strong>Open Session directly on a browser</strong> to log into the remote desktop session in the cluster.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You can also access the session with the NICE DCV native clients, which are available for Mac, Linux, and Windows from <a href="https://download.nice-dcv.com">https://download.nice-dcv.com</a></p>
 </div>
 </li>
 <li>
-<p>Start a new terminal session by going to <strong>Applications → Favorites → Terminal</strong> in the desktop manager.</p>
+<p>Start a new terminal session by going to <strong>Applications → System Tools → Terminal</strong> in the desktop manager.</p>
 </li>
 </ol>
 <h2 id="step-2-copy-test-case">Step 2: Copy test case<a class="headerlink" href="#step-2-copy-test-case" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p>Copy the test case to your home directory by typing <code>cp -r /data/NVDLA_export /fsx/`whoami`</code> at the command prompt and hit enter</p>
+<p>Make a working directory under /fsx/<code>whoami</code> by typing <code>`mkdir /fsx/</code>whoami``` at the command prompt and hit enter</p>
+</li>
+<li>
+<p>Copy the test case to your working directory by typing <code>cp -r /data/NVDLA_export /fsx/`whoami`</code> at the command prompt and hit enter</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>/data is a mount point for <strong>Amazon Elastic File System</strong> which provides a simple, scalable elastic NFS file system. /fsx is a mount point for <strong>Amazon FSx for Lustre</strong> which provides a Lustre file system suitable for high performance computing (HPC) workloads such as EDA</p>
