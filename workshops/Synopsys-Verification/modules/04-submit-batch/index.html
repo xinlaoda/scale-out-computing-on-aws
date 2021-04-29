@@ -14,7 +14,7 @@
     
     
       
-        <title>Lab 4: Submit Batch Jobs - Scale-Out Computing on AWS Knowledge Base</title>
+        <title>Lab 4: Submit VCS Batch Jobs - Scale-Out Computing on AWS Knowledge Base</title>
       
     
     
@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lab-4-submit-batch-jobs" class="md-skip">
+        <a href="#lab-4-submit-vcs-batch-jobs" class="md-skip">
           Skip to content
         </a>
       
@@ -91,7 +91,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lab 4: Submit Batch Jobs
+              Lab 4: Submit VCS Batch Jobs
             
           </span>
         </div>
@@ -1255,12 +1255,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Lab 4: Submit Batch Jobs
+          Lab 4: Submit VCS Batch Jobs
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Lab 4: Submit Batch Jobs
+        Lab 4: Submit VCS Batch Jobs
       </a>
       
         
@@ -1773,22 +1773,22 @@
                   </a>
                 
                 
-                <h1 id="lab-4-submit-batch-jobs">Lab 4: Submit Batch Jobs<a class="headerlink" href="#lab-4-submit-batch-jobs" title="Permanent link">&para;</a></h1>
+                <h1 id="lab-4-submit-vcs-batch-jobs">Lab 4: Submit VCS Batch Jobs<a class="headerlink" href="#lab-4-submit-vcs-batch-jobs" title="Permanent link">&para;</a></h1>
 <p>This module provides instructions for running an example batch workload in the SOCA computing environment. The example workload is a CPU- and IO-intensive logic simulation that is found in integrated cicuit design workflows.</p>
 <h3 id="step-1-submit-jobs-to-the-scheduler">Step 1: Submit jobs to the scheduler<a class="headerlink" href="#step-1-submit-jobs-to-the-scheduler" title="Permanent link">&para;</a></h3>
 <p>Next, you'll submit four jobs into the cluster, each job requests a specific instance type. Using multiple instance types will help provide more interesting data to look at in the analytics lab.</p>
 <ol>
 <li>
-<p>Execute the run_tests.sh script which will submit 20 batch jobs to the queue by typing <code>./run_tests.sh</code> then hit enter. You'll observe that the PBS scheduler will report the corresponding job idsfor each of these 20 jobs. </p>
+<p>Execute the run_tests.sh script by typing <code>./run_tests.sh</code> then hit enter. The script is broken into two sections: The first section creates 5 compute instances each with 4 vCPUs then the second section submits 20 batch jobs to these instances. You'll observe that the PBS scheduler will report the corresponding job ids for each of these 20 jobs. </p>
 </li>
 <li>
-<p>You can examine the run_tests.sh script by typing <code>cat run_tests.sh</code> and observe that for each test we're specifying a different instance_type. This will usually depend on the CPU and memory requirements for the corresponding test.</p>
+<p>You can examine the run_tests.sh script by typing <code>cat run_tests.sh</code>. </p>
 </li>
 </ol>
 <h3 id="step-2-watch-job-status">Step 2: Watch job status<a class="headerlink" href="#step-2-watch-job-status" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p>As soon as jobs are sent to the queue, SOCA automation scripts will create a new compute instance to execute each job. Run the <code>qstat</code> command to view the status of the jobs. You can also view job status in the web UI by clicking on <strong>My Job Queue</strong> in the left side navigation bar.
+<p>Run the <code>qstat</code> command to view the status of the jobs. You can also view job status in the web UI by clicking on <strong>My Job Queue</strong> in the left side navigation bar.
     <img alt="" src="../../imgs/my-job-queue.png" /></p>
 </li>
 <li>
