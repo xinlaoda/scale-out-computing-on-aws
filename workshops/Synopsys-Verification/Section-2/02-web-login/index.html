@@ -14,7 +14,7 @@
     
     
       
-        <title>Lab 1: Deploy Environment - Scale-Out Computing on AWS Knowledge Base</title>
+        <title>Lab 2: Login to SOCA Console and Launch Remote Desktop Session - Scale-Out Computing on AWS Knowledge Base</title>
       
     
     
@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lab-1-deploy-environment" class="md-skip">
+        <a href="#lab-2-login-to-soca-console-and-launch-remote-desktop-session" class="md-skip">
           Skip to content
         </a>
       
@@ -91,7 +91,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lab 1: Deploy Environment
+              Lab 2: Login to SOCA Console and Launch Remote Desktop Session
             
           </span>
         </div>
@@ -1174,10 +1174,49 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_2_2" type="checkbox" id="__nav_9_2_2" >
+      
+      <label class="md-nav__link" for="__nav_9_2_2">
+        Section 1
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Section 1" data-md-level="3">
+        <label class="md-nav__title" for="__nav_9_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Section 1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../getting-started/" class="md-nav__link">
+      <a href="../../Section-1/00-getting-started/" class="md-nav__link">
         Getting Started
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Section-1/01-deploy-env/" class="md-nav__link">
+        Lab 1: Deploy Environment
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1195,13 +1234,13 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_2_3" type="checkbox" id="__nav_9_2_3" checked>
       
       <label class="md-nav__link" for="__nav_9_2_3">
-        Modules
+        Section 2
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Modules" data-md-level="3">
+      <nav class="md-nav" aria-label="Section 2" data-md-level="3">
         <label class="md-nav__title" for="__nav_9_2_3">
           <span class="md-nav__icon md-icon"></span>
-          Modules
+          Section 2
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1219,12 +1258,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Lab 1: Deploy Environment
+          Lab 2: Login to SOCA Console and Launch Remote Desktop Session
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Lab 1: Deploy Environment
+        Lab 2: Login to SOCA Console and Launch Remote Desktop Session
       </a>
       
         
@@ -1241,8 +1280,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#step-1-launch-stack" class="md-nav__link">
-    Step 1: Launch stack
+  <a href="#step-1-login-to-soca-console" class="md-nav__link">
+    Step 1: Login to SOCA console
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-launch-remote-desktop-server" class="md-nav__link">
+    Step 2: Launch remote desktop server
   </a>
   
 </li>
@@ -1251,18 +1297,6 @@
   
 </nav>
       
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../02-web-login/" class="md-nav__link">
-        Lab 2: Login to SOCA Console and Launch Remote Desktop Session
-      </a>
     </li>
   
 
@@ -1722,8 +1756,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#step-1-launch-stack" class="md-nav__link">
-    Step 1: Launch stack
+  <a href="#step-1-login-to-soca-console" class="md-nav__link">
+    Step 1: Login to SOCA console
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-launch-remote-desktop-server" class="md-nav__link">
+    Step 2: Launch remote desktop server
   </a>
   
 </li>
@@ -1740,149 +1781,58 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/awslabs/scale-out-computing-on-aws/edit/master/docs/workshops/Synopsys-Verification/modules/01-deploy-env.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/awslabs/scale-out-computing-on-aws/edit/master/docs/workshops/Synopsys-Verification/Section-2/02-web-login.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="lab-1-deploy-environment">Lab 1: Deploy Environment<a class="headerlink" href="#lab-1-deploy-environment" title="Permanent link">&para;</a></h1>
-<p>We want you to have hands-on experience deploying your own cluster, and in this module we will have you walk through the process of launching a cluster in your temporary AWS account.  This cluster will be provisioned in the background. For the subsequent modules you'll access a pre-built cluster where EDA tools and licenses have been provisioned. </p>
-<h2 id="step-1-launch-stack">Step 1: Launch stack<a class="headerlink" href="#step-1-launch-stack" title="Permanent link">&para;</a></h2>
-<p>This automated AWS CloudFormation template deploys a scale-out computing environment in the AWS Cloud.</p>
+                <h1 id="lab-2-login-to-soca-console-and-launch-remote-desktop-session">Lab 2: Login to SOCA Console and Launch Remote Desktop Session<a class="headerlink" href="#lab-2-login-to-soca-console-and-launch-remote-desktop-session" title="Permanent link">&para;</a></h1>
+<p>The goal of this module is to login to SOCA console and start a remote desktop session from which you will run applications and submit jobs into the cluster.  You will use the cluster's management console to start and monitor the session.</p>
+<h2 id="step-1-login-to-soca-console">Step 1: Login to SOCA console<a class="headerlink" href="#step-1-login-to-soca-console" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p>Sign in to the AWS Management Console and click the Launch Stack link in the instructions below to launch the scale-out-computing-on-aws AWS CloudFormation template.</p>
-<p><a href="https://console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?&amp;templateURL=https://s3.amazonaws.com/solutions-reference/scale-out-computing-on-aws/latest/scale-out-computing-on-aws.template" target="_blank"><strong>Launch Stack &lt;--- CLICK HERE</strong></a></p>
-</li>
-<li>
-<p>Verify the launch region is <strong>Oregon</strong></p>
-<p><img alt="" src="../../imgs/verify-region.png" /></p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>The template must be launched in <strong>Oregon</strong> for this workshop.</p>
+<p>Click on the link below to login to SOCA console</p>
+<p><a href="https://soca-tko260-viewer-1219550143.us-west-2.elb.amazonaws.com/login" target="_blank"><strong>Login to SOCA console</strong></a></p>
+<p><img alt="SOCA Console" src="../../imgs/soca-console-login.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Your web browser will warn you about a certificate problem with the site.  To open the webpage, you need to authorize the browser to trust the self-signed security certificate.  In a production deployment, you would upload a Server Certificate to the Elastic Load Balancer endpoint.</p>
 </div>
 </li>
 <li>
-<p>On the <strong>Create stack</strong> page, you should see the template URL in the <strong>Amazon S3 URL</strong> text box and choose <strong>Next</strong>.</p>
-</li>
-<li>
-<p>On the <strong>Specify stack</strong> details page, assign a name to your solution stack. We recommend naming it "tutorial".</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The stack name must be less than 20 characters and must be lower-case only.</p>
-</div>
-</li>
-<li>
-<p>Under <strong>Parameters</strong>, modify the the last four parameters, which are marked with <strong>REQUIRED</strong>.  Leave all other fields with their default values.  These are variables passed the CloudFormation automation that deploys the environment.</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Install Location</strong></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Installer S3 Bucket</td>
-<td><code>solutions-reference</code></td>
-<td>The default AWS bucket name. Do not change this parameter.</td>
-</tr>
-<tr>
-<td>Installer Folder</td>
-<td><code>scale-out-computing-on-aws/v2.6.1</code></td>
-<td>The default AWS folder name. Do not change this parameter.</td>
-</tr>
-<tr>
-<td><strong>Linux Distribution</strong></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Linux Distribution</td>
-<td>AmazonLinux2</td>
-<td>The preferred Linux distribution for the scheduler and compute instances.  Do not change this parameter.</td>
-</tr>
-<tr>
-<td>Custom AMI</td>
-<td><Optional input></td>
-<td>If using a customized Amazon Machine Image, enter the ID. Leave this field blank.</td>
-</tr>
-<tr>
-<td><strong>Network and Security</strong></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>EC2 Instance Type for Scheduler node</td>
-<td>m5.xlarge</td>
-<td>The instance type for the scheduler.  Do not change this parameter.</td>
-</tr>
-<tr>
-<td>VPC Cluster CIDR</td>
-<td>10.0.0.0/16</td>
-<td>Choose the CIDR (/16) block for the VPC. Do not change this parameter.</td>
-</tr>
-<tr>
-<td>IP Address</td>
-<td>See description</td>
-<td><strong>REQUIRED</strong> The public-facing IP address that is permitted to log into the environment.  We recommend you change it to your public-facing IP address. You can find your public-facing IP address at <a href="http://checkip.amazonaws.com">http://checkip.amazonaws.com</a> then add the /32 suffix to the IP number.</td>
-</tr>
-<tr>
-<td>Key Pair Name</td>
-<td>ee-default-keypair</td>
-<td><strong>REQUIRED</strong> Select the <code>ee-default-keypair</code> provided by the workshop.</td>
-</tr>
-<tr>
-<td><strong>Default LDAP User</strong></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>User Name</td>
-<td><Requires input></td>
-<td><strong>REQUIRED</strong> Set a username for the default cluster user.</td>
-</tr>
-<tr>
-<td>Password</td>
-<td><Requires input></td>
-<td><strong>REQUIRED</strong> Set a password for the default cluster user. (5 characters minimum, uppercase/lowercase/digit only)</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-<p>Choose <strong>Next</strong>.</p>
-</li>
-<li>
-<p>On the <strong>Configure Stack Options</strong> page, choose <strong>Next</strong>.</p>
-</li>
-<li>
-<p>On the <strong>Review</strong> page, review the settings and check the two boxes acknowledging that the template will create AWS Identity and Access Management (IAM) resources and might require the CAPABILITY_AUTO_EXPAND capability.</p>
-</li>
-<li>
-<p>Choose <strong>Create stack</strong> to deploy the stack.</p>
+<p>Log in using the web UI using the following credentials:</p>
+<p>username: provided during tutorial session</p>
+<p>password: provided during tutorial session</p>
 </li>
 </ol>
-<p>You can view the status of the stack in the AWS CloudFormation console in the <strong>Status</strong> column. You should see a status of <code>CREATE_COMPLETE</code> in approximately 35 minutes.</p>
-<p>By now you've learned how to deploy Scale-Out Computing on AWS to create a compute cluster for EDA Workloads in an AWS account. For the remaining portion of the this tutorial, you'll login to a different pre-built cluster that has the following items:</p>
-<ul>
+<h2 id="step-2-launch-remote-desktop-server">Step 2: Launch remote desktop server<a class="headerlink" href="#step-2-launch-remote-desktop-server" title="Permanent link">&para;</a></h2>
+<p>Follow these instructions to start a full remote desktop experience in your new cluster:</p>
+<ol>
 <li>
-<p>Synopsys VCS and Verdi software pre-installed,</p>
+<p>Click <strong>Linux Desktop</strong> on the left sidebar.</p>
+<p><img alt="Graphical Access" src="../../imgs/access-2.png" /></p>
+</li>
+</ol>
+<p>Under <strong>Linux Session #1</strong> group:</p>
+<ol>
+<li>
+<p>Select  <strong>CentOS 7 - x86_64</strong> in the <strong>Software Stack</strong> dropdown menu.</p>
 </li>
 <li>
-<p>A license server with valid licenses, and</p>
+<p>Choose <strong>2D - Medium (8 vCPUs - 32GB ram)</strong> in the <strong>Session Type</strong> dropdown menu.</p>
 </li>
 <li>
-<p>Test case to use for VCS and Verdi</p>
+<p>Click <strong>Launch my Session #1</strong></p>
 </li>
-</ul>
-<p>You can now move on to the next lab. Click <strong>Next</strong>.</p>
+</ol>
+<p>After you click <strong>Launch my session</strong>, the SOCA solution will create a new EC2 instance with 8 vCPUs and 32GB of memory and install all desktop required packages including Gnome. </p>
+<p>You will see an message asking you to wait up to 10 minutes before being able to access your remote desktop.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Please wait till the desktop instance is ready before moving on to the next step.</p>
+</div>
+<p>In this lab you learned how to use SOCA web portal to create a desktop cloud visualization instance so you can access the compute cluster. </p>
+<p>Click <strong>Next</strong> once the status of Linux Session #1 changes and you see green button labeled <strong>Open Session directly on a browser</strong>.</p>
                 
               
               
@@ -1901,7 +1851,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer__inner md-grid" aria-label="Footer">
         
-          <a href="../../getting-started/" title="Getting Started" class="md-footer__link md-footer__link--prev" rel="prev">
+          <a href="../../Section-1/01-deploy-env/" title="Lab 1: Deploy Environment" class="md-footer__link md-footer__link--prev" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1910,19 +1860,19 @@
                 <span class="md-footer__direction">
                   Previous
                 </span>
-                Getting Started
+                Lab 1: Deploy Environment
               </div>
             </div>
           </a>
         
         
-          <a href="../02-web-login/" title="Lab 2: Login to SOCA Console and Launch Remote Desktop Session" class="md-footer__link md-footer__link--next" rel="next">
+          <a href="../03-login-compile/" title="Lab 3: Login to Remote Desktop and Compile Design" class="md-footer__link md-footer__link--next" rel="next">
             <div class="md-footer__title">
               <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   Next
                 </span>
-                Lab 2: Login to SOCA Console and Launch Remote Desktop Session
+                Lab 3: Login to Remote Desktop and Compile Design
               </div>
             </div>
             <div class="md-footer__button md-icon">
