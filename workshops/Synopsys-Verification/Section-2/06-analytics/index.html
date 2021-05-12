@@ -1842,9 +1842,11 @@
                 
                 <h1 id="lab-6-explore-analytics-dashboard">Lab 6: Explore Analytics Dashboard<a class="headerlink" href="#lab-6-explore-analytics-dashboard" title="Permanent link">&para;</a></h1>
 <h2 id="step-1-open-my-activity">Step 1: Open My Activity<a class="headerlink" href="#step-1-open-my-activity" title="Permanent link">&para;</a></h2>
-<p>Return to the your cluster web UI and click on the <strong>My Activity</strong> section on the left sidebar.</p>
+<p>Return to the SOCA web UI and click on the <strong>My Activity</strong> section on the left sidebar and wait a minute for Elasticsearch Kibana dashboard to load.</p>
 <p><img alt="" src="../../imgs/my-activity.png" /></p>
-<p>You should see information about recent jobs submitted to the cluster for your user. You might need to update the duration dropdown just above the chart to see older or more recent job data.</p>
+<p>The Elasticsearch dashboard attempts to filter the jobs view for the logged-in user. However, data is refereshed every hour from the SOCA cluster to Elasticsearch. If you see <strong>No results match your search criteria</strong>, delete the user filter from the search field.</p>
+<p><img alt="" src="../../imgs/my-activity-remove-user.png" /></p>
+<p>You should see information about recent jobs submitted to the cluster for all users. You might need to update the duration dropdown just above the chart to see older or more recent job data.</p>
 <p><img alt="" src="../../imgs/analytics-jobs.png" /></p>
 <p>If you click on the small arrow to the left of the date/time, you'll see all metadata information saved into the analytics dashboard for this specific job. The metadata information is available in Table or JSON format. Here is an example of how it looks in JSON format. Notice that it includes an estimated price calculated based on job duration and instance type.</p>
 <p><img alt="" src="../../../../imgs/kibana-7.png" /></p>
