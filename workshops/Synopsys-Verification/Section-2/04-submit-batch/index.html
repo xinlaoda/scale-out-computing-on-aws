@@ -1815,9 +1815,15 @@
 <h3 id="step-2-watch-job-status">Step 2: Watch job status<a class="headerlink" href="#step-2-watch-job-status" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p>Run the <code>qstat</code> command to view the status of the jobs. You can also view job status in the web UI by clicking on <strong>My Job Queue</strong> in the left side navigation bar.
-    <img alt="" src="../../imgs/my-job-queue.png" /></p>
+<p>Run the <code>qstat</code> command to view the status of the jobs. You can also view job status by clicking on <strong>My Job Queue</strong> in the left side navigation bar in SOCA portal under <strong>PROFILE</strong> section as shown in the screen shot below.</p>
+<p><img alt="" src="../../imgs/my-job-queue.png" /></p>
 </li>
+</ol>
+<p>The result should be similar to the screen shot below.</p>
+<div class="codehilite"><pre><span></span><code>![](../imgs/my-job-queue-status.png)
+</code></pre></div>
+
+<ol>
 <li>
 <p>You can run the <code>pbsnodes -aSjL</code> command to see the EC2 instances that have joined the cluster. Initially, the nodes will be in <strong>state-unknown,down</strong> till they boot-up and join the queue.</p>
 <div class="admonition note">
