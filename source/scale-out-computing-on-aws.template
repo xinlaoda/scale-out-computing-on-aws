@@ -209,6 +209,9 @@ Mappings:
       amazonlinux2: ami-0a36eb8fadc976275
       centos7: ami-0686851c4e7b1a8e1
       rhel7: ami-02deb4589e0f0d95e
+    cn-northwest-1:
+      amazonlinux2: ami-010f676abe7d44960
+      centos7: ami-083672bfc3c2e9164
 
 Conditions:
   UseCustomAMI: !Not [!Equals [!Ref CustomAMI, ""]]
@@ -350,7 +353,7 @@ Resources:
         ClusterId: !GetAtt CheckSOCAPreRequisite.ClusterId
         PublicSubnetMaskBits: !GetAtt CheckSOCAPreRequisite.PublicSubnetMaskBits
         PrivateSubnetMaskBits: !GetAtt CheckSOCAPreRequisite.PrivateSubnetMaskBits
-      TemplateURL: !Join [ "/", [!Sub "https://s3.${AWS::URLSuffix}", !Ref S3InstallBucket, !Ref S3InstallFolder, "templates/Network.template"] ]
+      TemplateURL: !Join [ "/", [!Sub "https://s3.${AWS::Region}.${AWS::URLSuffix}", !Ref S3InstallBucket, !Ref S3InstallFolder, "templates/Network.template"] ]
 
   Security:
     DependsOn: Network
@@ -366,7 +369,7 @@ Resources:
         EIPNat: !GetAtt Network.Outputs.EIPNat
         CreateESServiceRole: !GetAtt CheckSOCAPreRequisite.CreateESServiceRole
 
-      TemplateURL: !Join [ "/", [!Sub "https://s3.${AWS::URLSuffix}", !Ref S3InstallBucket, !Ref S3InstallFolder, "templates/Security.template"] ]
+      TemplateURL: !Join [ "/", [!Sub "https://s3.${AWS::Region}.${AWS::URLSuffix}", !Ref S3InstallBucket, !Ref S3InstallFolder, "templates/Security.template"] ]
       TimeoutInMinutes: 30
 
   Storage:
@@ -381,7 +384,7 @@ Resources:
         PrivateSubnet2: !GetAtt Network.Outputs.PrivateSubnet2
         PrivateSubnet3: !GetAtt Network.Outputs.PrivateSubnet3
         ClusterId: !Join [ "-", [ !FindInMap [ Info, Data, ClusterIdPrefix ], !Ref "AWS::StackName"] ]
-      TemplateURL: !Join [ "/", [!Sub "https://s3.${AWS::URLSuffix}", !Ref S3InstallBucket, !Ref S3InstallFolder, "templates/Storage.template"] ]
+      TemplateURL: !Join [ "/", [!Sub "https://s3.${AWS::Region}.${AWS::URLSuffix}", !Ref S3InstallBucket, !Ref S3InstallFolder, "templates/Storage.template"] ]
       TimeoutInMinutes: 30
 
   Scheduler:
@@ -405,7 +408,7 @@ Resources:
         UserName: !Ref UserName
         UserPassword: !Ref UserPassword
         SchedulerPublicIP: !GetAtt Network.Outputs.SchedulerPublicIP
-      TemplateURL: !Join [ "/", [!Sub "https://s3.${AWS::URLSuffix}", !Ref S3InstallBucket, !Ref S3InstallFolder, "templates/Scheduler.template"] ]
+      TemplateURL: !Join [ "/", [!Sub "https://s3.${AWS::Region}.${AWS::URLSuffix}", !Ref S3InstallBucket, !Ref S3InstallFolder, "templates/Scheduler.template"] ]
       TimeoutInMinutes: 60
 
   Analytics:
@@ -419,7 +422,7 @@ Resources:
         PrivateSubnet2: !GetAtt Network.Outputs.PrivateSubnet2
         ClusterId: !GetAtt CheckSOCAPreRequisite.ClusterId
 
-      TemplateURL: !Join [ "/", [!Sub "https://s3.${AWS::URLSuffix}", !Ref S3InstallBucket, !Ref S3InstallFolder, "templates/Analytics.template"] ]
+      TemplateURL: !Join [ "/", [!Sub "https://s3.${AWS::Region}.${AWS::URLSuffix}", !Ref S3InstallBucket, !Ref S3InstallFolder, "templates/Analytics.template"] ]
       TimeoutInMinutes: 30
 
   Viewer:
@@ -439,7 +442,7 @@ Resources:
         SchedulerIAMRole: !GetAtt Security.Outputs.SchedulerIAMRole
         LambdaACMIAMRoleArn: !GetAtt Security.Outputs.LambdaACMIAMRoleArn
         ESDomainIPAddresses: !GetAtt Analytics.Outputs.ESDomainIPAddresses
-      TemplateURL: !Join [ "/", [!Sub "https://s3.${AWS::URLSuffix}", !Ref S3InstallBucket, !Ref S3InstallFolder, "templates/Viewer.template"] ]
+      TemplateURL: !Join [ "/", [!Sub "https://s3.${AWS::Region}.${AWS::URLSuffix}", !Ref S3InstallBucket, !Ref S3InstallFolder, "templates/Viewer.template"] ]
       TimeoutInMinutes: 30
 
 
@@ -481,7 +484,7 @@ Resources:
         BaseOS: !Ref BaseOS
         SolutionMetricsRoleArn: !GetAtt Security.Outputs.SolutionMetricsRoleArn
         DefaultMetricCollection: !FindInMap [ Send, AnonymousUsage, Data ]
-      TemplateURL: !Join [ "/", [!Sub "https://s3.${AWS::URLSuffix}", !Ref S3InstallBucket, !Ref S3InstallFolder, "templates/Configuration.template"] ]
+      TemplateURL: !Join [ "/", [!Sub "https://s3.${AWS::Region}.${AWS::URLSuffix}", !Ref S3InstallBucket, !Ref S3InstallFolder, "templates/Configuration.template"] ]
       TimeoutInMinutes: 60
 
 Outputs:

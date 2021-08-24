@@ -150,7 +150,7 @@ Resources:
             Resource: !Ref SNSEFSTopic
             Principal:
               Service:
-                - !Sub "cloudwatch.${AWS::URLSuffix}"
+                - !Sub "cloudwatch.amazonaws.com"
             Condition:
               ArnLike:
                 AWS:SourceArn: !Sub 'arn:${AWS::Partition}:*:*:${AWS::AccountId}:*'

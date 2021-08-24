@@ -209,7 +209,7 @@ Resources:
             Principal:
               Service:
                 - !Sub "ec2.${AWS::URLSuffix}"
-                - !Sub "ssm.${AWS::URLSuffix}"
+                - !Sub "ssm.amazonaws.com"
             Action:
               - sts:AssumeRole
       ManagedPolicyArns:
@@ -284,7 +284,7 @@ Resources:
           - Effect: Allow
             Principal:
               Service:
-                - !Sub "spotfleet.${AWS::URLSuffix}"
+                - !Sub "spotfleet.amazonaws.com"
             Action:
               - sts:AssumeRole
       Policies:
@@ -336,7 +336,7 @@ Resources:
             Principal:
               Service:
                 - !Sub "ec2.${AWS::URLSuffix}"
-                - !Sub "ssm.${AWS::URLSuffix}"
+                - !Sub "ssm.amazonaws.com"
             Action:
               - sts:AssumeRole
       ManagedPolicyArns:
@@ -423,7 +423,7 @@ Resources:
                 Resource: "*"
                 Condition:
                   "ForAllValues:StringEquals":
-                    "cloudformation:TemplateURL": !Sub "https://s3.{AWS::URLSuffix}/${S3InstallBucket}/${S3InstallFolder}/templates/ComputeNode.template"
+                    "cloudformation:TemplateURL": !Sub "https://s3.{AWS::Region}.{AWS::URLSuffix}/${S3InstallBucket}/${S3InstallFolder}/templates/ComputeNode.template"
 
               - Effect: Allow
                 Action:
@@ -600,7 +600,7 @@ Resources:
           - Effect: Allow
             Principal:
               Service:
-                - !Sub lambda.${AWS::URLSuffix}
+                - !Sub lambda.amazonaws.com
             Action:
               - sts:AssumeRole
 

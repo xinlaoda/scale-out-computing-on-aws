@@ -3,7 +3,9 @@
 
 == :book: Documentation
 
-https://awslabs.github.io/scale-out-computing-on-aws/[https://awslabs.github.io/scale-out-computing-on-aws/]
+https://github.com/xinlaoda/scale-out-computing-on-aws/[https://github.com/xinlaoda/scale-out-computing-on-aws/]
+
+针对中国区域，做了变动，目前支持cn-northwest-1，如果要支持cn-north-1，可以添加相应的AMI ID
 
 == :rocket: How to install Scale-Out Computing on AWS
 

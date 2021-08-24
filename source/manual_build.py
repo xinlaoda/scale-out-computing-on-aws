@@ -64,6 +64,8 @@ if __name__ == "__main__":
     else:
         bucket = args.bucket
 
+    is_china_region = region.startswith('cn-')
+
     s3_bucket_exists = False
     try:
         print(" > Validating you can have access to that bucket...")
@@ -127,11 +129,16 @@ if __name__ == "__main__":
 
         # CloudFormation Template URL
         template_url = "https://%s.s3.amazonaws.com/%s/scale-out-computing-on-aws.template" % (bucket, output_prefix)
+        if is_china_region:
+            template_url = "https://%s.s3.%s.amazonaws.com.cn/%s/scale-out-computing-on-aws.template" % (bucket, region, output_prefix)
 
         print("\n====== Upload COMPLETE ======")
         print("\n====== Installation Instructions ======")
         print("1. Click on the following link:")
-        print("%s==> https://console.aws.amazon.com/cloudformation/home?region=%s#/stacks/create/review?&templateURL=%s&param_S3InstallBucket=%s&param_ClientIp=%s&param_S3InstallFolder=%s%s" % (fg('light_blue'), region, template_url, bucket, client_ip, output_prefix, attr('reset')))
+        if is_china_region:
+            print("%s==> https://console.amazonaws.cn/cloudformation/home?region=%s#/stacks/create/review?&templateURL=%s&param_S3InstallBucket=%s&param_ClientIp=%s&param_S3InstallFolder=%s%s" % (fg('light_blue'), region, template_url, bucket, client_ip, output_prefix, attr('reset')))
+        else:
+            print("%s==> https://console.aws.amazon.com/cloudformation/home?region=%s#/stacks/create/review?&templateURL=%s&param_S3InstallBucket=%s&param_ClientIp=%s&param_S3InstallFolder=%s%s" % (fg('light_blue'), region, template_url, bucket, client_ip, output_prefix, attr('reset')))
         print("2. The 'Install Location' parameters are pre-filled for you, fill out the rest of the parameters.")
     else:
         print("\n====== Installation Instructions ======")
