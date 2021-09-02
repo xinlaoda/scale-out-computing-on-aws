@@ -190,13 +190,15 @@ def can_launch_capacity(instance_type, desired_capacity, image_id, subnet_id, se
                 except NameError:
                     quota_info = {}
 
-                vcpus_check = verify_vcpus_limit(instance, desired_capacity, quota_info)
-                quota_info = vcpus_check["quota_info"]
-                if vcpus_check["message"] is True:
-                    return True
-                else:
-                    return vcpus_check["message"]
-            else:
+                return True
+
+                # vcpus_check = verify_vcpus_limit(instance, desired_capacity, quota_info)
+                # quota_info = vcpus_check["quota_info"]
+                # if vcpus_check["message"] is True:
+                    # return True
+                # else:
+                    # return vcpus_check["message"]
+            else: 
                 print('Dry Run Failed, capacity ' + instance + ' can not be added: ' + str(e), 'error')
                 return str(instance + ' can not be added: ' + str(e))
 

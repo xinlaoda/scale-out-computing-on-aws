@@ -71,10 +71,7 @@ then
      PIP=$(which pip3)
      $PIP install awscli
      yum install -y nfs-utils # enforce install of nfs-utils
-else
-     yum install -y python3-pip
-     PIP=$(which pip3)
-     $PIP install awscli
+
 fi
 if [[ "''' + params['BaseOS'] + '''" == "amazonlinux2" ]];
     then
