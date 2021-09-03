@@ -74,6 +74,10 @@
                                                        {% endif %}
                                                    {% elif job_data.job_state == 'E' %}
                                                        <span class="badge badge-danger">EXIT</span>
+                                                   {% elif job_data.job_state == 'F' %}
+                                                       <span class="badge badge-primary">FINISHED</span>
+                                                   {% elif job_data.job_state == 'S' %}
+                                                       <span class="badge badge-warning">SUSPENDED</span>
                                                    {% else %}
                                                         <span class="badge badge-primary">{{ job_data.job_state }}</span>
                                                    {% endif %}
@@ -82,7 +86,7 @@
                                            <th>{{ job_data.Resource_List.nodect }}</th>
                                            <th>
                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#job{{ job_id.split(".")[0] }}">Job Info</button>
-                                               {% if job_data.job_state != 'E' %}
+                                               {% if job_data.job_state != 'E' and job_data.job_state != 'F' %}
                                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete{{ job_id.split(".")[0] }}">Kill</button>
                                                {% endif %}
                                                {% if job_data.Variable_List.PBS_O_WORKDIR %}
