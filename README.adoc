@@ -6,6 +6,10 @@
 https://github.com/xinlaoda/scale-out-computing-on-aws/[https://github.com/xinlaoda/scale-out-computing-on-aws/]
 
 针对中国区域，做了变动，目前支持cn-northwest-1，如果要支持cn-north-1，可以添加相应的AMI ID
+主要变动如下：
+1. 修改构建URL，支持中国区域Cloudformation和S3。
+2. 更新代码，忽略中国区不支持的服务。如：Price，Qouta等。
+3. 支持Finish状态作业，作业完成后，缺省保存14天。
 
 == :rocket: How to install Scale-Out Computing on AWS
 

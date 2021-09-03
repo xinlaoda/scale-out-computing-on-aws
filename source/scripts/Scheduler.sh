@@ -139,7 +139,7 @@ systemctl start pbs
 /opt/pbs/bin/qmgr -c "set node $SERVER_HOSTNAME_ALT queue = workq"
 /opt/pbs/bin/qmgr -c "set server flatuid=true"
 /opt/pbs/bin/qmgr -c "set server job_history_enable=1"
-/opt/pbs/bin/qmgr -c "set server job_history_duration = 01:00:00"
+/opt/pbs/bin/qmgr -c "set server job_history_duration = 336:00:00"
 /opt/pbs/bin/qmgr -c "set server scheduler_iteration = 30"
 /opt/pbs/bin/qmgr -c "set server max_concurrent_provision = 5000"
 
