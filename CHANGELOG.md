@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 2021-09-03
+### Added
+- 中国宁夏区域支持
+- 更新代码，忽略中国区不支持的服务，如：ServiceQouta， Price等
+
+### Changed
+- 支持作业完成状态，缺省完成的作业保留14天
+
 ## [2.6.1] - 2021-03-22
 ### Added
 - Added Name tag to EIPNat in Network.template
